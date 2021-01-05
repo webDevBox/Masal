@@ -26,7 +26,7 @@ Route::get('/retailerlogout','AuthController@retailerlogout')->name('retailerlog
 //retailer
 Route::post('/retailerlogin', 'AuthController@retailerlogin')->name('retailerlogin');
 //Admin Routes
-Route::get('/dashboard', 'AdminController@index');
+Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 //Home Page Edits
 Route::get('/template_edit/{id}', 'EmailController@template_edit')->name('template_edit');
 Route::get('/template_stat/{id}/{value}', 'EmailController@template_stat')->name('template_stat');
@@ -181,7 +181,7 @@ Route::get('/remover/{id}', 'RetailerOrderController@remover')->name('remover');
 // Route::post('/ewayresponse', 'RetailerOrderController@ewayResponse')->name('ewayresponse');
 Route::post('/adminProfile', 'AdminController@adminProfile')->name('adminProfile');
 Route::post('/adminPassword', 'AdminController@passwordUpdate')->name('adminPassword');
-Route::get('/chat', 'ChatController@chat');
+Route::get('/chat', 'ChatController@chat')->name('chat');
 Route::post('/send_message', 'ChatController@send_message')->name('send_message');
 //Website Routes
 Route::get('/',  'PagesController@home' );

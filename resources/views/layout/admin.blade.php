@@ -180,7 +180,7 @@ $note=$chat + $newUser + $unread;
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
 <div class="navbar-header">
 <ul class="nav navbar-nav flex-row">
-<li class="nav-item mr-auto"><a class="navbar-brand" href="/dashboard">
+<li class="nav-item mr-auto"><a class="navbar-brand" href="{{ route('dashboard') }}">
   
      <span class="brand-logo">
         <img src="{{ asset('app-assets/images/logo/logo.png')}}" >      
@@ -215,7 +215,7 @@ $note=$chat + $newUser + $unread;
 <div class="shadow-bottom"></div>
 <div class="main-menu-content">
 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-<li class=" nav-item"><a class="d-flex align-items-center" href="/dashboard"><i class="fa fa-home" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboard</span></a></li>
+<li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('dashboard') }}"><i class="fa fa-home" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboard</span></a></li>
 <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span>
 </li>
 <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('order') }}"><i class="fa fa-envelope" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-title text-truncate" data-i18n="Email">Orders</span></a>
