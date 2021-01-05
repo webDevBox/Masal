@@ -155,7 +155,7 @@ Route::get('/lock_screen', 'AdminController@lock_screen');
 Route::get('/profile', 'AdminController@profile')->name('profile');
 Route::get('/editor/{id}', 'AdminController@editor');
 //Retailer Routes
-Route::get('/retailerdash', 'RetailerController@index');
+Route::get('/retailerdash', 'RetailerController@index')->name('retailerdash');
 Route::match(['get', 'post'],'/collection', 'RetailerController@collection')->name('collection');
 Route::get('/orders', 'RetailerController@orders')->name('orders');
 Route::get('/retailerorder/{id}', 'RetailerOrderController@retailerorder')->name('retailerorder');
