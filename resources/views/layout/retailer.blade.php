@@ -62,15 +62,15 @@
     </ul>
     <ul  class="nav navbar-nav align-items-center ml-auto">
         <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            
-            <span class="avatar"><img class="round" @if(Auth::user()->logo != null) src="{{ asset('images/'.Auth::user()->logo)}}" @else src="{{ asset('images/logos/abc.png') }}" @endif
-                 alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
-            <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}</span><span class="user-status">Retailer</span></div>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-profile.html"><i class="mr-50" data-feather="user"></i> Profile</a>
-            <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('retailerlogout') }}"><i class="mr-50" data-feather="power"></i> Logout</a>
-        </div>
-    </li>
+            <div class="user-nav d-sm-flex d-none"><span class="avatar"><img class="round" 
+                @if(Auth::user()->logo != null) src="{{ asset('images/'.Auth::user()->logo)}}" @else src="{{ asset('images/logos/abc.png') }}" @endif
+                  alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span></div>
+            <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}</span><span class="user-status">Admin</span></div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="{{ route('profile') }}"><i class="fa fa-user-o" aria-hidden="true"></i>Profile</a>
+            <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('retailerlogout') }}"><i class="fa fa-power-off " aria-hidden="true"></i> Logout</a>
+            </div>
+            </li>
     </ul>
 </div>
 <ul class="nav navbar-nav align-items-center ml-auto">
@@ -232,9 +232,9 @@
 
 <!-- BEGIN: Footer-->
 <footer class="footer footer-static footer-light">
-<p class="clearfix mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020<a class="ml-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+<p class="clearfix mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; {{ Carbon\Carbon::now()->year }}<span class="d-none d-sm-inline-block">, All rights Reserved</span></span></p>
 </footer>
-<button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+<button class="btn btn-primary btn-icon scroll-top" type="button"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
 <!-- END: Footer-->
 
 

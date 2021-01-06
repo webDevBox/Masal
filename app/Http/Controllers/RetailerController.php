@@ -14,6 +14,7 @@ use App\retailerOrder;
 use App\Category;
 use App\wedding;
 use App\retailer_bride;
+use Carbon\Carbon;
 class RetailerController extends Controller
 {
 
@@ -44,9 +45,17 @@ class RetailerController extends Controller
          {
              return redirect('/');
          }
-         $collection=Category::orderBy('created_at', 'desc')->limit(6 )->get();
-         $categories=Category::all();
-        return view('retailer.retailerdash')->with(array('categories'=>$categories,'collection'=>$collection));
+         $collection=Category::orderBy('id', 'desc')->limit(8)->get();
+         $todayOrder=retailerOrder::where('payment','Done')->where('RetailerId',Auth::user()->id)->whereDate('created_at', '=', Carbon::today())->count();
+         $monthOrder=retailerOrder::where('payment','Done')
+        ->whereMonth('created_at', '=', Carbon::now()->month)->where('RetailerId',Auth::user()->id)
+        ->whereYear('created_at', '=', Carbon::now()->year)->count();
+
+
+        $lastmonthOrder=retailerOrder::where('payment','Done')
+        ->whereMonth('created_at', '=', Carbon::now()->subMonth()->month)->where('RetailerId',Auth::user()->id)
+        ->whereYear('created_at', '=', Carbon::now()->subYear()->year)->count();
+        return view('retailer.retailerdash')->with(array('monthOrder'=>$monthOrder,'lastmonthOrder'=>$lastmonthOrder,'todayOrder'=>$todayOrder,'collection'=>$collection));
     }
 
     //Collection Page

@@ -32,11 +32,7 @@
                     @if($star == 1) 5% @elseif($star == 2) 7%  @elseif($star == 3) 10%  @elseif($star == 4) 15%  @endif 
                       on checkout automatically.</a>
               </h3>
-               
-
-                @endif         
-             
-              
+                @endif     
               <img src="{{ asset('app-assets/images/illustration/badge.svg') }}" class="congratulation-medal" />
           </div>
       </div>
@@ -47,7 +43,7 @@
     <div class="card  text-center  " > 
     <div class="card-body pb-50">
     <h3 style="margin-top: 20px;" >Order This Month</h3> 
-    <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > 276</h2>
+    <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $monthOrder }}</h2>
     <!-- <div id="statistics-order-chart"></div> -->
     </div>
     </div>
@@ -59,7 +55,7 @@
       <div class="card  text-center " >
         <div class="card-body pb-50">
         <h3 style="margin-top: 20px;" >Order Last Month</h3> 
-        <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > 500 </h2>
+        <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $lastmonthOrder }} </h2>
         <!-- <div id="statistics-order-chart"></div> -->
         </div>
         </div>
@@ -71,7 +67,7 @@
       <div class="card  text-center " >
         <div class="card-body pb-50">
         <h3 style="margin-top: 20px;" >Order Today</h3> 
-        <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > 500 </h2>
+        <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $todayOrder }} </h2>
         <!-- <div id="statistics-order-chart"></div> -->
         </div>
         </div>
@@ -80,189 +76,159 @@
     
     </div>
     
+
+    @php
+        $count=0;
+         foreach($collection as $row)
+         {
+            $prod[$count]=\App\products::where('delete_status',0)->where('category',$row->id)->count();
+            $image[$count]=$row->image;
+            $name[$count]=$row->name;
+            $count++;
+         }
+    @endphp
+
     <div class="row match-height">
-    <div class="col-lg-4 col-12">
-    <div class="row match-height">
-    <!-- Bar Chart - Orders -->
-    
-    <!--/ Earnings Card -->
-    </div>
-    </div>
-    
-    <!-- Revenue Report Card -->
-    <div class="col-lg-8 col-12">
-        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-          
-            <!--Controls-->
-            <div class="controls-top text-center">
-              <a class="btn-floating float-md-left badge badge-primary badge-glow" href="#multi-item-example" data-slide="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-              <a class=" btn-floating float-md-right badge badge-primary badge-glow" href="#multi-item-example" data-slide="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-            </div>
-     
-            <!--/.Controls-->
-      
-            <!--Indicators-->
-          
-            <ol class="carousel-indicators">
-              <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-              <li data-target="#multi-item-example" data-slide-to="1"></li>
-              <li data-target="#multi-item-example" data-slide-to="2"></li>
-            </ol>
-            <!--/.Indicators-->
-      
-            <!--Slides-->
-            <div class="carousel-inner" role="listbox">
-      
-              <!--First slide-->
-              <div class="carousel-item active">
-      
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="card mb-2">
-                      <img   class="card-img-top" src="images/trunk-img.jpeg"
-                        alt="Card image cap">
-                        <div class="card-body badge-glow badge-primary">
-                            <a href=""> <h4 style="color: white;">Real bride</h4></a>
-                            <a href=""></a>  <p class="card-text">Style# fdgdfh65454fgh</p></a>
-                            <p class="card-text"></p>
-                           
-                          </div>
-                    </div>
-                  </div>
-      
-                  <div class="col-md-4 clearfix d-none d-md-block">
-                    <div class="card mb-2">
-                      <img style="" class="card-img-top" src="images/new2.jpeg"
-                        alt="Card image cap">
-                        <div class="card-body badge-glow badge-primary">
-                            <a href=""> <h4 style="color: white;">Real bride</h4></a>
-                            <a href=""></a>  <p class="card-text">Style# fdgdfh65454fgh</p></a>
-                            <p class="card-text"></p>
-                           
-                          </div>
-                    </div>
-                  </div>
-      
-                  <div class="col-md-4 clearfix d-none d-md-block">
-                    <div class="card mb-2">
-                      <img class="card-img-top" src="images/new1.jpeg"
-                        alt="Card image cap">
-                        <div class="card-body badge-glow badge-primary">
-                            <a href=""> <h4 style="color: white;">Real bride</h4></a>
-                            <a href=""></a>  <p class="card-text">Style# fdgdfh65454fgh</p></a>
-                            <p class="card-text"></p>
-                           
-                          </div>
-                    </div>
-                  </div>
-                </div>
-      
-              </div>
-              <!--/.First slide-->
-      
-              <!--Second slide-->
-              <div class="carousel-item">
-      
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="card mb-2">
-                      <img class="card-img-top" src="masal.png"
-                        alt="Card image cap">
-                        <div class="card-body badge-glow badge-primary">
-                            <a href=""> <h4 style="color: white;">Real bride</h4></a>
-                            <a href=""></a>  <p class="card-text">Style# fdgdfh65454fgh</p></a>
-                            <p class="card-text"></p>
-                           
-                          </div>
-                    </div>
-                  </div>
-      
-                  <div class="col-md-4 clearfix d-none d-md-block">
-                    <div class="card mb-2">
-                      <img class="card-img-top" src="masal.png"
-                        alt="Card image cap">
-                        <div class="card-body badge-glow badge-primary">
-                            <a href=""> <h4 style="color: white;">Real bride</h4></a>
-                            <a href=""></a>  <p class="card-text">Style# fdgdfh65454fgh</p></a>
-                            <p class="card-text"></p>
-                           
-                          </div>
-                    </div>
-                  </div>
-      
-                  <div class="col-md-4 clearfix d-none d-md-block">
-                    <div class="card mb-2">
-                      <img class="card-img-top" src="masal.png"
-                        alt="Card image cap">
-                        <div class="card-body badge-glow badge-primary">
-                            <a href=""> <h4 style="color: white;">Real bride</h4></a>
-                            <a href=""></a>  <p class="card-text">Style# fdgdfh65454fgh</p></a>
-                            <p class="card-text"></p>
-                           
-                          </div>
-                    </div>
-                  </div>
-                </div>
-      
-              </div>
-              <!--/.Second slide-->
-      
-              <!--Third slide-->
-              <div class="carousel-item">
-      
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="card mb-2">
-                      <img class="card-img-top" src="masal.png"
-                        alt="Card image cap">
-                        <div class="card-body badge-glow badge-primary">
-                            <a href=""> <h4 style="color: white;">Real bride</h4></a>
-                            <a href=""></a>  <p class="card-text">Style# fdgdfh65454fgh</p></a>
-                            <p class="card-text"></p>
-                           
-                          </div>
-                    </div>
-                  </div>
-      
-                  <div class="col-md-4 clearfix d-none d-md-block">
-                    <div class="card mb-2">
-                      <img class="card-img-top" src="masal.png"
-                        alt="Card image cap">
-                        <div class="card-body badge-glow badge-primary">
-                            <a href=""> <h4 style="color: white;">Real bride</h4></a>
-                            <a href=""></a>  <p class="card-text">Style# fdgdfh65454fgh</p></a>
-                            <p class="card-text"></p>
-                           
-                          </div>
-                    </div>
-                  </div>
-      
-                  <div class="col-md-4 clearfix d-none d-md-block">
-                    <div class="card mb-2">
-                      <img class="card-img-top" src="masal.png"
-                        alt="Card image cap">
-                        <div class="card-body badge-glow badge-primary">
-                            <a href=""> <h4 style="color: white;">Real bride</h4></a>
-                            <a href=""></a>  <p class="card-text">Style# fdgdfh65454fgh</p></a>
-                            <p class="card-text"></p>
-                           
-                          </div>
-                          
-                    </div>
-                  </div>
-                  
-                </div>
-               
-              </div>
-              <!--/.Third slide-->
-              
-            </div>
-            <!--/.Slides-->
-          
-          </div>
-          <!--/.Carousel Wrapper-->
-        
+  
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+        <h2 class="text-center"> Latest Collections </h2>
+        <!--Controls-->
+        <div class="controls-top text-center">
+          <a class="btn-floating float-md-left badge badge-primary badge-glow" href="#multi-item-example" data-slide="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+          <a class=" btn-floating float-md-right badge badge-primary badge-glow" href="#multi-item-example" data-slide="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
         </div>
+ 
+        <!--/.Controls-->
+  
+        <!--Indicators-->
+      
+        <ol class="carousel-indicators">
+          <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+          <li data-target="#multi-item-example" data-slide-to="1"></li>
+        </ol>
+        <!--/.Indicators-->
+  
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+  
+          <!--First slide-->
+          <div class="carousel-item active">
+  
+            <div class="row">
+              <div class="col-md-3">
+                <div class="card mb-2">
+                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[0]) }}">
+                    <div class="card-body badge-glow badge-primary">
+                        <h4 class="text-uppercase text-center text-white">{{ $name[0] }}</h4>
+                        <p class="card-text"> Total Products: {{ $prod[0] }}</p>
+                       
+                      </div>
+                </div>
+              </div>
+  
+              <div class="col-md-3 ">
+                <div class="card mb-2">
+                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[1]) }}">
+                    <div class="card-body badge-glow badge-primary">
+                        <h4 class="text-uppercase text-center text-white">{{ $name[1] }}</h4>
+                        <p class="card-text"> Total Products: {{ $prod[1] }}</p>
+                       
+                      </div>
+                </div>
+              </div>
+  
+              <div class="col-md-3 ">
+                <div class="card mb-2">
+                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[2]) }}">
+                    <div class="card-body badge-glow badge-primary">
+                         <h4 class="text-uppercase text-center text-white">{{ $name[2] }}</h4>
+                        <p class="card-text"> Total Products: {{ $prod[2] }}</p>
+                       
+                      </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card mb-2">
+                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[3]) }}">
+                    <div class="card-body badge-glow badge-primary">
+                        <h4 class="text-uppercase text-center text-white">{{ $name[3] }}</h4>
+                        <p class="card-text"> Total Products: {{ $prod[3] }}</p>
+                       
+                      </div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          <!--/.First slide-->
+  
+          <!--Second slide-->
+          <div class="carousel-item">
+  
+            <div class="row">
+             
+  
+              <div class="col-md-3 ">
+                <div class="card mb-2">
+                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[4]) }}">
+                    <div class="card-body badge-glow badge-primary">
+                        <h4 class="text-uppercase text-center text-white">{{ $name[4] }}</h4>
+                        <p class="card-text"> Total Products: {{ $prod[4] }}</p>
+                       
+                      </div>
+                </div>
+              </div>
+  
+              <div class="col-md-3 ">
+                <div class="card mb-2">
+                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[5]) }}">
+                    <div class="card-body badge-glow badge-primary">
+                         <h4 class="text-uppercase text-center text-white">{{ $name[5] }}</h4>
+                        <p class="card-text"> Total Products: {{ $prod[5] }}</p>
+                       
+                      </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card mb-2">
+                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[6]) }}">
+                    <div class="card-body badge-glow badge-primary">
+                      <h4 class="text-uppercase text-center text-white">{{ $name[6] }} </h4>
+                        <p class="card-text"> Total Products: {{ $prod[6] }}</p>
+                       
+                      </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 ">
+                <div class="card mb-2">
+                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[7]) }}">
+                    <div class="card-body badge-glow badge-primary">
+                         <h4 class="text-uppercase text-center text-white">{{ $name[7] }} </h4>
+                        <p class="card-text"> Total Products: {{ $prod[7] }}</p>
+                       
+                      </div>
+                </div>
+              </div>
+  
+             
+
+
+            </div>
+  
+          </div>
+         
+          
+        </div>
+        <!--/.Slides-->
+      
+      </div>
+      <!--/.Carousel Wrapper-->
+    
+    </div>
     </div>
     <!--/ Revenue Report Card -->
     </div>
