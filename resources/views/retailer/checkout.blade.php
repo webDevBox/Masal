@@ -73,7 +73,7 @@
                                   <img alt="" id="image_1" style="width:60px; height:80px;" src="{{ asset('images/'.$image) }}">
                                   </a>
                                 </td>
-                                  <td class="text-center col-md-2 col-lg-2">
+                                  <td class="text-center">
                                     <a href="{{route('retailerorder',array('id'=>$product->id))}}" style="text-decoration: none; color:black;">
                                    <strong> {{ $product->name }} </strong>  
                                     </a>
@@ -108,10 +108,10 @@
                                   <td class="text-center">$<?php echo $subtotal; ?></td>
                                    <td class="text-center">
                                     <div class="btn-group btn-group-xs">
-                                    <a type="button" class="btn" href="{{route('edit_item', array('id' => $row->id))}}" aria-label="Close">
-                                    <i class="fa fa-pencil" style="color: black;" aria-hidden="true"></i>
+                                    <a type="button" class="btn btn-primary" href="{{route('edit_item', array('id' => $row->id))}}">
+                                    <i class="fa fa-pencil" style="color: white;" aria-hidden="true"></i>
                                     </a>
-                                   <a type="button" class="btn" style="color: black;" href="{{route('remover', array('id' => $row->id))}}" aria-label="Close">
+                                   <a type="button" class="btn btn-danger" style="color: black;" href="{{route('remover', array('id' => $row->id))}}">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                    </a>
                                     </div>

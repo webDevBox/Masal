@@ -11,7 +11,7 @@
     <!-- Dashboard Ecommerce Starts -->
     <!-- Quick Stats -->
     <div class="grid grid_12" id="blow">
-    <h1 class="grey2 text-center"><span class="grey">—</span> Product Details  <span class="grey">—</span></h1>
+    <h1 class="text-center mb-2"><span class="grey">—</span> {{$product->name}}  <span class="grey">—</span></h1>
     @if(Session::has('success'))
     <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
     @endif
@@ -21,108 +21,95 @@
     <div class="nicdark_space20"></div>
     
     <div class="row">   
-    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-    <div class="grid grid_6">
-    <div class=" nicdark_activity">    
-        <h3 class="text-center">{{$product->name}}</h3>   
-        
-        
-        <section class="section-product" data-product-id="473">
-            <div class="container">
-                <div class="row">
-                    <div class="product-bio">
-                        <div class="product-detailed clearfix iblock-fix">
-                            <div class="product-info product-visual">
-                                <div class="product-media">
-                                    <div class="product-views clearfix" data-property="parent">
-                                        <div class="product-view overviews common-videolist">
-                    
-                                            <div class="list-item">
-                                                <div class="overview" data-lazy-background style="background-image: url(../../%27https_/dy9ihb9itgy3g.cloudfront.net/products/2508/y118jkt/y118jkt_f_d.740.html)">
-                                                    <a class="MagicZoom overview-media" data-options="textClickZoomHint: Click to zoom" aria-hidden="true">
-                                                        <img style="width:250px; height:400px; " data-lazy="https://dy9ihb9itgy3g.cloudfront.net/products/2508/y118jkt/new2.jpeg" src="{{ asset('images/'.$product->image1) }}" alt="Masal Style #Y118JKT"/>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 mt-5">             
+            <div class="nicdark_archive1 nicdark_border_grey img-magnifier-container">
+            <img id="main_image" class="main_image mx-auto d-block" style="height:600px;" alt="" src="{{ asset('images/'.$product->image1) }}">
             </div>
-        </section>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 mt-5">
 
-        
-    </div>
-    </div>
+                <h1 class="text-center">Price: ${{$product->wholesalePrice}}</h1>
+                <h3 class="mt-2">Description<h3> 
+              
+                    <a class="btn btn-primary mt-2" href="{{ asset('images/products/chart.pdf') }}" style="color: white;" download="Size Chart"> Size Chart </a>
+                    <p style="text-align: justify;" class="mt-2">
+               @php
+                   echo $product->description;
+                @endphp</p> 
+
+                <h3 class="text-center mt-3">Other Images</h3>
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 mt-2">
+                        
+                    <div class="nicdark_archive1 nicdark_border_grey" >
+                    <img id="image_1" style="width:60px; height:80px; cursor:pointer;" alt=""  src="{{ asset('images/'.$product->image1) }}">
+                    </div>
+                    </div>
+                    
+                    @if(isset($product->image2))
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
+                    
+                    <div class="nicdark_archive1 nicdark_border_grey">
+                    <img alt="" id="image_2" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$product->image2) }}">
+                    
+                    </div>
+                    </div>
+                    @else
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2" style="visibility: hidden;"></div>
+                    @endif
+                    @if(isset($product->image3))
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
+                        
+                    <div class="nicdark_archive1 nicdark_border_grey">
+                    <img alt="" id="image_3" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$product->image3) }}">
+                    
+                    </div>
+                    </div>
+                    @else
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2" style="visibility: hidden;"></div>
+                    @endif
+
+                    @if(isset($product->image4))
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
+                    
+                    <div class="nicdark_archive1 nicdark_border_grey" >
+                    <img alt="" id="image_4" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$product->image4) }}">
+                    
+                    </div>
+                    </div>
+                    @else
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2" style="visibility: hidden;"></div>
+                    @endif
+                    
+                    @if(isset($product->image5))
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
+                    
+                    <div class="nicdark_archive1 nicdark_border_grey">
+                    <img alt="" id="image_5" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$product->image5) }}">
+                    
+                    </div>
+                    </div>
+                    @else
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2" style="visibility: hidden;"></div>
+                    @endif
+                    @if(isset($product->image6))
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
+                        
+                    <div class="nicdark_archive1 nicdark_border_grey">
+                    <img alt="" id="image_6" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$product->image6) }}">
+                    
+                    </div>
+                    </div>
+                    @else
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2" style="visibility: hidden;"></div>
+                    @endif
+
+
+                    </div>
+            </div>
     
-    <div class="row">
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4">
-        
-    <div class="nicdark_archive1 nicdark_border_grey" style="margin-left: 10px">
-    <img id="image_1" style="width:60px; height:80px; cursor:pointer;" alt=""  src="dy9ihb9itgy3g.cloudfront.net/products/2508/y118jkt/new2.jpeg">
-    </div>
-    </div>
-    
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4">
-    
-    <div class="nicdark_archive1 nicdark_border_grey">
-    
-    
-    </div>
-    </div>
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4" style="visibility: hidden;"></div>
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4">
-        
-    <div class="nicdark_archive1 nicdark_border_grey">
-    
-    
-    </div>
-    </div>
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4" style="visibility: hidden;"></div>
-    </div>
-    
-    
-    <div class="row" style="margin-top: 10px;">
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4">
-    
-    <div class="nicdark_archive1 nicdark_border_grey" style="margin-left: 10px">
-    
-    
-    </div>
-    </div>
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4" style="visibility: hidden;"></div>
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4">
-    
-    <div class="nicdark_archive1 nicdark_border_grey">
-    
-    
-    </div>
-    </div>
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4" style="visibility: hidden;"></div>
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4">
-        
-    <div class="nicdark_archive1 nicdark_border_grey">
-    
-    
-    </div>
-    </div>
-    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4" style="visibility: hidden;"></div>
-    </div>
-    </div>
-    
-    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" style="margin-top: 5px;">
-    <h1>${{$product->wholesalePrice}}</h1>
-    <h3 class="mt-2">Description<h3> 
-  
-        <a class="btn btn-primary mt-2" href="{{ asset('images/products/chart.pdf') }}" style="color: white;" download="Size Chart"> Size Chart </a>
-        <p style="text-align: justify;" class="mt-2">
-   @php
-       echo $product->description;
-    @endphp</p>
-    <h1 class="text-center mt-3"> Place Order </h1>   
+    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 mt-5">
+   <h2 class="text-center">Place Your Order</h2>
     <form action="{{route('sendorder')}}" method="POST">
     @csrf
     <div class="row">
@@ -158,7 +145,7 @@
     </div>
     <input style="display: none" id="product_price" type="text" value="{{$product->wholesalePrice}}">
     
-    <div class="form-group col-md-3 col-sm-3 mt-3">
+    <div class="form-group col-md-4 col-sm-4 col-xs-4 mt-3">
     <h3> Quantity </h3>
     <div class="input-group">
       <div class="input-group-btn">
@@ -220,9 +207,60 @@
     </div>
     </div>
 
+<script>
+$("#image_2").click(function() {
+    
+var temp=$('#image_2').attr('src');
+$('#main_image').attr('src',temp);
 
-    <script>
-        
+
+});
+
+$("#image_1").click(function() {
+    
+var temp=$('#image_1').attr('src');
+$('#main_image').attr('src',temp);
+
+
+});
+
+$("#image_3").click(function() {
+    
+var temp=$('#image_3').attr('src');
+$('#main_image').attr('src',temp);
+
+
+});
+
+
+$("#image_4").click(function() {
+    
+var temp=$('#image_4').attr('src');
+$('#main_image').attr('src',temp);
+
+
+});
+
+$("#image_5").click(function() {
+    
+var temp=$('#image_5').attr('src');
+$('#main_image').attr('src',temp);
+
+
+});
+
+
+$("#image_6").click(function() {
+    
+var temp=$('#image_6').attr('src');
+$('#main_image').attr('src',temp);
+
+
+});
+
+</script>
+<script>
+
 $("#up").click(function() {
 var max=1000;
 document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) + 1;

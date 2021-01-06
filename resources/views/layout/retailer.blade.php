@@ -86,7 +86,24 @@
 </li>
 
 
-<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge badge-pill badge-danger badge-up">5</span></a></li>
+@php
+
+  $id=Auth::user()->id;
+
+  $quantity=0;
+
+  $items= \App\retailerOrder::where('RetailerId',$id)->where('payment','none')->get();
+
+  foreach ($items as $item) {
+
+       $quantity=$quantity+$item->quantity;
+
+  }
+
+@endphp
+
+<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" @if($quantity > 0) href="{{route('checkout')}}" @endif><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    @if($quantity > 0) <span class="badge badge-pill badge-danger badge-up">{{ $quantity }}</span> @endif </a></li>
 
 
 <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i><span class="badge badge-pill badge-danger badge-up">5</span></a>
