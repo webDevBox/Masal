@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2021 at 05:43 AM
+-- Generation Time: Jan 06, 2021 at 09:52 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -135,7 +135,15 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'LOVE FOREVER', 'category/b2ASTWHaMfP54LKSoYcrqjiRAOrxVfmhlyTr2Lbe.jpeg', '2020-10-21 01:38:51', '2020-12-30 03:32:09');
+(1, 'LOVE FOREVER', 'category/b2ASTWHaMfP54LKSoYcrqjiRAOrxVfmhlyTr2Lbe.jpeg', '2020-10-21 01:38:51', '2020-12-30 03:32:09'),
+(4, 'Wedding', 'category/1GqCl5x2yo4wloS2PNxR9xWd3oCRumAQ00cvqgMK.jpeg', '2021-01-05 23:31:30', '2021-01-05 23:31:30'),
+(5, 'Smart', 'category/pmjeZcuHiOzIyviSuJWqawTyTOImjAOi5JkWqbbw.jpeg', '2021-01-05 23:31:42', '2021-01-05 23:31:42'),
+(6, 'Final', 'category/8f6fsVvjRxejZWY1b5aLIkUfj1KcYxXeTigO6oQ5.jpeg', '2021-01-05 23:31:58', '2021-01-05 23:31:58'),
+(7, 'mode', 'category/RGpD3nrxf8tpRW571X1255W9AlCHJXbMtNw2DoF6.jpeg', '2021-01-05 23:32:12', '2021-01-05 23:32:12'),
+(8, 'bomm', 'category/cQR5XRlmYMiUHE7QbDboGiQw1XRn6bdkz8eX5Ojd.jpeg', '2021-01-05 23:32:31', '2021-01-05 23:32:31'),
+(9, 'shift', 'category/d8lnkCcG3FMh4wTwGQdQIMObiyqum7r1KPmld8uO.jpeg', '2021-01-06 00:00:49', '2021-01-06 00:00:49'),
+(10, 'ragbi', 'category/ZeF5pRtoaHfp6vutD37uY2Mz713r6gkN1QNftqE3.jpeg', '2021-01-06 00:01:07', '2021-01-06 00:01:07'),
+(11, 'roby', 'category/w93HufNsH5KJvDPOK5dxYKURCRAzZ0JgW9GRyU1y.jpeg', '2021-01-06 00:01:23', '2021-01-06 00:01:23');
 
 -- --------------------------------------------------------
 
@@ -161,9 +169,9 @@ CREATE TABLE `chat_models` (
 --
 
 INSERT INTO `chat_models` (`id`, `message`, `file`, `sender`, `senderId`, `receiver`, `marker`, `created_at`, `updated_at`, `status`) VALUES
-(1, NULL, 'file/xLdkRvsnONy9RUfs06CTNA2ePY5hdNMYcDGVOghe.png', 'admin', 35, 65, 1, '2021-01-04 22:56:57', '2021-01-04 22:57:25', 2),
-(2, 'Test Message again', 'file/slThAKZKZLcTYmuyJjehGhjTNra7iD6yMprIWly1.png', 'admin', 35, 65, 1, '2021-01-04 22:57:08', '2021-01-04 22:57:25', 2),
-(3, 'I am good', NULL, 'admin', 35, 65, 1, '2021-01-04 22:59:36', '2021-01-04 22:59:36', 0);
+(1, NULL, 'file/xLdkRvsnONy9RUfs06CTNA2ePY5hdNMYcDGVOghe.png', 'admin', 35, 65, 0, '2021-01-04 22:56:57', '2021-01-05 02:17:45', 2),
+(2, 'Test Message again', 'file/slThAKZKZLcTYmuyJjehGhjTNra7iD6yMprIWly1.png', 'admin', 35, 65, 0, '2021-01-04 22:57:08', '2021-01-05 02:17:45', 2),
+(3, 'I am good', NULL, 'admin', 35, 65, 0, '2021-01-04 22:59:36', '2021-01-05 02:17:45', 0);
 
 -- --------------------------------------------------------
 
@@ -48828,16 +48836,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `colour`, `size`, `extra`, `category`, `tag`, `keyword`, `wholesalePrice`, `retailerPrice`, `styleNumber`, `status`, `delete_status`, `stock`, `image1`, `image2`, `image3`, `image4`, `image5`, `image6`, `created_at`, `updated_at`) VALUES
-(1, 'TIANA Dress | #AS1923 Modern Lace Ballgown Wedding Dress', '<p>TIANA Dress | #AS1923 Modern Lace Ballgown Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 2, NULL, 'Tiana, Tiana Dress, AS1923, Modern Wedding Dress, Lace Wedding Dress, Ballgown Wedding Dress', 100, 4900, 'AS1923', 'active', 0, 100, 'products/4ImDIzRDShw7j0uOPdQ6Hl9BlnvpxTbr1HumtD4r.jpeg', 'products/Mr76obNIl2O0hup76OTAk8VEBV9mVwKvL0ladpIl.jpeg', 'products/U8fIoF6e6g0xJxGWN0AqvWwEl0kzTyfzu4TFLD0x.jpeg', NULL, NULL, NULL, '2020-11-03 02:41:46', '2020-11-18 00:00:54'),
-(2, 'Glow', '<p style=\"text-align:center\">Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Ea&nbsp;ipsam&nbsp;laboriosam&nbsp;debitis</p>\r\n\r\n<p>&nbsp;consequatur&nbsp;accusamus&nbsp;cupiditate&nbsp;odio&nbsp;porro,&nbsp;similique,&nbsp;obcaecati&nbsp;reiciendis&nbsp;eum&nbsp;deleniti&nbsp;i</p>\r\n\r\n<p>mpedit&nbsp;fugiat&nbsp;numquam&nbsp;rerum&nbsp;perferendis&nbsp;velit?</p>\r\n\r\n<p>&nbsp;</p>', '[\"black\",\"red\",\"green\"]', '[\"Medium\",\"XX small\"]', '[\"1 M long\"]', 2, NULL, 'bridal,blow', 98, 34234, '1221dfdf', 'active', 1, 199, 'products/rJlgX2FklV3XTMNAt3sBaLik3WvyWINTP1VVT3KQ.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-11-03 02:42:45', '2020-12-30 00:11:28'),
-(3, 'TESSA Dress | #AS1930 Modern Off the Shoulder Wedding Dress', '<p>TESSA Dress | #AS1930 Modern Off the Shoulder Wedding Dress</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, 'New', 'TESSA, TESSA Dress, AS1930, Off the Shoulder, Wedding Dress', 1500, 4900, 'AS1930', 'active', 0, 100, 'products/6zjN8vbZVV9xxZvVpDbJEfuDaCv7SPjCu9ZtZqKc.jpeg', 'products/KqG3L5PQEP5Y8CQ86tUaEobwLznL9zlXrDSaIP2L.jpeg', 'products/5h3pAkYP7EmUHaBqciYcoZXhniDxZfgpKyVcMmnD.jpeg', 'products/AW9TxgHpoTqUBLIcI9ClgYwJiu7Z0yuFbaRgVje0.jpeg', NULL, NULL, '2020-11-17 23:43:35', '2020-12-31 00:20:23'),
-(4, 'NARIMAN Dress | #AS1942 Modern Lace Princess Wedding Dress', '<p>NARIMAN Dress | #AS1942 Modern Lace Princess Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, NULL, 'NARIMAN, NARIMAN Dress, AS1942, Princess Wedding Dress, Wedding Dress', 1600, 5900, 'AS1942', 'active', 0, 100, 'products/9qyo9TmYT96UcpbdzHfUJrASaT90TWbz9ZFRnMEN.jpeg', 'products/KiuPAYqFFl94zAHqCjPtocXAcerpsUfwd43tqpE9.jpeg', 'products/TOPkouJ5N5yNoBuSRADsicUjvwcyLEGqggSF4EyM.jpeg', 'products/PS5GImg2w6AqmAtRow0xl8oAE8o4JXvS9RLdxfMS.jpeg', NULL, NULL, '2020-11-18 00:09:23', '2020-11-18 00:15:09'),
-(5, 'HAYLEY Dress | #AS1956 V Back V Neck A-Line Wedding Dress', '<p>HAYLEY Dress | #AS1956 V Back V Neck A-Line Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, NULL, 'HAYLEY, HAYLEY Dress, AS1956, A-Line Wedding Dress', 750, 3700, 'AS1956', 'active', 0, 100, 'products/JadHwImw1a6qR2pDHxiI0XxuZvtfLNuzCJtJFpxN.jpeg', 'products/gFF7sLcuSfNzBxqds1xsnGfF1KBCH2lfztq7z67v.jpeg', 'products/iU0oPQ6quqYJkfrRj9YRGzHl1DRoSOaFwYnKlFSd.jpeg', 'products/zkGOEZBbuRRe0YvrDiN6Js8JK2zcV95iYXudNBJ9.jpeg', NULL, NULL, '2020-11-18 00:23:34', '2020-11-18 00:23:52'),
-(6, 'AMINA Dress | #AS2502 Long Sleeve Champagne Wedding Dress', '<p>AMINA Dress | #AS2502 Long Sleeve Champagne Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', '[\"Add Sleeves\"]', 1, NULL, 'AMINA, AMINA Dress, AS2502, Long Sleeve Wedding Dresses, Wedding Dresses', 1150, 4200, 'AS2502', 'active', 0, 100, 'products/h8WkdjuhTBVEmWw9hDRQEB1jfykzpv6CGHsDicxa.jpeg', 'products/RfsuHz5oKJ2cc64zOfQxluwiOM4ofC5lC1oAyQTi.jpeg', 'products/PdXIFXr7Jr0Rgv8IvkBKUt7Yk5WPknNjjfiKPVzH.jpeg', 'products/5R9kT3VLmuU7IuoR4bkuKidT9y4j2XxidsrHK1ua.jpeg', NULL, NULL, '2020-11-18 00:44:13', '2020-11-29 17:57:01'),
-(7, 'MELISSA Dress | #AS2518 Strapless Ballgown Wedding Dress', '<p>MELISSA Dress | #AS2518 Strapless Ballgown Wedding Dress</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"12\"]', '[\"1 M long\",\"Urgent\"]', 1, '50% Off', 'MELISSA, MELISSA Dress, AS2518, Strapless Wedding Dress', 800, 4500, 'AS2518', 'active', 0, 0, 'products/gJvi2NBSS4O4Q6tidmIGRjoa8cQznJbkbDNFneYR.jpeg', 'products/jiqgdHJYX3ih5VLU2Wior8OnQQNeVdhcYl5TBb99.jpeg', 'products/Wbsquxo9xuDKjvgYyzd5nsNP5nF3hkXGanJ2CVJK.jpeg', 'products/S5HL2F1FyC2Ju7NBAZ3u7P1DhbacMoBtp9yNJYVf.jpeg', NULL, NULL, '2020-11-18 01:03:39', '2020-12-31 23:44:45'),
+(1, 'Pro Bride', '<p>TIANA Dress | #AS1923 Modern Lace Ballgown Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 4, NULL, 'Tiana, Tiana Dress, AS1923, Modern Wedding Dress, Lace Wedding Dress, Ballgown Wedding Dress', 100, 4900, 'AS1923', 'active', 0, 100, 'products/4ImDIzRDShw7j0uOPdQ6Hl9BlnvpxTbr1HumtD4r.jpeg', 'products/Mr76obNIl2O0hup76OTAk8VEBV9mVwKvL0ladpIl.jpeg', 'products/U8fIoF6e6g0xJxGWN0AqvWwEl0kzTyfzu4TFLD0x.jpeg', NULL, NULL, NULL, '2020-11-03 02:41:46', '2021-01-06 00:34:16'),
+(2, 'Glow', '<p style=\"text-align:center\">Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Ea&nbsp;ipsam&nbsp;laboriosam&nbsp;debitis</p>\r\n\r\n<p>&nbsp;consequatur&nbsp;accusamus&nbsp;cupiditate&nbsp;odio&nbsp;porro,&nbsp;similique,&nbsp;obcaecati&nbsp;reiciendis&nbsp;eum&nbsp;deleniti&nbsp;i</p>\r\n\r\n<p>mpedit&nbsp;fugiat&nbsp;numquam&nbsp;rerum&nbsp;perferendis&nbsp;velit?</p>\r\n\r\n<p>&nbsp;</p>', '[\"black\",\"red\",\"green\"]', '[\"Medium\",\"XX small\"]', '[\"1 M long\"]', 4, NULL, 'bridal,blow', 98, 34234, '1221dfdf', 'active', 1, 199, 'products/rJlgX2FklV3XTMNAt3sBaLik3WvyWINTP1VVT3KQ.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-11-03 02:42:45', '2020-12-30 00:11:28'),
+(3, 'Beauty bride', '<p>TESSA Dress | #AS1930 Modern Off the Shoulder Wedding Dress</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 8, 'New', 'TESSA, TESSA Dress, AS1930, Off the Shoulder, Wedding Dress', 1500, 4900, 'AS1930', 'active', 0, 100, 'products/6zjN8vbZVV9xxZvVpDbJEfuDaCv7SPjCu9ZtZqKc.jpeg', 'products/KqG3L5PQEP5Y8CQ86tUaEobwLznL9zlXrDSaIP2L.jpeg', 'products/5h3pAkYP7EmUHaBqciYcoZXhniDxZfgpKyVcMmnD.jpeg', 'products/AW9TxgHpoTqUBLIcI9ClgYwJiu7Z0yuFbaRgVje0.jpeg', NULL, NULL, '2020-11-17 23:43:35', '2020-12-31 00:20:23'),
+(4, 'Regular Bride', '<p>NARIMAN Dress | #AS1942 Modern Lace Princess Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 5, NULL, 'NARIMAN, NARIMAN Dress, AS1942, Princess Wedding Dress, Wedding Dress', 1600, 5900, 'AS1942', 'active', 0, 100, 'products/9qyo9TmYT96UcpbdzHfUJrASaT90TWbz9ZFRnMEN.jpeg', 'products/KiuPAYqFFl94zAHqCjPtocXAcerpsUfwd43tqpE9.jpeg', 'products/TOPkouJ5N5yNoBuSRADsicUjvwcyLEGqggSF4EyM.jpeg', 'products/PS5GImg2w6AqmAtRow0xl8oAE8o4JXvS9RLdxfMS.jpeg', NULL, NULL, '2020-11-18 00:09:23', '2020-11-18 00:15:09'),
+(5, 'Cute Bride', '<p>HAYLEY Dress | #AS1956 V Back V Neck A-Line Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 5, NULL, 'HAYLEY, HAYLEY Dress, AS1956, A-Line Wedding Dress', 750, 3700, 'AS1956', 'active', 0, 100, 'products/JadHwImw1a6qR2pDHxiI0XxuZvtfLNuzCJtJFpxN.jpeg', 'products/gFF7sLcuSfNzBxqds1xsnGfF1KBCH2lfztq7z67v.jpeg', 'products/iU0oPQ6quqYJkfrRj9YRGzHl1DRoSOaFwYnKlFSd.jpeg', 'products/zkGOEZBbuRRe0YvrDiN6Js8JK2zcV95iYXudNBJ9.jpeg', NULL, NULL, '2020-11-18 00:23:34', '2020-11-18 00:23:52'),
+(6, 'Couple site', '<p>AMINA Dress | #AS2502 Long Sleeve Champagne Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', '[\"Add Sleeves\"]', 6, NULL, 'AMINA, AMINA Dress, AS2502, Long Sleeve Wedding Dresses, Wedding Dresses', 1150, 4200, 'AS2502', 'active', 0, 100, 'products/h8WkdjuhTBVEmWw9hDRQEB1jfykzpv6CGHsDicxa.jpeg', 'products/RfsuHz5oKJ2cc64zOfQxluwiOM4ofC5lC1oAyQTi.jpeg', 'products/PdXIFXr7Jr0Rgv8IvkBKUt7Yk5WPknNjjfiKPVzH.jpeg', 'products/5R9kT3VLmuU7IuoR4bkuKidT9y4j2XxidsrHK1ua.jpeg', NULL, NULL, '2020-11-18 00:44:13', '2020-11-29 17:57:01'),
+(7, 'Final Bride', '<p>MELISSA Dress | #AS2518 Strapless Ballgown Wedding Dress</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"12\"]', '[\"1 M long\",\"Urgent\"]', 7, '50% Off', 'MELISSA, MELISSA Dress, AS2518, Strapless Wedding Dress', 800, 4500, 'AS2518', 'active', 0, 0, 'products/gJvi2NBSS4O4Q6tidmIGRjoa8cQznJbkbDNFneYR.jpeg', 'products/jiqgdHJYX3ih5VLU2Wior8OnQQNeVdhcYl5TBb99.jpeg', 'products/Wbsquxo9xuDKjvgYyzd5nsNP5nF3hkXGanJ2CVJK.jpeg', 'products/S5HL2F1FyC2Ju7NBAZ3u7P1DhbacMoBtp9yNJYVf.jpeg', NULL, NULL, '2020-11-18 01:03:39', '2020-12-31 23:44:45'),
 (8, 'Bridal', '<p>retgtshrstfhyr</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"14\"]', '[\"1 M long\",\"Add Sleeves\"]', 1, 'New', 'dsfsdfg', 25, 32, '1221dftrgh', 'active', 1, 9, 'products/pCNntys36jbYPQ94MUSTLPfZ6vwOoIFrVZvk7Z5T.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-12-17 02:45:19', '2020-12-30 23:30:24'),
-(10, 'Real bride', '<p>reytgsruyru</p>', '[\"Ivory\",\"Champagne\"]', '[\"6\",\"14\",\"16\"]', '[\"1 M long\"]', 2, 'New', 'bridal,blow,flow', 25, 32, 'fdgdfh65454fgh', 'active', 1, 100, 'products/P6bXx2WjC3SCbCIm2o4oH6WekrvqsEp44Fm9Hggt.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-12-22 00:21:11', '2020-12-30 00:15:11'),
-(12, 'Beautiful Bride', '<p>dfgsdfh</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"4\",\"10\",\"240\"]', '[\"1 M long\",\"Add Seleves\"]', 1, NULL, 'bridal,blow,flow', 123, 654, 'AS53SM5Kh', 'active', 0, 100, 'products/xCvCNzaBpsNEApolqiKPgcZpgz1O4Qw0MF0CJ4D2.jpeg', 'products/mo0fMUa3ehQc7S8G25k0BKqIIJEHyAGcB7VBkpbt.jpeg', 'products/vAjA6j5Q4GRfpzaJQGdf84E1g8srIcAmUXUgyhJz.jpeg', 'products/XE3Ram6KMt2ONV04CN4mCcbeGJAjZ2q0auwb0aNi.jpeg', NULL, NULL, '2020-12-30 02:55:02', '2020-12-31 00:19:49');
+(10, 'Real bride', '<p>reytgsruyru</p>', '[\"Ivory\",\"Champagne\"]', '[\"6\",\"14\",\"16\"]', '[\"1 M long\"]', 9, 'New', 'bridal,blow,flow', 25, 32, 'fdgdfh65454fgh', 'active', 1, 100, 'products/P6bXx2WjC3SCbCIm2o4oH6WekrvqsEp44Fm9Hggt.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-12-22 00:21:11', '2020-12-30 00:15:11'),
+(12, 'Beautiful Bride', '<p>dfgsdfh</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"4\",\"10\",\"240\"]', '[\"1 M long\",\"Add Seleves\"]', 6, NULL, 'bridal,blow,flow', 123, 654, 'AS53SM5Kh', 'active', 0, 100, 'products/xCvCNzaBpsNEApolqiKPgcZpgz1O4Qw0MF0CJ4D2.jpeg', 'products/mo0fMUa3ehQc7S8G25k0BKqIIJEHyAGcB7VBkpbt.jpeg', 'products/vAjA6j5Q4GRfpzaJQGdf84E1g8srIcAmUXUgyhJz.jpeg', 'products/XE3Ram6KMt2ONV04CN4mCcbeGJAjZ2q0auwb0aNi.jpeg', NULL, NULL, '2020-12-30 02:55:02', '2020-12-31 00:19:49');
 
 -- --------------------------------------------------------
 
@@ -48938,7 +48946,8 @@ INSERT INTO `retailer_orders` (`id`, `productId`, `RetailerId`, `colour`, `sizes
 (1, 5, 65, 'Champagne', '8', NULL, 1, 0, 'completed', NULL, 'Done', '2020-01-01 04:22:03', '2020-12-31 00:27:29'),
 (2, 12, 65, 'Champagne', '10', NULL, 1, 0, 'completed', NULL, 'Done', '2020-12-23 06:03:16', '2020-11-30 00:27:42'),
 (3, 3, 65, 'Champagne', '10', NULL, 1, 0, 'completed', NULL, 'Done', '2020-12-30 23:32:45', '2020-12-30 23:33:10'),
-(4, 3, 65, 'Blue', '12', NULL, 1, 0, 'completed', NULL, 'Done', '2020-12-31 00:43:29', '2020-12-31 00:44:19');
+(4, 3, 65, 'Blue', '12', NULL, 1, 0, 'completed', NULL, 'Done', '2020-12-31 00:43:29', '2020-12-31 00:44:19'),
+(5, 5, 65, 'Champagne', '10', NULL, 3, 0, 'processing', NULL, 'Done', '2021-01-05 00:38:52', '2021-01-06 02:03:09');
 
 -- --------------------------------------------------------
 
@@ -53162,7 +53171,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `credit`, `logo`, `log`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
 (35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$RH113rw6fyTkRFZtxkKY2uundXWGyGHsCgmWzyMOlKtm0rUiK7wu.', 0, 'logo/Ed6V9DTEnCT0t7U9s1rJfIXu7VYKsj6nyCM6r9kK.jpeg', 0, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-04 03:15:09'),
-(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$sqmT6121doKFEb2olvO/YOt8gQHB8raW2jpt5ERV0/MSvWMlOXHAu', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 0, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-04 00:23:27'),
+(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$sqmT6121doKFEb2olvO/YOt8gQHB8raW2jpt5ERV0/MSvWMlOXHAu', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 1, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-05 22:23:40'),
 (70, 'Ahmad', 'sarfrazkhubaib278@gmail.com', '$2y$10$/vs3whztUfXRosb0CP0he.HRdlMAHzHDg7VFIBPawtBvD5WRUhpz6', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 0, 0, '54454', 'house', 'Pakistan', 'Punjab', 'lahore', '54000', '845', 'www.leads.com', 'facebook.com', 'onstagram.com', '-79.324595', '43.6715159', 2, 1, 0, NULL, '2020-11-26 06:12:16', '2021-01-01 01:00:14'),
 (72, 'Aown', 'khubaib@digitalinnovation.pk', '$2y$10$0mcj7KIHxpT4nyU2OPEUfuuxkL5YdOlgIq8QUvQZREfDcTSekX7/S', 0, NULL, 0, 0, '54146', 'abc road', 'Pakistan', 'Punjab', 'lahore', '53720', '59553485', 'https://masal.com', 'https://dsfjk.com', 'gfhjgf', '74.3640581', '31.4842744', 2, 1, 0, NULL, '2020-12-31 02:22:37', '2021-01-01 01:12:14');
 
@@ -53225,7 +53234,13 @@ INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
 (39, 1, '2021-01-03 23:32:45', '2021-01-03 23:32:45'),
 (40, 1, '2021-01-03 23:33:17', '2021-01-03 23:33:17'),
 (41, 1, '2021-01-04 00:16:15', '2021-01-04 00:16:15'),
-(42, 1, '2021-01-04 00:23:27', '2021-01-04 00:23:27');
+(42, 1, '2021-01-04 00:23:27', '2021-01-04 00:23:27'),
+(43, 1, '2021-01-05 00:37:15', '2021-01-05 00:37:15'),
+(44, 1, '2021-01-05 00:37:40', '2021-01-05 00:37:40'),
+(45, 1, '2021-01-05 00:42:39', '2021-01-05 00:42:39'),
+(46, 1, '2021-01-05 04:30:14', '2021-01-05 04:30:14'),
+(47, 1, '2021-01-05 06:41:37', '2021-01-05 06:41:37'),
+(48, 1, '2021-01-05 22:23:28', '2021-01-05 22:23:28');
 
 -- --------------------------------------------------------
 
@@ -53486,7 +53501,7 @@ ALTER TABLE `buyer_states`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `chat_models`
@@ -53570,7 +53585,7 @@ ALTER TABLE `necklines`
 -- AUTO_INCREMENT for table `new_orders`
 --
 ALTER TABLE `new_orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `new_pages`
@@ -53606,7 +53621,7 @@ ALTER TABLE `retailer_emails`
 -- AUTO_INCREMENT for table `retailer_orders`
 --
 ALTER TABLE `retailer_orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -53648,7 +53663,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `weddings`
