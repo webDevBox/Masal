@@ -65,9 +65,9 @@
                         <input type="file" name="logo" class="form-control clicker d-none">
                     </div>
                     @if(Auth::user()->logo != null)
-                    <img src="{{ asset('images/'.Auth::user()->logo) }}" class="img-col mx-auto d-block" style="width: 100px; height: 100px; cursor:pointer;" alt="">
+                    <img src="{{ asset('images/'.Auth::user()->logo) }}" class="img-col mx-auto d-block image" style="width: 100px; height: 100px; cursor:pointer;" alt="">
                     @else
-                    <img src="{{ asset('images/logos/abc.png') }}" class="img-col mx-auto d-block" style="width: 100px; height: 100px; cursor:pointer;" alt="">
+                    <img src="{{ asset('images/logos/abc.png') }}" class="img-col mx-auto d-block image" style="width: 100px; height: 100px; cursor:pointer;" alt="">
                     @endif
                     <br><br>
                     <center> <input type="submit" name="general" value="Submit" class="btn btn-success"> </center>
@@ -126,4 +126,23 @@
         $('.general').attr('style','justify-content: center; display:none;');
     });
 </script>
+
+<script>
+    function readimg(input) {
+    if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function (e) {
+    $('.image').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]);
+    }
+    }
+    $(".clicker").change(function(){
+    $('.image').attr('style','width: 100px; height:100px; cursor:pointer;');
+    readimg(this);
+    });
+    </script>
+
 @endsection

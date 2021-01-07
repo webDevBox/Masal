@@ -93,6 +93,12 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
         <h2 class="text-center"> Latest Collections </h2>
+                  @if(Session::has('success'))
+                  <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+                  @endif
+                  @if(Session::has('error'))
+                  <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
+                  @endif
         <!--Controls-->
         <div class="controls-top text-center">
           <a class="btn-floating float-md-left badge badge-primary badge-glow" href="#multi-item-example" data-slide="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>

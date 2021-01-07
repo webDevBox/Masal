@@ -90,7 +90,7 @@ $newUser= \App\User::where('status',0)->count();
 $unread= \App\feedback::where('status',0)->count();
 $note=$chat + $newUser + $unread;
 @endphp
-<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"> <i class="fa fa-bell" aria-hidden="true"></i>
+<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"> <i class="fa fa-bell" style="color: #7367F0;" aria-hidden="true"></i>
 @if($note > 0) <span class="badge badge-pill badge-danger badge-up">{{ $note }}</span> @endif </a>
 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
 @if($chat > 0)
