@@ -39,9 +39,10 @@ class ChatController extends Controller
              return redirect('/');
          }
         $id=Auth::user()->id;
-        $chat=chatModel::where('senderId',$id)->orWhere('receiver',$id)->orderBy('id', 'desc')->get();
+        $admin=User::where('userRole',1)->first();
+        $chat=chatModel::where('senderId',$id)->orWhere('receiver',$id)->get();
         $marker=chatModel::where('receiver',$id)->update(['marker'=>0]);
-        return view("retailer.chat")->with('chat',$chat);
+        return view("retailer.chat")->with(array('admin'=>$admin,'chat'=>$chat));
     }
 
     //Retailer Send Message
@@ -62,8 +63,6 @@ class ChatController extends Controller
          {
              return redirect('/');
          }
-         if(isset($request->send) && $request->send == 'Send')
-         {
         if(!isset($request->attachment)) {
       $this->validate($request,[
        'message'=>'required'
@@ -114,7 +113,6 @@ class ChatController extends Controller
 
         return redirect()->back();
     
-    }
 }
 
 

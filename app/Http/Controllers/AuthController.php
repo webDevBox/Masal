@@ -190,6 +190,7 @@ class AuthController extends Controller
                 $user = Auth::user();
                 if($user->status == 1 && $user->userRole == 1)
                 {
+                    User::where('id',$user->id)->update(['log'=>1]);
                     return redirect('/dashboard');
                 }
                else
@@ -225,6 +226,8 @@ class AuthController extends Controller
     //Admin Logout
     public function logout()
     {
+        $user=Auth::user()->id;
+        User::where('id',$user)->update(['log'=>0]);
         Auth::logout();
         return redirect('/admin');
     }

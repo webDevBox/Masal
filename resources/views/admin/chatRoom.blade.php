@@ -46,7 +46,17 @@
                                     if(count($chat) > 0)
                                     {
                                         foreach ($chat as $key) {
-                                            $message = $key->message;
+                                            if($key->message != null)
+                                            {
+                                                $message = $key->message;
+                                            }
+                                            else {
+                                                $message = 'photo';
+                                            }
+                                            if($key->message != null && $key->file != null)
+                                            {
+                                                $message = 'both';
+                                            }
                                             $time=$key->created_at;
                                         }
                                     }
@@ -70,7 +80,9 @@
                                     <div class="chat-info flex-grow-1">
                                         <h5 class="mb-0">{{ $row->name }}</h5>
                                         <p class="card-text text-truncate">
-                                            {{ $message }}
+                                            @if($message == 'photo') <i class="fa fa-camera" aria-hidden="true"></i> Photo 
+                                            @elseif($message == 'both') <i class="fa fa-camera" aria-hidden="true"></i> {{ $key->message }}
+                                            @else {{ $message }} @endif 
                                         </p>
                                     </div>
                                     <div class="chat-meta">

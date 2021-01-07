@@ -10,8 +10,6 @@
             <div class="sidebar-left">
                 <div class="sidebar">
                     <div class="sidebar-content card">
-                      
-                      
                         <div class="chat-fixed-search">
                             <div class="d-flex align-items-center w-100">
                                 <div class="sidebar-profile-toggle">
@@ -47,7 +45,18 @@
                                     if(count($chat) > 0)
                                     {
                                         foreach ($chat as $key) {
-                                            $message = $key->message;
+                                            if($key->message != null)
+                                            {
+                                                $message = $key->message;
+                                            }
+                                            else {
+                                                $message = 'photo';
+                                            }
+                                            if($key->message != null && $key->file != null)
+                                            {
+                                                $message = 'both';
+                                            }
+                                            
                                             $time=$key->created_at;
                                         }
                                     }
@@ -55,6 +64,9 @@
                                         $message='Star Chat..';
                                     }
                                 @endphp
+
+
+
                                 <a href="{{route('start_chat',array('id' => $row->id))}}">
                                 <li>
                                     <span class="avatar">
@@ -65,13 +77,14 @@
                                         <img src="{{ asset('images/logos/abc.png') }}" style="width: 50px; height:50px; border-radius: 50%;" alt="Toolbar svg" />
                                         @endif
 
-                                        {{-- <img src="app-assets/images/portrait/small/avatar-s-3.jpg" height="42" width="42" /> --}}
                                         <span @if($row->log == 0) class="avatar-status-offline" @elseif($row->log == 1) class="avatar-status-online" @endif></span>
                                     </span>
                                     <div class="chat-info flex-grow-1">
                                         <h5 class="mb-0">{{ $row->name }}</h5>
                                         <p class="card-text text-truncate">
-                                            {{ $message }}
+                                            @if($message == 'photo') <i class="fa fa-camera" aria-hidden="true"></i> Photo 
+                                            @elseif($message == 'both') <i class="fa fa-camera" aria-hidden="true"></i> {{ $key->message }}
+                                            @else {{ $message }} @endif 
                                         </p>
                                     </div>
                                     @if($message != 'Star Chat..')

@@ -65,7 +65,7 @@
             <div class="user-nav d-sm-flex d-none"><span class="avatar"><img class="round" 
                 @if(Auth::user()->logo != null) src="{{ asset('images/'.Auth::user()->logo)}}" @else src="{{ asset('images/logos/abc.png') }}" @endif
                   alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span></div>
-            <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}</span><span class="user-status">Admin</span></div>
+            <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}</span><span class="user-status">Retailer</span></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="{{ route('retailer_profile') }}"><i class="fa fa-user-o" aria-hidden="true"></i>Profile</a>
             <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('retailerlogout') }}"><i class="fa fa-power-off " aria-hidden="true"></i> Logout</a>
@@ -100,13 +100,20 @@
 
   }
 
+  $remain=0;
+
+        $id=Auth::user()->id;
+
+        $remain= \App\chatModel::where('marker',1)->where('receiver',$id)->count();
+
 @endphp
 
 <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" @if($quantity > 0) href="{{route('checkout')}}" @endif><i class="fa fa-shopping-cart" aria-hidden="true"></i>
     @if($quantity > 0) <span class="badge badge-pill badge-danger badge-up">{{ $quantity }}</span> @endif </a></li>
 
 
-<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i><span class="badge badge-pill badge-danger badge-up">5</span></a>
+<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i>
+    @if($remain > 0)<span class="badge badge-pill badge-danger badge-up"> {{ $remain }} </span> @endif </a>
 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
 <li class="dropdown-menu-header">
 <div class="dropdown-header d-flex">
@@ -272,7 +279,7 @@
 <!-- BEGIN: Page JS-->
 <script src="{{ asset('app-assets/js/scripts/pages/dashboard-ecommerce.js')}}"></script>
 <!-- END: Page JS-->
-
+<script src="{{ asset('app-assets/js/scripts/pages/app-chat.js') }}"></script>
 <script>
 $(window).on('load', function() {
 if (feather) {
