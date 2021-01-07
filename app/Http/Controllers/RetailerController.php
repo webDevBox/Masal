@@ -334,7 +334,7 @@ class RetailerController extends Controller
            {
                return redirect('/');
            }
-           $wedding=wedding::where('retailer',Auth::user()->id)->get();
+           $wedding=wedding::orderBy('id','desc')->where('retailer',Auth::user()->id)->get();
            $total=wedding::where('retailer',Auth::user()->id)->count();
           return view('retailer.wedding')->with(array('total'=>$total,'wedding'=>$wedding));
       }

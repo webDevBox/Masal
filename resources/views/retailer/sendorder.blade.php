@@ -21,7 +21,7 @@
     <div class="nicdark_space20"></div>
     
     <div class="row">   
-        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 mt-5">             
+        <div class="col-md-4 col-lg-4 col-sm-10 col-xs-10 mt-5">             
             <div class="nicdark_archive1 nicdark_border_grey img-magnifier-container">
             <img id="main_image" class="main_image mx-auto d-block" style="height:600px;" alt="" src="{{ asset('images/'.$product->image1) }}">
             </div>
@@ -39,31 +39,25 @@
 
                 <h3 class="text-center mt-3">Other Images</h3>
                 <div class="row">
-                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 mt-2">
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
                         
-                    <div class="nicdark_archive1 nicdark_border_grey" >
-                    <img id="image_1" style="width:60px; height:80px; cursor:pointer;" alt=""  src="{{ asset('images/'.$product->image1) }}">
-                    </div>
+                    <img id="image_1" style="width:60px; height:80px; cursor:pointer;" alt="" class="d-inline"  src="{{ asset('images/'.$product->image1) }}">
+                    
                     </div>
                     
                     @if(isset($product->image2))
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
                     
-                    <div class="nicdark_archive1 nicdark_border_grey">
-                    <img alt="" id="image_2" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$product->image2) }}">
+                    <img alt="" id="image_2" style="width:60px; height:80px; cursor:pointer;" class="d-inline" src="{{ asset('images/'.$product->image2) }}">
                     
-                    </div>
                     </div>
                     @else
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2" style="visibility: hidden;"></div>
                     @endif
                     @if(isset($product->image3))
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
-                        
-                    <div class="nicdark_archive1 nicdark_border_grey">
-                    <img alt="" id="image_3" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$product->image3) }}">
+                    <img alt="" id="image_3" style="width:60px; height:80px; cursor:pointer;" class="d-inline" src="{{ asset('images/'.$product->image3) }}">
                     
-                    </div>
                     </div>
                     @else
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2" style="visibility: hidden;"></div>
@@ -71,11 +65,8 @@
 
                     @if(isset($product->image4))
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
+                    <img alt="" id="image_4" style="width:60px; height:80px; cursor:pointer;" class="d-inline" src="{{ asset('images/'.$product->image4) }}">
                     
-                    <div class="nicdark_archive1 nicdark_border_grey" >
-                    <img alt="" id="image_4" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$product->image4) }}">
-                    
-                    </div>
                     </div>
                     @else
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2" style="visibility: hidden;"></div>
@@ -83,22 +74,16 @@
                     
                     @if(isset($product->image5))
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
+                    <img alt="" id="image_5" style="width:60px; height:80px; cursor:pointer;" class="d-inline" src="{{ asset('images/'.$product->image5) }}">
                     
-                    <div class="nicdark_archive1 nicdark_border_grey">
-                    <img alt="" id="image_5" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$product->image5) }}">
-                    
-                    </div>
                     </div>
                     @else
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2" style="visibility: hidden;"></div>
                     @endif
                     @if(isset($product->image6))
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
-                        
-                    <div class="nicdark_archive1 nicdark_border_grey">
-                    <img alt="" id="image_6" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$product->image6) }}">
+                    <img alt="" id="image_6" style="width:60px; height:80px; cursor:pointer;" class="d-inline" src="{{ asset('images/'.$product->image6) }}">
                     
-                    </div>
                     </div>
                     @else
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2" style="visibility: hidden;"></div>
