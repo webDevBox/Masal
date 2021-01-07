@@ -118,7 +118,7 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="card mb-2">
-                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[0]) }}">
+                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[0]) }}">
                     <div class="card-body badge-glow badge-primary">
                         <h4 class="text-uppercase text-center text-white">{{ $name[0] }}</h4>
                         <p class="card-text"> Total Products: {{ $prod[0] }}</p>
@@ -129,7 +129,7 @@
   
               <div class="col-md-3 ">
                 <div class="card mb-2">
-                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[1]) }}">
+                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[1]) }}">
                     <div class="card-body badge-glow badge-primary">
                         <h4 class="text-uppercase text-center text-white">{{ $name[1] }}</h4>
                         <p class="card-text"> Total Products: {{ $prod[1] }}</p>
@@ -140,7 +140,7 @@
   
               <div class="col-md-3 ">
                 <div class="card mb-2">
-                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[2]) }}">
+                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[2]) }}">
                     <div class="card-body badge-glow badge-primary">
                          <h4 class="text-uppercase text-center text-white">{{ $name[2] }}</h4>
                         <p class="card-text"> Total Products: {{ $prod[2] }}</p>
@@ -151,7 +151,7 @@
 
               <div class="col-md-3">
                 <div class="card mb-2">
-                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[3]) }}">
+                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[3]) }}">
                     <div class="card-body badge-glow badge-primary">
                         <h4 class="text-uppercase text-center text-white">{{ $name[3] }}</h4>
                         <p class="card-text"> Total Products: {{ $prod[3] }}</p>
@@ -172,7 +172,7 @@
   
               <div class="col-md-3 ">
                 <div class="card mb-2">
-                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[4]) }}">
+                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[4]) }}">
                     <div class="card-body badge-glow badge-primary">
                         <h4 class="text-uppercase text-center text-white">{{ $name[4] }}</h4>
                         <p class="card-text"> Total Products: {{ $prod[4] }}</p>
@@ -183,7 +183,7 @@
   
               <div class="col-md-3 ">
                 <div class="card mb-2">
-                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[5]) }}">
+                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[5]) }}">
                     <div class="card-body badge-glow badge-primary">
                          <h4 class="text-uppercase text-center text-white">{{ $name[5] }}</h4>
                         <p class="card-text"> Total Products: {{ $prod[5] }}</p>
@@ -194,7 +194,7 @@
 
               <div class="col-md-3">
                 <div class="card mb-2">
-                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[6]) }}">
+                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[6]) }}">
                     <div class="card-body badge-glow badge-primary">
                       <h4 class="text-uppercase text-center text-white">{{ $name[6] }} </h4>
                         <p class="card-text"> Total Products: {{ $prod[6] }}</p>
@@ -205,7 +205,7 @@
 
               <div class="col-md-3 ">
                 <div class="card mb-2">
-                  <img class="card-img-top" style="height:400px" src="{{ asset('images/'.$image[7]) }}">
+                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[7]) }}">
                     <div class="card-body badge-glow badge-primary">
                          <h4 class="text-uppercase text-center text-white">{{ $name[7] }} </h4>
                         <p class="card-text"> Total Products: {{ $prod[7] }}</p>

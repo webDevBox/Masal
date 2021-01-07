@@ -126,8 +126,13 @@
                                                 
                                            @if($row->cancle_order_request == 0)
                                            @if($row->payment == 'Done')
-                                            <a href="{{route('retailer_del_order', array('id' => $row->id))}}" data-toggle="tooltip" title="Cancellation Requests " class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                           @else
+                                           @if($row->status == 'completed')
+                                           <p> Order Completed </p> 
+                                           @else 
+                                            <a href="{{route('retailer_del_order', array('id' => $row->id))}}" data-toggle="tooltip" title="Cancellation Requests " class="btn btn-xs btn-danger">
+                                            <i class="fa fa-times"></i></a>
+                                            @endif
+                                            @else
                                             <a href="{{route('checkout')}}" data-toggle="tooltip" title="Saved in Cart" class="btn btn-xs btn-primary"><i class="fa fa-shopping-cart"></i></a>
                                             @endif
                                              @elseif($row->cancle_order_request == 2)
@@ -135,6 +140,7 @@
                                              @else
                                              <p> Your Request is Pending </p>   
                                             @endif
+                                           
                                         
                                         
                                         </div>

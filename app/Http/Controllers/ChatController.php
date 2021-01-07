@@ -21,7 +21,7 @@ class ChatController extends Controller
             return $next($request);
         });
     }
-        //Retailer Chat Room
+    //Retailer Chat Room
     public function chat()
     {
         if (Auth::check()) {

@@ -348,33 +348,37 @@ class RetailerOrderController extends Controller
          $product=products::find($id->id);
          return view('retailer.sendorder')->with('product',$product);
             }
-            else if(!isset($id))
+            // else if(!isset($id))
+            // {
+            //     $total=retailerOrder::where('RetailerId',Auth::user()->id)->where('payment','Done')->count();
+            //     $payment=retailerOrder::where('id',$style)->get();
+            //     if(count($payment) > 0)
+            //     {                                   
+            //         return view('retailer.order')->with(array('total'=>$total,'payment'=>$payment));
+            //     }
+            //     else if(count($payment) == 0)
+            //     {
+            //     $total=retailerOrder::where('RetailerId',Auth::user()->id)->where('payment','Done')->count();
+
+            //     $product= products::where('name',$style)->first();
+            //         if(isset($product))
+            //         {
+            //             $payment=retailerOrder::where('productId',$product->id)->where('RetailerId',Auth::user()->id)->get();
+            //         }
+            //             if(count($payment) > 0 && isset($payment))
+            //             {
+            //                 return view('retailer.order')->with(array('total'=>$total,'payment'=>$payment));
+            //             }
+            //             else
+            //             {
+            //                 return redirect()->back()->with('error', 'No Record Found');
+            //             }
+            //     }
+
+            //     return redirect()->back()->with('error', 'No Record Found');
+            // }
+            else
             {
-                $total=retailerOrder::where('RetailerId',Auth::user()->id)->where('payment','Done')->count();
-                $payment=retailerOrder::where('id',$style)->get();
-                if(count($payment) > 0)
-                {                                   
-                    return view('retailer.order')->with(array('total'=>$total,'payment'=>$payment));
-                }
-                else if(count($payment) == 0)
-                {
-                $total=retailerOrder::where('RetailerId',Auth::user()->id)->where('payment','Done')->count();
-
-                $product= products::where('name',$style)->first();
-                    if(isset($product))
-                    {
-                        $payment=retailerOrder::where('productId',$product->id)->where('RetailerId',Auth::user()->id)->get();
-                    }
-                        if(count($payment) > 0 && isset($payment))
-                        {
-                            return view('retailer.order')->with(array('total'=>$total,'payment'=>$payment));
-                        }
-                        else
-                        {
-                            return redirect()->back()->with('error', 'No Record Found');
-                        }
-                }
-
                 return redirect()->back()->with('error', 'No Record Found');
             }
     }

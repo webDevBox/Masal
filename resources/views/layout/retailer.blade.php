@@ -79,7 +79,10 @@
 <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="fa fa-search" aria-hidden="true"></i></a>
 <div class="search-input">
 <div class="search-input-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
-<input class="form-control input" type="text" placeholder="Explore Masal..." tabindex="-1" data-search="search">
+<form action="{{ route('product_search') }}" method="post" class="search_form">
+    @csrf
+<input class="form-control input" name="top_search" type="text" placeholder="Explore Masal..." tabindex="-1" data-search="search">
+</form>
 <div class="search-input-close"><i class="fa fa-times" aria-hidden="true"></i></div>
 <ul class="search-list search-list-main"></ul>
 </div>
@@ -108,11 +111,16 @@
 
 @endphp
 
-<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" @if($quantity > 0) href="{{route('checkout')}}" @endif><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="#"><i class="fa fa-credit-card-alt" style="color: #7367F0;" aria-hidden="true"></i>
+     <span class="badge badge-pill badge-danger badge-up">${{Auth::user()->credit}}</span>  </a></li>
+
+<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" @if($quantity > 0) href="{{route('checkout')}}" @endif>
+<i class="fa fa-shopping-cart" style="color: #7367F0;" aria-hidden="true"></i>
     @if($quantity > 0) <span class="badge badge-pill badge-danger badge-up">{{ $quantity }}</span> @endif </a></li>
 
 
-<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i>
+<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown">
+<i class="fa fa-bell" style="color: #7367F0;" aria-hidden="true"></i>
 @if($remain > 0)<span class="badge badge-pill badge-danger badge-up"> {{ $remain }} </span> @endif </a>
 
 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">

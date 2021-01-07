@@ -85,8 +85,6 @@
                                         <td class="text-center">
                                             <select name="status" class="form-control" id="status{{$row->id}}">
 
-                                                <option value="pending" @if($row->status == 'pending') selected
-                                                    @endif>Pending</option>
 
                                                     <option value="processing" @if($row->status == 'processing') selected
                                                     @endif>Processing</option>
@@ -102,7 +100,7 @@
 
                                         </td>
 
-                                        <td class="text-center"> @if($row->cancle_order_request == 1)<span class="label label-warning">Requested</span> @elseif($row->cancle_order_request == 2) <p> Order Canceled </p> @else <p> No Request </p> @endif </td>
+                                        <td class="text-center"> @if($row->cancle_order_request == 1)<span class="bg-warning text-dark">Requested</span> @elseif($row->cancle_order_request == 2) <p> Order Canceled </p> @else <p> No Request </p> @endif </td>
                                         <td class="text-center"> <input type="number" min="1" class="form-control" value="{{$row->quantity}}" name="quantity"> </td>
                                        
                                         <td class="text-center"> <button type="submit" class="btn btn-success"> Update </button> </td>

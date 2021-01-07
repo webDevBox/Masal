@@ -164,7 +164,7 @@ Route::get('/retailerOrderDel/{id}', 'OrderController@retailerOrderDel')->name('
 Route::get('/OrderDel/{id}', 'OrderController@OrderDel')->name('OrderDel');
 Route::get('/retailer_del_order/{id}', 'RetailerController@retailer_del_order')->name('retailer_del_order');
 Route::get('/cat_detail/{id}', 'RetailerController@cat_detail')->name('cat_detail');
-Route::get('/product_search', 'RetailerOrderController@product_search')->name('product_search');
+Route::post('/product_search', 'RetailerOrderController@product_search')->name('product_search');
 Route::get('/eway', 'RetailerOrderController@eway')->name('eway');
 Route::get('/upload_real', 'RetailerController@upload_real')->name('upload_real');
 Route::post('/bride_send', 'RetailerController@bride_send')->name('bride_send');
@@ -179,7 +179,6 @@ Route::post('/account', 'RetailerController@account')->name('account');
 Route::post('/passwordUpdate', 'RetailerController@passwordUpdate')->name('passwordUpdate');
 Route::get('/checkout', 'RetailerOrderController@checkout')->name('checkout');
 Route::get('/remover/{id}', 'RetailerOrderController@remover')->name('remover');
-// Route::post('/ewayresponse', 'RetailerOrderController@ewayResponse')->name('ewayresponse');
 Route::post('/adminProfile', 'AdminController@adminProfile')->name('adminProfile');
 Route::post('/retailerProfile', 'RetailerController@retailerProfile')->name('retailerProfile');
 Route::post('/adminPassword', 'AdminController@passwordUpdate')->name('adminPassword');

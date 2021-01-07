@@ -221,9 +221,10 @@
                                         <span class="input-group-text">
                                             <label for="attach-doc" class="attachment-icon mb-0">
                                                 <i class="fa fa-paperclip cursor-pointer" aria-hidden="true"></i>
-                                                <input type="file" name="attachment" id="attach-doc" hidden /> </label></span>
+                                                <input type="file" name="attachment" id="attach-doc" class="image" hidden /> </label></span>
                                     </div>
                                 </div>
+                                <img src="" id="blah" style="" class="p-1">
                                 <button type="submit" class="btn btn-primary send">
                                     
                                     <span class="d-none d-lg-block">Send</span>
@@ -274,7 +275,26 @@
            $('.img_load').attr('src',image);
            $('.img_down').attr('href',image);
         });
-      
-        
-        </script>
+    </script>
+
+<script>
+    function readimg(input) {
+    if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function (e) {
+    $('#blah').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]);
+    }
+    }
+    
+    $('#blah').attr('style','display:none;')
+    
+    $(".image").change(function(){
+    $('#blah').attr('style','width: 100px; height:100px;')
+    readimg(this);
+    });
+    </script>
    @endsection
