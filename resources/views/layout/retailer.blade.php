@@ -67,7 +67,7 @@
                   alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span></div>
             <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}</span><span class="user-status">Admin</span></div>
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="{{ route('profile') }}"><i class="fa fa-user-o" aria-hidden="true"></i>Profile</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="{{ route('retailer_profile') }}"><i class="fa fa-user-o" aria-hidden="true"></i>Profile</a>
             <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('retailerlogout') }}"><i class="fa fa-power-off " aria-hidden="true"></i> Logout</a>
             </div>
             </li>

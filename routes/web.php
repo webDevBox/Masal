@@ -153,6 +153,7 @@ Route::post('/fabric_edit_indb', 'AdminController@fabric_edit_indb')->name('fabr
 Route::post('/sleeve_edit_indb', 'AdminController@sleeve_edit_indb')->name('sleeve_edit_indb');
 Route::get('/lock_screen', 'AdminController@lock_screen');
 Route::get('/profile', 'AdminController@profile')->name('profile');
+Route::get('/retailer_profile', 'RetailerController@retailer_profile')->name('retailer_profile');
 Route::get('/editor/{id}', 'AdminController@editor');
 //Retailer Routes
 Route::get('/retailerdash', 'RetailerController@index')->name('retailerdash');
@@ -180,6 +181,7 @@ Route::get('/checkout', 'RetailerOrderController@checkout')->name('checkout');
 Route::get('/remover/{id}', 'RetailerOrderController@remover')->name('remover');
 // Route::post('/ewayresponse', 'RetailerOrderController@ewayResponse')->name('ewayresponse');
 Route::post('/adminProfile', 'AdminController@adminProfile')->name('adminProfile');
+Route::post('/retailerProfile', 'RetailerController@retailerProfile')->name('retailerProfile');
 Route::post('/adminPassword', 'AdminController@passwordUpdate')->name('adminPassword');
 Route::get('/chat', 'ChatController@chat')->name('chat');
 Route::post('/send_message', 'ChatController@send_message')->name('send_message');

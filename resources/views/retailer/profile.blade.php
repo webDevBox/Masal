@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.retailer')
 @section('content')
  
 <div class="app-content content ">
@@ -49,9 +49,9 @@
                 </div>
             </div>
 
-            <div class="container mt-5 general" @if(Session::has('status')) style="display:none;" @else @if($errors->has('password') || $errors->has('confirm')) style="display:none;" @else style="justify-content: center;" @endif @endif>
+            <div class="container mt-5 general"  @if(Session::has('status')) style="display:none;" @else @if($errors->has('password') || $errors->has('confirm')) style="display:none;" @else style="justify-content: center;" @endif @endif>
                 <h3 class="text-center"> General Details </h3>
-                <form action="{{ route('adminProfile') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('retailerProfile') }}" method="POST" enctype="multipart/form-data">
                     @csrf   
                     <div class="form-group">
                         <label for=""> Your Name </label>
@@ -78,7 +78,7 @@
            
             <div class="container mt-5 secure" @if(Session::has('status') || $errors->has('password') || $errors->has('confirm')) style="justify-content: center;" @else style="justify-content: center; display:none;" @endif>
                 <h3 class="text-center"> Secure Details </h3>
-                <form action="{{ route('adminProfile') }}" method="POST">
+                <form action="{{ route('retailerProfile') }}" method="POST">
                     @csrf   
                     <div class="form-group">
                         <label for=""> Your New Password </label>

@@ -339,6 +339,90 @@ class RetailerController extends Controller
           return view('retailer.wedding')->with(array('total'=>$total,'wedding'=>$wedding));
       }
 
+      // Profile Page
+    public function retailer_profile()
+    {
+        if (Auth::check()) {
+            if($this->user->userRole != 2)
+            {
+             return redirect('/');
+            }
+            if($this->user->status != 1)
+            {
+             return redirect('/retailerlogout');
+            }
+         }
+         else
+         {
+             return redirect('/');
+         }
+         $profile=User::find(Auth::user()->id);
+         return view('retailer.profile')->with(array('profile'=>$profile));
+    }
+
+
+    public function retailerProfile(Request $request)
+      {
+        if (Auth::check()) {
+            if($this->user->userRole != 2)
+            {
+             return redirect('/');
+            }
+            if($this->user->status != 1)
+            {
+             return redirect('/retailerlogout');
+            }
+         }
+         else
+         {
+             return redirect('/');
+         }
+         //General Update
+        
+           if(isset($request->general) && $request->general == 'Submit')
+           {
+                   $this->validate($request,[
+                    'name'=>'required',
+                    'email'=>'required|email',
+                    'logo'=>'mimes:jpeg,bmp,png'
+               ]);
+                    if(Auth::user()->email != $request->email)
+                    {
+                        $this->validate($request,[
+                            'email'=>'unique:users,email'
+                       ]);
+                    }
+                 $retailer = Auth::user()->id;
+                 $user=User::find($retailer);
+                 $user->name=$request->name;
+                 $user->email=$request->email;
+                 if(isset($request->logo))
+                 {
+                     $old=$user->logo;
+                   Storage::delete($old);
+                 $path=$request->logo->store('logo');
+                 $user->logo=$path;
+                 }
+                 
+                 $user->save();
+                 return redirect()->back()->with('success', 'Your Data Updated ');
+             }
+
+             //Password Update
+             if(isset($request->secure) && $request->secure == 'Submit')
+           {
+                   $this->validate($request,[
+                    'password'=>'required',
+                    'confirm'=>'required|same:password'
+               ]);
+                 $pass=bcrypt($request->password);
+                 User::where('id',Auth::user()->id)->update(['password'=>$pass]);
+                 return redirect()->back()->with(array('success'=>'Your Password Updated','status'=>'ok'));
+             }
+      }
+
+
+
 
 
        //Real Bride Images and Videos Page

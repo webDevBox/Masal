@@ -1118,14 +1118,18 @@ class AdminController extends Controller
                  $user=User::find($admin);
                  $user->name=$request->name;
                  $user->email=$request->email;
+                 if(isset($request->logo))
+                 {
+                     $old=$user->logo;
+                   Storage::delete($old);
                  $path=$request->logo->store('logo');
                  $user->logo=$path;
+                 }
                  $user->save();
                  return redirect()->back()->with('success', 'Your Data Updated ');
              }
 
              //Password Update
-           
              if(isset($request->secure) && $request->secure == 'Submit')
            {
                    $this->validate($request,[
@@ -1135,10 +1139,7 @@ class AdminController extends Controller
                  $pass=bcrypt($request->password);
                  User::where('id',Auth::user()->id)->update(['password'=>$pass]);
                  return redirect()->back()->with(array('success'=>'Your Password Updated','status'=>'ok'));
-                  
              }
- 
- 
       }
      
         public function passwordUpdate(Request $request)
