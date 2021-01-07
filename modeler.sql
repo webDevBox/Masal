@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2021 at 09:52 AM
+-- Generation Time: Jan 07, 2021 at 12:29 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -169,9 +169,11 @@ CREATE TABLE `chat_models` (
 --
 
 INSERT INTO `chat_models` (`id`, `message`, `file`, `sender`, `senderId`, `receiver`, `marker`, `created_at`, `updated_at`, `status`) VALUES
-(1, NULL, 'file/xLdkRvsnONy9RUfs06CTNA2ePY5hdNMYcDGVOghe.png', 'admin', 35, 65, 0, '2021-01-04 22:56:57', '2021-01-05 02:17:45', 2),
-(2, 'Test Message again', 'file/slThAKZKZLcTYmuyJjehGhjTNra7iD6yMprIWly1.png', 'admin', 35, 65, 0, '2021-01-04 22:57:08', '2021-01-05 02:17:45', 2),
-(3, 'I am good', NULL, 'admin', 35, 65, 0, '2021-01-04 22:59:36', '2021-01-05 02:17:45', 0);
+(16, 'I am good', NULL, 'admin', 35, 65, 0, '2021-01-07 03:12:44', '2021-01-07 06:09:53', 1),
+(17, NULL, 'file/mdY57ris79rPNULBCOIzQWaXTLJKlqymA3rt85cv.png', 'retailer', 65, 35, 0, '2021-01-07 06:01:55', '2021-01-07 06:09:52', 1),
+(18, 'Hello', NULL, 'admin', 35, 65, 0, '2021-01-07 06:04:56', '2021-01-07 06:09:53', 1),
+(19, 'Test Message again', 'file/Yu6mfJ1RFYa39OvZx7AOv5lTXeRn9hcjLnFmf4la.jpeg', 'retailer', 65, 35, 0, '2021-01-07 06:08:07', '2021-01-07 06:09:52', 1),
+(20, 'I am good', 'file/JSyLiNKhtjaKtH4yOSbNM04j9i5odPhMq7B3hvvi.jpeg', 'admin', 35, 65, 0, '2021-01-07 06:09:05', '2021-01-07 06:09:53', 1);
 
 -- --------------------------------------------------------
 
@@ -48841,11 +48843,11 @@ INSERT INTO `products` (`id`, `name`, `description`, `colour`, `size`, `extra`, 
 (3, 'Beauty bride', '<p>TESSA Dress | #AS1930 Modern Off the Shoulder Wedding Dress</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 8, 'New', 'TESSA, TESSA Dress, AS1930, Off the Shoulder, Wedding Dress', 1500, 4900, 'AS1930', 'active', 0, 100, 'products/6zjN8vbZVV9xxZvVpDbJEfuDaCv7SPjCu9ZtZqKc.jpeg', 'products/KqG3L5PQEP5Y8CQ86tUaEobwLznL9zlXrDSaIP2L.jpeg', 'products/5h3pAkYP7EmUHaBqciYcoZXhniDxZfgpKyVcMmnD.jpeg', 'products/AW9TxgHpoTqUBLIcI9ClgYwJiu7Z0yuFbaRgVje0.jpeg', NULL, NULL, '2020-11-17 23:43:35', '2020-12-31 00:20:23'),
 (4, 'Regular Bride', '<p>NARIMAN Dress | #AS1942 Modern Lace Princess Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 5, NULL, 'NARIMAN, NARIMAN Dress, AS1942, Princess Wedding Dress, Wedding Dress', 1600, 5900, 'AS1942', 'active', 0, 100, 'products/9qyo9TmYT96UcpbdzHfUJrASaT90TWbz9ZFRnMEN.jpeg', 'products/KiuPAYqFFl94zAHqCjPtocXAcerpsUfwd43tqpE9.jpeg', 'products/TOPkouJ5N5yNoBuSRADsicUjvwcyLEGqggSF4EyM.jpeg', 'products/PS5GImg2w6AqmAtRow0xl8oAE8o4JXvS9RLdxfMS.jpeg', NULL, NULL, '2020-11-18 00:09:23', '2020-11-18 00:15:09'),
 (5, 'Cute Bride', '<p>HAYLEY Dress | #AS1956 V Back V Neck A-Line Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 5, NULL, 'HAYLEY, HAYLEY Dress, AS1956, A-Line Wedding Dress', 750, 3700, 'AS1956', 'active', 0, 100, 'products/JadHwImw1a6qR2pDHxiI0XxuZvtfLNuzCJtJFpxN.jpeg', 'products/gFF7sLcuSfNzBxqds1xsnGfF1KBCH2lfztq7z67v.jpeg', 'products/iU0oPQ6quqYJkfrRj9YRGzHl1DRoSOaFwYnKlFSd.jpeg', 'products/zkGOEZBbuRRe0YvrDiN6Js8JK2zcV95iYXudNBJ9.jpeg', NULL, NULL, '2020-11-18 00:23:34', '2020-11-18 00:23:52'),
-(6, 'Couple site', '<p>AMINA Dress | #AS2502 Long Sleeve Champagne Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', '[\"Add Sleeves\"]', 6, NULL, 'AMINA, AMINA Dress, AS2502, Long Sleeve Wedding Dresses, Wedding Dresses', 1150, 4200, 'AS2502', 'active', 0, 100, 'products/h8WkdjuhTBVEmWw9hDRQEB1jfykzpv6CGHsDicxa.jpeg', 'products/RfsuHz5oKJ2cc64zOfQxluwiOM4ofC5lC1oAyQTi.jpeg', 'products/PdXIFXr7Jr0Rgv8IvkBKUt7Yk5WPknNjjfiKPVzH.jpeg', 'products/5R9kT3VLmuU7IuoR4bkuKidT9y4j2XxidsrHK1ua.jpeg', NULL, NULL, '2020-11-18 00:44:13', '2020-11-29 17:57:01'),
+(6, 'Couple site', '<p>AMINA Dress | #AS2502 Long Sleeve Champagne Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', '[\"Add Seleves\"]', 6, NULL, 'AMINA, AMINA Dress, AS2502, Long Sleeve Wedding Dresses, Wedding Dresses', 1150, 4200, 'AS2502', 'active', 0, 100, 'products/h8WkdjuhTBVEmWw9hDRQEB1jfykzpv6CGHsDicxa.jpeg', 'products/RfsuHz5oKJ2cc64zOfQxluwiOM4ofC5lC1oAyQTi.jpeg', 'products/PdXIFXr7Jr0Rgv8IvkBKUt7Yk5WPknNjjfiKPVzH.jpeg', 'products/5R9kT3VLmuU7IuoR4bkuKidT9y4j2XxidsrHK1ua.jpeg', NULL, NULL, '2020-11-18 00:44:13', '2020-11-29 17:57:01'),
 (7, 'Final Bride', '<p>MELISSA Dress | #AS2518 Strapless Ballgown Wedding Dress</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"12\"]', '[\"1 M long\",\"Urgent\"]', 7, '50% Off', 'MELISSA, MELISSA Dress, AS2518, Strapless Wedding Dress', 800, 4500, 'AS2518', 'active', 0, 0, 'products/gJvi2NBSS4O4Q6tidmIGRjoa8cQznJbkbDNFneYR.jpeg', 'products/jiqgdHJYX3ih5VLU2Wior8OnQQNeVdhcYl5TBb99.jpeg', 'products/Wbsquxo9xuDKjvgYyzd5nsNP5nF3hkXGanJ2CVJK.jpeg', 'products/S5HL2F1FyC2Ju7NBAZ3u7P1DhbacMoBtp9yNJYVf.jpeg', NULL, NULL, '2020-11-18 01:03:39', '2020-12-31 23:44:45'),
 (8, 'Bridal', '<p>retgtshrstfhyr</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"14\"]', '[\"1 M long\",\"Add Sleeves\"]', 1, 'New', 'dsfsdfg', 25, 32, '1221dftrgh', 'active', 1, 9, 'products/pCNntys36jbYPQ94MUSTLPfZ6vwOoIFrVZvk7Z5T.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-12-17 02:45:19', '2020-12-30 23:30:24'),
 (10, 'Real bride', '<p>reytgsruyru</p>', '[\"Ivory\",\"Champagne\"]', '[\"6\",\"14\",\"16\"]', '[\"1 M long\"]', 9, 'New', 'bridal,blow,flow', 25, 32, 'fdgdfh65454fgh', 'active', 1, 100, 'products/P6bXx2WjC3SCbCIm2o4oH6WekrvqsEp44Fm9Hggt.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-12-22 00:21:11', '2020-12-30 00:15:11'),
-(12, 'Beautiful Bride', '<p>dfgsdfh</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"4\",\"10\",\"240\"]', '[\"1 M long\",\"Add Seleves\"]', 6, NULL, 'bridal,blow,flow', 123, 654, 'AS53SM5Kh', 'active', 0, 100, 'products/xCvCNzaBpsNEApolqiKPgcZpgz1O4Qw0MF0CJ4D2.jpeg', 'products/mo0fMUa3ehQc7S8G25k0BKqIIJEHyAGcB7VBkpbt.jpeg', 'products/vAjA6j5Q4GRfpzaJQGdf84E1g8srIcAmUXUgyhJz.jpeg', 'products/XE3Ram6KMt2ONV04CN4mCcbeGJAjZ2q0auwb0aNi.jpeg', NULL, NULL, '2020-12-30 02:55:02', '2020-12-31 00:19:49');
+(12, 'Beautiful Bride', '<p style=\"text-align:center\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero esse cumque pariatur illum minus amet, nostrum recusandae iste deleniti hic ut labore sapiente culpa necessitatibus, incidunt, qui eligendi? Debitis, dolores.</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"4\",\"10\",\"16\"]', '[\"1 M long\",\"Add Seleves\"]', 6, NULL, 'bridal,blow,flow', 123, 654, 'AS53SM5Kh', 'active', 0, 100, 'products/xCvCNzaBpsNEApolqiKPgcZpgz1O4Qw0MF0CJ4D2.jpeg', 'products/mo0fMUa3ehQc7S8G25k0BKqIIJEHyAGcB7VBkpbt.jpeg', 'products/vAjA6j5Q4GRfpzaJQGdf84E1g8srIcAmUXUgyhJz.jpeg', 'products/XE3Ram6KMt2ONV04CN4mCcbeGJAjZ2q0auwb0aNi.jpeg', 'products/t3gX9gpsSZsYfaSoBJXH1CutbZYZaiqR9lOvJWaM.jpeg', 'products/jb68XDibYWB53xYQfF8vHyezbIlFpXh3damZKd3I.jpeg', '2020-12-30 02:55:02', '2021-01-06 23:44:31');
 
 -- --------------------------------------------------------
 
@@ -48890,7 +48892,8 @@ CREATE TABLE `retailer_brides` (
 
 INSERT INTO `retailer_brides` (`id`, `retailerId`, `wedding`, `file`, `type`, `status`, `created_at`, `updated_at`) VALUES
 (18, 65, '3', 'real/8zIQ8izAkDpiFDXuw5EAsusUus9THV4e6uX8d1sn.png', 'image', 2, '2020-11-27 22:53:26', '2020-11-27 22:54:11'),
-(21, 65, '2', 'real/L6b0XMwn7MXkPf4rYhGxdgn2kr7pQ4JhfdLthWut.jpeg', 'image', 1, '2021-01-01 01:28:35', '2021-01-01 01:33:17');
+(21, 65, '2', 'real/L6b0XMwn7MXkPf4rYhGxdgn2kr7pQ4JhfdLthWut.jpeg', 'image', 1, '2021-01-01 01:28:35', '2021-01-01 01:33:17'),
+(22, 65, '2', 'real/ICZFDhgIfxwBijoYbZWjpivawYIGLWLN9CZvYl5x.jpeg', 'image', 1, '2021-01-06 22:49:18', '2021-01-06 22:49:18');
 
 -- --------------------------------------------------------
 
@@ -48943,11 +48946,11 @@ CREATE TABLE `retailer_orders` (
 --
 
 INSERT INTO `retailer_orders` (`id`, `productId`, `RetailerId`, `colour`, `sizes`, `extra`, `quantity`, `cancle_order_request`, `status`, `detail`, `payment`, `created_at`, `updated_at`) VALUES
-(1, 5, 65, 'Champagne', '8', NULL, 1, 0, 'completed', NULL, 'Done', '2020-01-01 04:22:03', '2020-12-31 00:27:29'),
-(2, 12, 65, 'Champagne', '10', NULL, 1, 0, 'completed', NULL, 'Done', '2020-12-23 06:03:16', '2020-11-30 00:27:42'),
+(1, 5, 65, 'Champagne', '8', NULL, 1, 0, 'processing', NULL, 'Done', '2020-01-01 04:22:03', '2021-01-07 03:54:38'),
+(2, 12, 65, 'Champagne', '10', NULL, 1, 0, 'processing', NULL, 'Done', '2020-12-23 06:03:16', '2021-01-07 03:53:59'),
 (3, 3, 65, 'Champagne', '10', NULL, 1, 0, 'completed', NULL, 'Done', '2020-12-30 23:32:45', '2020-12-30 23:33:10'),
-(4, 3, 65, 'Blue', '12', NULL, 1, 0, 'completed', NULL, 'Done', '2020-12-31 00:43:29', '2020-12-31 00:44:19'),
-(5, 5, 65, 'Champagne', '10', NULL, 3, 0, 'processing', NULL, 'Done', '2021-01-05 00:38:52', '2021-01-06 02:03:09');
+(4, 3, 65, 'Blue', '12', NULL, 1, 2, 'canceled', NULL, 'Done', '2020-12-31 00:43:29', '2021-01-07 03:53:40'),
+(5, 5, 65, 'Champagne', '10', NULL, 3, 2, 'canceled', NULL, 'Done', '2021-01-05 00:38:52', '2021-01-07 03:34:34');
 
 -- --------------------------------------------------------
 
@@ -53170,9 +53173,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `credit`, `logo`, `log`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$RH113rw6fyTkRFZtxkKY2uundXWGyGHsCgmWzyMOlKtm0rUiK7wu.', 0, 'logo/Ed6V9DTEnCT0t7U9s1rJfIXu7VYKsj6nyCM6r9kK.jpeg', 0, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-04 03:15:09'),
-(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$sqmT6121doKFEb2olvO/YOt8gQHB8raW2jpt5ERV0/MSvWMlOXHAu', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 1, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-05 22:23:40'),
-(70, 'Ahmad', 'sarfrazkhubaib278@gmail.com', '$2y$10$/vs3whztUfXRosb0CP0he.HRdlMAHzHDg7VFIBPawtBvD5WRUhpz6', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 0, 0, '54454', 'house', 'Pakistan', 'Punjab', 'lahore', '54000', '845', 'www.leads.com', 'facebook.com', 'onstagram.com', '-79.324595', '43.6715159', 2, 1, 0, NULL, '2020-11-26 06:12:16', '2021-01-01 01:00:14'),
+(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$wQh2DzJz5LIspQgj/B0.y.qvvNL2QmdwZjL0r/VJ4/qUWTVsgwFZG', 0, 'logo/AQfnC1Bp4mDpXMklxpatxLQ8Q3AVNBdvl9ghEB7H.jpeg', 0, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-07 06:28:12'),
+(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$r2GnAAvhiDfIpB3qgUq2YuRM7TRBNIHWg8DafAiGhrC15MB49DeHC', 50, 'logo/Jo4dbjBBBOrIpGyV3vpYDCjRnQUmlqPTXluwlCqX.png', 0, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-07 06:24:08'),
+(70, 'Ahmad', 'sarfrazkhubaib278@gmail.com', '$2y$10$/vs3whztUfXRosb0CP0he.HRdlMAHzHDg7VFIBPawtBvD5WRUhpz6', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 0, 0, '54454', 'house', 'Pakistan', 'Punjab', 'lahore', '54000', '845', 'www.leads.com', 'facebook.com', 'onstagram.com', '-79.324595', '43.6715159', 2, 1, 0, NULL, '2020-11-26 06:12:16', '2021-01-06 05:54:09'),
 (72, 'Aown', 'khubaib@digitalinnovation.pk', '$2y$10$0mcj7KIHxpT4nyU2OPEUfuuxkL5YdOlgIq8QUvQZREfDcTSekX7/S', 0, NULL, 0, 0, '54146', 'abc road', 'Pakistan', 'Punjab', 'lahore', '53720', '59553485', 'https://masal.com', 'https://dsfjk.com', 'gfhjgf', '74.3640581', '31.4842744', 2, 1, 0, NULL, '2020-12-31 02:22:37', '2021-01-01 01:12:14');
 
 -- --------------------------------------------------------
@@ -53240,7 +53243,15 @@ INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
 (45, 1, '2021-01-05 00:42:39', '2021-01-05 00:42:39'),
 (46, 1, '2021-01-05 04:30:14', '2021-01-05 04:30:14'),
 (47, 1, '2021-01-05 06:41:37', '2021-01-05 06:41:37'),
-(48, 1, '2021-01-05 22:23:28', '2021-01-05 22:23:28');
+(48, 1, '2021-01-05 22:23:28', '2021-01-05 22:23:28'),
+(49, 1, '2021-01-06 05:38:39', '2021-01-06 05:38:39'),
+(50, 1, '2021-01-06 05:53:15', '2021-01-06 05:53:15'),
+(51, 1, '2021-01-06 05:54:09', '2021-01-06 05:54:09'),
+(52, 1, '2021-01-06 22:25:03', '2021-01-06 22:25:03'),
+(53, 1, '2021-01-07 00:28:13', '2021-01-07 00:28:13'),
+(54, 1, '2021-01-07 00:54:45', '2021-01-07 00:54:45'),
+(55, 1, '2021-01-07 06:24:08', '2021-01-07 06:24:08'),
+(56, 1, '2021-01-07 06:28:16', '2021-01-07 06:28:16');
 
 -- --------------------------------------------------------
 
@@ -53263,7 +53274,7 @@ CREATE TABLE `weddings` (
 INSERT INTO `weddings` (`id`, `name`, `retailer`, `created_at`, `updated_at`) VALUES
 (2, 'Blow', 65, '2020-10-23 07:29:42', '2020-12-08 05:37:43'),
 (3, 'masal', 65, '2020-10-27 02:40:01', '2020-12-08 02:35:47'),
-(4, 'function', 65, '2020-10-27 02:40:09', '2020-12-08 02:30:19'),
+(4, 'function', 65, '2020-10-27 02:40:09', '2021-01-06 23:15:08'),
 (6, 'Yolanda Trussler', 69, '2020-11-27 22:52:49', '2020-11-27 22:52:49');
 
 --
@@ -53507,7 +53518,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `chat_models`
 --
 ALTER TABLE `chat_models`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `cities`
@@ -53585,7 +53596,7 @@ ALTER TABLE `necklines`
 -- AUTO_INCREMENT for table `new_orders`
 --
 ALTER TABLE `new_orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `new_pages`
@@ -53609,7 +53620,7 @@ ALTER TABLE `reals`
 -- AUTO_INCREMENT for table `retailer_brides`
 --
 ALTER TABLE `retailer_brides`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `retailer_emails`
@@ -53621,7 +53632,7 @@ ALTER TABLE `retailer_emails`
 -- AUTO_INCREMENT for table `retailer_orders`
 --
 ALTER TABLE `retailer_orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -53663,13 +53674,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `weddings`
 --
 ALTER TABLE `weddings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
