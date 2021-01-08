@@ -1255,7 +1255,7 @@ class CrmController extends Controller
 
         $smallProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
 
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
 
         $collection=Category::all();
        

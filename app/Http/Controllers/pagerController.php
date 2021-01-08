@@ -53,7 +53,7 @@ class pagerController extends Controller
   
           $smallProduct=products::orderBy('created_at', 'desc')->limit(8)->get();
   
-          $gallery=products::orderBy('created_at', 'desc')->limit(8)->get();
+          $gallery=products::orderBy('created_at', 'desc')->limit(6)->get();
   
           $collection=Category::all();
 

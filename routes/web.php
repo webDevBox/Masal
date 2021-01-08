@@ -16,7 +16,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 |
 */
 //Authentication Route
-Route::match(['get', 'post'], '/retailerrequest', 'AuthController@register');
+Route::match(['get', 'post'], '/retailerrequest', 'AuthController@register')->name('retailerrequest');
 //admin
 Route::match(['get', 'post'], '/admin', 'AuthController@login');
 //Admin Logout Route
@@ -187,12 +187,12 @@ Route::post('/send_message', 'ChatController@send_message')->name('send_message'
 //Website Routes
 Route::get('/',  'PagesController@home' );
 Route::get('/bridesmaids', 'PagesController@bridesmaids' );
-Route::get('/contact','PagesController@contact' );
+Route::get('/contact','PagesController@contact')->name('contact');
 Route::get('/detail/{id}', 'PagesController@detail')->name('detail');
 Route::get('/wedding_detail/{id}', 'PagesController@wedding_detail')->name('wedding_detail');
-Route::get('/real', 'PagesController@real');
+Route::get('/real', 'PagesController@real')->name('real');
 Route::get('/wedding', 'PagesController@wedding');
-Route::get('/wherebuy',  'PagesController@index');
+Route::get('/wherebuy',  'PagesController@index')->name('wherebuy');
 Route::get('/statepicker', 'PagesController@statepicker')->name('statepicker');
 Route::get('/retailerstatepicker', 'PagesController@retailerstatepicker')->name('retailerstatepicker');
 Route::get('/citypicker', 'PagesController@cityPicker')->name('citypicker');

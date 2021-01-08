@@ -161,7 +161,7 @@ class AuthController extends Controller
             }
             return redirect()->back()->with('success', 'Your Account is Under Review');
         }
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $collection=Category::all();
         $countries=country::all();
         $foot=footer::where('id',1)->first();
@@ -290,7 +290,7 @@ class AuthController extends Controller
                 return redirect()->back()->with('error', 'Wrong Credantials');
             }
         }
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
         return view('pages.index')->with(array('foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery));
