@@ -144,13 +144,13 @@ class PagesController extends Controller
         $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
 
         $collection=Category::all();
-       
+        $category=Category::orderBy('id', 'desc')->limit(3)->get();
         $home=homePage::first();
         $foot=footer::where('id',1)->first();
         $user=new visitor;
         $user->visitors=1;
         $user->save();
-        return view('pages.index')->with(array('foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
+        return view('pages.index')->with(array('category'=>$category,'foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
     }
 
     public function contact()
@@ -169,7 +169,7 @@ class PagesController extends Controller
 
     public function nav_collection($id)
     {
-        $products=products::where('category',$id)->get();
+        $products=products::where('category',$id)->where('delete_status',0)->get();
         $collection=Category::all();
         $cat=Category::find($id);
 
