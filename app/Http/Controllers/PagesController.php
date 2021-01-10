@@ -86,7 +86,7 @@ class PagesController extends Controller
     {
         $state = '';
         if(isset($request['country']) && $request['country'] != '') {
-            $state = state::orderBy('id', 'asc')->where('country_id', $request['country'])->get();
+            $state = state::orderBy('name', 'asc')->where('country_id', $request['country'])->get();
         }
         $data_array = [
             "success" => [

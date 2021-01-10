@@ -88,7 +88,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 </a>
                             </li>
                             <li class="preheader-wishlist hidden-sm hidden-xs">
-                                <a data-property="wishlistheader" href="linked/login.html" aria-haspopup="true" aria-expanded="false" aria-label="Log-in">
+                                <a data-property="wishlistheader" href="{{route('login_form')}}" aria-haspopup="true" aria-expanded="false" aria-label="Log-in">
                                   <i class="fa fa-sign-in" style="font-size:24px"  aria-hidden="true"></i>
                                 </a>
                             </li>
@@ -214,7 +214,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @endif
     @if($where->header_status == 1)
     <li>
-      <a href="linked/trunk-shows.html" data-property="trunk-shows">
+      <a href="{{route('wherebuy')}}" data-property="trunk-shows">
         <span>FIND A Store 
         </span>
         <i class="sign">
@@ -652,6 +652,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     });
     </script>
+
 
     </body>
     </html>

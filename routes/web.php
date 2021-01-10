@@ -21,6 +21,7 @@ Route::match(['get', 'post'], '/retailerrequest', 'AuthController@register')->na
 Route::match(['get', 'post'], '/admin', 'AuthController@login');
 //Admin Logout Route
 Route::get('/logout','AuthController@logout')->name('logout');
+Route::get('/login_form','AuthController@login_form')->name('login_form');
 //Retailer Logout Route
 Route::get('/retailerlogout','AuthController@retailerlogout')->name('retailerlogout');
 //retailer

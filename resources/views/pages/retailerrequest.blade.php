@@ -48,28 +48,27 @@
         </div>
         
         <div class="form-group col-md-12 col-sm-12">
-        <label for="">Country <span style="color: red;">*</span></label>
-        <select class="custom-form-control country" name="country" id="country" required>
-            <option selected disabled>Select Country</option>
-           @if(count($countries) > 0)
-                @foreach ($countries as $row)
-            <option value="{{$row->id}}"> {{$row->name}} </option>
-                @endforeach
-           @endif
-            </select>
-        @if ($errors->has('country')) <p style="color:red;">{{ $errors->first('country') }}</p> @endif 
-        
-        </div>
-        
-        <div class="form-group col-md-12 col-sm-12">
-        <label for="">State <span style="color: red;">*</span></label>
-        <select class="custom-form-control state" name="state" id="state">
-            <option selected disabled>Select State</option>
-        
-            </select>
-        @if ($errors->has('state')) <p style="color:red;">{{ $errors->first('state') }}</p> @endif 
-        
-        </div>
+            <label for="">Country <span style="color: red;">*</span></label>
+            <select class="form-control" name="country" id="country" required>
+                <option selected disabled>Select Country</option>
+                    @if(count($countries) > 0)
+                            @foreach ($countries as $row)
+                                <option value="{{$row->id}}"> {{$row->name}} </option>
+                            @endforeach
+                    @endif
+                </select>
+            @if ($errors->has('country')) <p style="color:red;">{{ $errors->first('country') }}</p> @endif 
+            
+            </div>
+            
+            <div class="form-group col-md-12 col-sm-12">
+            <label for="">State <span style="color: red;">*</span></label>
+                <select class="form-control" name=state id="state" >
+                    <option selected disabled>Select State</option>
+                </select>
+            @if ($errors->has('state')) <p style="color:red;">{{ $errors->first('state') }}</p> @endif 
+            
+            </div>
         
         <div class="form-group col-md-12 col-sm-12">
         <label for="">City <span style="color: red;">*</span></label>
@@ -125,35 +124,26 @@
 
 
 <script>
-    $(document).ready(function() {
-        $(".country").change(function() {
+        $("#country").change(function() {
             if($(this).val() != '') {
                 $.ajax({
                     url: "/retailerstatepicker",
                     type: "GET",
                     data: { country : $(this).val()},
                     success: function (data) {
-                        $('.state')
-                        .find('option')
-                        .remove()
-                        .end();
-                        if (data['success'] !== undefined) {
-                            $('.state')
-                                .append($("<option></option>")
-                                .attr("value", "")
-                                .text('Select State'));
-                            for(let i = 0; i < data['success'].states.length; i++) {
-                                $('.state')
-                                .append($("<option></option>")
-                                .attr("value",data['success'].states[i].id)
-                                .text(data['success'].states[i].name));
-                            }
+                        if(data){
+                        $("#state").empty();
+                        $("#state").append('<option>Select</option>');
+                        $.each(data,function(key,value){
+                        $("#state").append('<option value="'+key+'">'+value+'</option>');
+                        });
                         }
                     }
                 });
             }
         });
-    });
+
+       
 </script>
 
 @endsection

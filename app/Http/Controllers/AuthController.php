@@ -223,6 +223,15 @@ class AuthController extends Controller
         return view('admin.index');
     }
 
+    //Retailer Login Form
+    public function login_form()
+    {
+        $foot=footer::where('id',1)->first();
+        $collection=Category::all();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        return view('pages.login')->with(array('gallery'=>$gallery,'collection'=>$collection,'foot'=>$foot));
+    }
+
     //Admin Logout
     public function logout()
     {
