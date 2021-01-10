@@ -220,7 +220,10 @@ class AuthController extends Controller
                 return redirect()->back()->with('error', 'Wrong Credantials');
             }
         }
-        return view('admin.index');
+        $collection=Category::all();
+        $foot=footer::where('id',1)->first();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        return view('admin.index')->with(array('gallery'=>$gallery,'foot'=>$foot,'collection'=>$collection));
     }
 
     //Retailer Login Form
