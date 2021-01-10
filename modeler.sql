@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2021 at 07:50 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.9
+-- Generation Time: Jan 10, 2021 at 04:48 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -141,7 +142,7 @@ INSERT INTO `categories` (`id`, `name`, `image`, `created_at`, `updated_at`) VAL
 (6, 'Final', 'category/8f6fsVvjRxejZWY1b5aLIkUfj1KcYxXeTigO6oQ5.jpeg', '2021-01-05 23:31:58', '2021-01-05 23:31:58'),
 (7, 'mode', 'category/RGpD3nrxf8tpRW571X1255W9AlCHJXbMtNw2DoF6.jpeg', '2021-01-05 23:32:12', '2021-01-05 23:32:12'),
 (8, 'bomm', 'category/cQR5XRlmYMiUHE7QbDboGiQw1XRn6bdkz8eX5Ojd.jpeg', '2021-01-05 23:32:31', '2021-01-05 23:32:31'),
-(9, 'shift', 'category/d8lnkCcG3FMh4wTwGQdQIMObiyqum7r1KPmld8uO.jpeg', '2021-01-06 00:00:49', '2021-01-06 00:00:49'),
+(9, 'shift', 'category/d8lnkCcG3FMh4wTwGQdQIMObiyqum7r1KPmld8uO.jpg', '2021-01-06 00:00:49', '2021-01-06 00:00:49'),
 (10, 'ragbi', 'category/ZeF5pRtoaHfp6vutD37uY2Mz713r6gkN1QNftqE3.jpeg', '2021-01-06 00:01:07', '2021-01-06 00:01:07'),
 (11, 'roby', 'category/w93HufNsH5KJvDPOK5dxYKURCRAzZ0JgW9GRyU1y.jpeg', '2021-01-06 00:01:23', '2021-01-06 00:01:23');
 
@@ -48538,7 +48539,10 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`id`, `name`, `phone`, `email`, `message`, `status`, `created_at`, `updated_at`) VALUES
-(1, NULL, NULL, 'muhammadmoeez64@gmail.com', 'dsfds', 0, '2021-01-08 01:39:46', '2021-01-08 01:39:46');
+(1, NULL, NULL, 'muhammadmoeez64@gmail.com', 'dsfds', 0, '2021-01-08 01:39:46', '2021-01-08 01:39:46'),
+(2, NULL, NULL, 'anwfye@gmail.com', 'gfhfghfg', 0, '2021-01-10 06:58:31', '2021-01-10 06:58:31'),
+(3, 'Aown', '4564645', 'aown@gmail.com', 'fxcxghfcngf', 0, '2021-01-10 09:33:01', '2021-01-10 09:33:01'),
+(4, 'Aown', '54146', 'aown@gmail.com', 'dfs', 0, '2021-01-10 09:34:15', '2021-01-10 09:34:15');
 
 -- --------------------------------------------------------
 
@@ -48596,6 +48600,7 @@ CREATE TABLE `home_pages` (
   `name16` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name17` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -48605,8 +48610,8 @@ CREATE TABLE `home_pages` (
 -- Dumping data for table `home_pages`
 --
 
-INSERT INTO `home_pages` (`id`, `name1`, `name2`, `name3`, `name4`, `name5`, `name6`, `name7`, `name8`, `name9`, `name10`, `name11`, `name12`, `name13`, `name14`, `name15`, `name16`, `name17`, `image`, `video`, `created_at`, `updated_at`) VALUES
-(1, 'Enter 1st', 'Enter lkhjkhkl', 'Forever', 'Paradone Text', 'Special Discount', 'save - 80%', 'Become a Fast Retailer', 'VERA', 'Quantity', 'This is qualty section.This is qualty section.This is qualty section.', 'About the silder', 'This is all about silder', 'Quality and slow', 'Work slowly but give your 100%', 'habits', 'This is full habitate', 'Bridal Dresses', 'products/yOOMjP6l24paVh7qmlF6Ms1TDng0KSW2Y2w8fqsX.jpeg', 'custom/Seygp4Z7Nm6k3kef3pLBllczlAGxxLib77Kbxjwf.mp4', '2020-08-13 03:38:00', '2020-11-25 18:45:22');
+INSERT INTO `home_pages` (`id`, `name1`, `name2`, `name3`, `name4`, `name5`, `name6`, `name7`, `name8`, `name9`, `name10`, `name11`, `name12`, `name13`, `name14`, `name15`, `name16`, `name17`, `image`, `image2`, `video`, `created_at`, `updated_at`) VALUES
+(1, 'Enter 1st', 'Enter lkhjkhkl', 'Forever', 'Paradone Text', 'Special Discount', 'save - 80%', 'Become a Fast Retailer', 'VERA', 'Quantity', 'This is qualty section.This is qualty section.This is qualty section.', 'About the silder', 'This is all about silder', 'Quality and slow', 'Work slowly but give your 100%', 'habits', 'This is full habitate', 'Bridal Dresses', 'products/yOOMjP6l24paVh7qmlF6Ms1TDng0KSW2Y2w8fqsX.jpg', 'products/yOOMjP6l24paVh7qmlF6Ms1TDng0KSW2Y2w8fqsX.jpg', 'custom/Seygp4Z7Nm6k3kef3pLBllczlAGxxLib77Kbxjwf.mp4', '2020-08-13 03:38:00', '2020-11-25 18:45:22');
 
 -- --------------------------------------------------------
 
@@ -48709,7 +48714,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (62, '2020_12_17_100944_create_sleeves_table', 46),
 (63, '2020_12_18_091814_add_status_feedback', 47),
 (64, '2020_12_22_035707_add_title', 48),
-(65, '2021_01_01_104319_add_log_user', 49);
+(65, '2021_01_01_104319_add_log_user', 49),
+(66, '2021_01_08_101235_add_image2', 50);
 
 -- --------------------------------------------------------
 
@@ -48892,8 +48898,8 @@ CREATE TABLE `retailer_brides` (
 
 INSERT INTO `retailer_brides` (`id`, `retailerId`, `wedding`, `file`, `type`, `status`, `created_at`, `updated_at`) VALUES
 (18, 65, '3', 'real/8zIQ8izAkDpiFDXuw5EAsusUus9THV4e6uX8d1sn.png', 'image', 2, '2020-11-27 22:53:26', '2020-11-27 22:54:11'),
-(21, 65, '2', 'real/L6b0XMwn7MXkPf4rYhGxdgn2kr7pQ4JhfdLthWut.jpeg', 'image', 1, '2021-01-01 01:28:35', '2021-01-01 01:33:17'),
-(22, 65, '2', 'real/ICZFDhgIfxwBijoYbZWjpivawYIGLWLN9CZvYl5x.jpeg', 'image', 1, '2021-01-06 22:49:18', '2021-01-06 22:49:18');
+(21, 65, '2', 'real/L6b0XMwn7MXkPf4rYhGxdgn2kr7pQ4JhfdLthWut.jpeg', 'image', 2, '2021-01-01 01:28:35', '2021-01-01 01:33:17'),
+(22, 65, '2', 'real/ICZFDhgIfxwBijoYbZWjpivawYIGLWLN9CZvYl5x.jpeg', 'image', 2, '2021-01-06 22:49:18', '2021-01-06 22:49:18');
 
 -- --------------------------------------------------------
 
@@ -53174,7 +53180,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `credit`, `logo`, `log`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
 (35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$wQh2DzJz5LIspQgj/B0.y.qvvNL2QmdwZjL0r/VJ4/qUWTVsgwFZG', 0, 'logo/AQfnC1Bp4mDpXMklxpatxLQ8Q3AVNBdvl9ghEB7H.jpeg', 0, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-07 06:28:12'),
-(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$r2GnAAvhiDfIpB3qgUq2YuRM7TRBNIHWg8DafAiGhrC15MB49DeHC', 50, 'logo/Jo4dbjBBBOrIpGyV3vpYDCjRnQUmlqPTXluwlCqX.png', 0, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-07 06:24:08'),
+(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$r2GnAAvhiDfIpB3qgUq2YuRM7TRBNIHWg8DafAiGhrC15MB49DeHC', 50, 'logo/Jo4dbjBBBOrIpGyV3vpYDCjRnQUmlqPTXluwlCqX.png', 0, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-10 08:23:03'),
 (70, 'Ahmad', 'sarfrazkhubaib278@gmail.com', '$2y$10$/vs3whztUfXRosb0CP0he.HRdlMAHzHDg7VFIBPawtBvD5WRUhpz6', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 0, 0, '54454', 'house', 'Pakistan', 'Punjab', 'lahore', '54000', '845', 'www.leads.com', 'facebook.com', 'onstagram.com', '-79.324595', '43.6715159', 2, 1, 0, NULL, '2020-11-26 06:12:16', '2021-01-06 05:54:09'),
 (72, 'Aown', 'khubaib@digitalinnovation.pk', '$2y$10$0mcj7KIHxpT4nyU2OPEUfuuxkL5YdOlgIq8QUvQZREfDcTSekX7/S', 0, NULL, 0, 0, '54146', 'abc road', 'Pakistan', 'Punjab', 'lahore', '53720', '59553485', 'https://masal.com', 'https://dsfjk.com', 'gfhjgf', '74.3640581', '31.4842744', 2, 1, 0, NULL, '2020-12-31 02:22:37', '2021-01-01 01:12:14');
 
@@ -53331,7 +53337,40 @@ INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
 (133, 1, '2021-01-08 01:47:59', '2021-01-08 01:47:59'),
 (134, 1, '2021-01-08 01:48:34', '2021-01-08 01:48:34'),
 (135, 1, '2021-01-08 01:49:17', '2021-01-08 01:49:17'),
-(136, 1, '2021-01-08 01:49:33', '2021-01-08 01:49:33');
+(136, 1, '2021-01-08 01:49:33', '2021-01-08 01:49:33'),
+(137, 1, '2021-01-10 02:12:21', '2021-01-10 02:12:21'),
+(138, 1, '2021-01-10 02:13:01', '2021-01-10 02:13:01'),
+(139, 1, '2021-01-10 02:13:40', '2021-01-10 02:13:40'),
+(140, 1, '2021-01-10 02:13:40', '2021-01-10 02:13:40'),
+(141, 1, '2021-01-10 02:13:40', '2021-01-10 02:13:40'),
+(142, 1, '2021-01-10 02:13:41', '2021-01-10 02:13:41'),
+(143, 1, '2021-01-10 02:13:41', '2021-01-10 02:13:41'),
+(144, 1, '2021-01-10 02:13:41', '2021-01-10 02:13:41'),
+(145, 1, '2021-01-10 06:51:21', '2021-01-10 06:51:21'),
+(146, 1, '2021-01-10 06:51:42', '2021-01-10 06:51:42'),
+(147, 1, '2021-01-10 06:53:40', '2021-01-10 06:53:40'),
+(148, 1, '2021-01-10 06:54:03', '2021-01-10 06:54:03'),
+(149, 1, '2021-01-10 06:55:30', '2021-01-10 06:55:30'),
+(150, 1, '2021-01-10 06:55:36', '2021-01-10 06:55:36'),
+(151, 1, '2021-01-10 06:55:46', '2021-01-10 06:55:46'),
+(152, 1, '2021-01-10 06:58:18', '2021-01-10 06:58:18'),
+(153, 1, '2021-01-10 06:58:38', '2021-01-10 06:58:38'),
+(154, 1, '2021-01-10 07:12:26', '2021-01-10 07:12:26'),
+(155, 1, '2021-01-10 07:12:43', '2021-01-10 07:12:43'),
+(156, 1, '2021-01-10 07:12:54', '2021-01-10 07:12:54'),
+(157, 1, '2021-01-10 08:08:09', '2021-01-10 08:08:09'),
+(158, 1, '2021-01-10 08:09:49', '2021-01-10 08:09:49'),
+(159, 1, '2021-01-10 08:15:35', '2021-01-10 08:15:35'),
+(160, 1, '2021-01-10 08:18:36', '2021-01-10 08:18:36'),
+(161, 1, '2021-01-10 08:22:10', '2021-01-10 08:22:10'),
+(162, 1, '2021-01-10 08:23:03', '2021-01-10 08:23:03'),
+(163, 1, '2021-01-10 08:23:11', '2021-01-10 08:23:11'),
+(164, 1, '2021-01-10 08:23:44', '2021-01-10 08:23:44'),
+(165, 1, '2021-01-10 09:35:21', '2021-01-10 09:35:21'),
+(166, 1, '2021-01-10 10:24:49', '2021-01-10 10:24:49'),
+(167, 1, '2021-01-10 10:29:44', '2021-01-10 10:29:44'),
+(168, 1, '2021-01-10 10:37:41', '2021-01-10 10:37:41'),
+(169, 1, '2021-01-10 10:47:38', '2021-01-10 10:47:38');
 
 -- --------------------------------------------------------
 
@@ -53640,7 +53679,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `footers`
@@ -53664,7 +53703,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `necklines`
@@ -53754,7 +53793,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
 
 --
 -- AUTO_INCREMENT for table `weddings`
