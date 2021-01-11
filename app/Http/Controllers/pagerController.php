@@ -822,7 +822,7 @@ class pagerController extends Controller
         {
             $home=footer::where('id',1)->first();
             Storage::delete($home->logo);
-            $path =  $request->data->store('products');
+            $path =  $request->data->store('logo');
             $home->logo=$path;
             $home->save();
             if($home->save())
