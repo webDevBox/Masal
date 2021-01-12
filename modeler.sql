@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2021 at 09:13 AM
+-- Generation Time: Jan 12, 2021 at 01:36 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -48568,7 +48568,7 @@ CREATE TABLE `footers` (
 --
 
 INSERT INTO `footers` (`id`, `h1`, `h2`, `h3`, `h4`, `p`, `t1`, `t2`, `t3`, `t4`, `t5`, `logo`, `created_at`, `updated_at`) VALUES
-(1, 'About Us', 'New Tags', 'Giloria', 'Contact Us', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit explicabo obcaecati sint aut, illo animi eveniet saepe provident, fugiat corporis dolorum adipisci corrupti necessitatibus eius cumque incidunt at libero ea.', 'Bridal', 'Groom', 'String', 'Friday', 'Show', 'logo/qXCgJZP3XgJbBpDKUxu5u6TD8lPJSQRyiamBPnKq.png', '2020-08-17 19:00:00', '2021-01-11 03:09:13');
+(1, 'About Us', 'New Tags', 'Giloria', 'Contact Us', 'Last Paragraph in footer is for bout Masal Details.', 'Bridal', 'Groom', 'String', 'Friday', 'Show', 'logo/qXCgJZP3XgJbBpDKUxu5u6TD8lPJSQRyiamBPnKq.png', '2020-08-17 19:00:00', '2021-01-11 22:49:09');
 
 -- --------------------------------------------------------
 
@@ -48581,20 +48581,9 @@ CREATE TABLE `home_pages` (
   `name1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name4` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name5` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name6` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name7` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name8` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name9` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name10` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name11` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name12` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name13` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name14` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name15` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name16` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name17` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name4` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name5` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_croatian_ci NOT NULL,
+  `name6` varchar(255) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
   `image` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -48606,8 +48595,8 @@ CREATE TABLE `home_pages` (
 -- Dumping data for table `home_pages`
 --
 
-INSERT INTO `home_pages` (`id`, `name1`, `name2`, `name3`, `name4`, `name5`, `name6`, `name7`, `name8`, `name9`, `name10`, `name11`, `name12`, `name13`, `name14`, `name15`, `name16`, `name17`, `image`, `image2`, `video`, `created_at`, `updated_at`) VALUES
-(1, 'Modern', 'Enter lkhjkhkl', 'Forever', '        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi in expedita nostrum voluptatum, maiores dolorem praesentium dolore inventore magnam nesciunt doloribus voluptatibus ad, id ea eius ut provident deserunt maxime!\r\n', 'Special Discount', 'save - 80%', 'For over a decade Sophia Apostolides has been recognised as one of the bridal industry’s most talented designers, inspired by real women to create unforgettable designs that highlight your natural beauty and unique bridal style. A fusion of modern romance', 'VERA', 'Quantity', 'Love', 'Forever', 'This is all about silder', 'Quality and slow', 'Work slowly but give your 100%', 'habits', 'This is full habitate', 'Bridal Dresses', 'products/yOOMjP6l24paVh7qmlF6Ms1TDng0KSW2Y2w8fqsX.jpg', 'products/yOOMjP6l24paVh7qmlF6Ms1TDng0KSW2Y2w8fqsX.jpg', 'custom/Seygp4Z7Nm6k3kef3pLBllczlAGxxLib77Kbxjwf.mp4', '2020-08-13 03:38:00', '2020-11-25 18:45:22');
+INSERT INTO `home_pages` (`id`, `name1`, `name2`, `name3`, `name4`, `name5`, `name6`, `image`, `image2`, `video`, `created_at`, `updated_at`) VALUES
+(1, 'Modern Props', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quisquam nihil consequuntur optio dignissimos nulla iusto, nemo tenetur dolorum. Voluptate dicta consectetur reiciendis est! Mollitia sequi laborum non nemo esse.', 'Mooto', 'For over a decade Sophia Apostolides has been recognised as one of the bridal industry’s most talented designers, inspired by real women to create unforgettable designs that highlight your natural beauty and unique bridal style. A fusion of modern romance and timeless elegance, the Masal collection is a celebration of diversity, femininity and individuality.', 'Designer With Design', 'Meetings', 'products/UBezm3m1F9R0pENoN6y73ljphzvaEcwBtcnw47Tq.jpeg', 'products/1QkICSsDcyBg3XjANnbrOE43on10kYD0OiJqPj4s.jpeg', 'custom/Seygp4Z7Nm6k3kef3pLBllczlAGxxLib77Kbxjwf.mp4', '2020-08-13 03:38:00', '2021-01-12 01:35:11');
 
 -- --------------------------------------------------------
 
@@ -48637,7 +48626,7 @@ INSERT INTO `menus` (`id`, `name`, `header_status`, `footer_status`, `status`, `
 (5, 'Masal Wedding', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-02 09:41:55'),
 (6, 'Become a Retailer', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-02 06:12:57'),
 (7, 'Contact', 1, 1, 0, '2020-10-02 09:41:55', '2021-01-01 01:45:23'),
-(61, 'Groom', 2, 2, 1, '2021-01-01 01:53:29', '2021-01-01 01:53:29');
+(65, 'Groom', 2, 2, 1, '2021-01-12 03:42:32', '2021-01-12 04:08:43');
 
 -- --------------------------------------------------------
 
@@ -48760,38 +48749,16 @@ CREATE TABLE `new_pages` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `h1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `h1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `h2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `p1` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `h3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `h4` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `p2` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `latest` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `p1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t5` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t6` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `h2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image5` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image6` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image7` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `h3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t7` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `p2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t8` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `p3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t9` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `p4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t10` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `p5` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `i1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `i2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `i3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `i4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image8` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `t11` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48800,8 +48767,8 @@ CREATE TABLE `new_pages` (
 -- Dumping data for table `new_pages`
 --
 
-INSERT INTO `new_pages` (`id`, `name`, `keyword`, `title`, `h1`, `image1`, `video`, `t1`, `t2`, `t3`, `p1`, `image2`, `t4`, `image3`, `t5`, `t6`, `h2`, `image4`, `image5`, `image6`, `image7`, `h3`, `t7`, `p2`, `t8`, `p3`, `t9`, `p4`, `t10`, `p5`, `i1`, `i2`, `i3`, `i4`, `image8`, `t11`, `created_at`, `updated_at`) VALUES
-(4, 'Groom', 'bridal,blow,flow', 'World cup 2019', 'Enter 1st Heading', NULL, NULL, 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', NULL, 'Enter Text', NULL, 'Enter Text', 'Enter Text', 'Enter 2nd Heading', NULL, NULL, NULL, NULL, 'Enter 3rd Heading', 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', NULL, NULL, NULL, NULL, NULL, 'Enter Text', '2021-01-01 01:53:29', '2021-01-01 01:53:29');
+INSERT INTO `new_pages` (`id`, `name`, `keyword`, `title`, `banner`, `h1`, `h2`, `p1`, `h3`, `h4`, `p2`, `latest`, `image1`, `image2`, `created_at`, `updated_at`) VALUES
+(8, 'Groom', 'bridal,blow,flow', 'vvv', 'banner/S74luYf7etEn8zecdUTx6qinZ2n1LFyW9LPxgsjD.jpeg', 'Dealing', 'Modern Frego', 'For over a decade Sophia Apostolides has been recognised as one of the bridal industry’s most talented designers, inspired by real women to create unforgettable designs that highlight your natural beauty and unique bridal style. A fusion of modern romance and timeless elegance, the Masal collection is a celebration of diversity, femininity and individuality.', 'Second Cup', 'Meet Loop', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt rerum suscipit optio. Quisquam consequuntur eveniet perspiciatis modi aut rem repellat doloribus quidem optio aspernatur! At, necessitatibus. Omnis nisi quis error.', 'cat', 'custom/YIG0xQ763qa4iNxdSx1mRBEI5rKpALJItMmX5PJM.jpeg', 'custom/yA96XYWAzRgtv65HXdHBYJISC1GhyShJ2i2yexKR.jpeg', '2021-01-12 03:42:32', '2021-01-12 07:36:37');
 
 -- --------------------------------------------------------
 
@@ -53175,8 +53142,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `credit`, `logo`, `log`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/AQfnC1Bp4mDpXMklxpatxLQ8Q3AVNBdvl9ghEB7H.jpeg', 1, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-11 02:21:31'),
-(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$r2GnAAvhiDfIpB3qgUq2YuRM7TRBNIHWg8DafAiGhrC15MB49DeHC', 50, 'logo/Jo4dbjBBBOrIpGyV3vpYDCjRnQUmlqPTXluwlCqX.png', 0, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-07 06:24:08'),
+(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 1, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-12 05:43:34'),
+(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$r2GnAAvhiDfIpB3qgUq2YuRM7TRBNIHWg8DafAiGhrC15MB49DeHC', 50, 'logo/Jo4dbjBBBOrIpGyV3vpYDCjRnQUmlqPTXluwlCqX.png', 0, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-12 05:43:18'),
 (70, 'Ahmad', 'sarfrazkhubaib278@gmail.com', '$2y$10$/vs3whztUfXRosb0CP0he.HRdlMAHzHDg7VFIBPawtBvD5WRUhpz6', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 0, 0, '54454', 'house', 'Pakistan', 'Punjab', 'lahore', '54000', '845', 'www.leads.com', 'facebook.com', 'onstagram.com', '-79.324595', '43.6715159', 2, 1, 0, NULL, '2020-11-26 06:12:16', '2021-01-06 05:54:09'),
 (72, 'Aown', 'khubaib@digitalinnovation.pk', '$2y$10$0mcj7KIHxpT4nyU2OPEUfuuxkL5YdOlgIq8QUvQZREfDcTSekX7/S', 0, NULL, 0, 0, '54146', 'abc road', 'Pakistan', 'Punjab', 'lahore', '53720', '59553485', 'https://masal.com', 'https://dsfjk.com', 'gfhjgf', '74.3640581', '31.4842744', 2, 1, 0, NULL, '2020-12-31 02:22:37', '2021-01-01 01:12:14');
 
@@ -53409,7 +53376,65 @@ INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
 (209, 1, '2021-01-11 02:16:51', '2021-01-11 02:16:51'),
 (210, 1, '2021-01-11 03:01:54', '2021-01-11 03:01:54'),
 (211, 1, '2021-01-11 03:09:15', '2021-01-11 03:09:15'),
-(212, 1, '2021-01-11 03:09:46', '2021-01-11 03:09:46');
+(212, 1, '2021-01-11 03:09:46', '2021-01-11 03:09:46'),
+(213, 1, '2021-01-11 03:26:23', '2021-01-11 03:26:23'),
+(214, 1, '2021-01-11 03:27:19', '2021-01-11 03:27:19'),
+(215, 1, '2021-01-11 06:56:35', '2021-01-11 06:56:35'),
+(216, 1, '2021-01-11 06:56:51', '2021-01-11 06:56:51'),
+(217, 1, '2021-01-11 06:56:53', '2021-01-11 06:56:53'),
+(218, 1, '2021-01-11 06:57:00', '2021-01-11 06:57:00'),
+(219, 1, '2021-01-11 06:57:01', '2021-01-11 06:57:01'),
+(220, 1, '2021-01-11 06:57:01', '2021-01-11 06:57:01'),
+(221, 1, '2021-01-11 07:06:19', '2021-01-11 07:06:19'),
+(222, 1, '2021-01-11 22:45:52', '2021-01-11 22:45:52'),
+(223, 1, '2021-01-11 22:46:55', '2021-01-11 22:46:55'),
+(224, 1, '2021-01-11 22:49:18', '2021-01-11 22:49:18'),
+(225, 1, '2021-01-11 22:51:32', '2021-01-11 22:51:32'),
+(226, 1, '2021-01-11 22:54:30', '2021-01-11 22:54:30'),
+(227, 1, '2021-01-11 22:54:32', '2021-01-11 22:54:32'),
+(228, 1, '2021-01-11 22:54:55', '2021-01-11 22:54:55'),
+(229, 1, '2021-01-12 01:10:14', '2021-01-12 01:10:14'),
+(230, 1, '2021-01-12 01:11:35', '2021-01-12 01:11:35'),
+(231, 1, '2021-01-12 01:21:59', '2021-01-12 01:21:59'),
+(232, 1, '2021-01-12 01:23:03', '2021-01-12 01:23:03'),
+(233, 1, '2021-01-12 01:23:06', '2021-01-12 01:23:06'),
+(234, 1, '2021-01-12 01:24:03', '2021-01-12 01:24:03'),
+(235, 1, '2021-01-12 01:24:25', '2021-01-12 01:24:25'),
+(236, 1, '2021-01-12 01:26:08', '2021-01-12 01:26:08'),
+(237, 1, '2021-01-12 01:35:58', '2021-01-12 01:35:58'),
+(238, 1, '2021-01-12 01:37:11', '2021-01-12 01:37:11'),
+(239, 1, '2021-01-12 01:38:03', '2021-01-12 01:38:03'),
+(240, 1, '2021-01-12 01:38:43', '2021-01-12 01:38:43'),
+(241, 1, '2021-01-12 03:11:38', '2021-01-12 03:11:38'),
+(242, 1, '2021-01-12 03:12:20', '2021-01-12 03:12:20'),
+(243, 1, '2021-01-12 03:16:29', '2021-01-12 03:16:29'),
+(244, 1, '2021-01-12 03:21:38', '2021-01-12 03:21:38'),
+(245, 1, '2021-01-12 03:21:43', '2021-01-12 03:21:43'),
+(246, 1, '2021-01-12 03:21:58', '2021-01-12 03:21:58'),
+(247, 1, '2021-01-12 03:22:24', '2021-01-12 03:22:24'),
+(248, 1, '2021-01-12 03:43:38', '2021-01-12 03:43:38'),
+(249, 1, '2021-01-12 03:44:04', '2021-01-12 03:44:04'),
+(250, 1, '2021-01-12 03:44:10', '2021-01-12 03:44:10'),
+(251, 1, '2021-01-12 03:44:58', '2021-01-12 03:44:58'),
+(252, 1, '2021-01-12 03:45:13', '2021-01-12 03:45:13'),
+(253, 1, '2021-01-12 03:45:34', '2021-01-12 03:45:34'),
+(254, 1, '2021-01-12 03:50:54', '2021-01-12 03:50:54'),
+(255, 1, '2021-01-12 03:51:09', '2021-01-12 03:51:09'),
+(256, 1, '2021-01-12 03:51:16', '2021-01-12 03:51:16'),
+(257, 1, '2021-01-12 03:51:20', '2021-01-12 03:51:20'),
+(258, 1, '2021-01-12 04:05:03', '2021-01-12 04:05:03'),
+(259, 1, '2021-01-12 04:05:14', '2021-01-12 04:05:14'),
+(260, 1, '2021-01-12 04:05:23', '2021-01-12 04:05:23'),
+(261, 1, '2021-01-12 04:05:41', '2021-01-12 04:05:41'),
+(262, 1, '2021-01-12 04:05:45', '2021-01-12 04:05:45'),
+(263, 1, '2021-01-12 04:07:34', '2021-01-12 04:07:34'),
+(264, 1, '2021-01-12 04:07:40', '2021-01-12 04:07:40'),
+(265, 1, '2021-01-12 04:07:43', '2021-01-12 04:07:43'),
+(266, 1, '2021-01-12 04:08:48', '2021-01-12 04:08:48'),
+(267, 1, '2021-01-12 04:09:19', '2021-01-12 04:09:19'),
+(268, 1, '2021-01-12 04:14:18', '2021-01-12 04:14:18'),
+(269, 1, '2021-01-12 05:43:19', '2021-01-12 05:43:19'),
+(270, 1, '2021-01-12 06:04:50', '2021-01-12 06:04:50');
 
 -- --------------------------------------------------------
 
@@ -53736,7 +53761,7 @@ ALTER TABLE `home_pages`
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -53760,7 +53785,7 @@ ALTER TABLE `new_orders`
 -- AUTO_INCREMENT for table `new_pages`
 --
 ALTER TABLE `new_pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -53832,7 +53857,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=271;
 
 --
 -- AUTO_INCREMENT for table `weddings`
