@@ -63,6 +63,7 @@
                         <tr>
                             <th class="text-center">Name</th>
                             <th class="text-center">Title</th>
+                            <th class="text-center">Keywords</th>
                             <th class="text-center">Edit</th>
                             <th class="text-center">Delete</th>
             
@@ -74,6 +75,7 @@
                         <tr>
                             <td class="text-center"> {{$row->name}} </td>
                             <td class="text-center"> {{$row->title}} </td>
+                            <td class="text-center"> {{$row->keyword}} </td>
                             
                             <td class="text-center">                                                                        
                                 <div class="btn-group btn-group-xs">

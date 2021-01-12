@@ -51,7 +51,7 @@
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static bg-light-primary  menu-collapsed" data-open="click" data-menu="vertical-menu-modern" data-col="">
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static bg-light-primary " data-open="click" data-menu="vertical-menu-modern" data-col="">
 
 <!-- BEGIN: Header-->
 <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow">

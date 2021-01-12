@@ -95,7 +95,6 @@ class PagesController extends Controller
             ]
         ];
         return response()->json($data_array);
-
     }
 
     public function cityPicker(Request $request)

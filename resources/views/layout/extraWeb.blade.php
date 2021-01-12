@@ -347,8 +347,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 @yield('content')
 
-
-
 <div class="ending-block iblock-fix">
     <footer class="footer" id="footer">
     <div class="container">
@@ -369,7 +367,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="footer-style">
             <h5>{{$foot->h1}}
     </h5>
-    <p class="text-dark" style="text-align: justify;">{{$foot->p}}</p>
+    <p class="white" style="text-align: justify;">{{$foot->p}}</p>
     
         </div>
     </div>
@@ -975,7 +973,222 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUx-lN2Wy6w2C0f2o14A3GgY-
 
 </script>
 
+<script src="js/main/jquery.min.js"></script> <!--Jquery-->
+<script src="js/main/jquery-ui.js"></script> <!--Jquery UI-->
+<script src="js/main/excanvas.js"></script> <!--canvas need for ie-->
+
+<!--plugins-->
+<script src="js/plugins/revslider/jquery.themepunch.tools.min.js"></script> <!--revslider-->
+<script src="js/plugins/revslider/jquery.themepunch.revolution.min.js"></script> <!--revslider-->
+
+<!--menu-->
+<script src="js/plugins/menu/superfish.min.js"></script> <!--superfish-->
+<script src="js/plugins/menu/tinynav.min.js"></script> <!--tinynav-->
+
+<!--other-->
+<script src="js/plugins/isotope/isotope.pkgd.min.js"></script> <!--isotope-->
+<script src="js/plugins/mpopup/jquery.magnific-popup.min.js"></script> <!--mpopup-->
+<script src="js/plugins/scroolto/scroolto.js"></script> <!--Scrool To-->
+<script src="js/plugins/nicescrool/jquery.nicescroll.min.js"></script> <!--Nice Scroll-->
+<script src="js/plugins/inview/jquery.inview.min.js"></script> <!--inview-->
+<script src="js/plugins/parallax/jquery.parallax-1.1.3.js"></script> <!--parallax-->
+<script src="js/plugins/countto/jquery.countTo.js"></script> <!--jquery.countTo-->
+<script src="js/plugins/countdown/jquery.countdown.js"></script> <!--countdown-->
+
+<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>    
+<script>
+
+  function initMap() {
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: {{$zoom}},
+      center: 
+        
+        {lat: {{$data['lat']}}, lng: {{$data['lng']}}},   
+       
+    });
+
+    // Create an array of alphabetical characters used to label the markers.
+    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    // Add some markers to the map.
+    // Note: The code uses the JavaScript Array.prototype.map() method to
+    // create an array of markers based on a given "locations" array.
+    // The map() method here has nothing to do with the Google Maps API.
+    var markers = locations.map(function(location, i) {
+      return new google.maps.Marker({
+        position: location,
+        label: labels[i % labels.length]
+      });
+    });
+
+    // Add a marker clusterer to manage the markers.
+    var markerCluster = new MarkerClusterer(map, markers,
+        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+  }
+  var locations = [
+    @foreach ($user as $row1)
+        
+            {lat: {{$row1['lat']}}, lng: {{$row1['lng']}}},   
+            @endforeach
+    // ,
+    // {lat: -33.718234, lng: 150.363181},
+    // {lat: -33.727111, lng: 150.371124},
+    // {lat: -33.848588, lng: 151.209834},
+    // {lat: -33.851702, lng: 151.216968},
+    // {lat: -34.671264, lng: 150.863657},
+    // {lat: -35.304724, lng: 148.662905},
+    // {lat: -36.817685, lng: 175.699196},
+    // {lat: -36.828611, lng: 175.790222},
+    // {lat: -37.750000, lng: 145.116667},
+    // {lat: -37.759859, lng: 145.128708},
+    // {lat: -37.765015, lng: 145.133858},
+    // {lat: -37.770104, lng: 145.143299},
+    // {lat: -37.773700, lng: 145.145187},
+    // {lat: -37.774785, lng: 145.137978},
+    // {lat: -37.819616, lng: 144.968119},
+    // {lat: -38.330766, lng: 144.695692},
+    // {lat: -39.927193, lng: 175.053218},
+    // {lat: -41.330162, lng: 174.865694},
+    // {lat: -42.734358, lng: 147.439506},
+    // {lat: -42.734358, lng: 147.501315},
+    // {lat: -42.735258, lng: 147.438000},
+    // {lat: -43.999792, lng: 170.463352}
+  ]
+</script>
+<script src="/maps/documentation/javascript/examples/markerclusterer/markerclustererplus@4.0.1.min.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUx-lN2Wy6w2C0f2o14A3GgY--AqGiXPc&callback=initMap">
+    </script>
+
+    <!--settings-->
+    <script src="js/settings.js"></script> <!--settings-->
+<!--custom js-->
+<script type="text/javascript">
+	jQuery(document).ready(function() {
 
 
+		//START SLIDE
+		jQuery('.nicdark_slide1').show().revolution(
+		{
+
+            dottedOverlay:"none",
+            delay:9000,
+            startwidth:1200,
+            startheight:700,
+            hideThumbs:200,
+
+            thumbWidth:100,
+            thumbHeight:50,
+            thumbAmount:2,
+                                
+            simplifyAll:"off",
+
+            navigationType:"bullet",
+            navigationArrows:"solo",
+            navigationStyle:"preview2",
+
+            touchenabled:"on",
+            onHoverStop:"on",
+            nextSlideOnWindowFocus:"off",
+
+            swipe_threshold: 75,
+            swipe_min_touches: 1,
+            drag_block_vertical: false,
+            
+            parallax:"mouse",
+            parallaxBgFreeze:"off",
+            parallaxLevels:[2,3,4,5,6,7,8,9,10,1],
+                                                       
+            keyboardNavigation:"off",
+
+            navigationHAlign:"center",
+            navigationVAlign:"bottom",
+            navigationHOffset:0,
+            navigationVOffset:20,
+
+            soloArrowLeftHalign:"left",
+            soloArrowLeftValign:"center",
+            soloArrowLeftHOffset:20,
+            soloArrowLeftVOffset:0,
+
+            soloArrowRightHalign:"right",
+            soloArrowRightValign:"center",
+            soloArrowRightHOffset:20,
+            soloArrowRightVOffset:0,
+
+            shadow:0,
+            fullWidth:"on",
+            fullScreen:"off",
+
+            spinner:"spinner0",
+                                    
+            stopLoop:"off",
+            stopAfterLoops:-1,
+            stopAtSlide:-1,
+
+            shuffle:"off",
+
+            autoHeight:"off",
+            forceFullWidth:"off",
+            
+            hideTimerBar:"on",
+            hideThumbsOnMobile:"off",
+            hideNavDelayOnMobile:1500,
+            hideBulletsOnMobile:"off",
+            hideArrowsOnMobile:"off",
+            hideThumbsUnderResolution:0,
+
+            hideSliderAtLimit:0,
+            hideCaptionAtLimit:0,
+            hideAllCaptionAtLilmit:0,
+            startWithSlide:0
+
+		});
+		//END SLIDE
+
+
+
+		//START SLIDE VIDEO
+        jQuery('#nicdark_slide2').show().revolution(
+        {
+            startheight:399
+        });
+        //END SLIDE
+
+		
+		
+
+		//START PARALLAX SECTIONS
+		$('#nicdark_parallax_1').parallax("50%", 0.3);
+		$('#nicdark_parallax_2').parallax("50%", 0.3);
+		$('#nicdark_parallax_3').parallax("50%", 0.3);
+		$('#nicdark_parallax_4').parallax("50%", 0.3);
+		$('#nicdark_parallax_5').parallax("50%", 0.3);
+		//END PARALLAX SECTIONS
+
+
+	});
+</script>
+
+<script type="text/javascript">
+
+	jQuery(window).load(function() {
+		jQuery(".nicdark_preloader").delay(500).fadeOut("slow");
+	})
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49425562-9', 'auto');
+  ga('send', 'pageview');
+
+</script>
     </body>
     </html>

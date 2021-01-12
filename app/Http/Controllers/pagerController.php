@@ -59,7 +59,9 @@ class pagerController extends Controller
 
           $home=homePage::first();
 
-          return view('admin.home')->with(array('home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
+          $foot=footer::where('id',1)->first();
+
+          return view('admin.home')->with(array('foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
 
      }
 
@@ -263,7 +265,7 @@ class pagerController extends Controller
         if(isset($request->submit))
         {
             $home=homePage::where('id',1)->first();
-            $home->name7=$request->data;
+            $home->name6=$request->data;
             $home->save();
             if($home->save())
             {
@@ -614,6 +616,41 @@ class pagerController extends Controller
             $home->image=$request->data;
             $path1 = $request->data->store('products');
             $home->image=$path1;
+            Storage::delete($del);
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Image Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Image Not Updated');
+         }
+        }
+          
+         
+     }
+    
+    
+     public function head19(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=homePage::where('id',1)->first();
+            $del=$home->image2;
+            $home->image2=$request->data;
+            $path1 = $request->data->store('products');
+            $home->image2=$path1;
             Storage::delete($del);
             $home->save();
             if($home->save())

@@ -730,34 +730,12 @@
         <div class="nicdark_space50"></div>
 
 
-        <div class="grid grid_12" style="margin-top: 80px;">
-            <h1 class="grey2 center"><span class="grey">—</span>Stay in touch with Masal  <span class="grey">—</span></h1>
-            <div class="nicdark_space20"></div>
-            
-        </div>
 
    </div>
    <!--end nicdark_container-->
             
 </section>
 
-
-<section class="nicdark_section">
-
-    <!--start nicdark_container-->
-    <div class="nicdark_container nicdark_clearfix">
-        
-  <p style="color: black;" class="text-center">Join our mailing list to stay informed about the latest trends in bridal. Plus, be the first to know when we post new contests and giveaways! </p>
- <form action="" method="get">
-  <center> <input type="submit" class="btn btn-primary my-2" name="search" type="submit" value="Search"> </center>
- </form>
-  <div class="nicdark_space20"></div>
-
-    <!--end nicdark_container-->
-     
-</section>
-
-   
 
 
 

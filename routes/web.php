@@ -55,6 +55,7 @@ Route::post('/head15', 'pagerController@head15')->name('head15');
 Route::post('/head16', 'pagerController@head16')->name('head16');
 Route::post('/head17', 'pagerController@head17')->name('head17');
 Route::post('/head18', 'pagerController@head18')->name('head18');
+Route::post('/head19', 'pagerController@head19')->name('head19');
 //Footer Edits
 Route::post('/foot1', 'pagerController@foot1')->name('foot1');
 Route::post('/foot2', 'pagerController@foot2')->name('foot2');

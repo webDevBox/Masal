@@ -44,7 +44,7 @@
     <div class="row">
     <div class="header">
     <h2>
-    Designer wedding dresses by Masal
+    {{ $home->name5 }}
     </h2>
     </div>
     </div>
@@ -204,6 +204,17 @@
     </div>
     </div>
     </section>
+    <section class="section-header section-header-alt" id="section-designers-header">
+        <div class="container">
+        <div class="row">
+        <div class="header">
+        <h2>
+        {{ $home->name6 }}
+        </h2>
+        </div>
+        </div>
+        </div>
+        </section>
     @php
         $image2='images/'.$home->image2;
     @endphp
@@ -224,13 +235,13 @@
     <div class="content-blocks">
     <div class="content-block content-header">
     <div class="headings">
-    <h3>Meet
+    <h3>{{ $home->name3 }}
     </h3>
     <div class="text-img">
     <img src="{{ asset('images/'.$foot->logo) }}" alt="Sophia" style="margin-top: 10px;">
     </div>
     <p>
-        {{ $home->name7 }}
+        {{ $home->name4 }}
     </p>
    
     </div>

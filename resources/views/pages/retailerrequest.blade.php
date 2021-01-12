@@ -49,7 +49,7 @@
         
         <div class="form-group col-md-12 col-sm-12">
             <label for="">Country <span style="color: red;">*</span></label>
-            <select class="form-control" name="country" id="country" required>
+            <select class="custom-form-control" name="country" id="country_top" required>
                 <option selected disabled>Select Country</option>
                     @if(count($countries) > 0)
                             @foreach ($countries as $row)
@@ -63,7 +63,7 @@
             
             <div class="form-group col-md-12 col-sm-12">
             <label for="">State <span style="color: red;">*</span></label>
-                <select class="form-control" name=state id="state" >
+                <select class="custom-form-control" name="state" id="state_top" >
                     <option selected disabled>Select State</option>
                 </select>
             @if ($errors->has('state')) <p style="color:red;">{{ $errors->first('state') }}</p> @endif 
@@ -123,27 +123,6 @@
 </div>
 
 
-<script>
-        $("#country").change(function() {
-            if($(this).val() != '') {
-                $.ajax({
-                    url: "/retailerstatepicker",
-                    type: "GET",
-                    data: { country : $(this).val()},
-                    success: function (data) {
-                        if(data){
-                        $("#state").empty();
-                        $("#state").append('<option>Select</option>');
-                        $.each(data,function(key,value){
-                        $("#state").append('<option value="'+key+'">'+value+'</option>');
-                        });
-                        }
-                    }
-                });
-            }
-        });
 
-       
-</script>
 
 @endsection

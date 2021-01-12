@@ -13,7 +13,7 @@
     <section id="dashboard-ecommerce">
     
         <div class=" row" >
-            <div class="col-md-5 offset-md-4" style=" margin-top:30px; border: 1px solid black; background-color: rgb(253, 253, 253);  box-shadow: 5px 5px 5px 5px #C0BCBC;">
+            <div class="col-md-4 offset-md-4" style=" margin-top:30px; border: 1px solid black; background-color: rgb(253, 253, 253);  box-shadow: 5px 5px 5px 5px #C0BCBC;">
             <div class="block full" style="padding: 50px;">
             
             <!-- eShop Overview Title -->
@@ -22,7 +22,7 @@
             
             
             
-            <h2><strong>Add New</strong> Page </h2>
+            <h2 class="text-center"><strong>Add New</strong> Page </h2>
             @if(Session::has('success'))
 
             <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
