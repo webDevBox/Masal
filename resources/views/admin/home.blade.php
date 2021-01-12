@@ -1,4 +1,4 @@
-@extends('layout.admin_pager')
+@extends('layout.admin')
 @section('content')
   
 <div class="app-content content ">

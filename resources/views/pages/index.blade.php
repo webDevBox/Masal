@@ -58,7 +58,6 @@
     <div class="list-item">
         @php
             $modern= 'images/'.$home->image;
-
         @endphp
     <a href="#" class="content-block content-img has-background" style="background-image: url(<?php echo $modern; ?>);">
     <img src="{{ asset('images/'.$home->image) }}" alt="Model in yellow Sherri Hill dress">
@@ -214,7 +213,7 @@
         </div>
         </div>
         </div>
-        </section>
+    </section>
     @php
         $image2='images/'.$home->image2;
     @endphp
