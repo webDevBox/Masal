@@ -418,7 +418,7 @@
 
             <form action="{{ route('mapper') }}" method="post">
                 @csrf
-                <div class="col-md-12" style="margin-top: 80px;">
+                <div class="col-md-12">
                     <h1 class="grey2 center every_page_top_on_small"><span class="grey">—</span> Where to Buy <span
                             class="grey">—</span></h1>
                     @if (Session::has('error'))
