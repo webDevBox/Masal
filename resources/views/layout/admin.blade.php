@@ -301,11 +301,15 @@ $note=$chat + $newUser + $unread;
     <span class="menu-title text-truncate" data-i18n="Pages">Contact Request</span></a>
 
 </li>
+</ul>
 
+<ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" style="margin-top:100%;">
 
-
+    <li style="display: none;" id="last_nav"><a class="d-flex align-items-center" target="_blank" id="prev_page" href="#"><i class="fa fa-bandcamp" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Checkout">Preview Page</span></a>
+    </li>
 
 </ul>
+
 </div>
 </div>
 <!-- END: Main Menu-->

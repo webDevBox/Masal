@@ -231,6 +231,12 @@ class CrmController extends Controller
           }
         if(isset($request->submit))
         {
+            $messages = [
+                'dimensions' => 'Banner Dimension Must be 1980 x 660',
+            ];
+            $this->validate($request,[
+                'data'=>'dimensions:min_width=1900,max_width=1980,min_height=300,max_height=350'
+            ],$messages);
             $page=newPages::where('name',$request->name)->first();
             if($page->banner != null)
             {
@@ -1244,9 +1250,9 @@ class CrmController extends Controller
 
      public function custom_page($name)
      {
-        $latestCat=Category::orderBy('created_at', 'desc')->limit(8)->get();
+        $latestCat=Category::orderBy('created_at', 'desc')->limit(4)->get();
 
-        $latestProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
+        $latestProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(4)->get();
 
         $smallProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
 
@@ -1254,14 +1260,6 @@ class CrmController extends Controller
 
         $collection=Category::all();
 
-        $count=menu::where('name',$name)->where(function ($query){
-            $query->where('header_status',1)->orWhere('footer_status',1);})->count();
-        if($count == 0)
-        {
-            return abort(404);
-        }
-
-       
         $foot=footer::where('id',1)->first();
          $page=newPages::where('name',$name)->first();
          return view('pages.page')
