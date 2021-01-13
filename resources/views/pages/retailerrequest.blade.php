@@ -58,12 +58,12 @@
                     @endif
                 </select>
             @if ($errors->has('country')) <p style="color:red;">{{ $errors->first('country') }}</p> @endif 
-            
             </div>
-            
-            <div class="form-group col-md-12 col-sm-12">
+
+           
+            <div class="col-md-12 col-sm-12">
             <label for="">State <span style="color: red;">*</span></label>
-                <select class="custom-form-control" name="state" id="state_top" >
+                <select name="state" class="state_top" id="state_top" >
                     <option selected disabled>Select State</option>
                 </select>
             @if ($errors->has('state')) <p style="color:red;">{{ $errors->first('state') }}</p> @endif 

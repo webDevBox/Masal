@@ -20,32 +20,32 @@
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="text-align: center">
             <h3>Style: {{$detail->styleNumber}} </h3>
             <div class="row" style="margin-top: 10px;">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <img id="image_1" alt="" style="height:250px; width:auto; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image1) }}">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <img id="image_1" alt="" style="height:250px; width:150px; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image1) }}">
                 </div>
                 @if($detail->image2 != null)
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <img id="image_2" alt="" style="height:250px; width:auto; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image2) }}">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <img id="image_2" alt="" style="height:250px; width:150px; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image2) }}">
                 </div>
                 @endif
                 @if($detail->image3 != null)
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 ">
-                    <img id="image_3" alt="" style="height:250px; width:auto; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image3) }}">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+                    <img id="image_3" alt="" style="height:250px; width:150px; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image3) }}">
                 </div>
                 @endif
                 @if($detail->image4 != null)
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 ">
-                    <img id="image_4" alt="" style="height:250px; width:auto; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image4) }}">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+                    <img id="image_4" alt="" style="height:250px; width:150px; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image4) }}">
                 </div>
                 @endif
                 @if($detail->image5 != null)
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 ">
-                    <img id="image_5" alt="" style="height:250px; width:auto; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image5) }}">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+                    <img id="image_5" alt="" style="height:250px; width:150px; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image5) }}">
                 </div>
                 @endif
                 @if($detail->image6 != null)
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 ">
-                    <img id="image_6" alt="" style="height:250px; width:auto; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image6) }}">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+                    <img id="image_6" alt="" style="height:250px; width:150px; margin-top:10px; cursor:pointer;"  src="{{ asset('images/'.$detail->image6) }}">
                 </div>
                 @endif
             </div>

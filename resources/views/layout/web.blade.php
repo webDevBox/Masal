@@ -718,7 +718,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
 
 <script>
-    $(document).ready(function() {
         $("#country_top").change(function() {
             if($(this).val() != '') {
                 $.ajax({
@@ -726,14 +725,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     type: "GET",
                     data: { country : $(this).val()},
                     success: function (data) {
-                      $('#state_top').html('<option value="">Select pp</option>'); 
+                        $('#state_top')
+                        .find('option')
+                        .remove()
+                        .end();
+                        $('#city')
+                        .find('option')
+                        .remove()
+                        .end();
+                        if (data['success'] !== undefined) {
+                            $('#state_top')
+                                .append($("<option></option>")
+                                .attr("value", "")
+                                .text('Select State'));
+                                $('#city')
+                                .append($("<option></option>")
+                                .attr("value", "")
+                                .text('Select City'));
+                            for(let i = 0; i < data['success'].states.length; i++) {
+                                $('#state_top')
+                                .append($("<option></option>")
+                                .attr("value",data['success'].states[i].id)
+                                .text(data['success'].states[i].name));
+                            }
+                        }
                     }
                 });
             }
         });
-    });
 </script>
-
 
 
 <script>
