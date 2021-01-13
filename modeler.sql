@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2021 at 01:36 PM
+-- Generation Time: Jan 13, 2021 at 06:54 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -48626,7 +48626,7 @@ INSERT INTO `menus` (`id`, `name`, `header_status`, `footer_status`, `status`, `
 (5, 'Masal Wedding', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-02 09:41:55'),
 (6, 'Become a Retailer', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-02 06:12:57'),
 (7, 'Contact', 1, 1, 0, '2020-10-02 09:41:55', '2021-01-01 01:45:23'),
-(65, 'Groom', 2, 2, 1, '2021-01-12 03:42:32', '2021-01-12 04:08:43');
+(65, 'Groom', 2, 2, 1, '2021-01-12 03:42:32', '2021-01-13 00:53:10');
 
 -- --------------------------------------------------------
 
@@ -48768,7 +48768,7 @@ CREATE TABLE `new_pages` (
 --
 
 INSERT INTO `new_pages` (`id`, `name`, `keyword`, `title`, `banner`, `h1`, `h2`, `p1`, `h3`, `h4`, `p2`, `latest`, `image1`, `image2`, `created_at`, `updated_at`) VALUES
-(8, 'Groom', 'bridal,blow,flow', 'vvv', 'banner/S74luYf7etEn8zecdUTx6qinZ2n1LFyW9LPxgsjD.jpeg', 'Dealing', 'Modern Frego', 'For over a decade Sophia Apostolides has been recognised as one of the bridal industry’s most talented designers, inspired by real women to create unforgettable designs that highlight your natural beauty and unique bridal style. A fusion of modern romance and timeless elegance, the Masal collection is a celebration of diversity, femininity and individuality.', 'Second Cup', 'Meet Loop', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt rerum suscipit optio. Quisquam consequuntur eveniet perspiciatis modi aut rem repellat doloribus quidem optio aspernatur! At, necessitatibus. Omnis nisi quis error.', 'cat', 'custom/YIG0xQ763qa4iNxdSx1mRBEI5rKpALJItMmX5PJM.jpeg', 'custom/yA96XYWAzRgtv65HXdHBYJISC1GhyShJ2i2yexKR.jpeg', '2021-01-12 03:42:32', '2021-01-12 07:36:37');
+(8, 'Groom', 'bridal,blow,flow', 'vvv', 'banner/kkco8gs8wchKLima5Ta2usy3qK0kemsQWPF9pwDB.jpeg', 'Dealing', 'Modern Frego', 'For over a decade Sophia Apostolides has been recognised as one of the bridal industry’s most talented designers, inspired by real women to create unforgettable designs that highlight your natural beauty and unique bridal style. A fusion of modern romance and timeless elegance, the Masal collection is a celebration of diversity, femininity and individuality.', 'Second Cup', 'Meet Loop', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt rerum suscipit optio. Quisquam consequuntur eveniet perspiciatis modi aut rem repellat doloribus quidem optio aspernatur! At, necessitatibus. Omnis nisi quis error.', 'prod', 'custom/HvyAQcHZRLb0fHH9fsyhT0D4rfPdthR5IaL3n0G7.jpeg', 'custom/yA96XYWAzRgtv65HXdHBYJISC1GhyShJ2i2yexKR.jpeg', '2021-01-12 03:42:32', '2021-01-13 00:52:19');
 
 -- --------------------------------------------------------
 
@@ -53142,7 +53142,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `credit`, `logo`, `log`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 1, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-12 05:43:34'),
+(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 0, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-13 00:53:18'),
 (65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$r2GnAAvhiDfIpB3qgUq2YuRM7TRBNIHWg8DafAiGhrC15MB49DeHC', 50, 'logo/Jo4dbjBBBOrIpGyV3vpYDCjRnQUmlqPTXluwlCqX.png', 0, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-12 05:43:18'),
 (70, 'Ahmad', 'sarfrazkhubaib278@gmail.com', '$2y$10$/vs3whztUfXRosb0CP0he.HRdlMAHzHDg7VFIBPawtBvD5WRUhpz6', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 0, 0, '54454', 'house', 'Pakistan', 'Punjab', 'lahore', '54000', '845', 'www.leads.com', 'facebook.com', 'onstagram.com', '-79.324595', '43.6715159', 2, 1, 0, NULL, '2020-11-26 06:12:16', '2021-01-06 05:54:09'),
 (72, 'Aown', 'khubaib@digitalinnovation.pk', '$2y$10$0mcj7KIHxpT4nyU2OPEUfuuxkL5YdOlgIq8QUvQZREfDcTSekX7/S', 0, NULL, 0, 0, '54146', 'abc road', 'Pakistan', 'Punjab', 'lahore', '53720', '59553485', 'https://masal.com', 'https://dsfjk.com', 'gfhjgf', '74.3640581', '31.4842744', 2, 1, 0, NULL, '2020-12-31 02:22:37', '2021-01-01 01:12:14');
@@ -53434,7 +53434,17 @@ INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
 (267, 1, '2021-01-12 04:09:19', '2021-01-12 04:09:19'),
 (268, 1, '2021-01-12 04:14:18', '2021-01-12 04:14:18'),
 (269, 1, '2021-01-12 05:43:19', '2021-01-12 05:43:19'),
-(270, 1, '2021-01-12 06:04:50', '2021-01-12 06:04:50');
+(270, 1, '2021-01-12 06:04:50', '2021-01-12 06:04:50'),
+(271, 1, '2021-01-12 22:40:01', '2021-01-12 22:40:01'),
+(272, 1, '2021-01-12 23:17:16', '2021-01-12 23:17:16'),
+(273, 1, '2021-01-12 23:28:01', '2021-01-12 23:28:01'),
+(274, 1, '2021-01-12 23:28:10', '2021-01-12 23:28:10'),
+(275, 1, '2021-01-12 23:29:48', '2021-01-12 23:29:48'),
+(276, 1, '2021-01-13 00:12:15', '2021-01-13 00:12:15'),
+(277, 1, '2021-01-13 00:21:49', '2021-01-13 00:21:49'),
+(278, 1, '2021-01-13 00:52:49', '2021-01-13 00:52:49'),
+(279, 1, '2021-01-13 00:53:40', '2021-01-13 00:53:40'),
+(280, 1, '2021-01-13 00:54:04', '2021-01-13 00:54:04');
 
 -- --------------------------------------------------------
 
@@ -53857,7 +53867,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=271;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=281;
 
 --
 -- AUTO_INCREMENT for table `weddings`
