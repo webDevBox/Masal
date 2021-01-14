@@ -822,7 +822,7 @@
                         country: $(this).val()
                     },
                     success: function(data) {
-                        $('#state_top')
+                        $('.state_top')
                             .find('option')
                             .remove()
                             .end();
@@ -831,7 +831,7 @@
                             .remove()
                             .end();
                         if (data['success'] !== undefined) {
-                            $('#state_top')
+                            $('.state_top')
                                 .append($("<option></option>")
                                     .attr("value", "")
                                     .text('Select State'));
@@ -840,7 +840,7 @@
                                     .attr("value", "")
                                     .text('Select City'));
                             for (let i = 0; i < data['success'].states.length; i++) {
-                                $('#state_top')
+                                $('.state_top')
                                     .append($("<option></option>")
                                         .attr("value", data['success'].states[i].id)
                                         .text(data['success'].states[i].name));
@@ -1091,7 +1091,7 @@
     <!--end preloader-->
 
     <!--start gogole analytics-->
-    <script>
+    {{-- <script>
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function() {
@@ -1107,7 +1107,7 @@
         ga('create', 'UA-49425562-9', 'auto');
         ga('send', 'pageview');
 
-    </script>
+    </script> --}}
 
 
 

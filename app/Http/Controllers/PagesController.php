@@ -58,8 +58,8 @@ class PagesController extends Controller
     public function index()
     {
         $country=buyer_country::all();
-        $user=User::all();
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $user=User::where('userRole',2)->where('status',1)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
         $menu=menu::where('header_status',1)->where('status',1)->get();

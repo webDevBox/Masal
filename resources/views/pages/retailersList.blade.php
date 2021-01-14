@@ -1,53 +1,109 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html class="" lang="en-US">
 
-<!-- Mirrored from www.nicdarkthemes.com/themes/fashion-atelier/html/demo/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 May 2020 21:17:24 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
 <head>
- 
-    <meta charset="utf-8">  
-    
-    <title>Masal</title> <!--insert your title here-->  
-    <meta name="description" content="nicdark Framework"> <!--insert your description here-->  
-    <meta name="author" content="nicdark"> <!--insert your name here-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--meta responsive-->
-    
-    <!--START CSS--> 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      
     <link rel="stylesheet" href="css/nicdark_style.css"> <!--style-->
     <link rel="stylesheet" href="css/nicdark_responsive.css"> <!--nicdark_responsive-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!--revslider-->
     <link rel="stylesheet" href="css/revslider/settings.css"> <!--revslider-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="shortcut icon" href="{{asset('img/favicon/favicon.ico')}}">
-    <!--END CSS-->
     
-    <!--google fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'> <!-- font-family: 'Raleway', sans-serif; -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'> <!--Roboto-->
-    <link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative:400,900,700' rel='stylesheet' type='text/css'> <!--Cinzel-->
-    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'> <!--Great Vibes-->
+    <base>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=1" />
+    <meta name="format-detection" content="telephone=yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('Content/img/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('Content/img/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('Content/img/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('Content/img/favicon/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('Content/img/favicon/safari-pinned-tab.svg') }}" color="#760751">
+    <link rel="shortcut icon" href="{{ asset('Content/img/favicon/favicon.ico') }}">
+    <meta name="msapplication-TileColor" content="#760751">
+    <meta name="msapplication-config" content="{{ asset('Content/img/favicon/browserconfig.xml') }}">
+    <meta name="theme-color" content="#760751">
+    <link rel="stylesheet" href="{{ asset('linked/content/cfq6ota.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
 
-    <!--[if lt IE 9]>  
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
-    <![endif]-->  
-    
-    <!--FAVICONS-->
-    <link rel="shortcut icon" href="img/favicon/favicon.ico">
-    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
-    
-    <!--END FAVICONS-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  
-   <style>
-       a{
+
+    <title>Masal</title>
+    <meta name="description"
+        content="Masal  is a designer of award-winning wedding dresses. With emphasis on luxurious fabrics, fabulous fit and exquisite embellishments, browse our collection of wedding gowns and accessories." />
+    <meta name="keywords"
+        content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Bridal Gowns, Lace Wedding Dresses, Plus Size Wedding Dresses, Masal, Wedding Gowns" />
+    <link rel="shortcut icon" type="image/gif" href="{{ asset('Content/img/favicon.html') }}" />
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-59538BB');
+
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Ads: 709554340 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-709554340"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'AW-709554340');
+
+    </script>
+
+    <link rel="stylesheet" href="css/nicdark_style.css">
+    <!--style-->
+    <link rel="stylesheet" href="css/nicdark_responsive.css">
+    <!--nicdark_responsive-->
+
+    <meta name="p:domain_verify" content="1ea8057ec0fccb8e17cf1ce9f003cdaa" />
+
+    <meta name="google-site-verification" content="M5NKTAMj-Uk9me34TsFHnHFvxdK23b_XrkAj2EETbS4" />
+
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('linked/content/theme.min4070.css') }}" />
+
+
+    <style>
+        @media(max-width:767px) {
+            .common-navbar a.menu_item_smaller_font {
+                font-size: 3.5vw !important;
+            }
+        }
+
+
+        /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+   a{
             text-decoration: none;
         }
         a:hover
@@ -89,341 +145,157 @@
  margin-left: 25%;
   }
 }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+
+
+        #map1 {
+            height: 500px;
+            ;
+        }
+
+        @media only screen and (max-width: 990px) {
+            .every_page_top_on_small {
+                margin-top: 50px;
+            }
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .logo_responsive_time {
+                width: 70px;
+                height: 40px;
+                margin-left: 40%;
+                margin-bottom: 20px;
+            }
+        }
+
+
+        @media only screen and (max-width: 1000px) {
+            .logo_responsive_time {
+                width: 70px;
+                height: 40px;
+                margin-left: 25%;
+            }
+        }
+
     </style>
-</head>  
-<body id="start_nicdark_framework">
-
-<!--start preloader-->
-<div class="nicdark_preloader">
-    <img src="{{ asset('img/logo.png') }}" style="margin-top: 20%" height="150" width="300" alt="">
-</div>
-<!--end preloader-->    
-
-<div class="nicdark_site">
-    <div class="nicdark_site_fullwidth nicdark_clearfix"><div class="nicdark_overlay"></div>
 
 
+</head>
 
-<!--START LEFT SIDEBAR OPEN-->
-<div class="nicdark_left_sidebar nicdark_bg_greydark nicdark_nicescrool nicdark_dark_widgets">
-
-    <a class="nicdark_left_sidebar_btn_close nicdark_btn_icon small white nicdark_absolute_right10">
-        <i class="icon-cancel"></i>
-    </a>
-
-    <!--start-->
-    <div class="nicdark_margin020">
-        <div class="nicdark_space20"></div>
-        <h4 class="white">AMAZING COMPONENTS</h4>
-        <div class="nicdark_space20"></div>
-        <div class="nicdark_divider left small"><span class="nicdark_bg_white"></span></div>
+<body class="page-moncheri page-home " id="start1">
+    <!--[if lt IE 11]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="hidden-vars" data-vars>
+        <div class="breakpoint-lg" data-var-name="breakpoint" data-var-type="lg" data-var-value="width"></div>
+        <div class="breakpoint-md" data-var-name="breakpoint" data-var-type="md" data-var-value="width"></div>
+        <div class="breakpoint-sm" data-var-name="breakpoint" data-var-type="sm" data-var-value="width"></div>
     </div>
-    
-    <div class="nicdark_textevidence">
-        <div class="nicdark_margin20">
-            <ul class="nicdark_list">
-                <li>
-                    <a href="components.php" class="nicdark_btn nicdark_margin150 white nicdark_margintop0"><i class="icon-html5"></i>&nbsp;&nbsp;&nbsp;Basic Components</a>
-                    <a href="components.php" class="white nicdark_btn nicdark_bg_greendark  nicdark_demo_components nicdark_margintop0">NEW</a>
-                </li>
-                <li>
-                    <a href="components-archives.php" class="nicdark_btn nicdark_margin150 white"><i class="icon-th-large"></i>&nbsp;&nbsp;&nbsp;Different Archives</a>
-                    <a href="components-archives.php" class="white nicdark_btn nicdark_bg_greendark  nicdark_demo_components">NEW</a>
-                </li>
-                <li>
-                    <a href="components-widgets.php" class="nicdark_btn nicdark_margin150 white"><i class="icon-columns"></i>&nbsp;&nbsp;&nbsp;Multiplies Widgets</a>
-                    <a href="components-widgets.php" class="white nicdark_btn nicdark_bg_greendark  nicdark_demo_components">NEW</a>
-                </li>
-                <li>
-                    <a href="components-focus.php" class="nicdark_btn nicdark_margin150 white"><i class="icon-paragraph"></i>&nbsp;&nbsp;&nbsp;Focus Solutions</a>
-                    <a href="components-focus.php" class="white nicdark_btn nicdark_bg_reddark nicdark_demo_components">HOT</a>
-                </li>
-                <li>
-                    <a href="#" class="nicdark_btn nicdark_margin150 white"><i class="icon-mail-2"></i>&nbsp;&nbsp;&nbsp;Form Possibilities</a>
-                    <a href="#" class="white nicdark_btn nicdark_bg_reddark nicdark_demo_components">HOT</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!--end-->
+    <div class="primary-block iblock-fix" data-property="fixed-header">
 
-    <!--start-->
-    <div class="nicdark_margin020">
-        <div class="nicdark_space20"></div>
-        <h4 class="white">SOME FEATURES</h4>
-        <div class="nicdark_space20"></div>
-        <div class="nicdark_divider left small"><span class="nicdark_bg_white"></span></div>
-    </div>
-    
-    <div class="nicdark_textevidence">
-        <div class="nicdark_margin20">
-            <ul class="nicdark_list">
-                <li style="padding: 0px 0px 20px 0px;">
-                    <img alt="" style="width:60px;float: left;margin-right: 20px;" src="img/demo/boxed_wide.jpg">
-                    <p class="white"><strong>BOXED/WIDE VERSION</strong><br>One class for switch your site from wide to boxed</p>
-                </li>
-                <li style="padding: 0px 0px 20px 0px;">
-                    <img alt="" style="width:60px;float: left;margin-right: 20px;" src="img/demo/mega_menu.jpg">
-                    <p class="white"><strong>MEGA MENU</strong><br>Create your mega menu easly in very simple way</p>
-                </li>
-                <li style="padding: 0px 0px 20px 0px;">
-                    <img alt="" style="width:60px;float: left;margin-right: 20px;" src="img/demo/rev_slider.jpg">
-                    <p class="white"><strong>REVOLUTION SLIDER</strong><br>Create your amazin slides, Save 14 $</p>
-                </li>
-                <li style="padding: 0px 0px 20px 0px;">
-                    <img alt="" style="width:60px;float: left;margin-right: 20px;" src="img/demo/custom_pages.jpg">
-                    <p class="white"><strong>CUSTOM PAGES</strong><br>A lot of pages thought for your shop !</p>
-                </li>
-                <li style="padding: 0px 0px 20px 0px;">
-                    <img alt="" style="width:60px;float: left;margin-right: 20px;" src="img/demo/framework.jpg">
-                    <p class="white"><strong>NICDARK FRAMEWORK</strong><br>Speed, Clear, Optimized code and easy to use</p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!--endd-->
-
-
-</div>
-<!--END RIGHT SIDEBAR OPEN-->
-
-
-<!--START SIDEBAR-->
-<div class="nicdark_right_sidebar nicdark_bg_greydark nicdark_nicescrool">
-
-    <a class="nicdark_right_sidebar_btn_close nicdark_btn_icon small white nicdark_absolute_right10"><i class="icon-cancel"></i></a>
-    
-    <!--start CART-->
-    <div class="nicdark_margin020">
-        <div class="nicdark_space20"></div>
-        <h4 class="white">YOUR CART</h4>
-        <div class="nicdark_space20"></div>
-        <div class="nicdark_divider left small"><span class="nicdark_bg_white"></span></div>
-    </div>
-    <div class="nicdark_textevidence">
-        <div class="nicdark_margin20">
-            <ul class="nicdark_list nicdark_relative">
-                <li>
-                    <a href="#"><img alt=""  class="nicdark_absolute nicdark_opacity nicdark_width60" src="img/shop/products/img1.jpg"></a>
-                    <div class="nicdark_activity nicdark_marginleft80">
-                        <h5 class="grey subtitle">AURORA DRESS</h5>                        
-                        <div class="nicdark_space10"></div>
-                       
-                    </div>
-                    <div class="nicdark_space50"></div>
-                </li>
-                <li>
-                    <a href="#"><img alt=""  class="nicdark_absolute nicdark_opacity nicdark_width60" src="img/shop/products/img2.jpg"></a>
-                    <div class="nicdark_activity nicdark_marginleft80">
-                        <h5 class="grey subtitle">GAYA DRESS</h5>                        
-                        <div class="nicdark_space10"></div>
-                    </div>
-                    <div class="nicdark_space30"></div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="nicdark_margin020">
-        
-        <div class="nicdark_space20"></div>
-        <div class="nicdark_focus">
-            <a href="shop-cart.php" class="nicdark_btn nicdark_bg_greendark title small white">VIEW CART</a>
-        </div>
-    </div>
-    <!--end CART-->
-
-    <!--start FILTER-->
-    <div class="nicdark_margin020">
-        <div class="nicdark_space60"></div>
-        <h4 class="white">FILTER PRICE</h4>
-        <div class="nicdark_space20"></div>
-        <div class="nicdark_divider left small"><span class="nicdark_bg_white"></span></div>
-    </div>
-    <div class="nicdark_margin020 nicdark_block">
-        <div class="nicdark_space20"></div>
-        <div class="nicdark_radius nicdark_bg_greydark2 nicdark_slider_range"></div>
-        <div class="nicdark_space20"></div>
-    </div>
-    <div class="nicdark_margin020">
-        <input class="nicdark_bg_greydark white subtitle small nicdark_padding0 nicdark_slider_amount" type="text">
-        <div class="nicdark_space20"></div>
-        <a href="shop.php" class="nicdark_btn nicdark_bg_yellowdark title small white">FILTER</a>
-    </div>
-    <!--END FILTER-->
-
-    <!--start PRODUCTS-->
-    <div class="nicdark_margin020">
-        <div class="nicdark_space60"></div>
-        <h4 class="white">BEST REVIEWED</h4>
-        <div class="nicdark_space20"></div>
-        <div class="nicdark_divider left small"><span class="nicdark_bg_white"></span></div>
-    </div>
-    <div class="nicdark_textevidence">
-        <div class="nicdark_margin20">
-            <ul class="nicdark_list nicdark_relative">
-                <li>
-                    <a href="#"><img alt=""  class="nicdark_absolute nicdark_opacity nicdark_width60" src="img/shop/products/img1.jpg"></a>
-                    <div class="nicdark_activity nicdark_marginleft80">
-                        <h5 class="grey subtitle">AURORA DRESS</h5>                        
-                        <div class="nicdark_space10"></div>
-                        <p><i class="icon-star yellow"></i><i class="icon-star yellow"></i><i class="icon-star yellow"></i><i class="icon-star yellow"></i><i class="icon-star-half-alt yellow"></i></p>
-                    </div>
-                    <div class="nicdark_space50"></div>
-                </li>
-                <li>
-                    <a href="#"><img alt=""  class="nicdark_absolute nicdark_opacity nicdark_width60" src="img/shop/products/img2.jpg"></a>
-                    <div class="nicdark_activity nicdark_marginleft80">
-                        <h5 class="grey subtitle">GAYA DRESS</h5>                        
-                        <div class="nicdark_space10"></div>
-                        <p><i class="icon-star yellow"></i><i class="icon-star yellow"></i><i class="icon-star yellow"></i><i class="icon-star yellow"></i><i class="icon-star-half-alt yellow"></i></p>
-                    </div>
-                    <div class="nicdark_space50"></div>
-                </li>
-                <li>
-                    <a href="#"><img alt=""  class="nicdark_absolute nicdark_opacity nicdark_width60" src="img/shop/products/img3.jpg"></a>
-                    <div class="nicdark_activity nicdark_marginleft80">
-                        <h5 class="grey subtitle">ANEMONE DRESS</h5>                        
-                        <div class="nicdark_space10"></div>
-                        <p><i class="icon-star yellow"></i><i class="icon-star yellow"></i><i class="icon-star yellow"></i><i class="icon-star yellow"></i><i class="icon-star-half-alt yellow"></i></p>
-                    </div>
-                    <div class="nicdark_space10"></div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!--end PRODUCTS-->
-
-    <!--start SEARCH-->
-    <div class="nicdark_margin020">
-        <div class="nicdark_space50"></div>
-        <h4 class="white">SEARCH YOUR DRESS</h4>
-        <div class="nicdark_space20"></div>
-        <div class="nicdark_divider left small"><span class="nicdark_bg_white"></span></div>
-    </div>
-    <div class="nicdark_margin20">
-        <input class="nicdark_bg_transparent nicdark_border_white white small subtitle" type="text" value="" placeholder="KEYWORD">
-        <div class="nicdark_space20"></div>
-        <a href="shop.php" class="nicdark_btn nicdark_bg_bluedark small title white">SEARCH</a>
-    </div>
-    <!--end SEARCH-->
-
-    <!--start TAGS-->
-    <div class="nicdark_margin020">
-        <div class="nicdark_space40"></div>
-        <h4 class="white">PRODUCTS TAGS</h4>
-        <div class="nicdark_space20"></div>
-        <div class="nicdark_divider left small"><span class="nicdark_bg_white"></span></div>
-    </div>
-    <div class="nicdark_margin10">
-        <a href="#" class="nicdark_btn small white nicdark_margin10 nicdark_border_white">Bride</a>
-        <a href="#" class="nicdark_btn small white nicdark_margin10 nicdark_border_white">Groom</a>
-        <a href="#" class="nicdark_btn small white nicdark_margin10 nicdark_border_white">Dress</a>
-    
-        <a href="#" class="nicdark_btn small white nicdark_margin10 nicdark_border_white">Suit</a>
-        
-        <a href="#" class="nicdark_btn small white nicdark_margin10 nicdark_border_white">Wedding</a>
-        
-    </div>
-    <!--end TAGS-->
-
-</div>
-<!--END SIDEBAR--><div class="nicdark_section nicdark_navigation">
-    
-    <div class="nicdark_menu_fullwidth">
-
-        <div class="nicdark_section nicdark_bg_gradient nicdark_displaynone_responsive">
-            <div class="nicdark_container nicdark_clearfix">
-                
-                <div class="grid grid_6 nicdark_bg_greydark percentage">
-                    <div class="nicdark_focus">
-                        <div class="nicdark_space5"></div>
-                        <p class="white"><small>
-                            <i class="icon-mail-alt green"></i>&nbsp;&nbsp;<a class="white" href="#">info@masal.com.au</a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="greydark">|</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <i class="icon-location-1 green"></i>&nbsp;&nbsp;<a class="white" href="#">Wholesale Across The Globe</a></small>
-                        </p>
-                        <div class="nicdark_space5"></div>
-                    </div>
-                </div>
-                <div class="grid grid_6 right nicdark_bg_greydark percentage">
-                    
-                    
-                    <div class="nicdark_activity right nicdark_bg_green">
-                        <div class="nicdark_space5"></div>
-                        <p class="greydark"><small>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="greendark">|</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <i class="icon-plus"></i>&nbsp;&nbsp; 
-                            <a class="" href="/retailerrequest"
-              ><span class="greydark nicdark_outline"> REGISTER </span></a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="greendark">|</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <i class="icon-lock"></i>&nbsp;&nbsp;
-                            <a class="" href="#" data-toggle="modal" data-target="#exampleModal1"
-                            ><span class="greydark nicdark_outline"> Retailer Login </span></a>                            </p>
-                        <div class="nicdark_space5"></div>
-                    </div>
-                    
-                    <div class="nicdark_activity right nicdark_bg_greendark nicdark_oblique_right">
-                        <div class="nicdark_space5"></div>
-                        <p class="greydark">
-                            <small><i class="icon-angle-right greendark"></i></small>
-                        </p>
-                        <div class="nicdark_space5"></div>
-                    </div>
-                    
-                
-            </div>
-                <!--info window for languages-->
-                <div id="nicdark_window" class="nicdark_bg_greydark zoom-anim-dialog mfp-hide">
-                    
-                    <div class="nicdark_textevidence nicdark_bg_violetdark ">
-                        <div class="nicdark_margin20">
-                            <h4 class="white">LANGUAGES</h4>
+        <div class="preheader preheader-main" id="preheader">
+            <div class="container">
+                <div class="row">
+                    <div class="preheader-blocks header-spacing">
+                        <div class="preheader-block preheader-left preheader-style">
+                            <ul>
+                                <li>
+                                    <a href="{{ route('wherebuy') }}" rel="nofollow" data-property="find-store"
+                                        aria-label="Find a store">
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        <span>Find a store</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
+                        <div class="preheader-block preheader-right preheader-style">
+                            <ul>
+                                <li>
+                                    <a class="showsearch" href="{{ route('retailerrequest') }}" aria-haspopup="true"
+                                        aria-expanded="false" aria-label="Toggle search">
+                                        <i class='fas fa-user-plus' style='font-size:24px' aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="preheader-wishlist hidden-sm hidden-xs">
+                                    <a data-property="wishlistheader" href="{{ route('login_form') }}"
+                                        aria-haspopup="true" aria-expanded="false" aria-label="Log-in">
+                                        <i class="fa fa-sign-in" style="font-size:24px" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <div class="nicdark_padding20 nicdark_display_inlineblock nicdark_width_percentage100 nicdark_sizing">
-                        
-                        <ul class="nicdark_list border">
-                        
-                            <li class="nicdark_border_greydark">
-                                <p><a class="white" href="index.php">ENGLISH</a><a href="index.php" class="nicdark_btn right nicdark_opacity"><i class="white icon-angle-right"></i></a></p>
-                                <div class="nicdark_space15"></div>
-                            </li>
-
-                            <li class="nicdark_border_greydark">
-                                <div class="nicdark_space15"></div>
-                                <p><a class="white" href="index.php">RUSSIAN</a><a href="index.php" class="nicdark_btn right nicdark_opacity"><i class="white icon-angle-right"></i></a></p>   
-                                <div class="nicdark_space15"></div>
-                            </li>
-                                
-                            <li class="nicdark_border_greydark">
-                                <div class="nicdark_space15"></div>
-                                <p><a class="white" href="index.php">ARABIC</a><a href="index.php" class="nicdark_btn right nicdark_opacity"><i class="white icon-angle-right"></i></a></p>   
-                                <div class="nicdark_space15"></div>
-                            </li>
-
-                            <li class="nicdark_border_greydark">
-                                <div class="nicdark_space15"></div>
-                                <p><a class="white" href="index.php">ITALIAN</a><a href="index.php" class="nicdark_btn right nicdark_opacity"><i class="white icon-angle-right"></i></a></p>    
-                            </li>
-                                
-                        </ul>
 
                     </div>
                 </div>
-                <!--end window-->
- </div>
-        </div>                    
-        <div class="nicdark_section nicdark_bg_grey fade-down">
-            <div class="nicdark_container nicdark_clearfix">
+            </div>
+        </div>
+        <header class="header iblock-fix" id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="header-blocks clearfix header-spacing">
+                        <a href="/" class="brand-logo">
+                            <img src="{{ asset('images/' . $foot->logo) }}" alt="Masal" style="max-height: 85px;">
+                        </a>
+                        <div class="header-block header-left preheader-style hidden-gt-sm">
+                            <ul>
+                                <li class="hidden-gt-sm">
+                                    <span class="navbar-toggle button collapsed" data-toggle="collapse"
+                                        data-target="#main-navbar" role="button" aria-expanded="false"
+                                        aria-controls="main-navbar" aria-label="Toggle navigation">
+                                        <i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>
+                                    </span>
+                                </li>
 
-                <div class="grid grid_12 percentage">
-                    <div  class="nicdark_logo logo_responsive_time" >
-                        <a class="nicdark_logo_normal" href="/"><img alt="" style="margin-top: 10px" height="70" class="" src="{{ asset('images/'.$foot->logo) }}"></a>
-                    </div>
-                        <div class="nicdark_space25"></div>
+                                <li class="visible-mobile-sticky">
+                                    <a href="{{ route('wherebuy') }}" rel="nofollow" aria-label="Find a store">
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        <span class="hidden-mobile-sticky">Find a store</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-block header-right preheader-style hidden-gt-sm">
+                            <ul>
+                                <li class="visible-mobile-sticky">
+                                    <a class="show-search" href="{{ route('retailerrequest') }}" aria-haspopup="true"
+                                        aria-expanded="false" aria-label="Toggle search">
+                                        <i class='fas fa-user-plus' style='font-size:24px' aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="preheader-wishlist">
+                                    <a data-property="wishlist-header" href="linked/login.html" aria-haspopup="true"
+                                        aria-expanded="false" aria-label="Check Wishlist">
+                                        <i class="fa fa-sign-in" style="font-size:24px" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="main-navbar" class="navbar-collapse collapse main-navbar" data-noanimation="true">
 
-                        @php
+                            @php
                             $home=\App\menu::where('name','Home')->first();
                             $brand=\App\menu::where('name','The Brand')->first();
                             $coll=\App\menu::where('name','Collection')->first();
@@ -441,389 +313,193 @@
                             $register1=\App\menu::where('name','Become a Retailer')->first();
                             $contact1=\App\menu::where('name','Contact')->first();
 
-                        @endphp
-                        
-                        <nav>
+                            $menu=\App\menu::where('header_status',1)->where('status',1)->get();
+                            @endphp
 
-                            <ul class="nicdark_menu nicdark_margin010 nicdark_padding50">
 
-                                @if($home->header_status == 1)
+                            <div class="common-navbar">
+                                <span class="close-navbar" data-toggle="collapse" data-target="#main-navbar"
+                                    aria-haspopup="false" aria-expanded="false" aria-hidden="true">
+                                </span>
+                                <ul>
+                                    @if ($home->header_status == 1)
+                                        <li>
+                                            <a href="/" data-property="trunk-shows">
+                                                <span>Home
+                                                </span>
+                                                <i class="sign">
+                                                </i>
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if ($coll->header_status == 1)
+                                        <li>
+                                            <input type="checkbox" data-trigger="menu-opener">
+                                            <a href="#">
+                                                <span>Collections
+                                                </span>
+                                                <i class="sign">
+                                                </i>
+                                            </a>
+                                            <ul class="common-sub-menu">
+                                                <li data-menu-item="empty">
+                                                    <input type="checkbox">
+                                                    <ul>
+                                                        @foreach ($collection as $nav)
 
-                                <li class="greydark">
+                                                            <li>
+                                                                <a href="{{ route('nav_collection', ['id' => $nav->id]) }}"
+                                                                    class="menu_item_smaller_font">
+                                                                    <span>
+                                                                        {{ $nav->name }}
+                                                                    </span>
+                                                                    <i class="sign">
+                                                                    </i>
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
 
-                                    <a href="/">HOME</a>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    @endif
+                                    @if ($where->header_status == 1)
+                                        <li>
+                                            <a href="{{ route('wherebuy') }}" data-property="trunk-shows">
+                                                <span>FIND A Store
+                                                </span>
+                                                <i class="sign">
+                                                </i>
+                                            </a>
+                                        </li>
+                                    @endif
 
-                                    
+                                    @if ($wedding->header_status == 1)
+                                        <li>
+                                            <a href="{{ asset('real') }}">
+                                                <span> MASAL WEDDINGS
+                                                </span>
+                                                <i class="sign">
+                                                </i>
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if ($register->header_status == 1)
+                                        <li>
+                                            <a href="{{ route('retailerrequest') }}" data-property="find-store">
+                                                <span>
+                                                    BECOME A RETAILER
+                                                </span>
+                                                <i class="sign">
+                                                </i>
+                                            </a>
+                                        </li>
+                                    @endif
 
-                                </li>
+                                    @foreach ($menu as $item)
 
-                                @endif
 
-                               
-
-                               @if($coll->header_status == 1)
-
-                                <li class="greydark">
-
-                                    <a href="#">COLLECTIONS</a>
-
-                                    <ul class="sub-menu">
-
-                                        @foreach ($collection as $nav)
-
-                                    <li><a href="{{route('nav_collection', array('id' => $nav->id))}}">{{$nav->name}}</a></li>
+                                        <li>
+                                            <a href="{{ route('custom_page', ['name' => $item->name]) }}"
+                                                data-property="find-store">
+                                                <span>
+                                                    {{ $item->name }}
+                                                </span>
+                                                <i class="sign">
+                                                </i>
+                                            </a>
+                                        </li>
 
                                     @endforeach
 
-                                    </ul>
-
-                                    </li>
-
+                                    @if ($contact->header_status == 1)
+                                        <li>
+                                            <a href="{{ route('contact') }}">
+                                                <span> Contact
+                                                </span>
+                                                <i class="sign">
+                                                </i>
+                                            </a>
+                                        </li>
                                     @endif
+                                </ul>
+                            </div>
 
 
-
-                                    @if($where->header_status == 1)
-
-                                 <li class="greydark nicdark_megamenu nicdark_megamenu_origin">
-
-                                    <a href="/wherebuy">FIND A STORE</a>
-
-                                   
-
-                                </li>
-
-                                @endif
-
-                                @if($wedding->header_status == 1)
-
-                                 <li class="greydark nicdark_megamenu nicdark_megamenu_origin">
-
-                                    <a href="/real">REAL BRIDES</a>
-
-                         
-
-                                </li>
-
-                                @endif
-
-                                @if($register->header_status == 1)
-
-                                 <li class="greydark nicdark_megamenu nicdark_megamenu_origin">
-
-                                    <a href="/retailerrequest">BECOME A RETAILER</a>
-
-                         
-
-                                </li>
-
-                                @endif
-
-								@if($brand->header_status == 1)
-
-                                <li class="greydark nicdark_megamenu nicdark_megamenu_origin">
-
-                                    <a href="#">ABOUT US</a>
-
-                         
-
-                                </li>
-
-                               @endif
-
-                                @foreach ($menu as $item)
-
-                                <li class="greydark nicdark_megamenu nicdark_megamenu_origin">
-
-                                <a href="{{route('custom_page',array('name'=>$item->name))}}">{{$item->name}}</a>
-
-                                </li>
-
-                                @endforeach
-
-
-
-                                @if($contact->header_status == 1)
-
-                                 <li class="greydark nicdark_megamenu nicdark_megamenu_origin">
-
-                                    <a href="/contact">CONTACT</a>
-
-                         
-
-                                </li>
-
-                                @endif
-
-
-
-                                
-
-                        
-
-                            </ul>
-
-                        </nav>
-    
-                        <div class="nicdark_space25"></div>
-
+                        </div>
+                    </div>
                 </div>
-
             </div>
-            <!--end container-->
-
-        </div>
-        <!--end header-->
-
+        </header>
     </div>
 
-</div>
-@if(Session::has('success'))
-<p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
-@endif
-@if(Session::has('error'))
-<p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
-@endif
+    <div class="nicdark_site">
+        <div class="nicdark_site_fullwidth nicdark_clearfix"><div class="nicdark_overlay"></div>
+    
+    
+    
+    @if(Session::has('success'))
+    <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+    @endif
+    @if(Session::has('error'))
+    <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
+    @endif
+    
+    <div class="row" style="margin-bottom: 10px; padding:50px">
 
-<div class="row" style="margin-top: 150px; margin-bottom: 10px; padding:50px">
-<div class="col-6">
-
-            <h1 class="text-center every_page_top_on_small"><span class="grey">—</span>Retailers in Your Area <span class="grey">—</span></h1>
-         
-            @if(count($result) > 0) 
-        @foreach ($result as $item)
-        @php
-          $status=$item->address.','.$item->city.','.$item->state.','.$item->country;
-      @endphp
-      <div class="bg-light border border-dark border-right-0 border-left-0 border-bottom-0">
-      <h5 class="text-dark"> {{$item->name}}</h5>
-      <p class="text-secondary">{{$item->address}}, {{$item->city}}, {{$item->state}}, {{$item->post}}, {{$item->country}}</p>
-      
-        <p style="color:firebrick; font-size:13px;"><i class="fa fa-phone" style="font-size:15px; color:firebrick;"></i> {{$item->phone}} <span class="text-secondary" style="padding-left:10px; padding-right:10px; ">|</span> 
-            <a href="{{ route('location',array('status'=>$status)) }}" target="blank"> GET DIRECTION  </a> <span style="padding-left:10px; padding-right:10px; " class="text-secondary">|</span> <a href="{{$item->website}}"> {{$item->website}} </a>
-            <span style="padding-left:10px; padding-right:10px; " class="text-secondary">|</span> <a href="{{$item->facebook}}"> {{$item->facebook}} </a>
-            <span style="padding-left:10px; padding-right:10px; " class="text-secondary">|</span> <a href="{{$item->instagram}}"> {{$item->instagram}} </a>
-
-        </p>
-      </div>
-        @endforeach
-        @else
-        <div class="bg-light border border-dark border-right-0 border-left-0 border-bottom-0">
-            <h5 class="text-dark text-center"> No Retailer in your Area</h5>
-            </div>
-        @endif
-      
-
-    <!--end nicdark_container-->
-     
-</div>
-   
-    <div class="col-6">
-       
-                    <h1 class="grey2 center every_page_top_on_small"><span class="grey">—</span>Retailers on Map <span class="grey">—</span></h1>
-                   
-                    <div id="map"></div>
-                </div>
-        
-           </div>
+    <div class="col-md-6">
+    
+                <h1 class="text-center every_page_top_on_small"><span class="grey">—</span>Retailers in Your Area <span class="grey">—</span></h1>
+             
+                @if(count($result) > 0) 
+            @foreach ($result as $item)
+            @php
+              $status=$item->address.','.$item->city.','.$item->state.','.$item->country;
+          @endphp
+          <div class="bg-light border border-dark border-right-0 border-left-0 border-bottom-0">
+          <h5 class="text-dark"> {{$item->name}}</h5>
+          <p class="text-secondary">{{$item->address}}, {{$item->city}}, {{$item->state}}, {{$item->post}}, {{$item->country}}</p>
           
-
-
-<!--start section-->
-<section class="nicdark_section nicdark_bg_greydark">
-
-    <!--start nicdark_container-->
-    <div class="nicdark_container nicdark_clearfix">
+            <p style="color:firebrick; font-size:13px;"><i class="fa fa-phone" style="font-size:15px; color:firebrick;"></i> {{$item->phone}} <span class="text-secondary" style="padding-left:10px; padding-right:10px; ">|</span> 
+                <a href="{{ route('location',array('status'=>$status)) }}" target="blank"> GET DIRECTION  </a> <span style="padding-left:10px; padding-right:10px; " class="text-secondary">|</span> <a href="{{$item->website}}"> {{$item->website}} </a>
+                <span style="padding-left:10px; padding-right:10px; " class="text-secondary">|</span> <a href="{{$item->facebook}}"> {{$item->facebook}} </a>
+                <span style="padding-left:10px; padding-right:10px; " class="text-secondary">|</span> <a href="{{$item->instagram}}"> {{$item->instagram}} </a>
     
-    <div class="nicdark_space30"></div>
-    
-    <div class="grid grid_3 nomargin percentage">
-    
-    <div class="nicdark_space_block20"></div>
-    
-    <div class="nicdark_margin10">
-    <h4 class="white">{{$foot->h1}}</h4>
-    <div class="nicdark_space_block20"></div>
-    <div class="nicdark_divider left small"><span class="nicdark_bg_white "></span></div>
-    <div class="nicdark_space_block20"></div>
-    <p class="white">{{$foot->p}}</p>
-    <a class="nicdark_logo_normal" href="/"><img alt="" style="margin-top: 10px" height="70" class="" src="{{ asset('images/'.$foot->logo) }}"></a>
-    </div>
-    </div>
-    
-    <div class="grid grid_3 nomargin percentage">
-    
-    <div class="nicdark_space30"></div>
-    
-    <div class="nicdark_marginleft10">
-    <h4 class="white">{{$foot->h2}}</h4>
-    <div class="nicdark_space_block20"></div>
-    <div class="nicdark_divider left small"><span class="nicdark_bg_white "></span></div>
-    </div>
-    <div class="nicdark_space10"></div>
-    
-    <a href="#" class="nicdark_btn small white nicdark_margin10 nicdark_border_white">{{$foot->t1}}</a>
-    <a href="#" class="nicdark_btn small white nicdark_margin10 nicdark_border_white">{{$foot->t2}}</a>
-    <a href="#" class="nicdark_btn small white nicdark_margin10 nicdark_border_white">{{$foot->t3}}</a>
-    
-    
-    
-    <a href="#" class="nicdark_btn small white nicdark_margin10 nicdark_border_white">{{$foot->t4}}</a>
-    
-    <a href="#" class="nicdark_btn small white nicdark_margin10 nicdark_border_white">{{$foot->t5}}</a>
-    
-    
-    </div>
-    
-    <div class="grid grid_3 nomargin percentage">
-    
-    <div class="nicdark_space_block20"></div>
-    
-    <div class="nicdark_size_normal">
-    <h4 class="white">{{$foot->h3}}</h4>
-    <div class="nicdark_space_block20"></div>
-    <div class="nicdark_divider left small"><span class="nicdark_bg_white "></span></div>
-    </div>
-    
-    @foreach ($gallery as $gall)
-        
-    
-    <div class="grid nomargin grid_3 percentage">
-    <div class="nicdark_margin5">
-    <img alt="" style="width:55px; height:80px; padding:5px;" class=" nicdark_opacity nicdark_focus " src="{{asset('images/'.$gall->image1)}}">
-    </div>
-    </div>
-    @endforeach
-    
-    
-    
-    </div>
-    
-    <div class="grid grid_3 nomargin percentage">
-    
-    <div class="nicdark_space_block20"></div>
-    
-    <div class="nicdark_margin10">
-        <h4 class="white">{{$foot->h4}}</h4>
-        <div class="nicdark_space_block20"></div>
-        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
-        <div class="nicdark_space20"></div>
-        
-        <form action="{{route('feedback')}}" method="post">
-            @csrf
-        <input class="nicdark_border_white nicdark_bg_greydark white small subtitle" type="text" name="email" value="" placeholder="EMAIL" required>
-        <div class="nicdark_space20"></div>
-        <textarea name="message" rows="3" class="nicdark_border_white nicdark_bg_greydark white small subtitle" placeholder="MESSAGE" required></textarea>
-        <div class="nicdark_space20"></div>
-        <!--<input class="nicdark_btn nicdark_bg_green small nicdark_shadow nicdark_radius white nicdark_press" type="submit" value="SEND">-->
-        <input type="submit" name="submit" value="SEND" class="btn" style=" background-color: #AFCEBA;
-        color: white;
-        border: 0px;
-        width: 60px;
-        height: 30px;
-        font-weight: bold;
-        font-size: 15px;
-        font-family: Raleway;">        </form>
-    </div>
-    </div> 
-    
-    
-    </div>
-    <!--end nicdark_container-->
-    
-    </section>
-<!--end section-->
-
-
-<!--start section-->
-<div class="nicdark_section">
-
-    <div class="nicdark_section nicdark_bg_gradient2">
-
-        <!--start nicdark_container-->
-        <div class="nicdark_container nicdark_clearfix">
-
-            
-            <div class="grid grid_6 nicdark_bg_greydark2 percentage">
-                
-                <div class="nicdark_activity nicdark_bg_green">
-                    <div class="nicdark_space5"></div>
-                    <p class="greydark title"><small>
-                        <i class="icon-up"></i>&nbsp;&nbsp;<a class="greydark nicdark_internal_link" href="#start_nicdark_framework">Back To Top</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="greendark nicdark_displaynone_ipadpotr nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr">|</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="nicdark_displaynone_ipadpotr nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr">©</span>&nbsp;&nbsp;<a class="greydark nicdark_displaynone_ipadpotr nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr" href="#">Copyright Digital innovation - Made With <i class="icon-heart-filled red nicdark_zoom_hover"></i> Masal</a></small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </p>
-                    <div class="nicdark_space5"></div>
+            </p>
+          </div>
+            @endforeach
+            @else
+            <div class="bg-light border border-dark border-right-0 border-left-0 border-bottom-0">
+                <h5 class="text-dark text-center"> No Retailer in your Area</h5>
                 </div>
-                
-                <div class="nicdark_activity nicdark_bg_greendark nicdark_oblique_left">
-                    <div class="nicdark_space5"></div>
-                    <p class="greydark">
-                        <small><i class="icon-angle-left greendark"></i></small>
-                    </p>
-                    <div class="nicdark_space5"></div>
-                </div>
-                    
-            </div>
-
-
-            <div class="grid grid_6 nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_bg_greydark2 percentage right">
-                <div class="nicdark_focus right">
-                <div class="nicdark_space5"></div>
-                <p class="white title"><small>
-                &nbsp;&nbsp;
-                @if($home1->footer_status == 1)
-                <a class="white" href="/">Home</a>
-                   
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="greydark2">|</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;
-                @endif
-                @if($brand1->footer_status == 1)
-                <a class="white" href="#">The Brand</a>
-                
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="greydark2">|</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;
-                @endif
-                @if($where1->footer_status == 1)
-                <a class="white" href="/wherebuy">SHOP</a>
-               
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="greydark2">|</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;
-                @endif
-                @if($wedding1->footer_status == 1)
-                <a class="white" href="/real">Masal Weddings</a>
-                
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="greydark2">|</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;
-                @endif
-                @if($register1->footer_status == 1)
-                <a class="white" href="/retailerrequest">Register</a>
-                
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="greydark2">|</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;
-                @endif
-                @if($contact1->footer_status == 1)
-                <a class="white" href="/contact">Contact</a>
-              @endif
-            
-            </small>&nbsp;&nbsp;
-                </p>
-                <div class="nicdark_space5"></div>
-                </div>
-                </div>
-            
-
-        </div>
+            @endif
+          
+    
         <!--end nicdark_container-->
-
+         
     </div>
+       
+        <div class="col-md-6">
+           
+                        <h1 class="grey2 center every_page_top_on_small"><span class="grey">—</span>Retailers on Map <span class="grey">—</span></h1>
+                       
+                        <div id="map"></div>
+                    </div>
             
-</div>
-<!--end section-->        </div>
-    </div>
-
-    <!--main-->
-    <script src="js/main/jquery.min.js"></script> <!--Jquery-->
+               </div>
+              
+    
+    
+    <!--end section-->
+    
+    
+    
+    <!--end section-->        </div>
+        </div>
+    <p style="color: white">.</p>
+        <!--main-->
+        <script src="js/main/jquery.min.js"></script> <!--Jquery-->
     <script src="js/main/jquery-ui.js"></script> <!--Jquery UI-->
     <script src="js/main/excanvas.js"></script> <!--canvas need for ie-->
 
@@ -1034,51 +710,7 @@
 	})
 
 </script>
-<!--end preloader-->
 
-<!--start gogole analytics-->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-49425562-9', 'auto');
-  ga('send', 'pageview');
-
-</script>
-<!--end gogole analytics-->
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-    <div class="modal-content">
-    <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-    
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
-    <div class="modal-body">
-    <form action="{{route('retailerlogin')}}" method="POST">
-    @csrf
-    <div class="row">
-    <div class="form-group col-md-12 col-sm-12">
-    <label for="">Email <span style="color: red;">*</span></label>
-    <input type="email" name="email" class="form-control" id="Shop Name" placeholder="Your Email" required>
-    </div>
-    <div class="form-group col-md-12 col-sm-12">
-    <label for="">Password <span style="color: red;">*</span></label>
-    <input type="password" name="password" class="form-control" id="Shop Name" placeholder="Your Password" required>
-    </div>
-    </div>
-    <div class="modal-footer">
-    <input type="button" class="btn btn-secondary" value="Close" data-dismiss="modal">
-    <input type="submit" name="login" value="Login" class="btn btn-primary"> 
-    </form>
-    </div>
-    </div>
-    </div>
-    </div>
 <script>
     $(document).ready(function() {
         $("#country").change(function() {
@@ -1146,7 +778,265 @@
         });
     });
 </script>
-</body>  
 
-<!-- Mirrored from www.nicdarkthemes.com/themes/fashion-atelier/html/demo/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 May 2020 21:18:34 GMT -->
+    <div class="ending-block iblock-fix">
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-groups">
+                        <div class="list">
+                            <div class="list-item">
+                                <div class="footer-group">
+                                    <div class="footer-style">
+                                        <a href="/" class="footer-logo">
+                                            <img src="{{ asset('images/' . $foot->logo) }}" alt="Masal">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="footer-group">
+                                    <div class="footer-style">
+                                        <h5>{{ $foot->h1 }}
+                                        </h5>
+                                        <p class="text-dark" style="text-align: justify;">{{ $foot->p }}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="footer-group">
+                                    <div class="footer-style">
+                                        <h5>{{ $foot->h2 }}
+                                        </h5>
+                                        <ul>
+                                            <li>
+                                                <a href="#">{{ $foot->t1 }}
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">{{ $foot->t2 }}
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">{{ $foot->t3 }}
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">{{ $foot->t4 }}
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">{{ $foot->t5 }}
+                                                </a>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="footer-group">
+                                    <div class="footer-style">
+                                        <h5>{{ $foot->h3 }}
+                                        </h5>
+                                        @foreach ($gallery as $gall)
+                                            <img alt="" style="width:55px; height:80px; padding:5px;"
+                                                class=" nicdark_opacity nicdark_focus "
+                                                src="{{ asset('images/' . $gall->image1) }}">
+                                        @endforeach
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-item social-item">
+                                <div class="footer-group">
+                                    <div class="footer-style">
+                                        <h5>{{ $foot->h4 }}</h5>
+                                        <div class="subscribe iblock-fix">
+                                            <form action="{{ route('feedback') }}" method="post">
+                                                @csrf
+                                                <div class="block-row">
+                                                    <input type="email" name="email" placeholder="Enter Email"
+                                                        data-input="subscribe" data-rule-email="true"
+                                                        aria-label="enter email" required>
+                                                    <input type="text" style="margin-top: 4px;" name="message"
+                                                        placeholder="Enter Message" autocomplete="off"
+                                                        data-input="subscribe" data-rule-email="true"
+                                                        aria-label="enter email" required>
+                                                    <input type="submit" name="submit" style="margin-top: 4px;"
+                                                        value="Send" class="btn btn-success">
+                                                </div>
+
+                                            </form>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="postfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="postfooter-groups">
+                        <div class="postfooter-group">
+                            <div class="postfooter-style">
+                                <ul>
+                                    @if ($home1->footer_status == 1)
+                                        <li>
+                                            <a href="/">Home
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if ($where1->footer_status == 1)
+                                        <li>
+                                            <a href="{{ route('wherebuy') }}">SHOP
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if ($wedding1->footer_status == 1)
+                                        <li>
+                                            <a href="{{ route('real') }}">Masal Weddings
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if ($register1->footer_status == 1)
+                                        <li>
+                                            <a href="{{ route('retailerrequest') }}">Register
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if ($contact1->footer_status == 1)
+                                        <li>
+                                            <a href="{{ route('contact') }}">Contact
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div id="privacyPolicyAcceptance" role="alert" style="background-color: #000000; color: #ffffff;">
+    <div class="content">
+    
+    
+    <div class="popup-block popup-body">
+    <p>Website uses cookies to give you personalized shopping and marketing experiences. By continuing to use our site, you agree to our use of cookies. Learn more <a href='privacy.html'>here</a>.</p>
+    </div>
+    <div class="popup-block popup-controls">
+    <button class="close popup-control-left" aria-label="Close Dialog"></button>
+    <button class="ok popup-control-right" aria-label="Submit Dialog">Ok</button>
+    </div>
+    
+    </div>
+    </div> -->
+
+
+    <div class="modal common-modal auth-modal" id="loginModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content auth-form">
+                <div class="modal-header">
+                    <h2>Sign In</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="auth-container clearfix" id="sign-in-popup">
+                        <form action="http://www.sophiatolli.com/login?ReturnUrl=%2F" method="post" name="sign-in"
+                            role="form">
+                            <div class="error-summary">
+                                <div class="validation-summary-valid text-danger" data-valmsg-summary="true">
+                                    <ul>
+                                        <li style="display:none"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginEmail">Email</label>
+                                <input autocomplete="off" class="form-control" data-val="true"
+                                    data-val-email="Provide correct email address"
+                                    data-val-required="This field is required" id="loginEmail" name="Email"
+                                    placeholder="Type email" type="text" value="" />
+                                <span class="field-validation-valid" data-valmsg-for="Email"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordEmail">Password</label>
+                                <input class="form-control" data-val="true" data-val-required="This field is required"
+                                    id="passwordEmail" name="Password" placeholder="Type password" type="password" />
+                                <span class="field-validation-valid" data-valmsg-for="Password"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
+
+                            </div>
+                            <input name="__RequestVerificationToken" type="hidden"
+                                value="CfDJ8O-rjaXeqL5PiEEgVyitteTfIgA8M2G_yTacw2rfiIWgJQZPxYC_l-mDAd9_1YBOUPHyyO2-7AFvA7WUqoSsI70UgievDggC66FWOlxZcqLlXKWhfID9eTtcLQbfhrlsriVvgB7Eeq3BvPhOoC6dGbw" />
+                        </form>
+                        <div class="auth-addon">
+                            <p>
+                                <a href="forgotpassword.html">Forgot password?</a>
+                            </p>
+                            <p>
+                                <span>Need an account? </span>
+                                <a href="register.html">Sign up for Free</a>
+                            </p>
+
+
+
+                            <div class="auth-addon">
+                                <div class="double-lines">
+                                    <h3>Or</h3>
+                                </div>
+                            </div>
+                            <div class="auth-addon">
+                                <p>Log in using your social account</p>
+                                <div role="region" aria-label="Social Login List">
+                                    <div class="form-group">
+                                        <a href="home/facebook.html"
+                                            class="btn btn-success-invert btn-lg btn-default facebook-btn"
+                                            title="Log in using your Facebook account">
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                            <span>Facebook</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                
+
+
+</body>
+
 </html>

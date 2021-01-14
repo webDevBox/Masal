@@ -142,6 +142,7 @@ class CrmController extends Controller
            $page->h3='Enter Text';
            $page->h4='Enter Text';
            $page->p2='Enter Text';
+           $page->latest='no';
            $page->image1=null;
            $page->image2=null;
            $page->save(); 
@@ -235,7 +236,7 @@ class CrmController extends Controller
                 'dimensions' => 'Banner Dimension Must be 1980 x 660',
             ];
             $this->validate($request,[
-                'data'=>'dimensions:min_width=1900,max_width=1980,min_height=300,max_height=350'
+                'data'=>'dimensions:min_width=1900,max_width=1980,min_height=600,max_height=660'
             ],$messages);
             $page=newPages::where('name',$request->name)->first();
             if($page->banner != null)
@@ -255,7 +256,6 @@ class CrmController extends Controller
          }
         }
           
-         
      }
 
 

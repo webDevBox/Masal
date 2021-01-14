@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2021 at 06:54 AM
+-- Generation Time: Jan 14, 2021 at 07:31 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -67,7 +67,9 @@ INSERT INTO `buyer_cities` (`id`, `city`, `state`, `created_at`, `updated_at`) V
 (2, 'lahore', 2, '2020-10-27 06:22:21', '2020-10-27 06:22:21'),
 (3, 'jamool', 3, '2020-11-03 00:47:42', '2020-11-03 00:47:42'),
 (4, 'Wetherill Park', 4, '2020-11-25 17:30:25', '2020-11-25 17:30:25'),
-(5, 'Wethherill Park', 4, '2020-11-28 00:15:24', '2020-11-28 00:15:24');
+(5, 'Wethherill Park', 4, '2020-11-28 00:15:24', '2020-11-28 00:15:24'),
+(6, 'Pikachu', 5, '2021-01-14 00:59:10', '2021-01-14 00:59:10'),
+(7, 'Pikachu', 6, '2021-01-14 01:01:36', '2021-01-14 01:01:36');
 
 -- --------------------------------------------------------
 
@@ -90,7 +92,9 @@ INSERT INTO `buyer_countries` (`id`, `country`, `created_at`, `updated_at`) VALU
 (1, 'Pakistan', '2020-10-21 01:13:18', '2020-10-21 01:13:18'),
 (2, 'Bahrain', '2020-10-27 06:22:21', '2020-10-27 06:22:21'),
 (3, 'India', '2020-11-03 00:47:42', '2020-11-03 00:47:42'),
-(4, 'Australia', '2020-11-25 17:30:25', '2020-11-25 17:30:25');
+(4, 'Australia', '2020-11-25 17:30:25', '2020-11-25 17:30:25'),
+(5, 'Myanmar', '2021-01-14 00:59:10', '2021-01-14 00:59:10'),
+(6, 'Malaysia', '2021-01-14 01:01:36', '2021-01-14 01:01:36');
 
 -- --------------------------------------------------------
 
@@ -114,7 +118,9 @@ INSERT INTO `buyer_states` (`id`, `state`, `country`, `created_at`, `updated_at`
 (1, 'Punjab', 1, '2020-10-21 01:13:18', '2020-10-21 01:13:18'),
 (2, 'Badiyah', 2, '2020-10-27 06:22:21', '2020-10-27 06:22:21'),
 (3, 'Jammu and Kashmir', 3, '2020-11-03 00:47:42', '2020-11-03 00:47:42'),
-(4, 'New South Wales', 4, '2020-11-25 17:30:25', '2020-11-25 17:30:25');
+(4, 'New South Wales', 4, '2020-11-25 17:30:25', '2020-11-25 17:30:25'),
+(5, 'Chin', 5, '2021-01-14 00:59:10', '2021-01-14 00:59:10'),
+(6, 'Kuala Lumpur', 6, '2021-01-14 01:01:36', '2021-01-14 01:01:36');
 
 -- --------------------------------------------------------
 
@@ -48738,6 +48744,13 @@ CREATE TABLE `new_orders` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `new_orders`
+--
+
+INSERT INTO `new_orders` (`id`, `order_id`, `retailer_id`, `created_at`, `updated_at`) VALUES
+(28, 11, 65, '2021-01-14 01:27:45', '2021-01-14 01:27:45');
+
 -- --------------------------------------------------------
 
 --
@@ -48919,7 +48932,8 @@ INSERT INTO `retailer_orders` (`id`, `productId`, `RetailerId`, `colour`, `sizes
 (2, 12, 65, 'Champagne', '10', NULL, 1, 0, 'processing', NULL, 'Done', '2020-12-23 06:03:16', '2021-01-07 03:53:59'),
 (3, 3, 65, 'Champagne', '10', NULL, 1, 0, 'completed', NULL, 'Done', '2020-12-30 23:32:45', '2020-12-30 23:33:10'),
 (4, 3, 65, 'Blue', '12', NULL, 1, 2, 'canceled', NULL, 'Done', '2020-12-31 00:43:29', '2021-01-07 03:53:40'),
-(5, 5, 65, 'Champagne', '10', NULL, 3, 2, 'canceled', NULL, 'Done', '2021-01-05 00:38:52', '2021-01-07 03:34:34');
+(5, 5, 65, 'Champagne', '10', NULL, 3, 2, 'canceled', NULL, 'Done', '2021-01-05 00:38:52', '2021-01-07 03:34:34'),
+(11, 12, 65, 'Champagne', '16', NULL, 2, 0, 'processing', NULL, 'Done', '2021-01-14 01:27:45', '2021-01-14 01:28:15');
 
 -- --------------------------------------------------------
 
@@ -53142,10 +53156,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `credit`, `logo`, `log`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 0, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-13 00:53:18'),
-(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$r2GnAAvhiDfIpB3qgUq2YuRM7TRBNIHWg8DafAiGhrC15MB49DeHC', 50, 'logo/Jo4dbjBBBOrIpGyV3vpYDCjRnQUmlqPTXluwlCqX.png', 0, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-12 05:43:18'),
+(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 1, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-14 01:02:40'),
+(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$r2GnAAvhiDfIpB3qgUq2YuRM7TRBNIHWg8DafAiGhrC15MB49DeHC', 0, 'logo/Jo4dbjBBBOrIpGyV3vpYDCjRnQUmlqPTXluwlCqX.png', 1, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-14 01:28:15'),
 (70, 'Ahmad', 'sarfrazkhubaib278@gmail.com', '$2y$10$/vs3whztUfXRosb0CP0he.HRdlMAHzHDg7VFIBPawtBvD5WRUhpz6', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 0, 0, '54454', 'house', 'Pakistan', 'Punjab', 'lahore', '54000', '845', 'www.leads.com', 'facebook.com', 'onstagram.com', '-79.324595', '43.6715159', 2, 1, 0, NULL, '2020-11-26 06:12:16', '2021-01-06 05:54:09'),
-(72, 'Aown', 'khubaib@digitalinnovation.pk', '$2y$10$0mcj7KIHxpT4nyU2OPEUfuuxkL5YdOlgIq8QUvQZREfDcTSekX7/S', 0, NULL, 0, 0, '54146', 'abc road', 'Pakistan', 'Punjab', 'lahore', '53720', '59553485', 'https://masal.com', 'https://dsfjk.com', 'gfhjgf', '74.3640581', '31.4842744', 2, 1, 0, NULL, '2020-12-31 02:22:37', '2021-01-01 01:12:14');
+(72, 'Aown', 'khubaib@digitalinnovation.pk', '$2y$10$0mcj7KIHxpT4nyU2OPEUfuuxkL5YdOlgIq8QUvQZREfDcTSekX7/S', 0, NULL, 0, 0, '54146', 'abc road', 'Pakistan', 'Punjab', 'lahore', '53720', '59553485', 'https://masal.com', 'https://dsfjk.com', 'gfhjgf', '74.3640581', '31.4842744', 2, 1, 0, NULL, '2020-12-31 02:22:37', '2021-01-01 01:12:14'),
+(74, 'Aown', 'aown@gmail.com', '$2y$10$rlJjetgAERKN90vpOzTpx.Nu0KHqUXv/Ou7fPIaLEHTy2Q6MkRJx6', 0, NULL, 0, 0, '326545646', '239B sector C commercial bahria town lahore', 'Malaysia', 'Kuala Lumpur', 'Pikachu', '53720', '6578746346464466', 'jhbhjv.com', 'masal.com', 'https://dsfjk.com', '74.186381', '31.3727787', 2, 1, 0, NULL, '2021-01-14 01:01:37', '2021-01-14 01:04:09');
 
 -- --------------------------------------------------------
 
@@ -53444,7 +53459,21 @@ INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
 (277, 1, '2021-01-13 00:21:49', '2021-01-13 00:21:49'),
 (278, 1, '2021-01-13 00:52:49', '2021-01-13 00:52:49'),
 (279, 1, '2021-01-13 00:53:40', '2021-01-13 00:53:40'),
-(280, 1, '2021-01-13 00:54:04', '2021-01-13 00:54:04');
+(280, 1, '2021-01-13 00:54:04', '2021-01-13 00:54:04'),
+(281, 1, '2021-01-13 02:44:40', '2021-01-13 02:44:40'),
+(282, 1, '2021-01-13 02:56:01', '2021-01-13 02:56:01'),
+(283, 1, '2021-01-13 05:25:37', '2021-01-13 05:25:37'),
+(284, 1, '2021-01-13 05:51:05', '2021-01-13 05:51:05'),
+(285, 1, '2021-01-13 05:51:05', '2021-01-13 05:51:05'),
+(286, 1, '2021-01-13 06:39:22', '2021-01-13 06:39:22'),
+(287, 1, '2021-01-13 22:54:45', '2021-01-13 22:54:45'),
+(288, 1, '2021-01-13 23:35:00', '2021-01-13 23:35:00'),
+(289, 1, '2021-01-14 00:20:25', '2021-01-14 00:20:25'),
+(290, 1, '2021-01-14 00:47:33', '2021-01-14 00:47:33'),
+(291, 1, '2021-01-14 01:14:52', '2021-01-14 01:14:52'),
+(292, 1, '2021-01-14 01:17:40', '2021-01-14 01:17:40'),
+(293, 1, '2021-01-14 01:18:22', '2021-01-14 01:18:22'),
+(294, 1, '2021-01-14 01:25:24', '2021-01-14 01:25:24');
 
 -- --------------------------------------------------------
 
@@ -53687,19 +53716,19 @@ ALTER TABLE `additionals`
 -- AUTO_INCREMENT for table `buyer_cities`
 --
 ALTER TABLE `buyer_cities`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `buyer_countries`
 --
 ALTER TABLE `buyer_countries`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `buyer_states`
 --
 ALTER TABLE `buyer_states`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -53771,7 +53800,7 @@ ALTER TABLE `home_pages`
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -53789,13 +53818,13 @@ ALTER TABLE `necklines`
 -- AUTO_INCREMENT for table `new_orders`
 --
 ALTER TABLE `new_orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `new_pages`
 --
 ALTER TABLE `new_pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -53825,7 +53854,7 @@ ALTER TABLE `retailer_emails`
 -- AUTO_INCREMENT for table `retailer_orders`
 --
 ALTER TABLE `retailer_orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -53861,13 +53890,13 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=281;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=295;
 
 --
 -- AUTO_INCREMENT for table `weddings`

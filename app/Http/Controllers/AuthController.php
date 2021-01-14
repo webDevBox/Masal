@@ -24,7 +24,7 @@ class AuthController extends Controller
    
     public function register(Request $request)
     {
-        if(isset($request->register) && $request->register == 'Submit')
+        if(isset($request->register) && $request->register == 'Register')
         {
             $this->validate($request,[
                 'contact'=>'required',
