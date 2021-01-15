@@ -158,7 +158,7 @@
 
 </head>
 
-<body class="page-moncheri page-home " id="start1">
+<body class="page-moncheri page-home " oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;" id="start1">
     <!--[if lt IE 11]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -1109,7 +1109,20 @@
 
     </script> --}}
 
-
+<script>
+    $(document).keydown(function(e){ 
+    if(e.which === 123){ 
+ 
+       return false; 
+ 
+    } 
+ 
+}); 
+$(document).bind("contextmenu",function(e) {  
+	e.preventDefault(); 
+ 
+}); 
+</script>
 
 </body>
 
