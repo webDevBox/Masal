@@ -48,7 +48,7 @@ class EmailController extends Controller
             return redirect('/admin');
         }
 
-        $templates=emails::orderBy('id','desc')->get();
+        $templates=emails::all();
         $user=User::where('userRole',2)->where('status',1)->count();
         return view('admin.email_templates')->with(array('user'=>$user,'templates'=>$templates));
 
@@ -224,7 +224,8 @@ class EmailController extends Controller
         {
             return redirect('/admin');
         }
-        
+        if(isset($request->mail) && $request->mail == 'Send')
+        {
             $this->validate($request,[
                 'id'=>'required|numeric',
                 'user'=>'required|numeric'
@@ -244,7 +245,11 @@ class EmailController extends Controller
             $subject=$welcome->subject;
             Mail::to($email)->send(new masalMail($mail,$subject));
             return redirect()->back()->with('success','Email has been Send');   
-        
+        }
+        else
+        {
+            return redirect()->back()->with('error','Email has not been Send');  
+        }
     }
 
 

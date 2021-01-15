@@ -21,7 +21,7 @@ class ChatController extends Controller
             return $next($request);
         });
     }
-    //Retailer Chat Room
+        //Retailer Chat Room
     public function chat()
     {
         if (Auth::check()) {
@@ -39,10 +39,9 @@ class ChatController extends Controller
              return redirect('/');
          }
         $id=Auth::user()->id;
-        $admin=User::where('userRole',1)->first();
-        $chat=chatModel::where('senderId',$id)->orWhere('receiver',$id)->get();
+        $chat=chatModel::where('senderId',$id)->orWhere('receiver',$id)->orderBy('id', 'desc')->get();
         $marker=chatModel::where('receiver',$id)->update(['marker'=>0]);
-        return view("retailer.chat")->with(array('admin'=>$admin,'chat'=>$chat));
+        return view("retailer.chat")->with('chat',$chat);
     }
 
     //Retailer Send Message
@@ -63,6 +62,8 @@ class ChatController extends Controller
          {
              return redirect('/');
          }
+         if(isset($request->send) && $request->send == 'Send')
+         {
         if(!isset($request->attachment)) {
       $this->validate($request,[
        'message'=>'required'
@@ -113,6 +114,7 @@ class ChatController extends Controller
 
         return redirect()->back();
     
+    }
 }
 
 
@@ -155,15 +157,12 @@ class ChatController extends Controller
        }
       $id=Auth::user()->id;
       $user=User::find($retailer);
-      $msg=chatModel::whereIn('senderId',[$retailer, $id])->whereIn('receiver', [$retailer, $id])->get();
-      
+      $chat=chatModel::whereIn('senderId',[$retailer, $id])->whereIn('receiver', [$retailer, $id])->orderBy('id', 'desc')->get();
       $name=$user->name;
       $marker=chatModel::where('receiver',$id)->where('senderId',$retailer)->update(['marker'=>0]);
-        $stokist=User::where([
-            ['userRole', '=', 2],
-            ['status', '=', 1], 
-        ])->get();
-      return view("admin.indivChat")->with(array('user'=>$user,'stokist'=>$stokist,'msg'=>$msg,'name'=>$name,'retailer'=>$retailer));
+
+    
+      return view("admin.indivChat")->with(array('chat'=>$chat,'name'=>$name,'retailer'=>$retailer));
   }
 
 
@@ -180,7 +179,8 @@ class ChatController extends Controller
      {
          return redirect('/admin');
      }
-       
+       if(isset($request->send) && $request->send == 'Send')
+       {
             if(!isset($request->attachment)) {
             $this->validate($request,[
             'message'=>'required'
@@ -224,7 +224,7 @@ class ChatController extends Controller
       }
       return redirect()->back();
   
-  
+  }
 }
 
 //Delete Me Retailer message

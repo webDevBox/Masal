@@ -1,250 +1,250 @@
 @extends('layout.retailer')
 @section('content')
+<!-- Quick Stats -->
+@if(Session::has('success'))
+<p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+@endif
+@if(Session::has('error'))
+<p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
+@endif
+@if ($errors->has('email')) <p style="color:red;">{{ $errors->first('email') }}</p> @endif
+@if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif
 
-<div class="app-content content ">
-    <div class="content-overlay"></div>
-    <div class="header-navbar-shadow"></div>
-    <div class="content-wrapper">
-    <div class="content-header row">
-    </div>
-    <div class="content-body">
-    <!-- Dashboard Ecommerce Starts -->
-    <section id="dashboard-ecommerce">
-    <div class="row match-height">
-    <!-- Medal Card -->
-    @php
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <h1 class="grey2 text-center"><span class="grey">—</span> Your Bride Star <span class="grey">—</span></h1>
+</div>
+
+@php
     $star=Auth::user()->star;
-    @endphp
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-      <div class="card card-congratulation-medal">
-          <div class="card-body">
-              <h5>  @if($star == 0) Welcome @else Congratulations 🎉 @endif{{ Auth::user()->name }}</h5>
-              <p class="card-text font-small-3" style="text-align: justify;width: 80%">
-                @if($star == 0)
-                 When your order reaches the total of 10 quantity, you will get your first bride star which gives you a 3% discount that be applied to your orders automatically on check out.
-                @else
-                You have {{ $star }} Bride Stars and save @if($star == 1) 3% @elseif($star == 2) 5%  @elseif($star == 3) 7% @elseif($star == 4) 10% @else 15%  @endif discount on check out automatically.
-              </p>
-                <h3 class="mb-75 mt-2 pt-50" style="text-align: justify;width: 80%">
-                  <a href="javascript:void(0);"> You need to achieve 
-                    @if($star == 1) 100 @elseif($star == 2) 1000  @elseif($star == 3) 2000  @elseif($star == 4) 5000  @endif orders quantity to have
-                    @if($star == 1) 2 @elseif($star == 2) 3  @elseif($star == 3) 4  @elseif($star == 4) 5  @endif Bride Stars that saves you
-                    @if($star == 1) 5% @elseif($star == 2) 7%  @elseif($star == 3) 10%  @elseif($star == 4) 15%  @endif 
-                      on checkout automatically.</a>
-              </h3>
-                @endif     
-              <img src="{{ asset('app-assets/images/illustration/badge.svg') }}" class="congratulation-medal" />
-          </div>
-      </div>
-  </div>
+@endphp
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="nicdark_archive1 nicdark_border_grey">
+    <div class="nicdark_textevidence center">
+    <div class="nicdark_margin20">
+        @if($star == 0)
+       <h3 class="text-center"> When your order reaches the total of 10 quantity, you will get your first bride star which gives you a 3% discount that be applied to your orders automatically on check out. </h3>
+        @else
+        <h3 class="text-center"> You have {{ $star }} Bride Stars and save @if($star == 1) 3% @elseif($star == 2) 5%  @elseif($star == 3) 7% @elseif($star == 4) 10% @else 15%  @endif discount on check out automatically.  </h3>
+        
+        <h3 class="text-center"> You need to achieve 
+            @if($star == 1) 100 @elseif($star == 2) 1000  @elseif($star == 3) 2000  @elseif($star == 4) 5000  @endif orders quantity to have
+            @if($star == 1) 2 @elseif($star == 2) 3  @elseif($star == 3) 4  @elseif($star == 4) 5  @endif Bride Stars that saves you
+            @if($star == 1) 5% @elseif($star == 2) 7%  @elseif($star == 3) 10%  @elseif($star == 4) 15%  @endif 
+              on checkout automatically. </h3>
+       
+        @endif
+    </div>
+    </div>
     
+    </div>
+   
+   
+    </div>
 
-  <div class="col-sm-4 col-xs-4 col-lg-2 col-md-2">     
-    <div class="card  text-center  " > 
-    <div class="card-body pb-50">
-    <h3 style="margin-top: 20px;" >Order This Month</h3> 
-    <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $monthOrder }}</h2>
-    <!-- <div id="statistics-order-chart"></div> -->
+
+
+@foreach ($categories as $item)
+   
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<h1 class="grey2 text-center"><span class="grey">—</span> New Products of {{$item->name}}  <span class="grey">—</span></h1>
+<div class="nicdark_space20"></div>
+</div>
+@php
+    $cat_id=$item->id;
+    $product= \App\products::where('category',$cat_id)->where('delete_status',0)->orderBy('created_at', 'desc')->limit(6)->get();
+@endphp
+@if (count($product) >0)
+<div class="row text-center">
+@foreach ($product as $row)
+
+<div class="col-sm-6 col-md-2 col-lg-2">
+<div class="grid grid_2">
+<div class=" nicdark_activity">               
+<div class="nicdark_archive1 nicdark_border_grey">
+
+<a href="{{route('retailerorder',array('id'=>$row->id))}}">
+<img style="width: 200px; height:300px;" alt="" src="{{ asset('images/'.$row->image1) }}">
+</a>
+<div class="nicdark_textevidence center">
+<div class="nicdark_margin20">
+<h4> <a  href="{{route('retailerorder',array('id'=>$row->id))}}" style="color: black;"> {{$row->name}} </a> </h4>
+<h6> <a  href="{{route('retailerorder',array('id'=>$row->id))}}" style="color: black;"> Style# {{$row->styleNumber}} </a> </h6>
+<div class="nicdark_space20"></div>
+
+<div class="nicdark_space20"></div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+@endforeach
+</div>
+@else
+<div class="row text-center">
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+   
+    <div class=" nicdark_activity">               
+    <div class="nicdark_archive1 nicdark_border_grey">
+        <h3 class="text-center">No Product in this Collection</h3>
+    </div></div></div></div>
+@endif
+@endforeach
+
+
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <h1 class="grey2 text-center"><span class="grey">—</span> New Categories  <span class="grey">—</span></h1>
+    <div class="nicdark_space20"></div>
     </div>
-    </div>
-    </div>
-    <!--/ Bar Chart - Orders -->
-    
-    <!-- Line Chart - Profit -->
-    <div class="col-sm-4 col-xs-4 col-lg-2 col-md-2">     
-      <div class="card  text-center " >
-        <div class="card-body pb-50">
-        <h3 style="margin-top: 20px;" >Order Last Month</h3> 
-        <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $lastmonthOrder }} </h2>
-        <!-- <div id="statistics-order-chart"></div> -->
+
+
+
+    <div class="row text-center" style="margin-bottom:30px ">
+        @foreach ($collection as $row)
+        
+        
+        <div class="col-sm-6 col-md-2 col-lg-2">
+        <div class="grid grid_2">
+        <div class=" nicdark_activity">               
+        <div class="nicdark_archive1 nicdark_border_grey">
+        
+        
+        <img style="width: 200px; height:300px;" alt="" src="{{ asset('images/'.$row->image) }}">
+        
+        
+        <div class="nicdark_textevidence center">
+        <div class="nicdark_margin20">
+        <h4>{{$row->name}}</h4>
+        
+        <a href="{{route('cat_detail', array('id' => $row->id))}}" class="btn btn-primary">Details </a>
+
+        </div>
+        </div>
+        
         </div>
         </div>
         </div>
-    <!--/ Line Chart - Profit -->
-    
-    <!-- Earnings Card -->
-    <div class="col-sm-4 col-xs-4 col-lg-2 col-md-2">     
-      <div class="card  text-center " >
-        <div class="card-body pb-50">
-        <h3 style="margin-top: 20px;" >Order Today</h3> 
-        <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $todayOrder }} </h2>
-        <!-- <div id="statistics-order-chart"></div> -->
         </div>
-        </div>
+        @endforeach
         </div>
 
-    
-    </div>
-    
+</div>
 
-    @php
-        $count=0;
-         foreach($collection as $row)
-         {
-            $prod[$count]=\App\products::where('delete_status',0)->where('category',$row->id)->count();
-            $image[$count]=$row->image;
-            $name[$count]=$row->name;
-            $count++;
-         }
-    @endphp
+</div>
+</div>
 
-    <div class="row match-height">
-  
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-        <h2 class="text-center"> Latest Collections </h2>
-                  @if(Session::has('success'))
-                  <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
-                  @endif
-                  @if(Session::has('error'))
-                  <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
-                  @endif
-        <!--Controls-->
-        <div class="controls-top text-center">
-          <a class="btn-floating float-md-left badge badge-primary badge-glow" href="#multi-item-example" data-slide="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-          <a class=" btn-floating float-md-right badge badge-primary badge-glow" href="#multi-item-example" data-slide="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
- 
-        <!--/.Controls-->
-  
-        <!--Indicators-->
-      
-        <ol class="carousel-indicators">
-          <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-          <li data-target="#multi-item-example" data-slide-to="1"></li>
-        </ol>
-        <!--/.Indicators-->
-  
-        <!--Slides-->
-        <div class="carousel-inner" role="listbox">
-  
-          <!--First slide-->
-          <div class="carousel-item active">
-  
-            <div class="row">
-              <div class="col-md-3">
-                <div class="card mb-2">
-                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[0]) }}">
-                    <div class="card-body badge-glow badge-primary">
-                        <h4 class="text-uppercase text-center text-white">{{ $name[0] }}</h4>
-                        <p class="card-text"> Total Products: {{ $prod[0] }}</p>
-                       
-                      </div>
-                </div>
-              </div>
-  
-              <div class="col-md-3 ">
-                <div class="card mb-2">
-                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[1]) }}">
-                    <div class="card-body badge-glow badge-primary">
-                        <h4 class="text-uppercase text-center text-white">{{ $name[1] }}</h4>
-                        <p class="card-text"> Total Products: {{ $prod[1] }}</p>
-                       
-                      </div>
-                </div>
-              </div>
-  
-              <div class="col-md-3 ">
-                <div class="card mb-2">
-                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[2]) }}">
-                    <div class="card-body badge-glow badge-primary">
-                         <h4 class="text-uppercase text-center text-white">{{ $name[2] }}</h4>
-                        <p class="card-text"> Total Products: {{ $prod[2] }}</p>
-                       
-                      </div>
-                </div>
-              </div>
-
-              <div class="col-md-3">
-                <div class="card mb-2">
-                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[3]) }}">
-                    <div class="card-body badge-glow badge-primary">
-                        <h4 class="text-uppercase text-center text-white">{{ $name[3] }}</h4>
-                        <p class="card-text"> Total Products: {{ $prod[3] }}</p>
-                       
-                      </div>
-                </div>
-              </div>
-            </div>
-  
-          </div>
-          <!--/.First slide-->
-  
-          <!--Second slide-->
-          <div class="carousel-item">
-  
-            <div class="row">
-             
-  
-              <div class="col-md-3 ">
-                <div class="card mb-2">
-                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[4]) }}">
-                    <div class="card-body badge-glow badge-primary">
-                        <h4 class="text-uppercase text-center text-white">{{ $name[4] }}</h4>
-                        <p class="card-text"> Total Products: {{ $prod[4] }}</p>
-                       
-                      </div>
-                </div>
-              </div>
-  
-              <div class="col-md-3 ">
-                <div class="card mb-2">
-                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[5]) }}">
-                    <div class="card-body badge-glow badge-primary">
-                         <h4 class="text-uppercase text-center text-white">{{ $name[5] }}</h4>
-                        <p class="card-text"> Total Products: {{ $prod[5] }}</p>
-                       
-                      </div>
-                </div>
-              </div>
-
-              <div class="col-md-3">
-                <div class="card mb-2">
-                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[6]) }}">
-                    <div class="card-body badge-glow badge-primary">
-                      <h4 class="text-uppercase text-center text-white">{{ $name[6] }} </h4>
-                        <p class="card-text"> Total Products: {{ $prod[6] }}</p>
-                       
-                      </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 ">
-                <div class="card mb-2">
-                  <img class="card-img-top" style="height:500px" src="{{ asset('images/'.$image[7]) }}">
-                    <div class="card-body badge-glow badge-primary">
-                         <h4 class="text-uppercase text-center text-white">{{ $name[7] }} </h4>
-                        <p class="card-text"> Total Products: {{ $prod[7] }}</p>
-                       
-                      </div>
-                </div>
-              </div>
-  
-             
-
-
-            </div>
-  
-          </div>
-         
-          
-        </div>
-        <!--/.Slides-->
-      
-      </div>
-      <!--/.Carousel Wrapper-->
-    
+</div>
+<a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+<div id="modal-user-settings" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header text-center">
+<h2 class="modal-title"><i class="fa fa-pencil"></i> Settings</h2>
+</div>
+<div class="modal-body">
+<form action="{{route('account')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+@csrf
+<fieldset>
+<legend>Email Update</legend>
+<div class="form-group">
+<label class="col-md-4 control-label">Username</label>
+<div class="col-md-8">
+<p class="form-control-static"> {{Auth::user()->email}}</p>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="user-settings-email">Email</label>
+<div class="col-md-8">
+<input type="email" id="user-settings-email" name="email" class="form-control" value="{{Auth::user()->email}}">
+</div>
+</div>
+<div class="form-group" style="display: none">
+    <div class="col-md-8">
+    <input type="number" id="user-settings-repassword" name="id" class="form-control" value="{{Auth::user()->id}}">
     </div>
     </div>
-    <!--/ Revenue Report Card -->
+<center>
+<button type="submit" name="update" value="update" class="btn btn-sm btn-primary">Update Email</button>
+</center>
+</form>
+</fieldset>
+<form action="{{route('passwordUpdate')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+    @csrf
+<fieldset>
+<legend>Password Update</legend>
+<div class="form-group">
+<label class="col-md-4 control-label" for="user-settings-password">New Password</label>
+<div class="col-md-8">
+<input type="password" id="user-settings-password" name="password" class="form-control" placeholder="Please choose a complex one..">
+@if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="user-settings-repassword">Confirm New Password</label>
+<div class="col-md-8">
+<input type="password" id="user-settings-repassword" name="repassword" class="form-control" placeholder="..and confirm it!">
+</div>
+</div>
+<div class="form-group" style="display: none">
+    <div class="col-md-8">
+    <input type="number" id="user-settings-repassword" name="id" class="form-control" value="{{Auth::user()->id}}">
     </div>
-    
-    
-    </section>
-    
-    <!-- Dashboard Ecommerce ends -->
-    
     </div>
-    </div>
+</fieldset>
+<div class="form-group form-actions">
+<div class="col-xs-12 text-right">
+<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+<button type="submit" name="update" value="update" class="btn btn-sm btn-primary">Update Password</button>
+</div>
+</div>
+</form>
+</div>
+<!-- END Modal Body -->
+</div>
+</div>
+</div>
+<!-- END User Settings -->
 
+<!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Load and execute javascript code used only in this page -->
+<script src="js/pages/ecomDashboard.js"></script>
+<script>$(function(){ EcomDashboard.init(); });</script>
+
+
+<script type="text/javascript">
+    var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light1", // "light2", "dark1", "dark2"
+        animationEnabled: true, // change to true		
+        title:{
+            text: "Statistics"
+        },
+        data: [
+        {
+            // Change type to "bar", "area", "spline", "pie",etc.
+            type: "column",
+            dataPoints: [
+                { label: "ORDERS",  y: 10  },
+                { label: "VISITS", y: 20  },
+                { label: "CUSTOMERS", y: 30  },
+                { label: "PRODUCTS",  y: 25  },
+            ]
+        }
+        ]
+    });
+    chart.render();
+    
+    </script>
+
+<script>
+    $('.dashboard').attr('class','active');
+</script>
 @endsection

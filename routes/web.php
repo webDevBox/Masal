@@ -16,18 +16,17 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 |
 */
 //Authentication Route
-Route::match(['get', 'post'], '/retailerrequest', 'AuthController@register')->name('retailerrequest');
+Route::match(['get', 'post'], '/retailerrequest', 'AuthController@register');
 //admin
 Route::match(['get', 'post'], '/admin', 'AuthController@login');
 //Admin Logout Route
 Route::get('/logout','AuthController@logout')->name('logout');
-Route::get('/login_form','AuthController@login_form')->name('login_form');
 //Retailer Logout Route
 Route::get('/retailerlogout','AuthController@retailerlogout')->name('retailerlogout');
 //retailer
 Route::post('/retailerlogin', 'AuthController@retailerlogin')->name('retailerlogin');
 //Admin Routes
-Route::get('/dashboard', 'AdminController@index')->name('dashboard');
+Route::get('/dashboard', 'AdminController@index');
 //Home Page Edits
 Route::get('/template_edit/{id}', 'EmailController@template_edit')->name('template_edit');
 Route::get('/template_stat/{id}/{value}', 'EmailController@template_stat')->name('template_stat');
@@ -55,7 +54,6 @@ Route::post('/head15', 'pagerController@head15')->name('head15');
 Route::post('/head16', 'pagerController@head16')->name('head16');
 Route::post('/head17', 'pagerController@head17')->name('head17');
 Route::post('/head18', 'pagerController@head18')->name('head18');
-Route::post('/head19', 'pagerController@head19')->name('head19');
 //Footer Edits
 Route::post('/foot1', 'pagerController@foot1')->name('foot1');
 Route::post('/foot2', 'pagerController@foot2')->name('foot2');
@@ -75,11 +73,8 @@ Route::get('/del_real/{id}', 'pagerController@del_real')->name('del_real');
 Route::get('/email_templates', 'EmailController@index')->name('email_templates');
 //Product Page
 Route::get('/product', 'AdminController@products')->name('products');
-
-Route::post('/admin_searcher', 'AdminController@admin_searcher')->name('admin_searcher');
-
+Route::get('/admin_searcher', 'AdminController@admin_searcher')->name('admin_searcher');
 Route::get('/out_stock', 'AdminController@out_stock')->name('out_stock');
-Route::get('/top_sell', 'AdminController@top_sell')->name('top_sell');
 //Add Product
 Route::post('/add_product', 'AdminController@addProduct')->name('add_product');
 Route::get('/addProductPage', 'AdminController@addProductPage')->name('addProductPage');
@@ -96,7 +91,7 @@ Route::get('/deletefeed/{id}', 'AdminController@deletefeed')->name('deletefeed')
 Route::get('/sale_tag', 'AdminController@sale_tag')->name('sale_tag');
 // Order Page
 Route::get('/order', 'OrderController@index')->name('order');
-Route::get('/adminChat', 'ChatController@adminChat')->name('adminChat');
+Route::get('/adminChat', 'ChatController@adminChat');
 Route::get('/start_chat/{id}', 'ChatController@start_chat')->name('start_chat');
 Route::post('/adminSendMessage', 'ChatController@adminSendMessage')->name('adminSendMessage');
 Route::get('/dater/{status}', 'OrderController@dater')->name('dater');
@@ -154,11 +149,10 @@ Route::post('/neckline_edit_indb', 'AdminController@neckline_edit_indb')->name('
 Route::post('/fabric_edit_indb', 'AdminController@fabric_edit_indb')->name('fabric_edit_indb');
 Route::post('/sleeve_edit_indb', 'AdminController@sleeve_edit_indb')->name('sleeve_edit_indb');
 Route::get('/lock_screen', 'AdminController@lock_screen');
-Route::get('/profile', 'AdminController@profile')->name('profile');
-Route::get('/retailer_profile', 'RetailerController@retailer_profile')->name('retailer_profile');
+Route::get('/profile', 'AdminController@profile');
 Route::get('/editor/{id}', 'AdminController@editor');
 //Retailer Routes
-Route::get('/retailerdash', 'RetailerController@index')->name('retailerdash');
+Route::get('/retailerdash', 'RetailerController@index');
 Route::match(['get', 'post'],'/collection', 'RetailerController@collection')->name('collection');
 Route::get('/orders', 'RetailerController@orders')->name('orders');
 Route::get('/retailerorder/{id}', 'RetailerOrderController@retailerorder')->name('retailerorder');
@@ -166,7 +160,7 @@ Route::get('/retailerOrderDel/{id}', 'OrderController@retailerOrderDel')->name('
 Route::get('/OrderDel/{id}', 'OrderController@OrderDel')->name('OrderDel');
 Route::get('/retailer_del_order/{id}', 'RetailerController@retailer_del_order')->name('retailer_del_order');
 Route::get('/cat_detail/{id}', 'RetailerController@cat_detail')->name('cat_detail');
-Route::post('/product_search', 'RetailerOrderController@product_search')->name('product_search');
+Route::get('/product_search', 'RetailerOrderController@product_search')->name('product_search');
 Route::get('/eway', 'RetailerOrderController@eway')->name('eway');
 Route::get('/upload_real', 'RetailerController@upload_real')->name('upload_real');
 Route::post('/bride_send', 'RetailerController@bride_send')->name('bride_send');
@@ -181,20 +175,20 @@ Route::post('/account', 'RetailerController@account')->name('account');
 Route::post('/passwordUpdate', 'RetailerController@passwordUpdate')->name('passwordUpdate');
 Route::get('/checkout', 'RetailerOrderController@checkout')->name('checkout');
 Route::get('/remover/{id}', 'RetailerOrderController@remover')->name('remover');
-Route::post('/adminProfile', 'AdminController@adminProfile')->name('adminProfile');
-Route::post('/retailerProfile', 'RetailerController@retailerProfile')->name('retailerProfile');
+// Route::post('/ewayresponse', 'RetailerOrderController@ewayResponse')->name('ewayresponse');
+Route::post('/adminEmail', 'AdminController@adminEmail')->name('adminEmail');
 Route::post('/adminPassword', 'AdminController@passwordUpdate')->name('adminPassword');
-Route::get('/chat', 'ChatController@chat')->name('chat');
+Route::get('/chat', 'ChatController@chat');
 Route::post('/send_message', 'ChatController@send_message')->name('send_message');
 //Website Routes
 Route::get('/',  'PagesController@home' );
 Route::get('/bridesmaids', 'PagesController@bridesmaids' );
-Route::get('/contact','PagesController@contact')->name('contact');
+Route::get('/contact','PagesController@contact' );
 Route::get('/detail/{id}', 'PagesController@detail')->name('detail');
 Route::get('/wedding_detail/{id}', 'PagesController@wedding_detail')->name('wedding_detail');
-Route::get('/real', 'PagesController@real')->name('real');
+Route::get('/real', 'PagesController@real');
 Route::get('/wedding', 'PagesController@wedding');
-Route::get('/wherebuy',  'PagesController@index')->name('wherebuy');
+Route::get('/wherebuy',  'PagesController@index');
 Route::get('/statepicker', 'PagesController@statepicker')->name('statepicker');
 Route::get('/retailerstatepicker', 'PagesController@retailerstatepicker')->name('retailerstatepicker');
 Route::get('/citypicker', 'PagesController@cityPicker')->name('citypicker');

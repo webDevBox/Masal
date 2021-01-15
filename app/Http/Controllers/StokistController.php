@@ -106,7 +106,7 @@ class StokistController extends Controller
                     $subject=$temp->subject;
                     Mail::to($email)->send(new masalMail($details,$subject));
                     }
-                    return redirect()->back()->with('success', 'Retailer Account Accepted');
+                    return redirect()->back()->with('success', 'Stokist Account Accepted');
                 }
                 if($value == 2)
                 {
@@ -126,12 +126,12 @@ class StokistController extends Controller
                     $subject=$temp->subject;
                     Mail::to($email)->send(new masalMail($details,$subject));
                     }
-                    return redirect()->back()->with('success', 'Retailer Account Rejected');
+                    return redirect()->back()->with('success', 'Stokist Account Rejected');
                 }
             }
          else
          {
-            return redirect()->back()->with('error', 'Retailer Not Updated');
+            return redirect()->back()->with('error', 'Stokist Not Updated');
          }
 
     }
@@ -157,17 +157,17 @@ class StokistController extends Controller
             $stokist->save();
             if($stokist->save())
             {
-                    return redirect()->back()->with('success', 'Retailer Account Suspended');
+                    return redirect()->back()->with('success', 'Stokist Account Suspended');
             }
          else
          {
-            return redirect()->back()->with('error', 'Retailer Account Not Suspended');
+            return redirect()->back()->with('error', 'Stokist Account Not Suspended');
          }
          }
          if($stokist->status==3)
          {
             $stokist->delete();
-            return redirect()->back()->with('success', 'Retailer Account Deleted Permanently');
+            return redirect()->back()->with('success', 'Stokist Account Deleted Permanently');
          }
          
 

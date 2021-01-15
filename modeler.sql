@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2021 at 07:31 AM
+-- Generation Time: Dec 28, 2020 at 04:09 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -42,7 +42,7 @@ CREATE TABLE `additionals` (
 INSERT INTO `additionals` (`id`, `additional`, `price`, `created_at`, `updated_at`) VALUES
 (1, '1 M long', 5, '2020-10-21 01:35:45', '2020-10-21 01:35:45'),
 (2, 'Urgent', 100, '2020-10-21 01:35:52', '2020-10-21 01:35:52'),
-(4, 'Add Seleves', 240, '2020-12-30 01:24:41', '2020-12-30 01:24:41');
+(3, 'Add Sleeves', 240, '2020-11-29 17:56:50', '2020-11-29 17:56:50');
 
 -- --------------------------------------------------------
 
@@ -67,9 +67,7 @@ INSERT INTO `buyer_cities` (`id`, `city`, `state`, `created_at`, `updated_at`) V
 (2, 'lahore', 2, '2020-10-27 06:22:21', '2020-10-27 06:22:21'),
 (3, 'jamool', 3, '2020-11-03 00:47:42', '2020-11-03 00:47:42'),
 (4, 'Wetherill Park', 4, '2020-11-25 17:30:25', '2020-11-25 17:30:25'),
-(5, 'Wethherill Park', 4, '2020-11-28 00:15:24', '2020-11-28 00:15:24'),
-(6, 'Pikachu', 5, '2021-01-14 00:59:10', '2021-01-14 00:59:10'),
-(7, 'Pikachu', 6, '2021-01-14 01:01:36', '2021-01-14 01:01:36');
+(5, 'Wethherill Park', 4, '2020-11-28 00:15:24', '2020-11-28 00:15:24');
 
 -- --------------------------------------------------------
 
@@ -92,9 +90,7 @@ INSERT INTO `buyer_countries` (`id`, `country`, `created_at`, `updated_at`) VALU
 (1, 'Pakistan', '2020-10-21 01:13:18', '2020-10-21 01:13:18'),
 (2, 'Bahrain', '2020-10-27 06:22:21', '2020-10-27 06:22:21'),
 (3, 'India', '2020-11-03 00:47:42', '2020-11-03 00:47:42'),
-(4, 'Australia', '2020-11-25 17:30:25', '2020-11-25 17:30:25'),
-(5, 'Myanmar', '2021-01-14 00:59:10', '2021-01-14 00:59:10'),
-(6, 'Malaysia', '2021-01-14 01:01:36', '2021-01-14 01:01:36');
+(4, 'Australia', '2020-11-25 17:30:25', '2020-11-25 17:30:25');
 
 -- --------------------------------------------------------
 
@@ -118,9 +114,7 @@ INSERT INTO `buyer_states` (`id`, `state`, `country`, `created_at`, `updated_at`
 (1, 'Punjab', 1, '2020-10-21 01:13:18', '2020-10-21 01:13:18'),
 (2, 'Badiyah', 2, '2020-10-27 06:22:21', '2020-10-27 06:22:21'),
 (3, 'Jammu and Kashmir', 3, '2020-11-03 00:47:42', '2020-11-03 00:47:42'),
-(4, 'New South Wales', 4, '2020-11-25 17:30:25', '2020-11-25 17:30:25'),
-(5, 'Chin', 5, '2021-01-14 00:59:10', '2021-01-14 00:59:10'),
-(6, 'Kuala Lumpur', 6, '2021-01-14 01:01:36', '2021-01-14 01:01:36');
+(4, 'New South Wales', 4, '2020-11-25 17:30:25', '2020-11-25 17:30:25');
 
 -- --------------------------------------------------------
 
@@ -141,15 +135,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'LOVE FOREVER', 'category/b2ASTWHaMfP54LKSoYcrqjiRAOrxVfmhlyTr2Lbe.jpeg', '2020-10-21 01:38:51', '2020-12-30 03:32:09'),
-(4, 'Wedding', 'category/1GqCl5x2yo4wloS2PNxR9xWd3oCRumAQ00cvqgMK.jpeg', '2021-01-05 23:31:30', '2021-01-05 23:31:30'),
-(5, 'Smart', 'category/pmjeZcuHiOzIyviSuJWqawTyTOImjAOi5JkWqbbw.jpeg', '2021-01-05 23:31:42', '2021-01-05 23:31:42'),
-(6, 'Final', 'category/8f6fsVvjRxejZWY1b5aLIkUfj1KcYxXeTigO6oQ5.jpeg', '2021-01-05 23:31:58', '2021-01-05 23:31:58'),
-(7, 'mode', 'category/RGpD3nrxf8tpRW571X1255W9AlCHJXbMtNw2DoF6.jpeg', '2021-01-05 23:32:12', '2021-01-05 23:32:12'),
-(8, 'bomm', 'category/cQR5XRlmYMiUHE7QbDboGiQw1XRn6bdkz8eX5Ojd.jpeg', '2021-01-05 23:32:31', '2021-01-05 23:32:31'),
-(9, 'roby', 'category/w93HufNsH5KJvDPOK5dxYKURCRAzZ0JgW9GRyU1y.jpeg', '2021-01-06 00:01:23', '2021-01-06 00:01:23'),
-(10, 'shift', 'category/d8lnkCcG3FMh4wTwGQdQIMObiyqum7r1KPmld8uO.jpg', '2021-01-06 00:00:49', '2021-01-06 00:00:49'),
-(11, 'ragbi', 'category/ZeF5pRtoaHfp6vutD37uY2Mz713r6gkN1QNftqE3.jpeg', '2021-01-06 00:01:07', '2021-01-06 00:01:07');
+(1, 'LOVE FOREVER', 'category/ZEovQHmcTUR1xBTZchModNGDkdR0QAZ8gVmcSRLk.jpeg', '2020-10-21 01:38:51', '2020-12-16 02:24:22'),
+(2, 'Smart', 'category/MekjG1GkP0ndGFFCBsKXlQQufxfyXx0dFbV5DBoP.jpeg', '2020-10-21 01:38:57', '2020-12-16 02:25:09');
 
 -- --------------------------------------------------------
 
@@ -175,11 +162,7 @@ CREATE TABLE `chat_models` (
 --
 
 INSERT INTO `chat_models` (`id`, `message`, `file`, `sender`, `senderId`, `receiver`, `marker`, `created_at`, `updated_at`, `status`) VALUES
-(16, 'I am good', NULL, 'admin', 35, 65, 0, '2021-01-07 03:12:44', '2021-01-07 06:09:53', 1),
-(17, NULL, 'file/mdY57ris79rPNULBCOIzQWaXTLJKlqymA3rt85cv.png', 'retailer', 65, 35, 0, '2021-01-07 06:01:55', '2021-01-07 06:09:52', 1),
-(18, 'Hello', NULL, 'admin', 35, 65, 0, '2021-01-07 06:04:56', '2021-01-07 06:09:53', 1),
-(19, 'Test Message again', 'file/Yu6mfJ1RFYa39OvZx7AOv5lTXeRn9hcjLnFmf4la.jpeg', 'retailer', 65, 35, 0, '2021-01-07 06:08:07', '2021-01-07 06:09:52', 1),
-(20, 'I am good', 'file/JSyLiNKhtjaKtH4yOSbNM04j9i5odPhMq7B3hvvi.jpeg', 'admin', 35, 65, 0, '2021-01-07 06:09:05', '2021-01-07 06:09:53', 1);
+(1, 'I am good', NULL, 'admin', 35, 65, 0, '2020-12-22 06:49:48', '2020-12-23 05:25:23', 0);
 
 -- --------------------------------------------------------
 
@@ -48182,8 +48165,7 @@ CREATE TABLE `colour_swatches` (
 --
 
 INSERT INTO `colour_swatches` (`id`, `name`, `colour`, `created_at`, `updated_at`) VALUES
-(3, 'Bridal Dress Colors', '[\"Ivory\",\"Champagne\",\"Blue\"]', '2020-11-17 22:58:52', '2020-12-30 02:43:01'),
-(7, 'Blow', '[\"skyblue\",\"Ivory\",\"black\",\"white\"]', '2020-12-30 02:11:42', '2020-12-30 02:42:34');
+(3, 'Bridal Dress Colors', '[\"Ivory\",\"Champagne\"]', '2020-11-17 22:58:52', '2020-11-17 22:58:52');
 
 -- --------------------------------------------------------
 
@@ -48471,7 +48453,7 @@ CREATE TABLE `emails` (
 --
 
 INSERT INTO `emails` (`id`, `name`, `subject`, `message`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'register', 'Your request has been received by Masal Australia', '<p>.</p>', 1, '2020-09-21 12:13:25', '2021-01-01 00:18:46'),
+(1, 'register', 'Your request has been received by Masal Australia', '<p>.</p>', 1, '2020-09-21 12:13:25', '2020-12-22 06:38:52'),
 (2, 'Accept_account', 'Your retailer account has been approved!', '<p>.</p>', 1, '2020-09-21 23:28:02', '2020-12-22 06:39:52'),
 (3, 'new_user', 'Account Approval Request', '<p><img alt=\"\" src=\"https://static.thenounproject.com/png/542237-200.png\" style=\"float:left; height:200px; width:200px\" />A new user apply as retailer kindly accept or reject acoount.</p>', 1, '2020-09-21 23:29:25', '2020-10-21 01:11:59'),
 (4, 'Reject_account', 'Account Status', '<p>.</p>', 1, '2020-09-21 23:53:12', '2020-12-22 06:38:29'),
@@ -48484,7 +48466,7 @@ INSERT INTO `emails` (`id`, `name`, `subject`, `message`, `status`, `created_at`
 (11, 'change_order_status', 'Your order status has been updated on Masal Australia!', '<p>.</p>', 1, '2020-09-23 23:23:57', '2020-12-22 06:39:27'),
 (12, 'mail_to_all', 'Masal admin', '<p>I want to tell you that I am New Admin<img alt=\"\" src=\"https://vignette.wikia.nocookie.net/fan-fiction-library/images/1/15/Admin.png/revision/latest?cb=20140917130743\" style=\"float:left; height:256px; width:256px\" /></p>', 1, '2020-09-24 02:41:22', '2020-10-21 01:28:51'),
 (13, 'real_bride_get', 'Real Bride', 'A new Real bride data waiting for approval', 1, '2020-09-25 04:49:03', '2020-09-28 05:09:34'),
-(14, 'Signature', 'End of Email', '<p><img alt=\"\" src=\"https://masal.com.au/images/products/6hsHFcadjzQTbUFxMipbdqPPz3RG2mMvJoiOuCoh.png\" style=\"height:50px; width:117px\" /></p>\r\n\r\n<table border=\"0\">\r\n	<tbody>\r\n		<tr>\r\n			<td><strong>Thanks for your application to become a retailer of Masal Australia!</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Masal</strong> has been the #1 leader in designing bridal dresses for over 30 years in Australia and we&rsquo;re excited to connect with you.</p>\r\n\r\n			<p>Thanks for your application to be our retailer, unfortunately, your account is Rejected.</p>\r\n\r\n			<p>If you believe a mistake happened, please do not hesitate to email us at <strong><a href=\"mailto:sales@masal.com.au?subject=Re%3A%20My%20application%20rejected%20to%20become%20a%20retailer!\">sales@masal.com.au</a></strong></p>\r\n\r\n			<p>Follow us on our social platforms below, stay in touch to get updated with&nbsp;new styles, collections, and stay up to date with the latest news from <strong>Masal Australia</strong>.</p>\r\n\r\n			<p><img alt=\"\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png\" style=\"height:50px; width:50px\" />&nbsp;<img alt=\"\" src=\"https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png\" style=\"height:50px; width:50px\" />&nbsp;<img alt=\"\" src=\"https://i.dlpng.com/static/png/7060691_preview.png\" /></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2020-12-22 06:17:46', '2021-01-01 00:46:41');
+(14, 'Signature', 'End of Email', '<p><img alt=\"\" src=\"https://masal.com.au/images/products/6hsHFcadjzQTbUFxMipbdqPPz3RG2mMvJoiOuCoh.png\" style=\"height:70px; width:200px\" /></p>\r\n\r\n<table border=\"0\">\r\n	<tbody>\r\n		<tr>\r\n			<td><strong>Thanks for your application to become a retailer of Masal Australia!</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Masal</strong> has been the #1 leader in designing bridal dresses for over 30 years in Australia and we&rsquo;re excited to connect with you.</p>\r\n\r\n			<p>Thanks for your application to be our retailer, unfortunately, your account is Rejected.</p>\r\n\r\n			<p>If you believe a mistake happened, please do not hesitate to email us at <strong><a href=\"mailto:sales@masal.com.au?subject=Re%3A%20My%20application%20rejected%20to%20become%20a%20retailer!\">sales@masal.com.au</a></strong></p>\r\n\r\n			<p>Follow us on our social platforms below, stay in touch to get updated with&nbsp;new styles, collections, and stay up to date with the latest news from <strong>Masal Australia</strong>.</p>\r\n\r\n			<p><img alt=\"\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png\" style=\"height:50px; width:50px\" />&nbsp;<img alt=\"\" src=\"https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png\" style=\"height:50px; width:50px\" />&nbsp;<img alt=\"\" src=\"https://i.dlpng.com/static/png/7060691_preview.png\" style=\"height:52px; width:50px\" /></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2020-12-22 06:17:46', '2020-12-22 06:49:27');
 
 -- --------------------------------------------------------
 
@@ -48505,7 +48487,7 @@ CREATE TABLE `fabrics` (
 --
 
 INSERT INTO `fabrics` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(2, 'Fitted', 'fabric/5ZV5VE4hLO6sDpiBKCgdRcQYj4N2kkhMwgbYkykz.jpeg', '2020-12-17 23:00:04', '2020-12-30 06:40:42');
+(2, 'Fitted', 'fabric/kK6R7CpcA7vunaSB4dSTPwm6j2KqgoGuR1be6m0z.jpeg', '2020-12-17 23:00:04', '2020-12-17 23:12:19');
 
 -- --------------------------------------------------------
 
@@ -48544,7 +48526,7 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`id`, `name`, `phone`, `email`, `message`, `status`, `created_at`, `updated_at`) VALUES
-(1, NULL, NULL, 'muhammadmoeez64@gmail.com', 'dsfds', 1, '2021-01-08 01:39:46', '2021-01-11 03:05:54');
+(10, 'Moeez', '0410925161', 'admin@twobirdsbridal.com.au', 'sdfsdgf', 1, '2020-12-22 22:50:40', '2020-12-22 22:50:46');
 
 -- --------------------------------------------------------
 
@@ -48574,7 +48556,7 @@ CREATE TABLE `footers` (
 --
 
 INSERT INTO `footers` (`id`, `h1`, `h2`, `h3`, `h4`, `p`, `t1`, `t2`, `t3`, `t4`, `t5`, `logo`, `created_at`, `updated_at`) VALUES
-(1, 'About Us', 'New Tags', 'Giloria', 'Contact Us', 'Last Paragraph in footer is for bout Masal Details.', 'Bridal', 'Groom', 'String', 'Friday', 'Show', 'logo/qXCgJZP3XgJbBpDKUxu5u6TD8lPJSQRyiamBPnKq.png', '2020-08-17 19:00:00', '2021-01-11 22:49:09');
+(1, 'About Us', 'New Tags', 'Gallery', 'Contact', 'Masal is one of the leading bridal designers in bridal industry creates unique designs for all dreamy weddings.', 'Bridal', 'Groom', 'String', 'Friday Bride', 'Show', 'products/6hsHFcadjzQTbUFxMipbdqPPz3RG2mMvJoiOuCoh.png', '2020-08-17 19:00:00', '2020-11-27 22:35:22');
 
 -- --------------------------------------------------------
 
@@ -48587,11 +48569,21 @@ CREATE TABLE `home_pages` (
   `name1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name4` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name5` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_croatian_ci NOT NULL,
-  `name6` varchar(255) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
+  `name4` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name5` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name6` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name7` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name8` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name9` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name10` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name11` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name12` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name13` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name14` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name15` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name16` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name17` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -48601,8 +48593,8 @@ CREATE TABLE `home_pages` (
 -- Dumping data for table `home_pages`
 --
 
-INSERT INTO `home_pages` (`id`, `name1`, `name2`, `name3`, `name4`, `name5`, `name6`, `image`, `image2`, `video`, `created_at`, `updated_at`) VALUES
-(1, 'Modern Props', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quisquam nihil consequuntur optio dignissimos nulla iusto, nemo tenetur dolorum. Voluptate dicta consectetur reiciendis est! Mollitia sequi laborum non nemo esse.', 'Mooto', 'For over a decade Sophia Apostolides has been recognised as one of the bridal industry’s most talented designers, inspired by real women to create unforgettable designs that highlight your natural beauty and unique bridal style. A fusion of modern romance and timeless elegance, the Masal collection is a celebration of diversity, femininity and individuality.', 'Designer With Design', 'Meetings', 'products/UBezm3m1F9R0pENoN6y73ljphzvaEcwBtcnw47Tq.jpeg', 'products/1QkICSsDcyBg3XjANnbrOE43on10kYD0OiJqPj4s.jpeg', 'custom/Seygp4Z7Nm6k3kef3pLBllczlAGxxLib77Kbxjwf.mp4', '2020-08-13 03:38:00', '2021-01-12 01:35:11');
+INSERT INTO `home_pages` (`id`, `name1`, `name2`, `name3`, `name4`, `name5`, `name6`, `name7`, `name8`, `name9`, `name10`, `name11`, `name12`, `name13`, `name14`, `name15`, `name16`, `name17`, `image`, `video`, `created_at`, `updated_at`) VALUES
+(1, 'Enter 1st', 'Enter lkhjkhkl', 'Forever', 'Paradone Text', 'Special Discount', 'save - 80%', 'Become a Fast Retailer', 'VERA', 'Quantity', 'This is qualty section.This is qualty section.This is qualty section.', 'About the silder', 'This is all about silder', 'Quality and slow', 'Work slowly but give your 100%', 'habits', 'This is full habitate', 'Bridal Dresses', 'products/yOOMjP6l24paVh7qmlF6Ms1TDng0KSW2Y2w8fqsX.jpeg', 'custom/Seygp4Z7Nm6k3kef3pLBllczlAGxxLib77Kbxjwf.mp4', '2020-08-13 03:38:00', '2020-11-25 18:45:22');
 
 -- --------------------------------------------------------
 
@@ -48631,8 +48623,8 @@ INSERT INTO `menus` (`id`, `name`, `header_status`, `footer_status`, `status`, `
 (4, 'Where to buy', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-02 05:38:40'),
 (5, 'Masal Wedding', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-02 09:41:55'),
 (6, 'Become a Retailer', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-02 06:12:57'),
-(7, 'Contact', 1, 1, 0, '2020-10-02 09:41:55', '2021-01-01 01:45:23'),
-(65, 'Groom', 2, 2, 1, '2021-01-12 03:42:32', '2021-01-13 00:53:10');
+(7, 'Contact', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-16 04:09:34'),
+(60, 'Groom', 2, 2, 1, '2020-12-21 23:14:35', '2020-12-21 23:45:15');
 
 -- --------------------------------------------------------
 
@@ -48704,9 +48696,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (61, '2020_12_17_100903_create_fabrics_table', 45),
 (62, '2020_12_17_100944_create_sleeves_table', 46),
 (63, '2020_12_18_091814_add_status_feedback', 47),
-(64, '2020_12_22_035707_add_title', 48),
-(65, '2021_01_01_104319_add_log_user', 49),
-(66, '2021_01_08_101235_add_image2', 50);
+(64, '2020_12_22_035707_add_title', 48);
 
 -- --------------------------------------------------------
 
@@ -48727,8 +48717,7 @@ CREATE TABLE `necklines` (
 --
 
 INSERT INTO `necklines` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(6, 'Fitted abc', 'neckline/smv5Ze3K5fvMcK1XKOuDV1pGq8goC2xGKdUfCVvY.jpeg', '2020-12-30 05:56:54', '2020-12-30 06:10:33'),
-(8, 'Fitted', 'neckline/HxnxqNsVqOk8WWyzjRidJYqTdIJBK4pai13zxxdm.jpeg', '2020-12-30 06:09:40', '2020-12-30 06:40:06');
+(4, 'Fitted', 'neckline/a5GCEAnsn9SNp5H6NTXrpJ5UKluYDiKw5pYAmWM5.jpeg', '2020-12-17 06:37:46', '2020-12-17 06:39:09');
 
 -- --------------------------------------------------------
 
@@ -48744,13 +48733,6 @@ CREATE TABLE `new_orders` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `new_orders`
---
-
-INSERT INTO `new_orders` (`id`, `order_id`, `retailer_id`, `created_at`, `updated_at`) VALUES
-(28, 11, 65, '2021-01-14 01:27:45', '2021-01-14 01:27:45');
-
 -- --------------------------------------------------------
 
 --
@@ -48762,16 +48744,38 @@ CREATE TABLE `new_pages` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `banner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `h1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `h2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `p1` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `h3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `h4` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `p2` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `latest` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `h1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `p1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t5` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t6` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `h2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image5` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image6` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image7` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `h3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t7` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `p2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t8` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `p3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t9` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `p4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t10` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `p5` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `i1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `i2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `i3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `i4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image8` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t11` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48780,8 +48784,8 @@ CREATE TABLE `new_pages` (
 -- Dumping data for table `new_pages`
 --
 
-INSERT INTO `new_pages` (`id`, `name`, `keyword`, `title`, `banner`, `h1`, `h2`, `p1`, `h3`, `h4`, `p2`, `latest`, `image1`, `image2`, `created_at`, `updated_at`) VALUES
-(8, 'Groom', 'bridal,blow,flow', 'vvv', 'banner/kkco8gs8wchKLima5Ta2usy3qK0kemsQWPF9pwDB.jpeg', 'Dealing', 'Modern Frego', 'For over a decade Sophia Apostolides has been recognised as one of the bridal industry’s most talented designers, inspired by real women to create unforgettable designs that highlight your natural beauty and unique bridal style. A fusion of modern romance and timeless elegance, the Masal collection is a celebration of diversity, femininity and individuality.', 'Second Cup', 'Meet Loop', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt rerum suscipit optio. Quisquam consequuntur eveniet perspiciatis modi aut rem repellat doloribus quidem optio aspernatur! At, necessitatibus. Omnis nisi quis error.', 'prod', 'custom/HvyAQcHZRLb0fHH9fsyhT0D4rfPdthR5IaL3n0G7.jpeg', 'custom/yA96XYWAzRgtv65HXdHBYJISC1GhyShJ2i2yexKR.jpeg', '2021-01-12 03:42:32', '2021-01-13 00:52:19');
+INSERT INTO `new_pages` (`id`, `name`, `keyword`, `title`, `h1`, `image1`, `video`, `t1`, `t2`, `t3`, `p1`, `image2`, `t4`, `image3`, `t5`, `t6`, `h2`, `image4`, `image5`, `image6`, `image7`, `h3`, `t7`, `p2`, `t8`, `p3`, `t9`, `p4`, `t10`, `p5`, `i1`, `i2`, `i3`, `i4`, `image8`, `t11`, `created_at`, `updated_at`) VALUES
+(3, 'Groom', 'bridal,blow,flow', 'Groom Show', 'Enter 1st Heading', 'custom/k2ja0n0bafm7u6AUhDcRlYW4TySNoSe31Qt4Trn2.jpeg', NULL, 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', NULL, 'Enter Text', NULL, 'Enter Text', 'Enter Text', 'Enter 2nd Heading', NULL, NULL, NULL, NULL, 'Enter 3rd Heading', 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', 'Enter Text', NULL, NULL, NULL, NULL, NULL, 'Enter Text', '2020-12-21 23:14:35', '2020-12-21 23:45:15');
 
 -- --------------------------------------------------------
 
@@ -48820,16 +48824,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `colour`, `size`, `extra`, `category`, `tag`, `keyword`, `wholesalePrice`, `retailerPrice`, `styleNumber`, `status`, `delete_status`, `stock`, `image1`, `image2`, `image3`, `image4`, `image5`, `image6`, `created_at`, `updated_at`) VALUES
-(1, 'Pro Bride', '<p>TIANA Dress | #AS1923 Modern Lace Ballgown Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, NULL, 'Tiana, Tiana Dress, AS1923, Modern Wedding Dress, Lace Wedding Dress, Ballgown Wedding Dress', 100, 4900, 'AS1923', 'active', 0, 100, 'products/4ImDIzRDShw7j0uOPdQ6Hl9BlnvpxTbr1HumtD4r.jpeg', 'products/Mr76obNIl2O0hup76OTAk8VEBV9mVwKvL0ladpIl.jpeg', 'products/U8fIoF6e6g0xJxGWN0AqvWwEl0kzTyfzu4TFLD0x.jpeg', NULL, NULL, NULL, '2020-11-03 02:41:46', '2021-01-06 00:34:16'),
-(2, 'Glow', '<p style=\"text-align:center\">Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Ea&nbsp;ipsam&nbsp;laboriosam&nbsp;debitis</p>\r\n\r\n<p>&nbsp;consequatur&nbsp;accusamus&nbsp;cupiditate&nbsp;odio&nbsp;porro,&nbsp;similique,&nbsp;obcaecati&nbsp;reiciendis&nbsp;eum&nbsp;deleniti&nbsp;i</p>\r\n\r\n<p>mpedit&nbsp;fugiat&nbsp;numquam&nbsp;rerum&nbsp;perferendis&nbsp;velit?</p>\r\n\r\n<p>&nbsp;</p>', '[\"black\",\"red\",\"green\"]', '[\"Medium\",\"XX small\"]', '[\"1 M long\"]', 1, NULL, 'bridal,blow', 98, 34234, '1221dfdf', 'active', 1, 199, 'products/rJlgX2FklV3XTMNAt3sBaLik3WvyWINTP1VVT3KQ.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-11-03 02:42:45', '2020-12-30 00:11:28'),
-(3, 'Beauty bride', '<p>TESSA Dress | #AS1930 Modern Off the Shoulder Wedding Dress</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, 'New', 'TESSA, TESSA Dress, AS1930, Off the Shoulder, Wedding Dress', 1500, 4900, 'AS1930', 'active', 0, 100, 'products/6zjN8vbZVV9xxZvVpDbJEfuDaCv7SPjCu9ZtZqKc.jpeg', 'products/KqG3L5PQEP5Y8CQ86tUaEobwLznL9zlXrDSaIP2L.jpeg', 'products/5h3pAkYP7EmUHaBqciYcoZXhniDxZfgpKyVcMmnD.jpeg', 'products/AW9TxgHpoTqUBLIcI9ClgYwJiu7Z0yuFbaRgVje0.jpeg', NULL, NULL, '2020-11-17 23:43:35', '2020-12-31 00:20:23'),
-(4, 'Regular Bride', '<p>NARIMAN Dress | #AS1942 Modern Lace Princess Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, NULL, 'NARIMAN, NARIMAN Dress, AS1942, Princess Wedding Dress, Wedding Dress', 1600, 5900, 'AS1942', 'active', 0, 100, 'products/9qyo9TmYT96UcpbdzHfUJrASaT90TWbz9ZFRnMEN.jpeg', 'products/KiuPAYqFFl94zAHqCjPtocXAcerpsUfwd43tqpE9.jpeg', 'products/TOPkouJ5N5yNoBuSRADsicUjvwcyLEGqggSF4EyM.jpeg', 'products/PS5GImg2w6AqmAtRow0xl8oAE8o4JXvS9RLdxfMS.jpeg', NULL, NULL, '2020-11-18 00:09:23', '2020-11-18 00:15:09'),
-(5, 'Cute Bride', '<p>HAYLEY Dress | #AS1956 V Back V Neck A-Line Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, NULL, 'HAYLEY, HAYLEY Dress, AS1956, A-Line Wedding Dress', 750, 3700, 'AS1956', 'active', 0, 100, 'products/JadHwImw1a6qR2pDHxiI0XxuZvtfLNuzCJtJFpxN.jpeg', 'products/gFF7sLcuSfNzBxqds1xsnGfF1KBCH2lfztq7z67v.jpeg', 'products/iU0oPQ6quqYJkfrRj9YRGzHl1DRoSOaFwYnKlFSd.jpeg', 'products/zkGOEZBbuRRe0YvrDiN6Js8JK2zcV95iYXudNBJ9.jpeg', NULL, NULL, '2020-11-18 00:23:34', '2020-11-18 00:23:52'),
-(6, 'Couple site', '<p>AMINA Dress | #AS2502 Long Sleeve Champagne Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', '[\"Add Seleves\"]', 6, NULL, 'AMINA, AMINA Dress, AS2502, Long Sleeve Wedding Dresses, Wedding Dresses', 1150, 4200, 'AS2502', 'active', 0, 100, 'products/h8WkdjuhTBVEmWw9hDRQEB1jfykzpv6CGHsDicxa.jpeg', 'products/RfsuHz5oKJ2cc64zOfQxluwiOM4ofC5lC1oAyQTi.jpeg', 'products/PdXIFXr7Jr0Rgv8IvkBKUt7Yk5WPknNjjfiKPVzH.jpeg', 'products/5R9kT3VLmuU7IuoR4bkuKidT9y4j2XxidsrHK1ua.jpeg', NULL, NULL, '2020-11-18 00:44:13', '2020-11-29 17:57:01'),
-(7, 'Final Bride', '<p>MELISSA Dress | #AS2518 Strapless Ballgown Wedding Dress</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"12\"]', '[\"1 M long\",\"Urgent\"]', 7, '50% Off', 'MELISSA, MELISSA Dress, AS2518, Strapless Wedding Dress', 800, 4500, 'AS2518', 'active', 0, 0, 'products/gJvi2NBSS4O4Q6tidmIGRjoa8cQznJbkbDNFneYR.jpeg', 'products/jiqgdHJYX3ih5VLU2Wior8OnQQNeVdhcYl5TBb99.jpeg', 'products/Wbsquxo9xuDKjvgYyzd5nsNP5nF3hkXGanJ2CVJK.jpeg', 'products/S5HL2F1FyC2Ju7NBAZ3u7P1DhbacMoBtp9yNJYVf.jpeg', NULL, NULL, '2020-11-18 01:03:39', '2020-12-31 23:44:45'),
-(8, 'Bridal', '<p>retgtshrstfhyr</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"14\"]', '[\"1 M long\",\"Add Sleeves\"]', 1, 'New', 'dsfsdfg', 25, 32, '1221dftrgh', 'active', 1, 9, 'products/pCNntys36jbYPQ94MUSTLPfZ6vwOoIFrVZvk7Z5T.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-12-17 02:45:19', '2020-12-30 23:30:24'),
-(10, 'Real bride', '<p>reytgsruyru</p>', '[\"Ivory\",\"Champagne\"]', '[\"6\",\"14\",\"16\"]', '[\"1 M long\"]', 9, 'New', 'bridal,blow,flow', 25, 32, 'fdgdfh65454fgh', 'active', 1, 100, 'products/P6bXx2WjC3SCbCIm2o4oH6WekrvqsEp44Fm9Hggt.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-12-22 00:21:11', '2020-12-30 00:15:11'),
-(12, 'Beautiful Bride', '<p style=\"text-align:center\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero esse cumque pariatur illum minus amet, nostrum recusandae iste deleniti hic ut labore sapiente culpa necessitatibus, incidunt, qui eligendi? Debitis, dolores.</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"4\",\"10\",\"16\"]', '[\"1 M long\",\"Add Seleves\"]', 6, NULL, 'bridal,blow,flow', 123, 654, 'AS53SM5Kh', 'active', 0, 100, 'products/xCvCNzaBpsNEApolqiKPgcZpgz1O4Qw0MF0CJ4D2.jpeg', 'products/mo0fMUa3ehQc7S8G25k0BKqIIJEHyAGcB7VBkpbt.jpeg', 'products/vAjA6j5Q4GRfpzaJQGdf84E1g8srIcAmUXUgyhJz.jpeg', 'products/XE3Ram6KMt2ONV04CN4mCcbeGJAjZ2q0auwb0aNi.jpeg', 'products/t3gX9gpsSZsYfaSoBJXH1CutbZYZaiqR9lOvJWaM.jpeg', 'products/jb68XDibYWB53xYQfF8vHyezbIlFpXh3damZKd3I.jpeg', '2020-12-30 02:55:02', '2021-01-06 23:44:31');
+(1, 'TIANA Dress | #AS1923 Modern Lace Ballgown Wedding Dress', '<p>TIANA Dress | #AS1923 Modern Lace Ballgown Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 2, NULL, 'Tiana, Tiana Dress, AS1923, Modern Wedding Dress, Lace Wedding Dress, Ballgown Wedding Dress', 100, 4900, 'AS1923', 'active', 0, 100, 'products/4ImDIzRDShw7j0uOPdQ6Hl9BlnvpxTbr1HumtD4r.jpeg', 'products/Mr76obNIl2O0hup76OTAk8VEBV9mVwKvL0ladpIl.jpeg', 'products/U8fIoF6e6g0xJxGWN0AqvWwEl0kzTyfzu4TFLD0x.jpeg', NULL, NULL, NULL, '2020-11-03 02:41:46', '2020-11-18 00:00:54'),
+(2, 'Glow', '<p style=\"text-align:center\">Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Ea&nbsp;ipsam&nbsp;laboriosam&nbsp;debitis</p>\r\n\r\n<p>&nbsp;consequatur&nbsp;accusamus&nbsp;cupiditate&nbsp;odio&nbsp;porro,&nbsp;similique,&nbsp;obcaecati&nbsp;reiciendis&nbsp;eum&nbsp;deleniti&nbsp;i</p>\r\n\r\n<p>mpedit&nbsp;fugiat&nbsp;numquam&nbsp;rerum&nbsp;perferendis&nbsp;velit?</p>\r\n\r\n<p>&nbsp;</p>', '[\"black\",\"red\",\"green\"]', '[\"Medium\",\"XX small\"]', '[\"1 M long\"]', 2, NULL, 'bridal,blow', 98, 34234, '1221dfdf', 'active', 0, 199, 'products/rJlgX2FklV3XTMNAt3sBaLik3WvyWINTP1VVT3KQ.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-11-03 02:42:45', '2020-11-16 02:31:59'),
+(3, 'TESSA Dress | #AS1930 Modern Off the Shoulder Wedding Dress', '<p>TESSA Dress | #AS1930 Modern Off the Shoulder Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, NULL, 'TESSA, TESSA Dress, AS1930, Off the Shoulder, Wedding Dress', 1500, 4900, 'AS1930', 'active', 0, 100, 'products/6zjN8vbZVV9xxZvVpDbJEfuDaCv7SPjCu9ZtZqKc.jpeg', 'products/KqG3L5PQEP5Y8CQ86tUaEobwLznL9zlXrDSaIP2L.jpeg', 'products/5h3pAkYP7EmUHaBqciYcoZXhniDxZfgpKyVcMmnD.jpeg', 'products/AW9TxgHpoTqUBLIcI9ClgYwJiu7Z0yuFbaRgVje0.jpeg', NULL, NULL, '2020-11-17 23:43:35', '2020-12-17 23:40:45'),
+(4, 'NARIMAN Dress | #AS1942 Modern Lace Princess Wedding Dress', '<p>NARIMAN Dress | #AS1942 Modern Lace Princess Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, NULL, 'NARIMAN, NARIMAN Dress, AS1942, Princess Wedding Dress, Wedding Dress', 1600, 5900, 'AS1942', 'active', 0, 100, 'products/9qyo9TmYT96UcpbdzHfUJrASaT90TWbz9ZFRnMEN.jpeg', 'products/KiuPAYqFFl94zAHqCjPtocXAcerpsUfwd43tqpE9.jpeg', 'products/TOPkouJ5N5yNoBuSRADsicUjvwcyLEGqggSF4EyM.jpeg', 'products/PS5GImg2w6AqmAtRow0xl8oAE8o4JXvS9RLdxfMS.jpeg', NULL, NULL, '2020-11-18 00:09:23', '2020-11-18 00:15:09'),
+(5, 'HAYLEY Dress | #AS1956 V Back V Neck A-Line Wedding Dress', '<p>HAYLEY Dress | #AS1956 V Back V Neck A-Line Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, NULL, 'HAYLEY, HAYLEY Dress, AS1956, A-Line Wedding Dress', 750, 3700, 'AS1956', 'active', 0, 100, 'products/JadHwImw1a6qR2pDHxiI0XxuZvtfLNuzCJtJFpxN.jpeg', 'products/gFF7sLcuSfNzBxqds1xsnGfF1KBCH2lfztq7z67v.jpeg', 'products/iU0oPQ6quqYJkfrRj9YRGzHl1DRoSOaFwYnKlFSd.jpeg', 'products/zkGOEZBbuRRe0YvrDiN6Js8JK2zcV95iYXudNBJ9.jpeg', NULL, NULL, '2020-11-18 00:23:34', '2020-11-18 00:23:52'),
+(6, 'AMINA Dress | #AS2502 Long Sleeve Champagne Wedding Dress', '<p>AMINA Dress | #AS2502 Long Sleeve Champagne Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', '[\"Add Sleeves\"]', 1, NULL, 'AMINA, AMINA Dress, AS2502, Long Sleeve Wedding Dresses, Wedding Dresses', 1150, 4200, 'AS2502', 'active', 0, 100, 'products/h8WkdjuhTBVEmWw9hDRQEB1jfykzpv6CGHsDicxa.jpeg', 'products/RfsuHz5oKJ2cc64zOfQxluwiOM4ofC5lC1oAyQTi.jpeg', 'products/PdXIFXr7Jr0Rgv8IvkBKUt7Yk5WPknNjjfiKPVzH.jpeg', 'products/5R9kT3VLmuU7IuoR4bkuKidT9y4j2XxidsrHK1ua.jpeg', NULL, NULL, '2020-11-18 00:44:13', '2020-11-29 17:57:01'),
+(7, 'MELISSA Dress | #AS2518 Strapless Ballgown Wedding Dress', '<p>MELISSA Dress | #AS2518 Strapless Ballgown Wedding Dress</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"6\",\"8\",\"10\",\"12\",\"14\",\"16\"]', NULL, 1, 'New', 'MELISSA, MELISSA Dress, AS2518, Strapless Wedding Dress', 800, 4500, 'AS2518', 'active', 0, 0, 'products/gJvi2NBSS4O4Q6tidmIGRjoa8cQznJbkbDNFneYR.jpeg', 'products/jiqgdHJYX3ih5VLU2Wior8OnQQNeVdhcYl5TBb99.jpeg', 'products/Wbsquxo9xuDKjvgYyzd5nsNP5nF3hkXGanJ2CVJK.jpeg', 'products/S5HL2F1FyC2Ju7NBAZ3u7P1DhbacMoBtp9yNJYVf.jpeg', NULL, NULL, '2020-11-18 01:03:39', '2020-11-28 01:20:38'),
+(8, 'Bridal', '<p>retgtshrstfhyr</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"14\"]', '[\"1 M long\",\"Add Sleeves\"]', 1, 'New', 'dsfsdfg', 25, 32, '1221dftrgh', 'active', 0, 66, 'products/pCNntys36jbYPQ94MUSTLPfZ6vwOoIFrVZvk7Z5T.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-12-17 02:45:19', '2020-12-17 02:45:42'),
+(9, 'Beauty Bride', '<p>gfhyftjytfjkytjkfuykyu</p>', '[\"Ivory\",\"Champagne\"]', '[\"4\",\"10\",\"16\"]', '[\"1 M long\",\"Add Sleeves\"]', 1, 'New', 'bridal,blow,flow', 25, 32, '1221dffgdf', 'active', 0, 100, 'products/nitz7o7xOVrbWuXGtAJD6cW5hS3OxgjVtF0Z8McE.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-12-22 00:08:46', '2020-12-22 00:08:46'),
+(10, 'Real bride', '<p>reytgsruyru</p>', '[\"Ivory\",\"Champagne\"]', '[\"6\",\"14\",\"16\"]', '[\"1 M long\"]', 2, 'New', 'bridal,blow,flow', 25, 32, 'fdgdfh65454fgh', 'active', 0, 100, 'products/P6bXx2WjC3SCbCIm2o4oH6WekrvqsEp44Fm9Hggt.jpeg', NULL, NULL, NULL, NULL, NULL, '2020-12-22 00:21:11', '2020-12-22 00:21:11');
 
 -- --------------------------------------------------------
 
@@ -48849,7 +48853,7 @@ CREATE TABLE `reals` (
 --
 
 INSERT INTO `reals` (`id`, `product`, `created_at`, `updated_at`) VALUES
-(5, 12, '2021-01-01 00:11:06', '2021-01-01 00:11:06');
+(2, 7, '2020-11-27 22:55:13', '2020-11-27 22:55:13');
 
 -- --------------------------------------------------------
 
@@ -48873,9 +48877,8 @@ CREATE TABLE `retailer_brides` (
 --
 
 INSERT INTO `retailer_brides` (`id`, `retailerId`, `wedding`, `file`, `type`, `status`, `created_at`, `updated_at`) VALUES
-(18, 65, '3', 'real/8zIQ8izAkDpiFDXuw5EAsusUus9THV4e6uX8d1sn.png', 'image', 2, '2020-11-27 22:53:26', '2020-11-27 22:54:11'),
-(21, 65, '2', 'real/L6b0XMwn7MXkPf4rYhGxdgn2kr7pQ4JhfdLthWut.jpeg', 'image', 1, '2021-01-01 01:28:35', '2021-01-01 01:33:17'),
-(22, 65, '2', 'real/ICZFDhgIfxwBijoYbZWjpivawYIGLWLN9CZvYl5x.jpeg', 'image', 1, '2021-01-06 22:49:18', '2021-01-06 22:49:18');
+(18, 69, '6', 'real/8zIQ8izAkDpiFDXuw5EAsusUus9THV4e6uX8d1sn.png', 'image', 2, '2020-11-27 22:53:26', '2020-11-27 22:54:11'),
+(20, 65, '2', 'real/tWrC3D2nNmXvSxF9GByrLrjgLC7VzIuDLnn0uFtB.jpeg', 'image', 2, '2020-12-08 02:03:31', '2020-12-09 04:19:21');
 
 -- --------------------------------------------------------
 
@@ -48897,9 +48900,9 @@ CREATE TABLE `retailer_emails` (
 
 INSERT INTO `retailer_emails` (`id`, `subject`, `message`, `created_at`, `updated_at`) VALUES
 (1, 'Lorem Ipsum', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque suscipit nam esse excepturi quam ab, qui, atque a facere expedita quae! Rem minima corporis dignissimos totam. Quidem explicabo asperiores facilis?</p>', '2020-10-23 06:02:46', '2020-11-02 07:00:55'),
+(5, 'Blogger', '<p>This is blogger mail</p>', '2020-10-27 00:07:26', '2020-11-02 06:53:58'),
 (6, 'Welcome Email', '<p>Dear Retailer,</p>\r\n\r\n<p>We would like to welcome you with our warm wishes.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>', '2020-11-25 17:42:38', '2020-11-25 17:42:38'),
-(8, 'New one', '<p>dsfsdgfdsg</p>', '2021-01-01 01:05:06', '2021-01-01 01:05:06'),
-(9, 'End of Email', '<p>rfsgdtdfhydtfj</p>', '2021-01-01 01:11:33', '2021-01-01 01:11:33');
+(7, 'test', '<p>test</p>', '2020-11-28 00:40:03', '2020-11-28 00:40:03');
 
 -- --------------------------------------------------------
 
@@ -48928,12 +48931,13 @@ CREATE TABLE `retailer_orders` (
 --
 
 INSERT INTO `retailer_orders` (`id`, `productId`, `RetailerId`, `colour`, `sizes`, `extra`, `quantity`, `cancle_order_request`, `status`, `detail`, `payment`, `created_at`, `updated_at`) VALUES
-(1, 5, 65, 'Champagne', '8', NULL, 1, 0, 'processing', NULL, 'Done', '2020-01-01 04:22:03', '2021-01-07 03:54:38'),
-(2, 12, 65, 'Champagne', '10', NULL, 1, 0, 'processing', NULL, 'Done', '2020-12-23 06:03:16', '2021-01-07 03:53:59'),
-(3, 3, 65, 'Champagne', '10', NULL, 1, 0, 'completed', NULL, 'Done', '2020-12-30 23:32:45', '2020-12-30 23:33:10'),
-(4, 3, 65, 'Blue', '12', NULL, 1, 2, 'canceled', NULL, 'Done', '2020-12-31 00:43:29', '2021-01-07 03:53:40'),
-(5, 5, 65, 'Champagne', '10', NULL, 3, 2, 'canceled', NULL, 'Done', '2021-01-05 00:38:52', '2021-01-07 03:34:34'),
-(11, 12, 65, 'Champagne', '16', NULL, 2, 0, 'processing', NULL, 'Done', '2021-01-14 01:27:45', '2021-01-14 01:28:15');
+(1, 4, 65, 'Champagne', '8', NULL, 1, 0, 'processing', NULL, 'Done', '2020-11-12 06:06:20', '2020-12-17 01:28:00'),
+(2, 5, 65, 'Champagne', '8', NULL, 8, 0, 'processing', NULL, 'Done', '2020-12-10 06:07:29', '2020-12-10 06:07:41'),
+(3, 6, 65, 'Ivory', '12', NULL, 2, 0, 'processing', NULL, 'Done', '2020-12-10 06:08:04', '2020-12-16 02:29:13'),
+(4, 3, 65, 'Ivory', '8', NULL, 1, 0, 'processing', NULL, 'Done', '2020-12-10 06:09:18', '2020-12-10 06:19:18'),
+(5, 6, 65, 'Champagne', '4', NULL, 7, 0, 'processing', NULL, 'Done', '2020-12-10 06:19:05', '2020-12-10 06:19:18'),
+(9, 7, 65, 'Champagne', '4', NULL, 1, 0, 'processing', NULL, 'Done', '2020-12-22 02:46:34', '2020-12-22 02:49:16'),
+(10, 10, 65, 'Champagne', '16', NULL, 2, 0, 'processing', 'Hello', 'Done', '2020-12-22 02:53:10', '2020-12-22 02:53:21');
 
 -- --------------------------------------------------------
 
@@ -48954,10 +48958,7 @@ CREATE TABLE `sales` (
 --
 
 INSERT INTO `sales` (`id`, `name`, `color`, `created_at`, `updated_at`) VALUES
-(3, 'New', '#ff0000', '2020-12-31 23:45:41', '2020-12-31 23:53:37'),
-(4, '50% Off', '#834bec', '2020-12-31 23:46:15', '2020-12-31 23:57:17'),
-(5, 'sale', '#4aea3e', '2020-12-31 23:46:32', '2020-12-31 23:46:32'),
-(6, '30%', '#5b3fe4', '2020-12-31 23:56:43', '2020-12-31 23:56:51');
+(1, 'New', '#de0d0d', '2020-10-21 01:39:37', '2020-11-27 22:58:44');
 
 -- --------------------------------------------------------
 
@@ -48978,8 +48979,7 @@ CREATE TABLE `silhouettes` (
 --
 
 INSERT INTO `silhouettes` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(6, 'ballgown forgin', 'silhouette/PS0daQfhnVQXzzq7NfmEnFYYkFgPDJ0ZmfJupABV.jpeg', '2020-12-30 04:00:30', '2020-12-30 04:11:55'),
-(7, 'ballgown', 'silhouette/orrTICDmkxNz14F0UVZZZZL3LTNnGbaQRUaZF8qW.jpeg', '2020-12-30 05:42:43', '2020-12-30 05:42:53');
+(4, 'ballgown forgin', 'silhouette/GDbAW75iSizLoxQ0IoNZUIJI1AQGH65wE0Qs4Ibm.jpeg', '2020-12-17 06:15:59', '2020-12-17 06:18:09');
 
 -- --------------------------------------------------------
 
@@ -49004,9 +49004,8 @@ INSERT INTO `sizes` (`id`, `size`, `created_at`, `updated_at`) VALUES
 (6, '8', '2020-11-17 22:59:17', '2020-11-17 22:59:17'),
 (7, '10', '2020-11-17 22:59:21', '2020-11-17 22:59:21'),
 (8, '12', '2020-11-17 22:59:25', '2020-11-17 22:59:25'),
-(11, '14', '2020-12-30 01:01:45', '2020-12-30 01:01:45'),
-(14, '16', '2020-12-30 01:04:34', '2020-12-30 01:04:34'),
-(16, '240', '2020-12-30 01:17:45', '2020-12-30 01:17:45');
+(9, '14', '2020-11-17 22:59:29', '2020-11-17 22:59:29'),
+(10, '16', '2020-11-17 22:59:34', '2020-11-17 22:59:34');
 
 -- --------------------------------------------------------
 
@@ -49027,8 +49026,7 @@ CREATE TABLE `sleeves` (
 --
 
 INSERT INTO `sleeves` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(2, 'final 1', 'sleeve/8WZfObLxtcraPQy1MNJCmDvVfDD3m39JlGiIX4EX.jpeg', '2020-12-17 23:22:51', '2020-12-30 22:43:01'),
-(5, 'final', 'sleeve/oFAFFMgzjUZbMoN950fkl6jCu2CzJAcjujAJTOxH.jpeg', '2020-12-30 22:43:36', '2020-12-30 23:11:31');
+(2, 'final', 'sleeve/8WZfObLxtcraPQy1MNJCmDvVfDD3m39JlGiIX4EX.jpeg', '2020-12-17 23:22:51', '2020-12-17 23:31:57');
 
 -- --------------------------------------------------------
 
@@ -53129,7 +53127,6 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `credit` int(11) NOT NULL,
   `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `log` int(11) NOT NULL DEFAULT 0 COMMENT '0 = Offline , 1 = Online',
   `star` int(11) NOT NULL DEFAULT 0,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -53155,12 +53152,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `credit`, `logo`, `log`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 1, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-01-14 01:02:40'),
-(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$r2GnAAvhiDfIpB3qgUq2YuRM7TRBNIHWg8DafAiGhrC15MB49DeHC', 0, 'logo/Jo4dbjBBBOrIpGyV3vpYDCjRnQUmlqPTXluwlCqX.png', 1, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-01-14 01:28:15'),
-(70, 'Ahmad', 'sarfrazkhubaib278@gmail.com', '$2y$10$/vs3whztUfXRosb0CP0he.HRdlMAHzHDg7VFIBPawtBvD5WRUhpz6', 0, 'logos/Ljr7IazQIRSqZLtqoTXZgM9uWLosOnCjKBwAk0B5.png', 0, 0, '54454', 'house', 'Pakistan', 'Punjab', 'lahore', '54000', '845', 'www.leads.com', 'facebook.com', 'onstagram.com', '-79.324595', '43.6715159', 2, 1, 0, NULL, '2020-11-26 06:12:16', '2021-01-06 05:54:09'),
-(72, 'Aown', 'khubaib@digitalinnovation.pk', '$2y$10$0mcj7KIHxpT4nyU2OPEUfuuxkL5YdOlgIq8QUvQZREfDcTSekX7/S', 0, NULL, 0, 0, '54146', 'abc road', 'Pakistan', 'Punjab', 'lahore', '53720', '59553485', 'https://masal.com', 'https://dsfjk.com', 'gfhjgf', '74.3640581', '31.4842744', 2, 1, 0, NULL, '2020-12-31 02:22:37', '2021-01-01 01:12:14'),
-(74, 'Aown', 'aown@gmail.com', '$2y$10$rlJjetgAERKN90vpOzTpx.Nu0KHqUXv/Ou7fPIaLEHTy2Q6MkRJx6', 0, NULL, 0, 0, '326545646', '239B sector C commercial bahria town lahore', 'Malaysia', 'Kuala Lumpur', 'Pikachu', '53720', '6578746346464466', 'jhbhjv.com', 'masal.com', 'https://dsfjk.com', '74.186381', '31.3727787', 2, 1, 0, NULL, '2021-01-14 01:01:37', '2021-01-14 01:04:09');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `credit`, `logo`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
+(35, 'admin', 'khubaibwaheed1995@gmail.com', '$2y$10$sqmT6121doKFEb2olvO/YOt8gQHB8raW2jpt5ERV0/MSvWMlOXHAu', 0, NULL, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2020-12-18 06:06:34'),
+(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$sqmT6121doKFEb2olvO/YOt8gQHB8raW2jpt5ERV0/MSvWMlOXHAu', 0, 'logos/ec0XZkCmzeKCbMXpyrlMOz2t5Vx7ZroIG5tNhv0j.png', 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2020-12-23 05:23:09'),
+(69, 'TwoBirds Bridal', 'admin@twobirdsbridal.com.au', '$2y$10$SUD3OBcphnnl80QGh39JIegDmBMCGEhpopBo620geHGwrr5rYGcC2', 0, NULL, 0, '0296095500', '26 Toohey Road', 'Australia', 'New South Wales', 'Wetherill Park', '2164', '69154415219', 'https://www.twobirdsbridal.com.au', 'https://facebook.com/twobirdsbridal/', 'https://instagram.com/twobirdsbridal/', '150.8809723', '-33.8517837', 2, 1, 1, NULL, '2020-11-25 17:30:26', '2020-12-14 02:40:29'),
+(70, 'Ahmad Sohail', 'ahmedsohail1075@gmail.com', '$2y$10$/vs3whztUfXRosb0CP0he.HRdlMAHzHDg7VFIBPawtBvD5WRUhpz6', 0, NULL, 0, '03334638367', 'house', 'Pakistan', 'Punjab', 'lahore', '54000', '123', 'https://frontend.leadsdeveloper.com/page.html', 'facebook.com', 'onstagram.com', '74.3345526', '31.5570013', 2, 1, 0, NULL, '2020-11-26 06:12:16', '2020-12-14 06:53:40');
 
 -- --------------------------------------------------------
 
@@ -53180,300 +53176,776 @@ CREATE TABLE `visitors` (
 --
 
 INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
-(1, 1, '2020-12-28 03:18:53', '2020-12-28 03:18:53'),
-(2, 1, '2020-12-29 02:06:05', '2020-12-29 02:06:05'),
-(3, 1, '2020-12-29 02:06:10', '2020-12-29 02:06:10'),
-(4, 1, '2020-12-29 02:06:10', '2020-12-29 02:06:10'),
-(5, 1, '2020-12-29 02:06:12', '2020-12-29 02:06:12'),
-(6, 1, '2020-12-29 02:06:14', '2020-12-29 02:06:14'),
-(7, 1, '2020-12-29 02:06:15', '2020-12-29 02:06:15'),
-(8, 1, '2020-12-29 02:06:16', '2020-12-29 02:06:16'),
-(9, 1, '2020-12-29 02:06:17', '2020-12-29 02:06:17'),
-(10, 1, '2020-12-29 02:06:17', '2020-12-29 02:06:17'),
-(11, 1, '2020-12-29 02:06:18', '2020-12-29 02:06:18'),
-(12, 1, '2020-12-29 02:06:19', '2020-12-29 02:06:19'),
-(13, 1, '2020-12-29 02:06:20', '2020-12-29 02:06:20'),
-(14, 1, '2020-12-29 02:06:21', '2020-12-29 02:06:21'),
-(15, 1, '2020-12-29 02:06:22', '2020-12-29 02:06:22'),
-(16, 1, '2020-12-29 02:06:23', '2020-12-29 02:06:23'),
-(17, 1, '2020-12-29 06:25:42', '2020-12-29 06:25:42'),
-(18, 1, '2020-12-29 23:00:39', '2020-12-29 23:00:39'),
-(19, 1, '2020-12-30 02:43:35', '2020-12-30 02:43:35'),
-(20, 1, '2020-12-30 06:47:08', '2020-12-30 06:47:08'),
-(21, 1, '2020-12-30 22:21:49', '2020-12-30 22:21:49'),
-(22, 1, '2020-12-30 23:32:06', '2020-12-30 23:32:06'),
-(23, 1, '2020-12-31 00:37:34', '2020-12-31 00:37:34'),
-(24, 1, '2020-12-31 00:37:50', '2020-12-31 00:37:50'),
-(25, 1, '2020-12-31 02:07:22', '2020-12-31 02:07:22'),
-(26, 1, '2020-12-31 02:21:20', '2020-12-31 02:21:20'),
-(27, 1, '2021-01-01 00:10:02', '2021-01-01 00:10:02'),
-(28, 1, '2021-01-01 01:25:26', '2021-01-01 01:25:26'),
-(29, 1, '2021-01-01 01:44:56', '2021-01-01 01:44:56'),
-(30, 1, '2021-01-01 01:45:26', '2021-01-01 01:45:26'),
-(31, 1, '2021-01-01 05:05:15', '2021-01-01 05:05:15'),
-(32, 1, '2021-01-01 05:47:50', '2021-01-01 05:47:50'),
-(33, 1, '2021-01-01 05:50:03', '2021-01-01 05:50:03'),
-(34, 1, '2021-01-01 05:50:27', '2021-01-01 05:50:27'),
-(35, 1, '2021-01-01 05:50:50', '2021-01-01 05:50:50'),
-(36, 1, '2021-01-01 05:51:02', '2021-01-01 05:51:02'),
-(37, 1, '2021-01-01 05:54:48', '2021-01-01 05:54:48'),
-(38, 1, '2021-01-03 23:00:42', '2021-01-03 23:00:42'),
-(39, 1, '2021-01-03 23:32:45', '2021-01-03 23:32:45'),
-(40, 1, '2021-01-03 23:33:17', '2021-01-03 23:33:17'),
-(41, 1, '2021-01-04 00:16:15', '2021-01-04 00:16:15'),
-(42, 1, '2021-01-04 00:23:27', '2021-01-04 00:23:27'),
-(43, 1, '2021-01-05 00:37:15', '2021-01-05 00:37:15'),
-(44, 1, '2021-01-05 00:37:40', '2021-01-05 00:37:40'),
-(45, 1, '2021-01-05 00:42:39', '2021-01-05 00:42:39'),
-(46, 1, '2021-01-05 04:30:14', '2021-01-05 04:30:14'),
-(47, 1, '2021-01-05 06:41:37', '2021-01-05 06:41:37'),
-(48, 1, '2021-01-05 22:23:28', '2021-01-05 22:23:28'),
-(49, 1, '2021-01-06 05:38:39', '2021-01-06 05:38:39'),
-(50, 1, '2021-01-06 05:53:15', '2021-01-06 05:53:15'),
-(51, 1, '2021-01-06 05:54:09', '2021-01-06 05:54:09'),
-(52, 1, '2021-01-06 22:25:03', '2021-01-06 22:25:03'),
-(53, 1, '2021-01-07 00:28:13', '2021-01-07 00:28:13'),
-(54, 1, '2021-01-07 00:54:45', '2021-01-07 00:54:45'),
-(55, 1, '2021-01-07 06:24:08', '2021-01-07 06:24:08'),
-(56, 1, '2021-01-07 06:28:16', '2021-01-07 06:28:16'),
-(57, 1, '2021-01-07 22:31:28', '2021-01-07 22:31:28'),
-(58, 1, '2021-01-08 00:03:15', '2021-01-08 00:03:15'),
-(59, 1, '2021-01-08 00:04:00', '2021-01-08 00:04:00'),
-(60, 1, '2021-01-08 00:16:46', '2021-01-08 00:16:46'),
-(61, 1, '2021-01-08 00:29:12', '2021-01-08 00:29:12'),
-(62, 1, '2021-01-08 00:32:23', '2021-01-08 00:32:23'),
-(63, 1, '2021-01-08 00:32:33', '2021-01-08 00:32:33'),
-(64, 1, '2021-01-08 00:36:17', '2021-01-08 00:36:17'),
-(65, 1, '2021-01-08 00:41:58', '2021-01-08 00:41:58'),
-(66, 1, '2021-01-08 00:42:21', '2021-01-08 00:42:21'),
-(67, 1, '2021-01-08 00:47:27', '2021-01-08 00:47:27'),
-(68, 1, '2021-01-08 00:49:39', '2021-01-08 00:49:39'),
-(69, 1, '2021-01-08 00:50:37', '2021-01-08 00:50:37'),
-(70, 1, '2021-01-08 00:50:40', '2021-01-08 00:50:40'),
-(71, 1, '2021-01-08 00:50:42', '2021-01-08 00:50:42'),
-(72, 1, '2021-01-08 00:57:35', '2021-01-08 00:57:35'),
-(73, 1, '2021-01-08 01:02:02', '2021-01-08 01:02:02'),
-(74, 1, '2021-01-08 01:02:13', '2021-01-08 01:02:13'),
-(75, 1, '2021-01-08 01:03:14', '2021-01-08 01:03:14'),
-(76, 1, '2021-01-08 01:03:38', '2021-01-08 01:03:38'),
-(77, 1, '2021-01-08 01:03:56', '2021-01-08 01:03:56'),
-(78, 1, '2021-01-08 01:04:08', '2021-01-08 01:04:08'),
-(79, 1, '2021-01-08 01:04:15', '2021-01-08 01:04:15'),
-(80, 1, '2021-01-08 01:05:02', '2021-01-08 01:05:02'),
-(81, 1, '2021-01-08 01:06:39', '2021-01-08 01:06:39'),
-(82, 1, '2021-01-08 01:07:14', '2021-01-08 01:07:14'),
-(83, 1, '2021-01-08 01:07:47', '2021-01-08 01:07:47'),
-(84, 1, '2021-01-08 01:08:11', '2021-01-08 01:08:11'),
-(85, 1, '2021-01-08 01:11:58', '2021-01-08 01:11:58'),
-(86, 1, '2021-01-08 01:12:12', '2021-01-08 01:12:12'),
-(87, 1, '2021-01-08 01:12:22', '2021-01-08 01:12:22'),
-(88, 1, '2021-01-08 01:12:34', '2021-01-08 01:12:34'),
-(89, 1, '2021-01-08 01:13:25', '2021-01-08 01:13:25'),
-(90, 1, '2021-01-08 01:14:49', '2021-01-08 01:14:49'),
-(91, 1, '2021-01-08 01:16:42', '2021-01-08 01:16:42'),
-(92, 1, '2021-01-08 01:18:41', '2021-01-08 01:18:41'),
-(93, 1, '2021-01-08 01:19:19', '2021-01-08 01:19:19'),
-(94, 1, '2021-01-08 01:19:44', '2021-01-08 01:19:44'),
-(95, 1, '2021-01-08 01:20:08', '2021-01-08 01:20:08'),
-(96, 1, '2021-01-08 01:20:24', '2021-01-08 01:20:24'),
-(97, 1, '2021-01-08 01:21:37', '2021-01-08 01:21:37'),
-(98, 1, '2021-01-08 01:21:45', '2021-01-08 01:21:45'),
-(99, 1, '2021-01-08 01:21:49', '2021-01-08 01:21:49'),
-(100, 1, '2021-01-08 01:22:57', '2021-01-08 01:22:57'),
-(101, 1, '2021-01-08 01:23:34', '2021-01-08 01:23:34'),
-(102, 1, '2021-01-08 01:25:20', '2021-01-08 01:25:20'),
-(103, 1, '2021-01-08 01:25:36', '2021-01-08 01:25:36'),
-(104, 1, '2021-01-08 01:25:58', '2021-01-08 01:25:58'),
-(105, 1, '2021-01-08 01:27:55', '2021-01-08 01:27:55'),
-(106, 1, '2021-01-08 01:28:22', '2021-01-08 01:28:22'),
-(107, 1, '2021-01-08 01:28:38', '2021-01-08 01:28:38'),
-(108, 1, '2021-01-08 01:28:57', '2021-01-08 01:28:57'),
-(109, 1, '2021-01-08 01:29:50', '2021-01-08 01:29:50'),
-(110, 1, '2021-01-08 01:31:11', '2021-01-08 01:31:11'),
-(111, 1, '2021-01-08 01:32:48', '2021-01-08 01:32:48'),
-(112, 1, '2021-01-08 01:34:10', '2021-01-08 01:34:10'),
-(113, 1, '2021-01-08 01:34:42', '2021-01-08 01:34:42'),
-(114, 1, '2021-01-08 01:36:24', '2021-01-08 01:36:24'),
-(115, 1, '2021-01-08 01:37:16', '2021-01-08 01:37:16'),
-(116, 1, '2021-01-08 01:38:41', '2021-01-08 01:38:41'),
-(117, 1, '2021-01-08 01:38:57', '2021-01-08 01:38:57'),
-(118, 1, '2021-01-08 01:39:14', '2021-01-08 01:39:14'),
-(119, 1, '2021-01-08 01:39:26', '2021-01-08 01:39:26'),
-(120, 1, '2021-01-08 01:39:49', '2021-01-08 01:39:49'),
-(121, 1, '2021-01-08 01:40:37', '2021-01-08 01:40:37'),
-(122, 1, '2021-01-08 01:41:03', '2021-01-08 01:41:03'),
-(123, 1, '2021-01-08 01:41:16', '2021-01-08 01:41:16'),
-(124, 1, '2021-01-08 01:41:21', '2021-01-08 01:41:21'),
-(125, 1, '2021-01-08 01:41:38', '2021-01-08 01:41:38'),
-(126, 1, '2021-01-08 01:41:52', '2021-01-08 01:41:52'),
-(127, 1, '2021-01-08 01:42:03', '2021-01-08 01:42:03'),
-(128, 1, '2021-01-08 01:42:20', '2021-01-08 01:42:20'),
-(129, 1, '2021-01-08 01:42:35', '2021-01-08 01:42:35'),
-(130, 1, '2021-01-08 01:42:57', '2021-01-08 01:42:57'),
-(131, 1, '2021-01-08 01:47:43', '2021-01-08 01:47:43'),
-(132, 1, '2021-01-08 01:47:55', '2021-01-08 01:47:55'),
-(133, 1, '2021-01-08 01:47:59', '2021-01-08 01:47:59'),
-(134, 1, '2021-01-08 01:48:34', '2021-01-08 01:48:34'),
-(135, 1, '2021-01-08 01:49:17', '2021-01-08 01:49:17'),
-(136, 1, '2021-01-08 01:49:33', '2021-01-08 01:49:33'),
-(137, 1, '2021-01-08 01:58:40', '2021-01-08 01:58:40'),
-(138, 1, '2021-01-08 02:00:03', '2021-01-08 02:00:03'),
-(139, 1, '2021-01-08 02:00:26', '2021-01-08 02:00:26'),
-(140, 1, '2021-01-08 02:00:42', '2021-01-08 02:00:42'),
-(141, 1, '2021-01-08 02:01:20', '2021-01-08 02:01:20'),
-(142, 1, '2021-01-08 02:02:26', '2021-01-08 02:02:26'),
-(143, 1, '2021-01-08 02:03:23', '2021-01-08 02:03:23'),
-(144, 1, '2021-01-08 03:44:00', '2021-01-08 03:44:00'),
-(145, 1, '2021-01-08 03:52:44', '2021-01-08 03:52:44'),
-(146, 1, '2021-01-08 03:53:58', '2021-01-08 03:53:58'),
-(147, 1, '2021-01-08 03:54:21', '2021-01-08 03:54:21'),
-(148, 1, '2021-01-08 03:55:00', '2021-01-08 03:55:00'),
-(149, 1, '2021-01-08 03:55:09', '2021-01-08 03:55:09'),
-(150, 1, '2021-01-08 03:56:05', '2021-01-08 03:56:05'),
-(151, 1, '2021-01-08 03:56:19', '2021-01-08 03:56:19'),
-(152, 1, '2021-01-08 03:56:32', '2021-01-08 03:56:32'),
-(153, 1, '2021-01-08 03:57:07', '2021-01-08 03:57:07'),
-(154, 1, '2021-01-08 03:59:30', '2021-01-08 03:59:30'),
-(155, 1, '2021-01-08 03:59:59', '2021-01-08 03:59:59'),
-(156, 1, '2021-01-08 04:00:38', '2021-01-08 04:00:38'),
-(157, 1, '2021-01-08 04:01:00', '2021-01-08 04:01:00'),
-(158, 1, '2021-01-08 04:01:14', '2021-01-08 04:01:14'),
-(159, 1, '2021-01-08 04:01:20', '2021-01-08 04:01:20'),
-(160, 1, '2021-01-08 04:06:06', '2021-01-08 04:06:06'),
-(161, 1, '2021-01-08 04:06:47', '2021-01-08 04:06:47'),
-(162, 1, '2021-01-08 04:07:07', '2021-01-08 04:07:07'),
-(163, 1, '2021-01-08 04:07:29', '2021-01-08 04:07:29'),
-(164, 1, '2021-01-08 04:07:54', '2021-01-08 04:07:54'),
-(165, 1, '2021-01-08 04:08:08', '2021-01-08 04:08:08'),
-(166, 1, '2021-01-08 04:08:41', '2021-01-08 04:08:41'),
-(167, 1, '2021-01-08 04:09:13', '2021-01-08 04:09:13'),
-(168, 1, '2021-01-08 04:12:13', '2021-01-08 04:12:13'),
-(169, 1, '2021-01-08 04:14:55', '2021-01-08 04:14:55'),
-(170, 1, '2021-01-08 04:15:58', '2021-01-08 04:15:58'),
-(171, 1, '2021-01-08 04:18:26', '2021-01-08 04:18:26'),
-(172, 1, '2021-01-08 04:18:32', '2021-01-08 04:18:32'),
-(173, 1, '2021-01-08 04:23:37', '2021-01-08 04:23:37'),
-(174, 1, '2021-01-08 04:24:37', '2021-01-08 04:24:37'),
-(175, 1, '2021-01-08 04:26:37', '2021-01-08 04:26:37'),
-(176, 1, '2021-01-08 04:28:07', '2021-01-08 04:28:07'),
-(177, 1, '2021-01-08 04:30:28', '2021-01-08 04:30:28'),
-(178, 1, '2021-01-08 04:32:11', '2021-01-08 04:32:11'),
-(179, 1, '2021-01-08 04:32:34', '2021-01-08 04:32:34'),
-(180, 1, '2021-01-08 04:34:00', '2021-01-08 04:34:00'),
-(181, 1, '2021-01-08 04:44:46', '2021-01-08 04:44:46'),
-(182, 1, '2021-01-08 04:45:58', '2021-01-08 04:45:58'),
-(183, 1, '2021-01-08 04:50:43', '2021-01-08 04:50:43'),
-(184, 1, '2021-01-08 04:51:26', '2021-01-08 04:51:26'),
-(185, 1, '2021-01-08 04:52:01', '2021-01-08 04:52:01'),
-(186, 1, '2021-01-08 04:53:05', '2021-01-08 04:53:05'),
-(187, 1, '2021-01-08 04:53:49', '2021-01-08 04:53:49'),
-(188, 1, '2021-01-08 04:55:37', '2021-01-08 04:55:37'),
-(189, 1, '2021-01-08 04:56:11', '2021-01-08 04:56:11'),
-(190, 1, '2021-01-08 04:59:40', '2021-01-08 04:59:40'),
-(191, 1, '2021-01-08 05:01:24', '2021-01-08 05:01:24'),
-(192, 1, '2021-01-08 05:10:06', '2021-01-08 05:10:06'),
-(193, 1, '2021-01-08 05:10:11', '2021-01-08 05:10:11'),
-(194, 1, '2021-01-08 05:10:20', '2021-01-08 05:10:20'),
-(195, 1, '2021-01-08 05:10:25', '2021-01-08 05:10:25'),
-(196, 1, '2021-01-08 05:11:05', '2021-01-08 05:11:05'),
-(197, 1, '2021-01-08 05:11:17', '2021-01-08 05:11:17'),
-(198, 1, '2021-01-08 05:15:41', '2021-01-08 05:15:41'),
-(199, 1, '2021-01-08 05:45:09', '2021-01-08 05:45:09'),
-(200, 1, '2021-01-08 05:49:58', '2021-01-08 05:49:58'),
-(201, 1, '2021-01-08 06:12:10', '2021-01-08 06:12:10'),
-(202, 1, '2021-01-08 06:17:07', '2021-01-08 06:17:07'),
-(203, 1, '2021-01-08 06:42:09', '2021-01-08 06:42:09'),
-(204, 1, '2021-01-08 06:42:21', '2021-01-08 06:42:21'),
-(205, 1, '2021-01-08 06:42:41', '2021-01-08 06:42:41'),
-(206, 1, '2021-01-10 23:04:34', '2021-01-10 23:04:34'),
-(207, 1, '2021-01-10 23:34:38', '2021-01-10 23:34:38'),
-(208, 1, '2021-01-10 23:38:43', '2021-01-10 23:38:43'),
-(209, 1, '2021-01-11 02:16:51', '2021-01-11 02:16:51'),
-(210, 1, '2021-01-11 03:01:54', '2021-01-11 03:01:54'),
-(211, 1, '2021-01-11 03:09:15', '2021-01-11 03:09:15'),
-(212, 1, '2021-01-11 03:09:46', '2021-01-11 03:09:46'),
-(213, 1, '2021-01-11 03:26:23', '2021-01-11 03:26:23'),
-(214, 1, '2021-01-11 03:27:19', '2021-01-11 03:27:19'),
-(215, 1, '2021-01-11 06:56:35', '2021-01-11 06:56:35'),
-(216, 1, '2021-01-11 06:56:51', '2021-01-11 06:56:51'),
-(217, 1, '2021-01-11 06:56:53', '2021-01-11 06:56:53'),
-(218, 1, '2021-01-11 06:57:00', '2021-01-11 06:57:00'),
-(219, 1, '2021-01-11 06:57:01', '2021-01-11 06:57:01'),
-(220, 1, '2021-01-11 06:57:01', '2021-01-11 06:57:01'),
-(221, 1, '2021-01-11 07:06:19', '2021-01-11 07:06:19'),
-(222, 1, '2021-01-11 22:45:52', '2021-01-11 22:45:52'),
-(223, 1, '2021-01-11 22:46:55', '2021-01-11 22:46:55'),
-(224, 1, '2021-01-11 22:49:18', '2021-01-11 22:49:18'),
-(225, 1, '2021-01-11 22:51:32', '2021-01-11 22:51:32'),
-(226, 1, '2021-01-11 22:54:30', '2021-01-11 22:54:30'),
-(227, 1, '2021-01-11 22:54:32', '2021-01-11 22:54:32'),
-(228, 1, '2021-01-11 22:54:55', '2021-01-11 22:54:55'),
-(229, 1, '2021-01-12 01:10:14', '2021-01-12 01:10:14'),
-(230, 1, '2021-01-12 01:11:35', '2021-01-12 01:11:35'),
-(231, 1, '2021-01-12 01:21:59', '2021-01-12 01:21:59'),
-(232, 1, '2021-01-12 01:23:03', '2021-01-12 01:23:03'),
-(233, 1, '2021-01-12 01:23:06', '2021-01-12 01:23:06'),
-(234, 1, '2021-01-12 01:24:03', '2021-01-12 01:24:03'),
-(235, 1, '2021-01-12 01:24:25', '2021-01-12 01:24:25'),
-(236, 1, '2021-01-12 01:26:08', '2021-01-12 01:26:08'),
-(237, 1, '2021-01-12 01:35:58', '2021-01-12 01:35:58'),
-(238, 1, '2021-01-12 01:37:11', '2021-01-12 01:37:11'),
-(239, 1, '2021-01-12 01:38:03', '2021-01-12 01:38:03'),
-(240, 1, '2021-01-12 01:38:43', '2021-01-12 01:38:43'),
-(241, 1, '2021-01-12 03:11:38', '2021-01-12 03:11:38'),
-(242, 1, '2021-01-12 03:12:20', '2021-01-12 03:12:20'),
-(243, 1, '2021-01-12 03:16:29', '2021-01-12 03:16:29'),
-(244, 1, '2021-01-12 03:21:38', '2021-01-12 03:21:38'),
-(245, 1, '2021-01-12 03:21:43', '2021-01-12 03:21:43'),
-(246, 1, '2021-01-12 03:21:58', '2021-01-12 03:21:58'),
-(247, 1, '2021-01-12 03:22:24', '2021-01-12 03:22:24'),
-(248, 1, '2021-01-12 03:43:38', '2021-01-12 03:43:38'),
-(249, 1, '2021-01-12 03:44:04', '2021-01-12 03:44:04'),
-(250, 1, '2021-01-12 03:44:10', '2021-01-12 03:44:10'),
-(251, 1, '2021-01-12 03:44:58', '2021-01-12 03:44:58'),
-(252, 1, '2021-01-12 03:45:13', '2021-01-12 03:45:13'),
-(253, 1, '2021-01-12 03:45:34', '2021-01-12 03:45:34'),
-(254, 1, '2021-01-12 03:50:54', '2021-01-12 03:50:54'),
-(255, 1, '2021-01-12 03:51:09', '2021-01-12 03:51:09'),
-(256, 1, '2021-01-12 03:51:16', '2021-01-12 03:51:16'),
-(257, 1, '2021-01-12 03:51:20', '2021-01-12 03:51:20'),
-(258, 1, '2021-01-12 04:05:03', '2021-01-12 04:05:03'),
-(259, 1, '2021-01-12 04:05:14', '2021-01-12 04:05:14'),
-(260, 1, '2021-01-12 04:05:23', '2021-01-12 04:05:23'),
-(261, 1, '2021-01-12 04:05:41', '2021-01-12 04:05:41'),
-(262, 1, '2021-01-12 04:05:45', '2021-01-12 04:05:45'),
-(263, 1, '2021-01-12 04:07:34', '2021-01-12 04:07:34'),
-(264, 1, '2021-01-12 04:07:40', '2021-01-12 04:07:40'),
-(265, 1, '2021-01-12 04:07:43', '2021-01-12 04:07:43'),
-(266, 1, '2021-01-12 04:08:48', '2021-01-12 04:08:48'),
-(267, 1, '2021-01-12 04:09:19', '2021-01-12 04:09:19'),
-(268, 1, '2021-01-12 04:14:18', '2021-01-12 04:14:18'),
-(269, 1, '2021-01-12 05:43:19', '2021-01-12 05:43:19'),
-(270, 1, '2021-01-12 06:04:50', '2021-01-12 06:04:50'),
-(271, 1, '2021-01-12 22:40:01', '2021-01-12 22:40:01'),
-(272, 1, '2021-01-12 23:17:16', '2021-01-12 23:17:16'),
-(273, 1, '2021-01-12 23:28:01', '2021-01-12 23:28:01'),
-(274, 1, '2021-01-12 23:28:10', '2021-01-12 23:28:10'),
-(275, 1, '2021-01-12 23:29:48', '2021-01-12 23:29:48'),
-(276, 1, '2021-01-13 00:12:15', '2021-01-13 00:12:15'),
-(277, 1, '2021-01-13 00:21:49', '2021-01-13 00:21:49'),
-(278, 1, '2021-01-13 00:52:49', '2021-01-13 00:52:49'),
-(279, 1, '2021-01-13 00:53:40', '2021-01-13 00:53:40'),
-(280, 1, '2021-01-13 00:54:04', '2021-01-13 00:54:04'),
-(281, 1, '2021-01-13 02:44:40', '2021-01-13 02:44:40'),
-(282, 1, '2021-01-13 02:56:01', '2021-01-13 02:56:01'),
-(283, 1, '2021-01-13 05:25:37', '2021-01-13 05:25:37'),
-(284, 1, '2021-01-13 05:51:05', '2021-01-13 05:51:05'),
-(285, 1, '2021-01-13 05:51:05', '2021-01-13 05:51:05'),
-(286, 1, '2021-01-13 06:39:22', '2021-01-13 06:39:22'),
-(287, 1, '2021-01-13 22:54:45', '2021-01-13 22:54:45'),
-(288, 1, '2021-01-13 23:35:00', '2021-01-13 23:35:00'),
-(289, 1, '2021-01-14 00:20:25', '2021-01-14 00:20:25'),
-(290, 1, '2021-01-14 00:47:33', '2021-01-14 00:47:33'),
-(291, 1, '2021-01-14 01:14:52', '2021-01-14 01:14:52'),
-(292, 1, '2021-01-14 01:17:40', '2021-01-14 01:17:40'),
-(293, 1, '2021-01-14 01:18:22', '2021-01-14 01:18:22'),
-(294, 1, '2021-01-14 01:25:24', '2021-01-14 01:25:24');
+(1, 1, '2020-10-21 01:42:26', '2020-10-21 01:42:26'),
+(2, 1, '2020-10-21 01:42:49', '2020-10-21 01:42:49'),
+(3, 1, '2020-10-21 03:25:32', '2020-10-21 03:25:32'),
+(4, 1, '2020-10-21 05:14:49', '2020-10-21 05:14:49'),
+(5, 1, '2020-10-21 06:18:42', '2020-10-21 06:18:42'),
+(6, 1, '2020-10-21 23:24:56', '2020-10-21 23:24:56'),
+(7, 1, '2020-10-21 23:31:00', '2020-10-21 23:31:00'),
+(8, 1, '2020-10-21 23:31:34', '2020-10-21 23:31:34'),
+(9, 1, '2020-10-22 00:03:45', '2020-10-22 00:03:45'),
+(10, 1, '2020-10-22 00:20:52', '2020-10-22 00:20:52'),
+(11, 1, '2020-10-22 00:40:47', '2020-10-22 00:40:47'),
+(12, 1, '2020-10-22 02:23:04', '2020-10-22 02:23:04'),
+(13, 1, '2020-10-22 03:21:40', '2020-10-22 03:21:40'),
+(14, 1, '2020-10-23 00:00:35', '2020-10-23 00:00:35'),
+(15, 1, '2020-10-23 04:11:43', '2020-10-23 04:11:43'),
+(16, 1, '2020-10-23 05:15:42', '2020-10-23 05:15:42'),
+(17, 1, '2020-10-23 05:15:54', '2020-10-23 05:15:54'),
+(18, 1, '2020-10-23 05:18:25', '2020-10-23 05:18:25'),
+(19, 1, '2020-10-23 07:39:18', '2020-10-23 07:39:18'),
+(20, 1, '2020-10-23 09:35:47', '2020-10-23 09:35:47'),
+(21, 1, '2020-10-23 09:57:10', '2020-10-23 09:57:10'),
+(22, 1, '2020-10-26 07:32:30', '2020-10-26 07:32:30'),
+(23, 1, '2020-10-26 07:36:27', '2020-10-26 07:36:27'),
+(24, 1, '2020-10-26 07:39:41', '2020-10-26 07:39:41'),
+(25, 1, '2020-10-26 23:05:55', '2020-10-26 23:05:55'),
+(26, 1, '2020-10-26 23:15:10', '2020-10-26 23:15:10'),
+(27, 1, '2020-10-27 02:38:33', '2020-10-27 02:38:33'),
+(28, 1, '2020-10-27 02:39:22', '2020-10-27 02:39:22'),
+(29, 1, '2020-10-27 02:56:38', '2020-10-27 02:56:38'),
+(30, 1, '2020-10-27 03:09:58', '2020-10-27 03:09:58'),
+(31, 1, '2020-10-27 05:31:03', '2020-10-27 05:31:03'),
+(32, 1, '2020-10-27 05:32:36', '2020-10-27 05:32:36'),
+(33, 1, '2020-10-27 06:07:13', '2020-10-27 06:07:13'),
+(34, 1, '2020-10-27 06:20:35', '2020-10-27 06:20:35'),
+(35, 1, '2020-11-02 02:03:55', '2020-11-02 02:03:55'),
+(36, 1, '2020-11-02 02:06:07', '2020-11-02 02:06:07'),
+(37, 1, '2020-11-02 02:22:45', '2020-11-02 02:22:45'),
+(38, 1, '2020-11-02 02:33:18', '2020-11-02 02:33:18'),
+(39, 1, '2020-11-02 05:28:59', '2020-11-02 05:28:59'),
+(40, 1, '2020-11-02 07:06:03', '2020-11-02 07:06:03'),
+(41, 1, '2020-11-02 07:26:44', '2020-11-02 07:26:44'),
+(42, 1, '2020-11-02 23:23:36', '2020-11-02 23:23:36'),
+(43, 1, '2020-11-03 00:05:25', '2020-11-03 00:05:25'),
+(44, 1, '2020-11-03 00:07:32', '2020-11-03 00:07:32'),
+(45, 1, '2020-11-03 00:32:02', '2020-11-03 00:32:02'),
+(46, 1, '2020-11-03 05:28:31', '2020-11-03 05:28:31'),
+(47, 1, '2020-11-03 05:28:55', '2020-11-03 05:28:55'),
+(48, 1, '2020-11-03 05:28:55', '2020-11-03 05:28:55'),
+(49, 1, '2020-11-03 06:11:19', '2020-11-03 06:11:19'),
+(50, 1, '2020-11-03 06:11:27', '2020-11-03 06:11:27'),
+(51, 1, '2020-11-03 06:11:37', '2020-11-03 06:11:37'),
+(52, 1, '2020-11-03 06:13:13', '2020-11-03 06:13:13'),
+(53, 1, '2020-11-03 06:19:07', '2020-11-03 06:19:07'),
+(54, 1, '2020-11-03 06:56:08', '2020-11-03 06:56:08'),
+(55, 1, '2020-11-05 03:15:47', '2020-11-05 03:15:47'),
+(56, 1, '2020-11-05 05:11:16', '2020-11-05 05:11:16'),
+(57, 1, '2020-11-05 05:20:27', '2020-11-05 05:20:27'),
+(58, 1, '2020-11-05 05:24:50', '2020-11-05 05:24:50'),
+(59, 1, '2020-11-05 08:54:46', '2020-11-05 08:54:46'),
+(60, 1, '2020-11-05 09:40:06', '2020-11-05 09:40:06'),
+(61, 1, '2020-11-13 06:37:12', '2020-11-13 06:37:12'),
+(62, 1, '2020-11-13 06:37:42', '2020-11-13 06:37:42'),
+(63, 1, '2020-11-13 06:40:09', '2020-11-13 06:40:09'),
+(64, 1, '2020-11-13 06:40:23', '2020-11-13 06:40:23'),
+(65, 1, '2020-11-13 06:40:35', '2020-11-13 06:40:35'),
+(66, 1, '2020-11-13 06:40:45', '2020-11-13 06:40:45'),
+(67, 1, '2020-11-13 06:42:54', '2020-11-13 06:42:54'),
+(68, 1, '2020-11-13 06:43:14', '2020-11-13 06:43:14'),
+(69, 1, '2020-11-13 06:43:30', '2020-11-13 06:43:30'),
+(70, 1, '2020-11-13 06:43:45', '2020-11-13 06:43:45'),
+(71, 1, '2020-11-13 06:44:09', '2020-11-13 06:44:09'),
+(72, 1, '2020-11-13 06:44:17', '2020-11-13 06:44:17'),
+(73, 1, '2020-11-13 06:45:54', '2020-11-13 06:45:54'),
+(74, 1, '2020-11-13 06:46:09', '2020-11-13 06:46:09'),
+(75, 1, '2020-11-13 06:46:24', '2020-11-13 06:46:24'),
+(76, 1, '2020-11-13 06:48:28', '2020-11-13 06:48:28'),
+(77, 1, '2020-11-13 06:48:36', '2020-11-13 06:48:36'),
+(78, 1, '2020-11-13 06:49:02', '2020-11-13 06:49:02'),
+(79, 1, '2020-11-13 06:49:13', '2020-11-13 06:49:13'),
+(80, 1, '2020-11-13 06:50:19', '2020-11-13 06:50:19'),
+(81, 1, '2020-11-13 06:51:01', '2020-11-13 06:51:01'),
+(82, 1, '2020-11-13 06:51:17', '2020-11-13 06:51:17'),
+(83, 1, '2020-11-13 06:53:05', '2020-11-13 06:53:05'),
+(84, 1, '2020-11-13 06:53:23', '2020-11-13 06:53:23'),
+(85, 1, '2020-11-13 06:53:30', '2020-11-13 06:53:30'),
+(86, 1, '2020-11-13 06:54:29', '2020-11-13 06:54:29'),
+(87, 1, '2020-11-13 06:54:38', '2020-11-13 06:54:38'),
+(88, 1, '2020-11-13 06:55:18', '2020-11-13 06:55:18'),
+(89, 1, '2020-11-13 06:56:37', '2020-11-13 06:56:37'),
+(90, 1, '2020-11-13 06:57:20', '2020-11-13 06:57:20'),
+(91, 1, '2020-11-13 07:00:05', '2020-11-13 07:00:05'),
+(92, 1, '2020-11-13 07:02:22', '2020-11-13 07:02:22'),
+(93, 1, '2020-11-13 07:02:41', '2020-11-13 07:02:41'),
+(94, 1, '2020-11-13 07:03:50', '2020-11-13 07:03:50'),
+(95, 1, '2020-11-16 02:14:53', '2020-11-16 02:14:53'),
+(96, 1, '2020-11-16 02:41:22', '2020-11-16 02:41:22'),
+(97, 1, '2020-11-16 02:43:27', '2020-11-16 02:43:27'),
+(98, 1, '2020-11-16 02:44:48', '2020-11-16 02:44:48'),
+(99, 1, '2020-11-16 02:51:15', '2020-11-16 02:51:15'),
+(100, 1, '2020-11-16 02:51:50', '2020-11-16 02:51:50'),
+(101, 1, '2020-11-16 02:52:22', '2020-11-16 02:52:22'),
+(102, 1, '2020-11-16 03:18:28', '2020-11-16 03:18:28'),
+(103, 1, '2020-11-16 00:27:14', '2020-11-16 00:27:14'),
+(104, 1, '2020-11-16 01:38:12', '2020-11-16 01:38:12'),
+(105, 1, '2020-11-16 01:38:13', '2020-11-16 01:38:13'),
+(106, 1, '2020-11-16 01:53:19', '2020-11-16 01:53:19'),
+(107, 1, '2020-11-16 04:04:33', '2020-11-16 04:04:33'),
+(108, 1, '2020-11-16 04:05:32', '2020-11-16 04:05:32'),
+(109, 1, '2020-11-16 04:22:56', '2020-11-16 04:22:56'),
+(110, 1, '2020-11-16 06:46:06', '2020-11-16 06:46:06'),
+(111, 1, '2020-11-16 08:12:50', '2020-11-16 08:12:50'),
+(112, 1, '2020-11-16 09:18:15', '2020-11-16 09:18:15'),
+(113, 1, '2020-11-16 10:47:06', '2020-11-16 10:47:06'),
+(114, 1, '2020-11-16 11:29:06', '2020-11-16 11:29:06'),
+(115, 1, '2020-11-16 12:08:30', '2020-11-16 12:08:30'),
+(116, 1, '2020-11-16 12:54:39', '2020-11-16 12:54:39'),
+(117, 1, '2020-11-16 13:03:28', '2020-11-16 13:03:28'),
+(118, 1, '2020-11-16 13:03:29', '2020-11-16 13:03:29'),
+(119, 1, '2020-11-16 13:03:29', '2020-11-16 13:03:29'),
+(120, 1, '2020-11-16 13:22:29', '2020-11-16 13:22:29'),
+(121, 1, '2020-11-16 13:32:48', '2020-11-16 13:32:48'),
+(122, 1, '2020-11-16 13:32:49', '2020-11-16 13:32:49'),
+(123, 1, '2020-11-16 16:43:09', '2020-11-16 16:43:09'),
+(124, 1, '2020-11-16 17:44:16', '2020-11-16 17:44:16'),
+(125, 1, '2020-11-16 18:05:37', '2020-11-16 18:05:37'),
+(126, 1, '2020-11-16 19:36:20', '2020-11-16 19:36:20'),
+(127, 1, '2020-11-16 19:36:22', '2020-11-16 19:36:22'),
+(128, 1, '2020-11-16 19:36:52', '2020-11-16 19:36:52'),
+(129, 1, '2020-11-16 19:43:47', '2020-11-16 19:43:47'),
+(130, 1, '2020-11-16 20:12:32', '2020-11-16 20:12:32'),
+(131, 1, '2020-11-16 22:12:29', '2020-11-16 22:12:29'),
+(132, 1, '2020-11-16 22:55:28', '2020-11-16 22:55:28'),
+(133, 1, '2020-11-17 00:15:35', '2020-11-17 00:15:35'),
+(134, 1, '2020-11-17 00:21:27', '2020-11-17 00:21:27'),
+(135, 1, '2020-11-17 00:22:14', '2020-11-17 00:22:14'),
+(136, 1, '2020-11-17 00:26:02', '2020-11-17 00:26:02'),
+(137, 1, '2020-11-17 01:27:24', '2020-11-17 01:27:24'),
+(138, 1, '2020-11-17 01:27:31', '2020-11-17 01:27:31'),
+(139, 1, '2020-11-17 02:05:25', '2020-11-17 02:05:25'),
+(140, 1, '2020-11-17 02:05:27', '2020-11-17 02:05:27'),
+(141, 1, '2020-11-17 02:05:55', '2020-11-17 02:05:55'),
+(142, 1, '2020-11-17 03:34:49', '2020-11-17 03:34:49'),
+(143, 1, '2020-11-17 04:58:58', '2020-11-17 04:58:58'),
+(144, 1, '2020-11-17 05:52:41', '2020-11-17 05:52:41'),
+(145, 1, '2020-11-17 05:52:42', '2020-11-17 05:52:42'),
+(146, 1, '2020-11-17 05:52:42', '2020-11-17 05:52:42'),
+(147, 1, '2020-11-17 05:52:42', '2020-11-17 05:52:42'),
+(148, 1, '2020-11-17 05:52:43', '2020-11-17 05:52:43'),
+(149, 1, '2020-11-17 07:08:32', '2020-11-17 07:08:32'),
+(150, 1, '2020-11-17 08:08:36', '2020-11-17 08:08:36'),
+(151, 1, '2020-11-17 09:23:42', '2020-11-17 09:23:42'),
+(152, 1, '2020-11-17 09:25:42', '2020-11-17 09:25:42'),
+(153, 1, '2020-11-17 13:56:35', '2020-11-17 13:56:35'),
+(154, 1, '2020-11-17 15:10:13', '2020-11-17 15:10:13'),
+(155, 1, '2020-11-17 15:13:25', '2020-11-17 15:13:25'),
+(156, 1, '2020-11-17 15:16:40', '2020-11-17 15:16:40'),
+(157, 1, '2020-11-17 15:23:08', '2020-11-17 15:23:08'),
+(158, 1, '2020-11-17 15:23:11', '2020-11-17 15:23:11'),
+(159, 1, '2020-11-17 16:43:28', '2020-11-17 16:43:28'),
+(160, 1, '2020-11-17 17:22:08', '2020-11-17 17:22:08'),
+(161, 1, '2020-11-17 17:40:10', '2020-11-17 17:40:10'),
+(162, 1, '2020-11-17 18:51:56', '2020-11-17 18:51:56'),
+(163, 1, '2020-11-17 21:18:22', '2020-11-17 21:18:22'),
+(164, 1, '2020-11-17 22:52:44', '2020-11-17 22:52:44'),
+(165, 1, '2020-11-17 22:55:16', '2020-11-17 22:55:16'),
+(166, 1, '2020-11-17 22:56:53', '2020-11-17 22:56:53'),
+(167, 1, '2020-11-17 23:05:57', '2020-11-17 23:05:57'),
+(168, 1, '2020-11-18 00:25:08', '2020-11-18 00:25:08'),
+(169, 1, '2020-11-18 01:10:35', '2020-11-18 01:10:35'),
+(170, 1, '2020-11-18 01:13:30', '2020-11-18 01:13:30'),
+(171, 1, '2020-11-18 01:14:39', '2020-11-18 01:14:39'),
+(172, 1, '2020-11-18 02:02:42', '2020-11-18 02:02:42'),
+(173, 1, '2020-11-18 03:19:21', '2020-11-18 03:19:21'),
+(174, 1, '2020-11-18 04:37:51', '2020-11-18 04:37:51'),
+(175, 1, '2020-11-18 04:37:52', '2020-11-18 04:37:52'),
+(176, 1, '2020-11-18 05:07:59', '2020-11-18 05:07:59'),
+(177, 1, '2020-11-18 05:08:45', '2020-11-18 05:08:45'),
+(178, 1, '2020-11-18 05:09:24', '2020-11-18 05:09:24'),
+(179, 1, '2020-11-18 05:15:10', '2020-11-18 05:15:10'),
+(180, 1, '2020-11-18 06:00:37', '2020-11-18 06:00:37'),
+(181, 1, '2020-11-18 06:00:39', '2020-11-18 06:00:39'),
+(182, 1, '2020-11-18 09:16:11', '2020-11-18 09:16:11'),
+(183, 1, '2020-11-18 10:25:23', '2020-11-18 10:25:23'),
+(184, 1, '2020-11-18 12:26:15', '2020-11-18 12:26:15'),
+(185, 1, '2020-11-18 13:11:36', '2020-11-18 13:11:36'),
+(186, 1, '2020-11-18 13:13:35', '2020-11-18 13:13:35'),
+(187, 1, '2020-11-18 14:13:49', '2020-11-18 14:13:49'),
+(188, 1, '2020-11-18 15:54:14', '2020-11-18 15:54:14'),
+(189, 1, '2020-11-18 16:35:11', '2020-11-18 16:35:11'),
+(190, 1, '2020-11-18 16:43:07', '2020-11-18 16:43:07'),
+(191, 1, '2020-11-18 17:09:56', '2020-11-18 17:09:56'),
+(192, 1, '2020-11-18 17:17:29', '2020-11-18 17:17:29'),
+(193, 1, '2020-11-18 17:18:27', '2020-11-18 17:18:27'),
+(194, 1, '2020-11-18 17:18:31', '2020-11-18 17:18:31'),
+(195, 1, '2020-11-18 17:20:23', '2020-11-18 17:20:23'),
+(196, 1, '2020-11-18 17:20:36', '2020-11-18 17:20:36'),
+(197, 1, '2020-11-18 17:22:47', '2020-11-18 17:22:47'),
+(198, 1, '2020-11-18 17:23:40', '2020-11-18 17:23:40'),
+(199, 1, '2020-11-18 17:40:47', '2020-11-18 17:40:47'),
+(200, 1, '2020-11-18 18:24:39', '2020-11-18 18:24:39'),
+(201, 1, '2020-11-18 18:31:24', '2020-11-18 18:31:24'),
+(202, 1, '2020-11-18 18:31:32', '2020-11-18 18:31:32'),
+(203, 1, '2020-11-18 18:31:34', '2020-11-18 18:31:34'),
+(204, 1, '2020-11-18 18:43:08', '2020-11-18 18:43:08'),
+(205, 1, '2020-11-18 18:43:15', '2020-11-18 18:43:15'),
+(206, 1, '2020-11-18 18:47:13', '2020-11-18 18:47:13'),
+(207, 1, '2020-11-18 18:47:21', '2020-11-18 18:47:21'),
+(208, 1, '2020-11-18 18:47:23', '2020-11-18 18:47:23'),
+(209, 1, '2020-11-18 18:47:49', '2020-11-18 18:47:49'),
+(210, 1, '2020-11-18 18:47:52', '2020-11-18 18:47:52'),
+(211, 1, '2020-11-18 18:48:07', '2020-11-18 18:48:07'),
+(212, 1, '2020-11-18 18:48:08', '2020-11-18 18:48:08'),
+(213, 1, '2020-11-18 18:48:13', '2020-11-18 18:48:13'),
+(214, 1, '2020-11-18 18:48:15', '2020-11-18 18:48:15'),
+(215, 1, '2020-11-18 18:48:16', '2020-11-18 18:48:16'),
+(216, 1, '2020-11-18 18:48:18', '2020-11-18 18:48:18'),
+(217, 1, '2020-11-18 19:41:56', '2020-11-18 19:41:56'),
+(218, 1, '2020-11-18 19:45:58', '2020-11-18 19:45:58'),
+(219, 1, '2020-11-18 19:46:03', '2020-11-18 19:46:03'),
+(220, 1, '2020-11-18 19:46:20', '2020-11-18 19:46:20'),
+(221, 1, '2020-11-18 20:08:18', '2020-11-18 20:08:18'),
+(222, 1, '2020-11-18 20:08:18', '2020-11-18 20:08:18'),
+(223, 1, '2020-11-18 20:08:28', '2020-11-18 20:08:28'),
+(224, 1, '2020-11-18 20:08:28', '2020-11-18 20:08:28'),
+(225, 1, '2020-11-18 20:08:30', '2020-11-18 20:08:30'),
+(226, 1, '2020-11-18 20:08:30', '2020-11-18 20:08:30'),
+(227, 1, '2020-11-18 20:30:05', '2020-11-18 20:30:05'),
+(228, 1, '2020-11-18 21:08:08', '2020-11-18 21:08:08'),
+(229, 1, '2020-11-18 21:19:09', '2020-11-18 21:19:09'),
+(230, 1, '2020-11-18 21:20:53', '2020-11-18 21:20:53'),
+(231, 1, '2020-11-18 21:21:12', '2020-11-18 21:21:12'),
+(232, 1, '2020-11-18 21:22:43', '2020-11-18 21:22:43'),
+(233, 1, '2020-11-18 21:44:11', '2020-11-18 21:44:11'),
+(234, 1, '2020-11-18 21:45:28', '2020-11-18 21:45:28'),
+(235, 1, '2020-11-18 21:47:46', '2020-11-18 21:47:46'),
+(236, 1, '2020-11-18 21:48:13', '2020-11-18 21:48:13'),
+(237, 1, '2020-11-18 21:48:17', '2020-11-18 21:48:17'),
+(238, 1, '2020-11-18 21:48:30', '2020-11-18 21:48:30'),
+(239, 1, '2020-11-18 21:48:59', '2020-11-18 21:48:59'),
+(240, 1, '2020-11-18 21:49:32', '2020-11-18 21:49:32'),
+(241, 1, '2020-11-18 21:50:12', '2020-11-18 21:50:12'),
+(242, 1, '2020-11-18 21:50:13', '2020-11-18 21:50:13'),
+(243, 1, '2020-11-18 21:50:13', '2020-11-18 21:50:13'),
+(244, 1, '2020-11-18 21:50:13', '2020-11-18 21:50:13'),
+(245, 1, '2020-11-18 21:50:13', '2020-11-18 21:50:13'),
+(246, 1, '2020-11-18 21:50:14', '2020-11-18 21:50:14'),
+(247, 1, '2020-11-18 21:50:14', '2020-11-18 21:50:14'),
+(248, 1, '2020-11-18 21:50:14', '2020-11-18 21:50:14'),
+(249, 1, '2020-11-18 21:50:14', '2020-11-18 21:50:14'),
+(250, 1, '2020-11-18 21:50:21', '2020-11-18 21:50:21'),
+(251, 1, '2020-11-18 21:50:36', '2020-11-18 21:50:36'),
+(252, 1, '2020-11-18 21:50:47', '2020-11-18 21:50:47'),
+(253, 1, '2020-11-18 21:52:16', '2020-11-18 21:52:16'),
+(254, 1, '2020-11-18 21:52:26', '2020-11-18 21:52:26'),
+(255, 1, '2020-11-18 21:53:06', '2020-11-18 21:53:06'),
+(256, 1, '2020-11-18 22:55:30', '2020-11-18 22:55:30'),
+(257, 1, '2020-11-18 22:56:06', '2020-11-18 22:56:06'),
+(258, 1, '2020-11-18 22:56:08', '2020-11-18 22:56:08'),
+(259, 1, '2020-11-18 23:37:45', '2020-11-18 23:37:45'),
+(260, 1, '2020-11-19 00:35:21', '2020-11-19 00:35:21'),
+(261, 1, '2020-11-19 01:08:18', '2020-11-19 01:08:18'),
+(262, 1, '2020-11-19 01:22:37', '2020-11-19 01:22:37'),
+(263, 1, '2020-11-19 01:23:38', '2020-11-19 01:23:38'),
+(264, 1, '2020-11-19 01:44:03', '2020-11-19 01:44:03'),
+(265, 1, '2020-11-19 05:06:35', '2020-11-19 05:06:35'),
+(266, 1, '2020-11-19 07:01:51', '2020-11-19 07:01:51'),
+(267, 1, '2020-11-19 07:41:34', '2020-11-19 07:41:34'),
+(268, 1, '2020-11-19 09:02:48', '2020-11-19 09:02:48'),
+(269, 1, '2020-11-19 09:04:46', '2020-11-19 09:04:46'),
+(270, 1, '2020-11-19 10:18:17', '2020-11-19 10:18:17'),
+(271, 1, '2020-11-19 11:48:43', '2020-11-19 11:48:43'),
+(272, 1, '2020-11-19 11:48:43', '2020-11-19 11:48:43'),
+(273, 1, '2020-11-19 13:31:14', '2020-11-19 13:31:14'),
+(274, 1, '2020-11-19 13:31:52', '2020-11-19 13:31:52'),
+(275, 1, '2020-11-19 14:42:11', '2020-11-19 14:42:11'),
+(276, 1, '2020-11-19 14:57:13', '2020-11-19 14:57:13'),
+(277, 1, '2020-11-19 15:55:27', '2020-11-19 15:55:27'),
+(278, 1, '2020-11-19 16:43:26', '2020-11-19 16:43:26'),
+(279, 1, '2020-11-19 18:28:36', '2020-11-19 18:28:36'),
+(280, 1, '2020-11-19 20:59:25', '2020-11-19 20:59:25'),
+(281, 1, '2020-11-19 22:12:04', '2020-11-19 22:12:04'),
+(282, 1, '2020-11-19 22:29:44', '2020-11-19 22:29:44'),
+(283, 1, '2020-11-20 04:55:49', '2020-11-20 04:55:49'),
+(284, 1, '2020-11-20 05:47:17', '2020-11-20 05:47:17'),
+(285, 1, '2020-11-20 06:30:59', '2020-11-20 06:30:59'),
+(286, 1, '2020-11-20 06:32:54', '2020-11-20 06:32:54'),
+(287, 1, '2020-11-20 06:38:54', '2020-11-20 06:38:54'),
+(288, 1, '2020-11-20 07:19:22', '2020-11-20 07:19:22'),
+(289, 1, '2020-11-20 07:19:22', '2020-11-20 07:19:22'),
+(290, 1, '2020-11-20 14:26:31', '2020-11-20 14:26:31'),
+(291, 1, '2020-11-20 16:43:44', '2020-11-20 16:43:44'),
+(292, 1, '2020-11-20 16:52:25', '2020-11-20 16:52:25'),
+(293, 1, '2020-11-20 17:29:38', '2020-11-20 17:29:38'),
+(294, 1, '2020-11-20 18:32:55', '2020-11-20 18:32:55'),
+(295, 1, '2020-11-20 18:42:23', '2020-11-20 18:42:23'),
+(296, 1, '2020-11-20 19:42:12', '2020-11-20 19:42:12'),
+(297, 1, '2020-11-20 20:16:02', '2020-11-20 20:16:02'),
+(298, 1, '2020-11-20 21:31:45', '2020-11-20 21:31:45'),
+(299, 1, '2020-11-20 22:46:34', '2020-11-20 22:46:34'),
+(300, 1, '2020-11-20 22:46:46', '2020-11-20 22:46:46'),
+(301, 1, '2020-11-20 22:49:07', '2020-11-20 22:49:07'),
+(302, 1, '2020-11-21 00:13:45', '2020-11-21 00:13:45'),
+(303, 1, '2020-11-21 04:46:59', '2020-11-21 04:46:59'),
+(304, 1, '2020-11-21 04:47:00', '2020-11-21 04:47:00'),
+(305, 1, '2020-11-21 06:47:52', '2020-11-21 06:47:52'),
+(306, 1, '2020-11-21 07:50:10', '2020-11-21 07:50:10'),
+(307, 1, '2020-11-21 09:59:55', '2020-11-21 09:59:55'),
+(308, 1, '2020-11-21 11:35:05', '2020-11-21 11:35:05'),
+(309, 1, '2020-11-21 12:43:25', '2020-11-21 12:43:25'),
+(310, 1, '2020-11-21 13:08:40', '2020-11-21 13:08:40'),
+(311, 1, '2020-11-21 14:36:37', '2020-11-21 14:36:37'),
+(312, 1, '2020-11-21 15:29:27', '2020-11-21 15:29:27'),
+(313, 1, '2020-11-21 16:41:37', '2020-11-21 16:41:37'),
+(314, 1, '2020-11-21 16:43:33', '2020-11-21 16:43:33'),
+(315, 1, '2020-11-21 19:34:50', '2020-11-21 19:34:50'),
+(316, 1, '2020-11-21 19:34:51', '2020-11-21 19:34:51'),
+(317, 1, '2020-11-21 20:39:56', '2020-11-21 20:39:56'),
+(318, 1, '2020-11-21 22:31:37', '2020-11-21 22:31:37'),
+(319, 1, '2020-11-21 23:57:27', '2020-11-21 23:57:27'),
+(320, 1, '2020-11-22 00:42:36', '2020-11-22 00:42:36'),
+(321, 1, '2020-11-22 00:42:56', '2020-11-22 00:42:56'),
+(322, 1, '2020-11-22 01:17:46', '2020-11-22 01:17:46'),
+(323, 1, '2020-11-22 01:45:48', '2020-11-22 01:45:48'),
+(324, 1, '2020-11-22 02:13:37', '2020-11-22 02:13:37'),
+(325, 1, '2020-11-22 02:13:39', '2020-11-22 02:13:39'),
+(326, 1, '2020-11-22 02:13:42', '2020-11-22 02:13:42'),
+(327, 1, '2020-11-22 02:13:44', '2020-11-22 02:13:44'),
+(328, 1, '2020-11-22 02:13:45', '2020-11-22 02:13:45'),
+(329, 1, '2020-11-22 04:30:45', '2020-11-22 04:30:45'),
+(330, 1, '2020-11-22 04:36:43', '2020-11-22 04:36:43'),
+(331, 1, '2020-11-22 06:03:55', '2020-11-22 06:03:55'),
+(332, 1, '2020-11-22 07:59:39', '2020-11-22 07:59:39'),
+(333, 1, '2020-11-22 08:01:59', '2020-11-22 08:01:59'),
+(334, 1, '2020-11-22 08:34:28', '2020-11-22 08:34:28'),
+(335, 1, '2020-11-22 08:57:36', '2020-11-22 08:57:36'),
+(336, 1, '2020-11-22 09:40:27', '2020-11-22 09:40:27'),
+(337, 1, '2020-11-22 09:49:38', '2020-11-22 09:49:38'),
+(338, 1, '2020-11-22 09:57:44', '2020-11-22 09:57:44'),
+(339, 1, '2020-11-22 13:49:59', '2020-11-22 13:49:59'),
+(340, 1, '2020-11-22 13:50:06', '2020-11-22 13:50:06'),
+(341, 1, '2020-11-22 14:05:44', '2020-11-22 14:05:44'),
+(342, 1, '2020-11-22 14:05:47', '2020-11-22 14:05:47'),
+(343, 1, '2020-11-22 14:13:44', '2020-11-22 14:13:44'),
+(344, 1, '2020-11-22 16:09:51', '2020-11-22 16:09:51'),
+(345, 1, '2020-11-22 16:30:55', '2020-11-22 16:30:55'),
+(346, 1, '2020-11-22 16:31:04', '2020-11-22 16:31:04'),
+(347, 1, '2020-11-22 16:44:30', '2020-11-22 16:44:30'),
+(348, 1, '2020-11-22 17:14:36', '2020-11-22 17:14:36'),
+(349, 1, '2020-11-22 17:57:18', '2020-11-22 17:57:18'),
+(350, 1, '2020-11-22 18:15:43', '2020-11-22 18:15:43'),
+(351, 1, '2020-11-22 20:59:11', '2020-11-22 20:59:11'),
+(352, 1, '2020-11-22 21:39:27', '2020-11-22 21:39:27'),
+(353, 1, '2020-11-22 23:19:20', '2020-11-22 23:19:20'),
+(354, 1, '2020-11-23 00:06:33', '2020-11-23 00:06:33'),
+(355, 1, '2020-11-23 01:39:09', '2020-11-23 01:39:09'),
+(356, 1, '2020-11-23 01:40:16', '2020-11-23 01:40:16'),
+(357, 1, '2020-11-23 02:53:43', '2020-11-23 02:53:43'),
+(358, 1, '2020-11-23 04:19:56', '2020-11-23 04:19:56'),
+(359, 1, '2020-11-23 04:25:28', '2020-11-23 04:25:28'),
+(360, 1, '2020-11-23 05:59:35', '2020-11-23 05:59:35'),
+(361, 1, '2020-11-23 07:51:27', '2020-11-23 07:51:27'),
+(362, 1, '2020-11-23 08:23:39', '2020-11-23 08:23:39'),
+(363, 1, '2020-11-23 08:25:39', '2020-11-23 08:25:39'),
+(364, 1, '2020-11-23 10:33:19', '2020-11-23 10:33:19'),
+(365, 1, '2020-11-23 10:33:21', '2020-11-23 10:33:21'),
+(366, 1, '2020-11-23 10:51:49', '2020-11-23 10:51:49'),
+(367, 1, '2020-11-23 13:14:37', '2020-11-23 13:14:37'),
+(368, 1, '2020-11-23 13:15:15', '2020-11-23 13:15:15'),
+(369, 1, '2020-11-23 14:53:25', '2020-11-23 14:53:25'),
+(370, 1, '2020-11-23 16:04:21', '2020-11-23 16:04:21'),
+(371, 1, '2020-11-23 16:22:04', '2020-11-23 16:22:04'),
+(372, 1, '2020-11-23 16:43:23', '2020-11-23 16:43:23'),
+(373, 1, '2020-11-23 16:51:14', '2020-11-23 16:51:14'),
+(374, 1, '2020-11-23 17:00:25', '2020-11-23 17:00:25'),
+(375, 1, '2020-11-23 18:15:41', '2020-11-23 18:15:41'),
+(376, 1, '2020-11-23 19:14:41', '2020-11-23 19:14:41'),
+(377, 1, '2020-11-23 20:18:36', '2020-11-23 20:18:36'),
+(378, 1, '2020-11-23 20:37:35', '2020-11-23 20:37:35'),
+(379, 1, '2020-11-23 22:04:44', '2020-11-23 22:04:44'),
+(380, 1, '2020-11-23 23:35:50', '2020-11-23 23:35:50'),
+(381, 1, '2020-11-24 00:18:28', '2020-11-24 00:18:28'),
+(382, 1, '2020-11-24 01:43:48', '2020-11-24 01:43:48'),
+(383, 1, '2020-11-24 01:43:56', '2020-11-24 01:43:56'),
+(384, 1, '2020-11-24 01:44:45', '2020-11-24 01:44:45'),
+(385, 1, '2020-11-24 01:53:20', '2020-11-24 01:53:20'),
+(386, 1, '2020-11-24 01:54:04', '2020-11-24 01:54:04'),
+(387, 1, '2020-11-24 01:55:40', '2020-11-24 01:55:40'),
+(388, 1, '2020-11-24 01:55:57', '2020-11-24 01:55:57'),
+(389, 1, '2020-11-24 01:57:59', '2020-11-24 01:57:59'),
+(390, 1, '2020-11-24 01:58:14', '2020-11-24 01:58:14'),
+(391, 1, '2020-11-24 01:59:42', '2020-11-24 01:59:42'),
+(392, 1, '2020-11-24 04:24:50', '2020-11-24 04:24:50'),
+(393, 1, '2020-11-24 04:31:36', '2020-11-24 04:31:36'),
+(394, 1, '2020-11-24 04:31:36', '2020-11-24 04:31:36'),
+(395, 1, '2020-11-24 06:12:57', '2020-11-24 06:12:57'),
+(396, 1, '2020-11-24 07:14:12', '2020-11-24 07:14:12'),
+(397, 1, '2020-11-24 07:57:00', '2020-11-24 07:57:00'),
+(398, 1, '2020-11-24 08:12:24', '2020-11-24 08:12:24'),
+(399, 1, '2020-11-24 08:14:52', '2020-11-24 08:14:52'),
+(400, 1, '2020-11-24 08:14:53', '2020-11-24 08:14:53'),
+(401, 1, '2020-11-24 08:49:29', '2020-11-24 08:49:29'),
+(402, 1, '2020-11-24 10:41:08', '2020-11-24 10:41:08'),
+(403, 1, '2020-11-24 10:50:40', '2020-11-24 10:50:40'),
+(404, 1, '2020-11-24 10:59:03', '2020-11-24 10:59:03'),
+(405, 1, '2020-11-24 14:31:45', '2020-11-24 14:31:45'),
+(406, 1, '2020-11-24 15:24:35', '2020-11-24 15:24:35'),
+(407, 1, '2020-11-24 16:11:14', '2020-11-24 16:11:14'),
+(408, 1, '2020-11-24 16:11:17', '2020-11-24 16:11:17'),
+(409, 1, '2020-11-24 16:38:20', '2020-11-24 16:38:20'),
+(410, 1, '2020-11-24 16:42:50', '2020-11-24 16:42:50'),
+(411, 1, '2020-11-24 19:30:56', '2020-11-24 19:30:56'),
+(412, 1, '2020-11-24 20:11:53', '2020-11-24 20:11:53'),
+(413, 1, '2020-11-24 20:30:22', '2020-11-24 20:30:22'),
+(414, 1, '2020-11-24 20:55:56', '2020-11-24 20:55:56'),
+(415, 1, '2020-11-24 21:31:01', '2020-11-24 21:31:01'),
+(416, 1, '2020-11-24 21:31:06', '2020-11-24 21:31:06'),
+(417, 1, '2020-11-24 21:32:43', '2020-11-24 21:32:43'),
+(418, 1, '2020-11-24 21:33:03', '2020-11-24 21:33:03'),
+(419, 1, '2020-11-24 23:53:55', '2020-11-24 23:53:55'),
+(420, 1, '2020-11-25 00:07:45', '2020-11-25 00:07:45'),
+(421, 1, '2020-11-25 00:07:46', '2020-11-25 00:07:46'),
+(422, 1, '2020-11-25 00:18:11', '2020-11-25 00:18:11'),
+(423, 1, '2020-11-25 01:01:50', '2020-11-25 01:01:50'),
+(424, 1, '2020-11-25 02:05:08', '2020-11-25 02:05:08'),
+(425, 1, '2020-11-25 05:20:28', '2020-11-25 05:20:28'),
+(426, 1, '2020-11-25 06:33:53', '2020-11-25 06:33:53'),
+(427, 1, '2020-11-25 07:27:15', '2020-11-25 07:27:15'),
+(428, 1, '2020-11-25 08:14:34', '2020-11-25 08:14:34'),
+(429, 1, '2020-11-25 10:48:41', '2020-11-25 10:48:41'),
+(430, 1, '2020-11-25 10:48:47', '2020-11-25 10:48:47'),
+(431, 1, '2020-11-25 12:49:20', '2020-11-25 12:49:20'),
+(432, 1, '2020-11-25 13:48:39', '2020-11-25 13:48:39'),
+(433, 1, '2020-11-25 15:17:59', '2020-11-25 15:17:59'),
+(434, 1, '2020-11-25 15:18:08', '2020-11-25 15:18:08'),
+(435, 1, '2020-11-25 15:18:30', '2020-11-25 15:18:30'),
+(436, 1, '2020-11-25 15:30:46', '2020-11-25 15:30:46'),
+(437, 1, '2020-11-25 15:38:51', '2020-11-25 15:38:51'),
+(438, 1, '2020-11-25 16:10:47', '2020-11-25 16:10:47'),
+(439, 1, '2020-11-25 16:44:01', '2020-11-25 16:44:01'),
+(440, 1, '2020-11-25 17:29:15', '2020-11-25 17:29:15'),
+(441, 1, '2020-11-25 17:52:50', '2020-11-25 17:52:50'),
+(442, 1, '2020-11-25 18:07:30', '2020-11-25 18:07:30'),
+(443, 1, '2020-11-25 18:30:32', '2020-11-25 18:30:32'),
+(444, 1, '2020-11-25 18:32:37', '2020-11-25 18:32:37'),
+(445, 1, '2020-11-25 18:38:17', '2020-11-25 18:38:17'),
+(446, 1, '2020-11-25 18:38:26', '2020-11-25 18:38:26'),
+(447, 1, '2020-11-25 18:45:35', '2020-11-25 18:45:35'),
+(448, 1, '2020-11-25 18:52:27', '2020-11-25 18:52:27'),
+(449, 1, '2020-11-25 19:56:41', '2020-11-25 19:56:41'),
+(450, 1, '2020-11-25 19:57:31', '2020-11-25 19:57:31'),
+(451, 1, '2020-11-25 19:59:37', '2020-11-25 19:59:37'),
+(452, 1, '2020-11-25 21:03:16', '2020-11-25 21:03:16'),
+(453, 1, '2020-11-25 21:47:11', '2020-11-25 21:47:11'),
+(454, 1, '2020-11-25 21:51:06', '2020-11-25 21:51:06'),
+(455, 1, '2020-11-25 21:53:02', '2020-11-25 21:53:02'),
+(456, 1, '2020-11-25 21:53:41', '2020-11-25 21:53:41'),
+(457, 1, '2020-11-26 00:42:24', '2020-11-26 00:42:24'),
+(458, 1, '2020-11-26 01:10:44', '2020-11-26 01:10:44'),
+(459, 1, '2020-11-26 01:27:04', '2020-11-26 01:27:04'),
+(460, 1, '2020-11-26 01:36:08', '2020-11-26 01:36:08'),
+(461, 1, '2020-11-26 01:48:15', '2020-11-26 01:48:15'),
+(462, 1, '2020-11-26 04:00:47', '2020-11-26 04:00:47'),
+(463, 1, '2020-11-26 06:01:11', '2020-11-26 06:01:11'),
+(464, 1, '2020-11-26 06:03:29', '2020-11-26 06:03:29'),
+(465, 1, '2020-11-26 09:17:59', '2020-11-26 09:17:59'),
+(466, 1, '2020-11-26 09:27:56', '2020-11-26 09:27:56'),
+(467, 1, '2020-11-26 13:57:46', '2020-11-26 13:57:46'),
+(468, 1, '2020-11-26 13:57:46', '2020-11-26 13:57:46'),
+(469, 1, '2020-11-26 14:33:33', '2020-11-26 14:33:33'),
+(470, 1, '2020-11-26 15:47:46', '2020-11-26 15:47:46'),
+(471, 1, '2020-11-26 16:44:03', '2020-11-26 16:44:03'),
+(472, 1, '2020-11-26 16:55:19', '2020-11-26 16:55:19'),
+(473, 1, '2020-11-26 17:03:36', '2020-11-26 17:03:36'),
+(474, 1, '2020-11-26 17:38:21', '2020-11-26 17:38:21'),
+(475, 1, '2020-11-27 00:22:58', '2020-11-27 00:22:58'),
+(476, 1, '2020-11-27 00:25:52', '2020-11-27 00:25:52'),
+(477, 1, '2020-11-27 00:47:00', '2020-11-27 00:47:00'),
+(478, 1, '2020-11-27 01:20:35', '2020-11-27 01:20:35'),
+(479, 1, '2020-11-27 02:16:20', '2020-11-27 02:16:20'),
+(480, 1, '2020-11-27 07:13:41', '2020-11-27 07:13:41'),
+(481, 1, '2020-11-27 07:28:29', '2020-11-27 07:28:29'),
+(482, 1, '2020-11-27 08:25:52', '2020-11-27 08:25:52'),
+(483, 1, '2020-11-27 11:38:55', '2020-11-27 11:38:55'),
+(484, 1, '2020-11-27 11:48:39', '2020-11-27 11:48:39'),
+(485, 1, '2020-11-27 11:58:12', '2020-11-27 11:58:12'),
+(486, 1, '2020-11-27 16:14:12', '2020-11-27 16:14:12'),
+(487, 1, '2020-11-27 16:42:35', '2020-11-27 16:42:35'),
+(488, 1, '2020-11-27 18:29:48', '2020-11-27 18:29:48'),
+(489, 1, '2020-11-27 21:30:34', '2020-11-27 21:30:34'),
+(490, 1, '2020-11-27 21:52:30', '2020-11-27 21:52:30'),
+(491, 1, '2020-11-27 22:13:27', '2020-11-27 22:13:27'),
+(492, 1, '2020-11-27 22:35:31', '2020-11-27 22:35:31'),
+(493, 1, '2020-11-27 22:40:00', '2020-11-27 22:40:00'),
+(494, 1, '2020-11-27 22:40:47', '2020-11-27 22:40:47'),
+(495, 1, '2020-11-27 22:59:31', '2020-11-27 22:59:31'),
+(496, 1, '2020-11-27 23:51:07', '2020-11-27 23:51:07'),
+(497, 1, '2020-11-28 00:37:47', '2020-11-28 00:37:47'),
+(498, 1, '2020-11-28 00:49:11', '2020-11-28 00:49:11'),
+(499, 1, '2020-11-28 02:07:54', '2020-11-28 02:07:54'),
+(500, 1, '2020-11-28 03:59:14', '2020-11-28 03:59:14'),
+(501, 1, '2020-11-28 04:33:40', '2020-11-28 04:33:40'),
+(502, 1, '2020-11-28 05:05:46', '2020-11-28 05:05:46'),
+(503, 1, '2020-11-28 05:05:46', '2020-11-28 05:05:46'),
+(504, 1, '2020-11-28 06:47:00', '2020-11-28 06:47:00'),
+(505, 1, '2020-11-28 07:22:25', '2020-11-28 07:22:25'),
+(506, 1, '2020-11-28 07:22:27', '2020-11-28 07:22:27'),
+(507, 1, '2020-11-28 07:43:03', '2020-11-28 07:43:03'),
+(508, 1, '2020-11-28 08:25:08', '2020-11-28 08:25:08'),
+(509, 1, '2020-11-28 08:40:09', '2020-11-28 08:40:09'),
+(510, 1, '2020-11-28 10:36:26', '2020-11-28 10:36:26'),
+(511, 1, '2020-11-28 10:36:40', '2020-11-28 10:36:40'),
+(512, 1, '2020-11-28 11:24:07', '2020-11-28 11:24:07'),
+(513, 1, '2020-11-28 11:49:09', '2020-11-28 11:49:09'),
+(514, 1, '2020-11-28 11:49:39', '2020-11-28 11:49:39'),
+(515, 1, '2020-11-28 13:01:58', '2020-11-28 13:01:58'),
+(516, 1, '2020-11-28 15:11:42', '2020-11-28 15:11:42'),
+(517, 1, '2020-11-28 15:52:19', '2020-11-28 15:52:19'),
+(518, 1, '2020-11-28 16:30:34', '2020-11-28 16:30:34'),
+(519, 1, '2020-11-28 16:42:50', '2020-11-28 16:42:50'),
+(520, 1, '2020-11-28 18:20:20', '2020-11-28 18:20:20'),
+(521, 1, '2020-11-28 18:51:46', '2020-11-28 18:51:46'),
+(522, 1, '2020-11-28 20:02:55', '2020-11-28 20:02:55'),
+(523, 1, '2020-11-28 21:28:17', '2020-11-28 21:28:17'),
+(524, 1, '2020-11-28 21:47:12', '2020-11-28 21:47:12'),
+(525, 1, '2020-11-28 22:36:59', '2020-11-28 22:36:59'),
+(526, 1, '2020-11-28 23:41:21', '2020-11-28 23:41:21'),
+(527, 1, '2020-11-29 00:25:08', '2020-11-29 00:25:08'),
+(528, 1, '2020-11-29 00:25:26', '2020-11-29 00:25:26'),
+(529, 1, '2020-11-29 00:35:38', '2020-11-29 00:35:38'),
+(530, 1, '2020-11-29 00:38:36', '2020-11-29 00:38:36'),
+(531, 1, '2020-11-29 01:28:49', '2020-11-29 01:28:49'),
+(532, 1, '2020-11-29 09:15:38', '2020-11-29 09:15:38'),
+(533, 1, '2020-11-29 10:57:33', '2020-11-29 10:57:33'),
+(534, 1, '2020-11-29 14:37:21', '2020-11-29 14:37:21'),
+(535, 1, '2020-11-29 15:29:59', '2020-11-29 15:29:59'),
+(536, 1, '2020-11-29 16:43:04', '2020-11-29 16:43:04'),
+(537, 1, '2020-11-29 17:51:50', '2020-11-29 17:51:50'),
+(538, 1, '2020-11-29 17:53:31', '2020-11-29 17:53:31'),
+(539, 1, '2020-11-29 18:25:49', '2020-11-29 18:25:49'),
+(540, 1, '2020-11-29 22:45:24', '2020-11-29 22:45:24'),
+(541, 1, '2020-11-29 22:55:34', '2020-11-29 22:55:34'),
+(542, 1, '2020-11-29 23:57:14', '2020-11-29 23:57:14'),
+(543, 1, '2020-11-30 00:01:17', '2020-11-30 00:01:17'),
+(544, 1, '2020-11-30 00:11:58', '2020-11-30 00:11:58'),
+(545, 1, '2020-11-30 00:12:39', '2020-11-30 00:12:39'),
+(546, 1, '2020-11-30 00:40:43', '2020-11-30 00:40:43'),
+(547, 1, '2020-11-30 03:00:22', '2020-11-30 03:00:22'),
+(548, 1, '2020-11-30 04:33:32', '2020-11-30 04:33:32'),
+(549, 1, '2020-11-30 05:30:31', '2020-11-30 05:30:31'),
+(550, 1, '2020-11-30 07:19:28', '2020-11-30 07:19:28'),
+(551, 1, '2020-11-30 07:19:42', '2020-11-30 07:19:42'),
+(552, 1, '2020-11-30 07:32:31', '2020-11-30 07:32:31'),
+(553, 1, '2020-11-30 08:28:29', '2020-11-30 08:28:29'),
+(554, 1, '2020-11-30 08:30:29', '2020-11-30 08:30:29'),
+(555, 1, '2020-11-30 11:58:06', '2020-11-30 11:58:06'),
+(556, 1, '2020-11-30 12:53:49', '2020-11-30 12:53:49'),
+(557, 1, '2020-11-30 13:22:18', '2020-11-30 13:22:18'),
+(558, 1, '2020-11-30 13:27:27', '2020-11-30 13:27:27'),
+(559, 1, '2020-11-30 13:31:20', '2020-11-30 13:31:20'),
+(560, 1, '2020-11-30 13:34:23', '2020-11-30 13:34:23'),
+(561, 1, '2020-11-30 15:54:28', '2020-11-30 15:54:28'),
+(562, 1, '2020-11-30 16:12:28', '2020-11-30 16:12:28'),
+(563, 1, '2020-11-30 16:41:37', '2020-11-30 16:41:37'),
+(564, 1, '2020-11-30 19:03:39', '2020-11-30 19:03:39'),
+(565, 1, '2020-11-30 19:03:39', '2020-11-30 19:03:39'),
+(566, 1, '2020-11-30 19:37:55', '2020-11-30 19:37:55'),
+(567, 1, '2020-11-30 19:37:57', '2020-11-30 19:37:57'),
+(568, 1, '2020-11-30 20:18:09', '2020-11-30 20:18:09'),
+(569, 1, '2020-11-30 21:12:51', '2020-11-30 21:12:51'),
+(570, 1, '2020-11-30 21:13:46', '2020-11-30 21:13:46'),
+(571, 1, '2020-11-30 21:50:35', '2020-11-30 21:50:35'),
+(572, 1, '2020-11-30 22:12:12', '2020-11-30 22:12:12'),
+(573, 1, '2020-11-30 23:14:17', '2020-11-30 23:14:17'),
+(574, 1, '2020-12-01 01:53:47', '2020-12-01 01:53:47'),
+(575, 1, '2020-12-01 03:18:26', '2020-12-01 03:18:26'),
+(576, 1, '2020-12-01 04:47:25', '2020-12-01 04:47:25'),
+(577, 1, '2020-12-01 04:59:32', '2020-12-01 04:59:32'),
+(578, 1, '2020-12-01 04:59:33', '2020-12-01 04:59:33'),
+(579, 1, '2020-12-01 04:59:33', '2020-12-01 04:59:33'),
+(580, 1, '2020-12-01 04:59:33', '2020-12-01 04:59:33'),
+(581, 1, '2020-12-01 04:59:33', '2020-12-01 04:59:33'),
+(582, 1, '2020-12-01 07:12:47', '2020-12-01 07:12:47'),
+(583, 1, '2020-12-01 10:58:46', '2020-12-01 10:58:46'),
+(584, 1, '2020-12-01 13:11:21', '2020-12-01 13:11:21'),
+(585, 1, '2020-12-01 14:54:14', '2020-12-01 14:54:14'),
+(586, 1, '2020-12-01 15:39:27', '2020-12-01 15:39:27'),
+(587, 1, '2020-12-01 15:39:29', '2020-12-01 15:39:29'),
+(588, 1, '2020-12-01 15:39:32', '2020-12-01 15:39:32'),
+(589, 1, '2020-12-01 16:05:34', '2020-12-01 16:05:34'),
+(590, 1, '2020-12-01 16:44:20', '2020-12-01 16:44:20'),
+(591, 1, '2020-12-01 17:54:59', '2020-12-01 17:54:59'),
+(592, 1, '2020-12-01 19:33:46', '2020-12-01 19:33:46'),
+(593, 1, '2020-12-01 21:13:18', '2020-12-01 21:13:18'),
+(594, 1, '2020-12-01 21:54:56', '2020-12-01 21:54:56'),
+(595, 1, '2020-12-01 21:55:02', '2020-12-01 21:55:02'),
+(596, 1, '2020-12-01 22:50:08', '2020-12-01 22:50:08'),
+(597, 1, '2020-12-01 23:24:37', '2020-12-01 23:24:37'),
+(598, 1, '2020-12-01 23:24:38', '2020-12-01 23:24:38'),
+(599, 1, '2020-12-02 03:49:46', '2020-12-02 03:49:46'),
+(600, 1, '2020-12-02 03:49:50', '2020-12-02 03:49:50'),
+(601, 1, '2020-12-02 04:38:37', '2020-12-02 04:38:37'),
+(602, 1, '2020-12-02 06:43:29', '2020-12-02 06:43:29'),
+(603, 1, '2020-12-02 07:11:22', '2020-12-02 07:11:22'),
+(604, 1, '2020-12-02 08:19:23', '2020-12-02 08:19:23'),
+(605, 1, '2020-12-02 14:49:38', '2020-12-02 14:49:38'),
+(606, 1, '2020-12-02 14:53:28', '2020-12-02 14:53:28'),
+(607, 1, '2020-12-02 15:24:26', '2020-12-02 15:24:26'),
+(608, 1, '2020-12-02 15:35:51', '2020-12-02 15:35:51'),
+(609, 1, '2020-12-02 16:43:02', '2020-12-02 16:43:02'),
+(610, 1, '2020-12-02 17:32:30', '2020-12-02 17:32:30'),
+(611, 1, '2020-12-02 17:57:48', '2020-12-02 17:57:48'),
+(612, 1, '2020-12-02 23:33:12', '2020-12-02 23:33:12'),
+(613, 1, '2020-12-03 02:24:28', '2020-12-03 02:24:28'),
+(614, 1, '2020-12-03 05:22:43', '2020-12-03 05:22:43'),
+(615, 1, '2020-12-03 05:25:25', '2020-12-03 05:25:25'),
+(616, 1, '2020-12-03 06:35:06', '2020-12-03 06:35:06'),
+(617, 1, '2020-12-03 07:08:28', '2020-12-03 07:08:28'),
+(618, 1, '2020-12-03 11:19:22', '2020-12-03 11:19:22'),
+(619, 1, '2020-12-03 14:50:41', '2020-12-03 14:50:41'),
+(620, 1, '2020-12-03 14:56:11', '2020-12-03 14:56:11'),
+(621, 1, '2020-12-03 15:15:56', '2020-12-03 15:15:56'),
+(622, 1, '2020-12-03 16:45:15', '2020-12-03 16:45:15'),
+(623, 1, '2020-12-03 18:15:11', '2020-12-03 18:15:11'),
+(624, 1, '2020-12-03 18:16:55', '2020-12-03 18:16:55'),
+(625, 1, '2020-12-03 18:17:13', '2020-12-03 18:17:13'),
+(626, 1, '2020-12-03 18:21:28', '2020-12-03 18:21:28'),
+(627, 1, '2020-12-03 18:32:37', '2020-12-03 18:32:37'),
+(628, 1, '2020-12-03 19:17:02', '2020-12-03 19:17:02'),
+(629, 1, '2020-12-03 19:20:54', '2020-12-03 19:20:54'),
+(630, 1, '2020-12-03 19:20:58', '2020-12-03 19:20:58'),
+(631, 1, '2020-12-03 19:21:01', '2020-12-03 19:21:01'),
+(632, 1, '2020-12-03 21:39:38', '2020-12-03 21:39:38'),
+(633, 1, '2020-12-03 22:19:24', '2020-12-03 22:19:24'),
+(634, 1, '2020-12-03 22:19:24', '2020-12-03 22:19:24'),
+(635, 1, '2020-12-04 05:40:04', '2020-12-04 05:40:04'),
+(636, 1, '2020-12-04 09:55:26', '2020-12-04 09:55:26'),
+(637, 1, '2020-12-04 09:56:11', '2020-12-04 09:56:11'),
+(638, 1, '2020-12-04 10:29:41', '2020-12-04 10:29:41'),
+(639, 1, '2020-12-04 15:47:53', '2020-12-04 15:47:53'),
+(640, 1, '2020-12-04 15:47:56', '2020-12-04 15:47:56'),
+(641, 1, '2020-12-04 16:44:25', '2020-12-04 16:44:25'),
+(642, 1, '2020-12-04 16:50:01', '2020-12-04 16:50:01'),
+(643, 1, '2020-12-04 19:23:57', '2020-12-04 19:23:57'),
+(644, 1, '2020-12-04 22:35:59', '2020-12-04 22:35:59'),
+(645, 1, '2020-12-05 00:54:07', '2020-12-05 00:54:07'),
+(646, 1, '2020-12-05 01:37:20', '2020-12-05 01:37:20'),
+(647, 1, '2020-12-05 06:25:51', '2020-12-05 06:25:51'),
+(648, 1, '2020-12-05 07:57:02', '2020-12-05 07:57:02'),
+(649, 1, '2020-12-05 08:40:19', '2020-12-05 08:40:19'),
+(650, 1, '2020-12-05 08:51:04', '2020-12-05 08:51:04'),
+(651, 1, '2020-12-05 08:54:37', '2020-12-05 08:54:37'),
+(652, 1, '2020-12-05 09:15:36', '2020-12-05 09:15:36'),
+(653, 1, '2020-12-05 10:50:31', '2020-12-05 10:50:31'),
+(654, 1, '2020-12-05 12:54:38', '2020-12-05 12:54:38'),
+(655, 1, '2020-12-05 13:47:07', '2020-12-05 13:47:07'),
+(656, 1, '2020-12-05 14:04:48', '2020-12-05 14:04:48'),
+(657, 1, '2020-12-05 14:41:13', '2020-12-05 14:41:13'),
+(658, 1, '2020-12-05 16:24:01', '2020-12-05 16:24:01'),
+(659, 1, '2020-12-05 16:42:43', '2020-12-05 16:42:43'),
+(660, 1, '2020-12-05 18:11:48', '2020-12-05 18:11:48'),
+(661, 1, '2020-12-05 19:35:34', '2020-12-05 19:35:34'),
+(662, 1, '2020-12-05 19:45:26', '2020-12-05 19:45:26'),
+(663, 1, '2020-12-05 22:09:40', '2020-12-05 22:09:40'),
+(664, 1, '2020-12-05 22:09:44', '2020-12-05 22:09:44'),
+(665, 1, '2020-12-05 22:13:11', '2020-12-05 22:13:11'),
+(666, 1, '2020-12-05 22:13:58', '2020-12-05 22:13:58'),
+(667, 1, '2020-12-05 22:14:51', '2020-12-05 22:14:51'),
+(668, 1, '2020-12-05 22:49:54', '2020-12-05 22:49:54'),
+(669, 1, '2020-12-05 22:50:39', '2020-12-05 22:50:39'),
+(670, 1, '2020-12-05 22:53:01', '2020-12-05 22:53:01'),
+(671, 1, '2020-12-05 22:53:53', '2020-12-05 22:53:53'),
+(672, 1, '2020-12-05 23:15:28', '2020-12-05 23:15:28'),
+(673, 1, '2020-12-06 00:03:48', '2020-12-06 00:03:48'),
+(674, 1, '2020-12-06 02:17:50', '2020-12-06 02:17:50'),
+(675, 1, '2020-12-06 02:25:23', '2020-12-06 02:25:23'),
+(676, 1, '2020-12-06 02:47:34', '2020-12-06 02:47:34'),
+(677, 1, '2020-12-06 02:48:22', '2020-12-06 02:48:22'),
+(678, 1, '2020-12-06 07:05:39', '2020-12-06 07:05:39'),
+(679, 1, '2020-12-06 07:39:57', '2020-12-06 07:39:57'),
+(680, 1, '2020-12-06 14:26:37', '2020-12-06 14:26:37'),
+(681, 1, '2020-12-06 14:26:37', '2020-12-06 14:26:37'),
+(682, 1, '2020-12-06 14:26:38', '2020-12-06 14:26:38'),
+(683, 1, '2020-12-06 14:49:59', '2020-12-06 14:49:59'),
+(684, 1, '2020-12-06 15:01:39', '2020-12-06 15:01:39'),
+(685, 1, '2020-12-06 15:35:01', '2020-12-06 15:35:01'),
+(686, 1, '2020-12-06 16:42:50', '2020-12-06 16:42:50'),
+(687, 1, '2020-12-06 17:53:54', '2020-12-06 17:53:54'),
+(688, 1, '2020-12-06 18:56:32', '2020-12-06 18:56:32'),
+(689, 1, '2020-12-06 21:10:27', '2020-12-06 21:10:27'),
+(690, 1, '2020-12-06 21:51:05', '2020-12-06 21:51:05'),
+(691, 1, '2020-12-06 22:30:33', '2020-12-06 22:30:33'),
+(692, 1, '2020-12-06 22:31:10', '2020-12-06 22:31:10'),
+(693, 1, '2020-12-06 22:31:50', '2020-12-06 22:31:50'),
+(694, 1, '2020-12-06 23:21:48', '2020-12-06 23:21:48'),
+(695, 1, '2020-12-06 23:22:07', '2020-12-06 23:22:07'),
+(696, 1, '2020-12-06 23:23:23', '2020-12-06 23:23:23'),
+(697, 1, '2020-12-06 23:30:37', '2020-12-06 23:30:37'),
+(698, 1, '2020-12-06 23:34:17', '2020-12-06 23:34:17'),
+(699, 1, '2020-12-07 00:41:08', '2020-12-07 00:41:08'),
+(700, 1, '2020-12-07 00:53:13', '2020-12-07 00:53:13'),
+(701, 1, '2020-12-07 00:55:57', '2020-12-07 00:55:57'),
+(702, 1, '2020-12-07 02:09:06', '2020-12-07 02:09:06'),
+(703, 1, '2020-12-07 02:09:06', '2020-12-07 02:09:06'),
+(704, 1, '2020-12-07 02:09:34', '2020-12-07 02:09:34'),
+(705, 1, '2020-12-07 02:09:34', '2020-12-07 02:09:34'),
+(706, 1, '2020-12-07 07:00:12', '2020-12-07 07:00:12'),
+(707, 1, '2020-12-07 07:43:56', '2020-12-07 07:43:56'),
+(708, 1, '2020-12-07 09:46:03', '2020-12-07 09:46:03'),
+(709, 1, '2020-12-07 10:09:03', '2020-12-07 10:09:03'),
+(710, 1, '2020-12-07 10:10:27', '2020-12-07 10:10:27'),
+(711, 1, '2020-12-07 14:02:15', '2020-12-07 14:02:15'),
+(712, 1, '2020-12-07 14:31:11', '2020-12-07 14:31:11'),
+(713, 1, '2020-12-07 15:12:12', '2020-12-07 15:12:12'),
+(714, 1, '2020-12-07 15:26:49', '2020-12-07 15:26:49'),
+(715, 1, '2020-12-07 15:26:55', '2020-12-07 15:26:55'),
+(716, 1, '2020-12-07 15:39:54', '2020-12-07 15:39:54'),
+(717, 1, '2020-12-07 16:36:52', '2020-12-07 16:36:52'),
+(718, 1, '2020-12-07 16:43:42', '2020-12-07 16:43:42'),
+(719, 1, '2020-12-08 00:19:49', '2020-12-08 00:19:49'),
+(720, 1, '2020-12-08 00:26:43', '2020-12-08 00:26:43'),
+(721, 1, '2020-12-08 00:28:37', '2020-12-08 00:28:37'),
+(722, 1, '2020-12-08 00:34:45', '2020-12-08 00:34:45'),
+(723, 1, '2020-12-08 01:50:51', '2020-12-08 01:50:51'),
+(724, 1, '2020-12-08 01:51:39', '2020-12-08 01:51:39'),
+(725, 1, '2020-12-09 00:50:28', '2020-12-09 00:50:28'),
+(726, 1, '2020-12-09 22:58:45', '2020-12-09 22:58:45'),
+(727, 1, '2020-12-10 02:21:16', '2020-12-10 02:21:16'),
+(728, 1, '2020-12-10 23:39:23', '2020-12-10 23:39:23'),
+(729, 1, '2020-12-11 00:06:53', '2020-12-11 00:06:53'),
+(730, 1, '2020-12-11 01:21:56', '2020-12-11 01:21:56'),
+(731, 1, '2020-12-11 04:53:32', '2020-12-11 04:53:32'),
+(732, 1, '2020-12-11 05:07:25', '2020-12-11 05:07:25'),
+(733, 1, '2020-12-14 00:28:41', '2020-12-14 00:28:41'),
+(734, 1, '2020-12-14 00:28:46', '2020-12-14 00:28:46'),
+(735, 1, '2020-12-14 00:29:23', '2020-12-14 00:29:23'),
+(736, 1, '2020-12-14 00:31:51', '2020-12-14 00:31:51'),
+(737, 1, '2020-12-14 02:38:57', '2020-12-14 02:38:57'),
+(738, 1, '2020-12-14 06:52:53', '2020-12-14 06:52:53'),
+(739, 1, '2020-12-15 00:47:59', '2020-12-15 00:47:59'),
+(740, 1, '2020-12-15 23:21:33', '2020-12-15 23:21:33'),
+(741, 1, '2020-12-16 02:21:45', '2020-12-16 02:21:45'),
+(742, 1, '2020-12-16 02:24:09', '2020-12-16 02:24:09'),
+(743, 1, '2020-12-16 02:24:24', '2020-12-16 02:24:24'),
+(744, 1, '2020-12-16 02:25:13', '2020-12-16 02:25:13'),
+(745, 1, '2020-12-17 01:11:40', '2020-12-17 01:11:40'),
+(746, 1, '2020-12-17 22:39:52', '2020-12-17 22:39:52'),
+(747, 1, '2020-12-17 22:40:12', '2020-12-17 22:40:12'),
+(748, 1, '2020-12-17 22:40:23', '2020-12-17 22:40:23'),
+(749, 1, '2020-12-18 00:21:44', '2020-12-18 00:21:44'),
+(750, 1, '2020-12-18 03:57:03', '2020-12-18 03:57:03'),
+(751, 1, '2020-12-18 04:35:31', '2020-12-18 04:35:31'),
+(752, 1, '2020-12-18 04:41:47', '2020-12-18 04:41:47'),
+(753, 1, '2020-12-18 04:48:31', '2020-12-18 04:48:31'),
+(754, 1, '2020-12-18 04:59:28', '2020-12-18 04:59:28'),
+(755, 1, '2020-12-18 05:00:35', '2020-12-18 05:00:35'),
+(756, 1, '2020-12-18 05:04:55', '2020-12-18 05:04:55'),
+(757, 1, '2020-12-18 06:12:17', '2020-12-18 06:12:17'),
+(758, 1, '2020-12-18 06:14:07', '2020-12-18 06:14:07'),
+(759, 1, '2020-12-18 06:24:05', '2020-12-18 06:24:05'),
+(760, 1, '2020-12-21 22:18:31', '2020-12-21 22:18:31'),
+(761, 1, '2020-12-21 22:53:58', '2020-12-21 22:53:58'),
+(762, 1, '2020-12-21 23:44:10', '2020-12-21 23:44:10'),
+(763, 1, '2020-12-22 02:46:10', '2020-12-22 02:46:10'),
+(764, 1, '2020-12-22 02:54:44', '2020-12-22 02:54:44'),
+(765, 1, '2020-12-22 22:47:29', '2020-12-22 22:47:29'),
+(766, 1, '2020-12-23 01:14:01', '2020-12-23 01:14:01'),
+(767, 1, '2020-12-23 03:09:32', '2020-12-23 03:09:32'),
+(768, 1, '2020-12-23 03:18:57', '2020-12-23 03:18:57'),
+(769, 1, '2020-12-23 05:20:47', '2020-12-23 05:20:47'),
+(770, 1, '2020-12-23 05:21:06', '2020-12-23 05:21:06');
 
 -- --------------------------------------------------------
 
@@ -53496,7 +53968,7 @@ CREATE TABLE `weddings` (
 INSERT INTO `weddings` (`id`, `name`, `retailer`, `created_at`, `updated_at`) VALUES
 (2, 'Blow', 65, '2020-10-23 07:29:42', '2020-12-08 05:37:43'),
 (3, 'masal', 65, '2020-10-27 02:40:01', '2020-12-08 02:35:47'),
-(4, 'function', 65, '2020-10-27 02:40:09', '2021-01-06 23:15:08'),
+(4, 'function', 65, '2020-10-27 02:40:09', '2020-12-08 02:30:19'),
 (6, 'Yolanda Trussler', 69, '2020-11-27 22:52:49', '2020-11-27 22:52:49');
 
 --
@@ -53710,37 +54182,37 @@ ALTER TABLE `weddings`
 -- AUTO_INCREMENT for table `additionals`
 --
 ALTER TABLE `additionals`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `buyer_cities`
 --
 ALTER TABLE `buyer_cities`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `buyer_countries`
 --
 ALTER TABLE `buyer_countries`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `buyer_states`
 --
 ALTER TABLE `buyer_states`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `chat_models`
 --
 ALTER TABLE `chat_models`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cities`
@@ -53752,7 +54224,7 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT for table `colour_swatches`
 --
 ALTER TABLE `colour_swatches`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `countries`
@@ -53764,13 +54236,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `fabrics`
 --
 ALTER TABLE `fabrics`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -53782,7 +54254,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `footers`
@@ -53800,85 +54272,85 @@ ALTER TABLE `home_pages`
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `necklines`
 --
 ALTER TABLE `necklines`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `new_orders`
 --
 ALTER TABLE `new_orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `new_pages`
 --
 ALTER TABLE `new_pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `reals`
 --
 ALTER TABLE `reals`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `retailer_brides`
 --
 ALTER TABLE `retailer_brides`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `retailer_emails`
 --
 ALTER TABLE `retailer_emails`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `retailer_orders`
 --
 ALTER TABLE `retailer_orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `silhouettes`
 --
 ALTER TABLE `silhouettes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sizes`
 --
 ALTER TABLE `sizes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `sleeves`
 --
 ALTER TABLE `sleeves`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `states`
@@ -53890,19 +54362,19 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=295;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=771;
 
 --
 -- AUTO_INCREMENT for table `weddings`
 --
 ALTER TABLE `weddings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

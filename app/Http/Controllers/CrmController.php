@@ -135,16 +135,25 @@ class CrmController extends Controller
            $page->name=$str;
            $page->keyword=$request->key;
            $page->title=$request->title;
-           $page->banner=null;
-           $page->h1='Enter Text';
-           $page->h2='Enter Text';
+           $page->h1='Enter 1st Heading';
+           $page->t1='Enter Text';
+           $page->t2='Enter Text';
+           $page->t3='Enter Text';
+           $page->h2='Enter 2nd Heading';
            $page->p1='Enter Text';
-           $page->h3='Enter Text';
-           $page->h4='Enter Text';
+           $page->t4='Enter Text';
+           $page->t5='Enter Text';
+           $page->t6='Enter Text';
+           $page->h3='Enter 3rd Heading';
+           $page->t7='Enter Text';
            $page->p2='Enter Text';
-           $page->latest='no';
-           $page->image1=null;
-           $page->image2=null;
+           $page->t8='Enter Text';
+           $page->p3='Enter Text';
+           $page->t9='Enter Text';
+           $page->p4='Enter Text';
+           $page->t10='Enter Text';
+           $page->p5='Enter Text';
+           $page->t11='Enter Text';
            $page->save(); 
            $menu=new menu;
            $menu->name=$str;
@@ -189,9 +198,7 @@ class CrmController extends Controller
              return redirect('/admin');
          }
          $page=newPages::where('name',$new)->first();
-         $prod=products::orderBy('id','desc')->first();
-         $cat=Category::orderBy('id','desc')->first();
-         return view('admin.new')->with(array('cat'=>$cat,'prod'=>$prod,'page'=>$page));
+         return view('admin.new')->with('page',$page);
     }
 
 
@@ -232,30 +239,20 @@ class CrmController extends Controller
           }
         if(isset($request->submit))
         {
-            $messages = [
-                'dimensions' => 'Banner Dimension Must be 1980 x 660',
-            ];
-            $this->validate($request,[
-                'data'=>'dimensions:min_width=1900,max_width=1980,min_height=600,max_height=660'
-            ],$messages);
             $page=newPages::where('name',$request->name)->first();
-            if($page->banner != null)
-            {
-                Storage::delete($page->banner);
-            }
-            $path=$request->data->store('banner');
-            $page->banner=$path;
+            $page->h1=$request->data;
             $page->save();
             if($page->save())
             {
-            return redirect()->back()->with('success', 'Banner Updated');
+            return redirect()->back()->with('success', 'Content Updated');
          }
          else
          {
-            return redirect()->back()->with('error', 'Banner Not Updated');
+            return redirect()->back()->with('error', 'Content Not Updated');
          }
         }
           
+         
      }
 
 
@@ -274,7 +271,7 @@ class CrmController extends Controller
         if(isset($request->submit))
         {
             $page=newPages::where('name',$request->name)->first();
-            $page->h1=$request->data;
+            $page->t1=$request->data;
             $page->save();
             if($page->save())
             {
@@ -303,7 +300,7 @@ class CrmController extends Controller
         if(isset($request->submit))
         {
             $page=newPages::where('name',$request->name)->first();
-            $page->h2=$request->data;
+            $page->t2=$request->data;
             $page->save();
             if($page->save())
             {
@@ -333,7 +330,7 @@ class CrmController extends Controller
         if(isset($request->submit))
         {
             $page=newPages::where('name',$request->name)->first();
-            $page->p1=$request->data;
+            $page->t3=$request->data;
             $page->save();
             if($page->save())
             {
@@ -364,17 +361,12 @@ class CrmController extends Controller
         if(isset($request->submit))
         {
             $page=newPages::where('name',$request->name)->first();
-            if($page->image1 != null)
-            {
-                Storage::delete($page->image1);
-            }
-            $path=$request->data->store('custom');
-            $page->image1=$path;
+            $page->p1=$request->data;
             $page->save();
             if($page->save())
             {
             return redirect()->back()->with('success', 'Content Updated');
-            }
+         }
          else
          {
             return redirect()->back()->with('error', 'Content Not Updated');
@@ -400,7 +392,7 @@ class CrmController extends Controller
         if(isset($request->submit))
         {
             $page=newPages::where('name',$request->name)->first();
-            $page->h3=$request->data;
+            $page->t4=$request->data;
             $page->save();
             if($page->save())
             {
@@ -430,7 +422,7 @@ class CrmController extends Controller
         if(isset($request->submit))
         {
             $page=newPages::where('name',$request->name)->first();
-            $page->h4=$request->data;
+            $page->t5=$request->data;
             $page->save();
             if($page->save())
             {
@@ -444,6 +436,7 @@ class CrmController extends Controller
           
          
      }
+
 
      public function new8(Request $request)
      {
@@ -460,7 +453,7 @@ class CrmController extends Controller
         if(isset($request->submit))
         {
             $page=newPages::where('name',$request->name)->first();
-            $page->p2=$request->data;
+            $page->t6=$request->data;
             $page->save();
             if($page->save())
             {
@@ -490,12 +483,7 @@ class CrmController extends Controller
         if(isset($request->submit))
         {
             $page=newPages::where('name',$request->name)->first();
-            if($page->image2 != null)
-            {
-                Storage::delete($page->image2);
-            }
-            $path=$request->data->store('custom');
-            $page->image2=$path;
+            $page->h2=$request->data;
             $page->save();
             if($page->save())
             {
@@ -523,11 +511,22 @@ class CrmController extends Controller
           {
               return redirect('/admin');
           }
-        
+        if(isset($request->submit))
+        {
             $page=newPages::where('name',$request->name)->first();
-            $page->latest=$request->latest;
+            $page->h3=$request->data;
             $page->save();
+            if($page->save())
+            {
             return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
+         }
+        }
+          
+         
      }
 
      public function new11(Request $request)
@@ -1250,16 +1249,16 @@ class CrmController extends Controller
 
      public function custom_page($name)
      {
-        $latestCat=Category::orderBy('created_at', 'desc')->limit(4)->get();
+        $latestCat=Category::orderBy('created_at', 'desc')->limit(8)->get();
 
-        $latestProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(4)->get();
+        $latestProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
 
         $smallProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
 
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
 
         $collection=Category::all();
-
+       
         $foot=footer::where('id',1)->first();
          $page=newPages::where('name',$name)->first();
          return view('pages.page')

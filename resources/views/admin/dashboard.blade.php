@@ -2,409 +2,538 @@
 
 @section('content')
 
-<div class="app-content content ">
-  <div class="content-overlay"></div>
-  <div class="header-navbar-shadow"></div>
-  <div class="content-wrapper">
-  <div class="content-header row">
-  </div>
-  <div class="content-body">
-  <!-- Dashboard Ecommerce Starts -->
-  <section id="dashboard-ecommerce">
-  <div class="row match-height">
-  <!-- Medal Card -->
-  <div class="col-xl-4 col-md-6 col-12">
-      <div class="card earnings-card">
-          <div class="card-body">
-          <div class="row">
-              <div class="col-6" style="text-align: center;">
-                  <h4 class="card-title mb-1">Earnings</h4>
-                  <div class="font-small-2">This Month</div>
-                  <h5 class="mb-1">${{ $amount }}</h5>
-                  <p class="card-text text-muted font-small-2">
-                      <span class="font-weight-bolder">{{ $stat }}</span>
-                  </p>
-              </div>
-              <div class="col-6">
-                  <div id="earnings-chart"></div>
-                  <input type="text" id="percent" value="{{ $percent }}" style="display: none;">
-              </div>
-          </div>
-          </div>
-          </div>
-  <!-- <div class="card card-congratulation-medal">
-  <div class="card-body">
-  <h5>Congratulations 🎉 John!</h5>
-  <p class="card-text font-small-3">You have won gold medal</p>
-  <h3 class="mb-75 mt-2 pt-50">
-  <a href="javascript:void(0);">$48.9k</a>
-  </h3>
-  <button type="button" class="btn btn-primary">View Sales</button>
-  <img src="app-assets/images/illustration/badge.svg" class="congratulation-medal" alt="Medal Pic" />
-  </div>
-  </div> -->
-  </div>
-  <!--/ Medal Card -->
-  
-  <!-- Statistics Card -->
-  <div class="col-xl-8 col-md-6 col-12">
-  <div class="card card-statistics">
-  <div class="card-header">
-  <h4 class="card-title">Statistics</h4>
-  <div class="d-flex align-items-center">
-  </div>
-  </div>
-  <div class="card-body statistics-body">
-  <div class="row">
-  <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-  <div class="media">
-      <div class="avatar bg-light-primary mr-2">
-          <div class="avatar-content">
-              <i data-feather="trending-up" class="avatar-icon"></i>
-          </div>
-      </div>
-      <div class="media-body my-auto">
-          <h4 class="font-weight-bolder mb-0">{{ $order }}</h4>
-          <p class="card-text font-small-3 mb-0">Sales</p>
-      </div>
-  </div>
-  </div>
-  <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-  <div class="media">
-      <div class="avatar bg-light-info mr-2">
-          <div class="avatar-content">
-              <i data-feather="user" class="avatar-icon"></i>
-          </div>
-      </div>
-      <div class="media-body my-auto">
-          <h4 class="font-weight-bolder mb-0">{{ $customer }}</h4>
-          <p class="card-text font-small-3 mb-0">Customers</p>
-      </div>
-  </div>
-  </div>
-  <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
-  <div class="media">
-      <div class="avatar bg-light-danger mr-2">
-          <div class="avatar-content">
-              <i data-feather="box" class="avatar-icon"></i>
-          </div>
-      </div>
-      <div class="media-body my-auto">
-          <h4 class="font-weight-bolder mb-0">{{ $products }}</h4>
-          <p class="card-text font-small-3 mb-0">Products</p>
-      </div>
-  </div>
-  </div>
-  <div class="col-xl-3 col-sm-6 col-12">
-  <div class="media">
-      <div class="avatar bg-light-success mr-2">
-          <div class="avatar-content">
-              <i data-feather="dollar-sign" class="avatar-icon"></i>
-          </div>
-      </div>
-      <div class="media-body my-auto">
-          <h4 class="font-weight-bolder mb-0">${{ $sale }}</h4>
-          <p class="card-text font-small-3 mb-0">Revenue</p>
-      </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  <!--/ Statistics Card -->
-  </div>
-  
-  <div class="row match-height">
-  <div class="col-lg-4 col-12">
-  <div class="row match-height">
-  <!-- Bar Chart - Orders -->
-  <div class="col-lg-6 col-md-3 col-6">
-  <a href="{{route('dater',array('status'=>'month'))}}">     
-  <div class="card  text-center " > 
-  <div class="card-body pb-50">
-  <h3 style="margin-top: 20px;" >Order This Month</h3> 
-  <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $monthOrder }} </h2>
-  <!-- <div id="statistics-order-chart"></div> -->
-  </div>
-  </div>
-  </a>
-  </div>
-  <!--/ Bar Chart - Orders -->
-  
-  <!-- Line Chart - Profit -->
-  <div class="col-lg-6 col-md-3 col-6">
-      <a href="{{route('dater',array('status'=>'last'))}}">
-      <div class="card  text-center " >
-      <div class="card-body pb-50">
-      <h3 style="margin-top: 20px;" >Order Last Month</h3> 
-      <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $lastmonthOrder }} </h2>
-      <!-- <div id="statistics-order-chart"></div> -->
-      </div>
-      </div>
-      </a>
-      </div>
-  <!--/ Line Chart - Profit -->
-  
-  <!-- Earnings Card -->
-  <div class="col-lg-12 col-md-6 col-12">
-  <a href="{{route('dater',array('status'=>'today'))}}">    
-  <div class="card earnings-card">
-  <div class="card-body" >
-  <div class="row">
-      <div class="col-12 " style="text-align: center;">
-          <h3 style="margin-top: px;">Order Today</h3>
-          <h2 class="font-weight-bolder mb-1" style="margin-top: 20px;">{{ $todayOrder }}</h2>
-        
-          <!-- <h4 class="card-title mb-1" style="color: white;">Earnings</h4>
-          <div class="font-small-2" style="color: white;" >This Month</div>
-          <h5 class="mb-1" style="color: white;" >$4055.56</h5>
-          <p class="card-text text-muted font-small-2">
-              <span class="font-weight-bolder" style="color: white;" >68.2%</span><span style="color: white;" > more earnings than last month.</span>
-          </p>
-      </div>
-      <div class="col-6">
-          <div id="earnings-chart"></div> -->
-      </div>
-  </div>
-  </div>
-  </div>
-  </a>
-  </div>
-  <!--/ Earnings Card -->
-  </div>
-  </div>
-  
-  <!-- Revenue Report Card -->
-  <div class="col-lg-8 col-12">
-  <div class="card card-revenue-budget">
-  <div class="row mx-0">
-  <div class="col-md-7 col-12 revenue-report-wrapper">
-  <div class="d-sm-flex justify-content-between align-items-center mb-3">
-  <h4 class="card-title mb-50 mb-sm-0">Graphical Representation</h4>
-  <!-- <div class="d-flex align-items-center">
-      <div class="d-flex align-items-center mr-2">
-          <span class="bullet bullet-primary font-small-3 mr-50 cursor-pointer"></span>
-          <span>Earning</span>
-      </div>  
-      <div class="d-flex align-items-center ml-75">
-          <span class="bullet bullet-warning font-small-3 mr-50 cursor-pointer"></span>
-          <span>Expense</span>
-      </div>
-  </div> -->
-  </div>
-  <div id="revenue-report-chart"></div>
-  <input type="text" id="order" value="{{ $order }}" style="display: none;">
-  <input type="text" id="product" value="{{ $products }}" style="display: none;">
-  <input type="text" id="visit" value="{{ $visits }}" style="display: none;">
-  <input type="text" id="customer" value="{{ $customer }}" style="display: none;">
+    
 
 
-  <input type="text" id="this_year" value="{{ $this_year_rev }}" style="display: none;">
-  <input type="text" id="last_year" value="{{ $last_year_rev }}" style="display: none;">
-  <input type="text" id="previous_year" value="{{ $previous_year_rev }}" style="display: none;">
 
-  
+<!-- Quick Stats -->
 
-  </div>
+<div class="row text-center">
+
+<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+
+<a href="{{route('dater',array('status'=>'today'))}}" class="widget widget-hover-effect2">
+
+<div class="widget-extra themed-background-dark">
+
+<h4 class="widget-content-light"><strong>Orders</strong> Today</h4>
+
+</div>
+
+<div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">{{$todayOrder}}</span></div>
+
+</a>
+
+</div>
+
+<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+
+<a href="{{route('dater',array('status'=>'month'))}}" class="widget widget-hover-effect2">
+
+<div class="widget-extra themed-background-dark">
+
+<h4 class="widget-content-light"><strong>Orders</strong> This Month</h4>
+
+</div>
+
+<div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">{{$monthOrder}}</span></div>
+
+</a>
+
+</div>
+
+<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+
+<a href="{{route('dater',array('status'=>'last'))}}" class="widget widget-hover-effect2">
+
+<div class="widget-extra themed-background-dark">
+
+<h4 class="widget-content-light"><strong>Orders</strong> Last Month</h4>
+
+</div>
+
+<div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">{{$lastmonthOrder}}</span></div>
+
+</a>
+
+</div>
+
+</div>
+
+<!-- END Quick Stats -->
+
+<div class="block full">
+
+<!-- eShop Overview Title -->
+
+<div class="block-title">
 
 
-  <div class="col-md-5 col-12 budget-wrapper">
-    <div class="d-sm-flex justify-content-between align-items-center mb-3">
-        <h4 class="card-title mb-50 mb-sm-0">Yearly Revenue</h4>
-        <!-- <div class="d-flex align-items-center">
-            <div class="d-flex align-items-center mr-2">
-                <span class="bullet bullet-primary font-small-3 mr-50 cursor-pointer"></span>
-                <span>Earning</span>
-            </div>  
-            <div class="d-flex align-items-center ml-75">
-                <span class="bullet bullet-warning font-small-3 mr-50 cursor-pointer"></span>
-                <span>Expense</span>
-            </div>
-        </div> -->
-        </div>
-  <div class="btn-group" style="zoom: 1.2;">
-  {{-- <button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle budget-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      {{ $currentYear }}
-  </button>
-  <div class="dropdown-menu">
-      <a class="dropdown-item" href="javascript:void(0);">{{ $currentYear }}</a>
-      <a class="dropdown-item" href="javascript:void(0);">{{ $lastYear }}</a>
-      <a class="dropdown-item" href="javascript:void(0);">{{ $previousYear }}</a>
-  </div> --}}
-  
 
-  <select  onchange="myFunction()" class="btn btn-outline-primary btn-sm dropdown-toggle budget-dropdown" id="yearer">
-      <option class="dropdown-item" value="this" selected> {{ $currentYear }} </option>
-      <option class="dropdown-item" value="last"> {{ $lastYear }} </option>
-      <option class="dropdown-item" value="previous"> {{ $previousYear }} </option>
-  </select>
+<h2><strong>Masal</strong> Overview</h2>
 
-  </div>
-  <h2 style="margin-top: 50px;" id="result">${{ $this_year_rev }}</h2>
-  <!-- <div class="d-flex justify-content-center">
-  <span class="font-weight-bolder mr-25">Budget:</span>
-  <span>56,800</span>
-  </div> -->
-  
-  <!-- <button type="button" class="btn btn-primary">Increase Budget</button> -->
-  </div>
+@if(Session::has('success'))
+
+<p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+
+@endif
+
+@if(Session::has('error'))
+
+<p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
+
+@endif
+
+@if ($errors->has('email')) <p style="color:red;">{{ $errors->first('email') }}</p> @endif
+
+@if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif
+
+</div>
+
+<!-- END eShop Overview Title -->
 
 
-  </div>
-  </div>
-  </div>
-  <!--/ Revenue Report Card -->
-  </div>
-  
-  <div class="row match-height">
-  <!-- Company Table Card -->
-  <div class="col-lg-8 col-12">
-  <div class="card card-company-table">
-  <div class="card-body p-0">
-  <div class="table-responsive">
-  <table class="table">
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>Star</th>
-          <th>Credits</th>
-          <th>Purchases</th>
-          <th>Weedings</th>
-      </tr>
-  </thead>
-  <tbody>
-      @foreach ($retailer as $item)
-      @php
-          $order = \App\retailerOrder::where('RetailerId',$item->id)->get();
-          $total=0;
-          if(count($order) > 0)
-          {
-          foreach ($order as $key) {
-              $product=\App\products::find($key->productId);
-              $total=$total+$product->wholesalePrice;
-          }
-        }
-        $wedding = \App\wedding::where('retailer',$item->id)->count();
-      @endphp
-      <tr>
-          <td>
-              <div class="d-flex align-items-center">
-                  <div class="avatar rounded">
-                      <div class="avatar-content">
-                          @if($item->logo != null)
-                          <img src="{{ asset('images/'.$item->logo) }}" style="width: 50px; height:50px; border-radius: 50%;" alt="Toolbar svg" />
-                          @else
-                          <img src="{{ asset('images/logos/abc.png') }}" style="width: 50px; height:50px; border-radius: 50%;" alt="Toolbar svg" />
-                          @endif
-                      </div>
-                  </div>
-                  <div>
-                      <div class="font-weight-bolder">{{ $item->name }}</div>
-                      <div class="font-small-2 text-muted">{{ $item->email }}</div>
-                  </div>
-              </div>
-          </td>
-          <td>
-              <div class="d-flex align-items-center">
-                  <div class="avatar bg-light-primary mr-1">
-                      <div class="avatar-content">
-                          <i data-feather="star" class="font-medium-3"></i>
-                      </div>
-                  </div>
-                  <span>{{ $item->star }}</span>
-              </div>
-          </td>
-          <td class="text-nowrap">
-              <div class="d-flex flex-column">
-                  <span class="font-weight-bolder mb-25">{{ $item->credit }}</span>
-              </div>
-          </td>
-          <td>${{ $total }}</td>
-          <td>
-              <div class="d-flex align-items-center">
-                  <span class="font-weight-bolder mr-1">{{ $wedding }}</span>
-                 
-              </div>
-          </td>
-      </tr>
-       @endforeach
-      
-  </tbody>
-  </table>
-  </div>
-  </div>
-  </div>
-  </div>
-  <!--/ Company Table Card -->
-  
-  <!-- Developer Meetup Card -->
-  
-  
-  
-  
-  
-  <!--/ Browser States Card -->
-  
-  <!-- Goal Overview Card -->
-  <div class="col-lg-4 col-md-6 col-12">
-  <div class="card">
-  <div class="card-header d-flex justify-content-between align-items-center">
-  <h4 class="card-title">Orders Overview</h4>
-  <i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i>
-  </div>
-  <div class="card-body p-0">
-  <div id="goal-overview-radial-bar-chart" class="my-2"></div>
-  <input type="text" id="overview" value="{{ $order_over }}" style="display: none;">
-  <div class="row border-top text-center mx-0">
-  <div class="col-6 border-right py-1">
-  <p class="card-text text-muted mb-0">Completed</p>
-  <h3 class="font-weight-bolder mb-0">{{ $complete }}</h3>
-  </div>
-  <div class="col-6 py-1">
-  <p class="card-text text-muted mb-0">In Progress</p>
-  <h3 class="font-weight-bolder mb-0">{{ $process }}</h3>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  <!--/ Goal Overview Card -->
-  
-  <!-- Transaction Card -->
-  
-  <!--/ Transaction Card -->
-  </div>
-  </section>
-  <!-- Dashboard Ecommerce ends -->
-  
-  </div>
-  </div>
-  </div>
+
+<!-- eShop Overview Content -->
+
+<div class="row">
+
+<div class="col-md-6 col-xs-6 col-sm-6 col-lg-6">
+
+<div class="row push">
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+    <h3>Orders Made:<strong class="animation-fadeInQuick"> {{$order}}</strong></h3>
+
+</div>
+
+
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+    <h3>Number of Visits:<strong  class="animation-fadeInQuick"> {{$visits}}</strong></h3>
+
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+    <h3>Approved Retailers:<strong  class="animation-fadeInQuick"> {{$customer}}</strong></h3>
+
+</div>
+
+
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+    <h3>Number of Products:<strong class="animation-fadeInQuick"> {{$products}}</strong> </h3>
+
+</div>
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+<div
+
+                class="col-md-6 col-lg-6 col-sm-6 col-xs-6 graph"
+
+                style="
+
+                  background-color: white;
+
+                  height: 300px;
+
+                  border-radius: 10px;
+
+                "
+
+              >
+
+                <!--<img-->
+
+                <!--  src="img/Calander.PNG"-->
+
+                <!--  class="img-responsive"-->
+
+                <!--  style="height: 250px; width: 100%;"-->
+
+                <!--/>-->
+
+                <canvas
+
+      id="myCanvas"
+
+      height="300"
+
+      width="520"
+
+    
+
+    >
+
+    </canvas>
+
+              </div>   
+
+
+
+</div>
+
+<!-- END eShop Overview Content -->
+
+</div>
+
+<!-- END eShop Overview Block -->
+
+
+
+
+
+</div>
+
+<!-- END Page Content -->
+
+
+
+<!-- Footer -->
+
+
+
+<!-- END Footer -->
+
+</div>
+
+<!-- END Main Container -->
+
+</div>
+
+<!-- END Page Container -->
+
+</div>
+
+<!-- END Page Wrapper -->
+
+
+
+<!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+
+<a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+
+<!-- User Settings, modal which opens from Settings link (found in top right user menu) and the Cog link (found in sidebar user info) -->
+
+<div id="modal-user-settings" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="modal-dialog">
+
+<div class="modal-content">
+
+<!-- Modal Header -->
+
+<div class="modal-header text-center">
+
+<h2 class="modal-title"><i class="fa fa-pencil"></i> Settings</h2>
+
+</div>
+
+<!-- END Modal Header -->
+
+
+
+<!-- Modal Body -->
+
+<div class="modal-body">
+
+<form action="{{route('adminEmail')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+
+@csrf
+
+<fieldset>
+
+<legend>Email Update</legend>
+
+<div class="form-group">
+
+<label class="col-md-4 control-label">Username</label>
+
+<div class="col-md-8">
+
+<p class="form-control-static"> {{Auth::user()->email}}</p>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label class="col-md-4 control-label" for="user-settings-email">Email</label>
+
+<div class="col-md-8">
+
+<input type="email" id="user-settings-email" name="email" class="form-control" value="{{Auth::user()->email}}">
+
+</div>
+
+</div>
+
+<div class="form-group" style="display: none">
+
+<div class="col-md-8">
+
+<input type="number" id="user-settings-repassword" name="id" class="form-control" value="{{Auth::user()->id}}">
+
+</div>
+
+</div>
+
+<center>
+
+<button type="submit" name="update" value="update" class="btn btn-sm btn-primary">Update Email</button>
+
+</center>
+
+</form>
+
+</fieldset>
+
+<form action="{{route('adminPassword')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+
+@csrf
+
+<fieldset>
+
+<legend>Password Update</legend>
+
+<div class="form-group">
+
+<label class="col-md-4 control-label" for="user-settings-password">New Password</label>
+
+<div class="col-md-8">
+
+<input type="password" id="user-settings-password" name="password" class="form-control" placeholder="Please choose a complex one..">
+
+@if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label class="col-md-4 control-label" for="user-settings-repassword">Confirm New Password</label>
+
+<div class="col-md-8">
+
+<input type="password" id="user-settings-repassword" name="repassword" class="form-control" placeholder="..and confirm it!">
+
+</div>
+
+</div>
+
+<div class="form-group" style="display: none">
+
+<div class="col-md-8">
+
+<input type="number" id="user-settings-repassword" name="id" class="form-control" value="{{Auth::user()->id}}">
+
+</div>
+
+</div>
+
+</fieldset>
+
+<div class="form-group form-actions">
+
+<div class="col-xs-12 text-right">
+
+<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+
+<button type="submit" name="update" value="update" class="btn btn-sm btn-primary">Update Password</button>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+<!-- END Modal Body -->
+
+</div>
+
+</div>
+
+</div>
+
+<!-- END User Settings -->
+
+
+
+<!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
+
+<script src="js/vendor/jquery.min.js"></script>
+
+<script src="js/vendor/bootstrap.min.js"></script>
+
+<script src="js/plugins.js"></script>
+
+<script src="js/app.js"></script>
+
+
+
+<!-- Load and execute javascript code used only in this page -->
+
+<script src="js/pages/ecomDashboard.js"></script>
+
+<script>$(function(){ EcomDashboard.init(); });</script>
+
+
+
+<script type="application/javascript">
+
+    var data = [
+
+      { CUSTOMERS: {{$customer}} },
+
+      { ORDERS: {{$order}} },
+
+      { VISITS: {{$visits}} },
+
+      { PRODUCTS: {{$products}} },
+
+    ];
+
+    var barcolor = [
+
+      "#1BBAE1",
+
+      "#1BBAE1",
+
+      "#1BBAE1",
+
+      "#1BBAE1",
+
+    ];
+
+    var obj = {
+
+      barId: "myCanvas", // Need To pass canvas id  and mandatory to generate the bar graph
+
+      barData: data, // Bar data in the form of array of object and mandatory to pass atleast 1 value
+
+      barColour: barcolor, // Bar colour as array and the default value is '#020202'
+
+      barStroke: 25, // Bar Stroke as per your requirement and the default value is 50
+
+      barSpaces: 90, // Space between 2 bar graph and the default value is 80
+
+      barInnerPadding: 40, // Padding inside all side of the canvas and the default value is 80
+
+      barDivisionPositionFromLineX: 20, // X-Axis division position from left side of the bar graph and the deafult value is 20
+
+      barDivisionPositionFromLineY: 20, // Y-Axis division position from bottom side of the bar graph and the deafult value is 20
+
+      barAnimation: true, // Used to define the animation from the bottom to top position and the default value is true
+
+      barAnimationSpeed: 1, // Define the animation spedd of the graph and the default value is 1
+
+      barTextFont: "14px Arial", // Define font size with font family name and the default value is 14px Arial
+
+      barDivision: 5, // Define the division to the Y-Axis and the default value is 5
+
+      barScaleDivisionReqX: true, // Define the scale division marking to the X-Axis and the default value is true
+
+      barScaleDivisionReqY: true, // Define the scale division marking to the Y-Axis and the default value is true
+
+      barScaleDivisionY: 100, // Define the manually setup the Y-Axis division upto the highest value of your array default value is null
+
+      barScaleDivisionStroke: 1, //Define the stroke of scale division and the default value is 1
+
+      barScaleDivisionColour: "#333", //Define the stroke colour of the scale division and the default value is #333
+
+      barAxisLineStroke: 2, //Define the stroke of the X & Y-Axis line and the default value is 1
+
+      barAxisLineColour: "#333", //Define the stroke colour of the X & Y-axis line and the default value is #333
+
+      barMaxHeight: 1000, // Define the maximum height of the Y-Axis line of the bar graph and the default value is null
+
+    };
+
+
+
+    generateBarGraph(obj);
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
-   function myFunction()
-   {
-    var e = document.getElementById("yearer");
-    var data = e.value;
-    if(data == 'this')
+
+$('#top_type').change(function()
+
+{
+
+    var type=$(this).val();
+
+    if(type == 'retailer')
+
     {
-        var record = document.getElementById('this_year').value;
-        document.getElementById('result').innerHTML = '$' + record;
+
+    $('#top_search').attr('placeholder','Registration Number');
+
     }
-    else if(data == 'last')
+
+
+
+    if(type == 'product')
+
     {
-        var record1 = document.getElementById('last_year').value;
-      
-        document.getElementById('result').innerHTML = '$' + record1;
+
+    $('#top_search').attr('placeholder','Product style#');
+
     }
-    else if(data == 'previous')
+
+
+
+    if(type == 'category')
+
     {
-        var record2 = document.getElementById('previous_year').value;
-        
-        document.getElementById('result').innerHTML ='$' + record2;
+
+    $('#top_search').attr('placeholder','Category Name');
+
     }
-   }
+
+
+
+
+
+});
+
+$('.dashboard').attr('class','active');
+
 </script>
+
+
 
 @endsection

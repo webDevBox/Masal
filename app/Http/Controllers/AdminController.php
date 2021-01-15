@@ -108,24 +108,6 @@ class AdminController extends Controller
          $real=retailer_bride::where('wedding',$id)->get();
          return view('admin.real_request')->with(array('real'=>$real));
     }
-    
-    
-    // Profile Page
-    public function profile()
-    {
-        if (Auth::check()) {
-            if($this->user->userRole != 1)
-            {
-             return redirect('/admin');
-            }
-         }
-         else
-         {
-             return redirect('/admin');
-         }
-         $profile=User::find(Auth::user()->id);
-         return view('admin.profile')->with(array('profile'=>$profile));
-    }
 
 
     //Dashboard
@@ -143,132 +125,14 @@ class AdminController extends Controller
         }
         $order=retailerOrder::count();
         $customer=User::where('userRole',2)->where('status',1)->count();
-        $retailer=User::where('userRole',2)->where('status',1)->orderBy('id','desc')->limit(7)->get();
         $visits=visitor::count();
         $products=products::count();
 
-        $todayOrder=retailerOrder::where('payment','Done')->whereDate('created_at', '=', Carbon::today())->count();
-
-
-        $monthOrder=retailerOrder::where('payment','Done')
-        ->whereMonth('created_at', '=', Carbon::now()->month)
-        ->whereYear('created_at', '=', Carbon::now()->year)->count();
-
-
-        $lastmonthOrder=retailerOrder::where('payment','Done')
-        ->whereMonth('created_at', '=', Carbon::now()->subMonth()->month)
-        ->whereYear('created_at', '=', Carbon::now()->subYear()->year)->count();
-
-        if($order == 0)
-        {
-            $order = 0.5;
-        }
-
-        $percent = round(($monthOrder/$order)*100 , 0);
-        $sale=0;
-        $stat='No Comparison';
-        $amount=0;
-        if($monthOrder > 0)
-        {
-        $current=retailerOrder::where('payment','Done')
-        ->whereMonth('created_at', '=', Carbon::now()->month)
-        ->whereYear('created_at', '=', Carbon::now()->year)->get();
-        foreach($current as $row)
-            {
-                $prod=products::find($row->productId);
-                $amount=$amount+$prod->wholesalePrice;
-            }
-        }  
-        
-        $total=0;
-        if($lastmonthOrder > 0)
-        {
-        $previous=retailerOrder::where('payment','Done')
-        ->whereMonth('created_at', '=', Carbon::now()->subMonth()->month)
-        ->whereYear('created_at', '=', Carbon::now()->subYear()->year)->get();
-        foreach($previous as $row)
-            {
-                $prod=products::find($row->productId);
-                $total=$total+$prod->wholesalePrice;
-            }
-        }
-            if($amount != 0 && $total != 0)
-            {
-                if($amount == $total)
-                {
-                    $stat='Same Earning as last month';
-                }
-                if($amount > $total)
-                {
-                    $stat=round(($amount/$total)*100 ,2) .'% more earnings than last month.';
-                }
-                else if($total > $amount)
-                {
-                    $stat=round(($total/$amount)*100 ,2).'% less earnings than last month.';
-                }
-            }
-
-            $orders=retailerOrder::get();
-            if(count($orders) > 0)
-            {
-                foreach($orders as $item)
-                {
-                    $prod=products::find($item->productId);
-                    $sale=$sale+$prod->wholesalePrice;
-                }
-            }
-            $currentYear=Carbon::now()->year;
-            $lastYear=Carbon::now()->subYear()->year;
-            $previousYear=Carbon::now()->subYear(2)->year;
-
-            $rev_this=retailerOrder::where('payment','Done')->whereYear('created_at', '=', Carbon::now()->year)->get();
-            $this_year_rev=0;
-                if(count($rev_this) > 0)
-                {            
-                foreach($rev_this as $row)
-                    {
-                        $prod=products::find($row->productId);
-                        $this_year_rev=$this_year_rev+$prod->wholesalePrice;
-                    }
-                }
-
-                $rev_last=retailerOrder::where('payment','Done')->whereYear('created_at', '=', Carbon::now()->subYear()->year)->get();
-                $last_year_rev=0;
-                    if(count($rev_last) > 0)
-                    {            
-                    foreach($rev_last as $row)
-                        {
-                            $prod=products::find($row->productId);
-                            $last_year_rev=$last_year_rev+$prod->wholesalePrice;
-                        }
-                    }
-
-
-                    $rev_previous=retailerOrder::where('payment','Done')->whereYear('created_at', '=', Carbon::now()->subYear(2)->year)->get();
-                    $previous_year_rev=0;
-                        if(count($rev_previous) > 0)
-                        {            
-                        foreach($rev_previous as $row)
-                            {
-                                $prod=products::find($row->productId);
-                                $previous_year_rev=$previous_year_rev+$prod->wholesalePrice;
-                            }
-                        }
-
-                        $process = retailerOrder::where('status','processing')->count();
-                        $complete = retailerOrder::where('status','completed')->count();
-
-                        $order_over = round(($complete/$order)*100 , 0);
-
-                        if($order = 0.5)
-                        {
-                            $order = 0;
-                        }
-
-        return view('admin.dashboard')->with(array('order_over'=>$order_over,'process'=>$process,'complete'=>$complete,'retailer'=>$retailer,'this_year_rev'=>$this_year_rev,'last_year_rev'=>$last_year_rev,
-        'previous_year_rev'=>$previous_year_rev,'currentYear'=>$currentYear,'lastYear'=>$lastYear,'previousYear'=>$previousYear,'percent'=>$percent,
-        'sale'=>$sale,'stat'=>$stat,'amount'=>$amount,'lastmonthOrder'=>$lastmonthOrder,'todayOrder'=>$todayOrder,'monthOrder'=>$monthOrder,'order'=>$order,
-        'customer'=>$customer,'visits'=>$visits,'products'=>$products));
+        $todayOrder=retailerOrder::whereDate('created_at', '=', Carbon::today())->count();
+        $monthOrder=retailerOrder::whereMonth('created_at', '=', Carbon::now()->month)->count();
+        $lastmonthOrder=retailerOrder::whereMonth('created_at', '=', Carbon::now()->subMonth()->month)->count();
+      
+        return view('admin.dashboard')->with(array('lastmonthOrder'=>$lastmonthOrder,'todayOrder'=>$todayOrder,'monthOrder'=>$monthOrder,'order'=>$order,'customer'=>$customer,'visits'=>$visits,'products'=>$products));
     }
 
 
@@ -308,25 +172,22 @@ class AdminController extends Controller
             if($request->cat_name != $request->cat_rename)
             {
             $this->validate($request,[
-                'cat_name'=>'required|unique:categories,name'
+                'cat_name'=>'required|unique:categories,name',
                 ]);
             }
             else
             {
                 $this->validate($request,[
-                    'cat_name'=>'required'
+                    'cat_name'=>'required',
                     ]);
             }
-            $id=$request->cat_id;
-            $category=Category::find($id);
+                $id=$request->cat_id;
+                $category=Category::find($id);
             $category->name=$request->cat_name;
             if(isset($request->cat_image))
             {
-                $path = $category->image;
-                Storage::delete($path);
-
-                $path1 = $request->cat_image->store('category');
-                $category->image=$path1;
+            $path1 = $request->cat_image->store('category');
+            $category->image=$path1;
             }
             $category->save();
             if($category->save())
@@ -629,26 +490,8 @@ class AdminController extends Controller
          {
              return redirect('/admin');
          }
-         $outer=products::where('stock','<=',10)->where('delete_status',0)->get();
+         $outer=products::where('stock',0)->get();
         return view('admin.outStock')->with(array('outer'=>$outer));;
-    }
-    
-    
-    //Product edit form page
-    public function top_sell()
-    {
-        if (Auth::check()) {
-            if($this->user->userRole != 1)
-            {
-             return redirect('/admin');
-            }
-         }
-         else
-         {
-             return redirect('/admin');
-         }
-         $product = products::orderBy('id','desc')->where('delete_status',0)->get();
-        return view('admin.topSell')->with(array('product'=>$product));;
     }
 
 
@@ -850,6 +693,8 @@ class AdminController extends Controller
          {
              return redirect('/admin');
          }
+        if(isset($request->update))
+        {
             $this->validate($request,[
                 'id'=>'required',
                 'color'=>'required',
@@ -865,7 +710,6 @@ class AdminController extends Controller
                 $order->colour=$request->color;
                 $order->sizes=$request->size;
                 $order->status=$request->status;
-                
                 if($request->status == 'canceled' && $order->cancle_order_request == 1)
                 {
                     $order->cancle_order_request=2;
@@ -886,7 +730,6 @@ class AdminController extends Controller
                 $order->save();
                 if($order->save())
                 {
-                    
                     if($status != $request->status)
                     {
                         $retailer=retailerOrder::where('id',$request->id)->first();
@@ -981,7 +824,7 @@ class AdminController extends Controller
                     }
                     return redirect()->back()->with('success','Order Updated Successfully');
                 }
-        
+        }
     }
 
 
@@ -1087,7 +930,7 @@ class AdminController extends Controller
 
 
   
-      public function adminProfile(Request $request)
+      public function adminEmail(Request $request)
       {
         if (Auth::check()) {
             if($this->user->userRole != 1)
@@ -1099,49 +942,50 @@ class AdminController extends Controller
          {
              return redirect('/admin');
          }
-         //General Update
         
-           if(isset($request->general) && $request->general == 'Submit')
+           if(isset($request->update) && $request->update == 'update')
            {
                    $this->validate($request,[
-                    'name'=>'required',
-                    'email'=>'required|email',
-                    'logo'=>'mimes:jpeg,bmp,png'
+                   'email'=>'required|email'
                ]);
-                    if(Auth::user()->email != $request->email)
-                    {
-                        $this->validate($request,[
-                            'email'=>'unique:users,email'
-                       ]);
-                    }
-                 $admin = Auth::user()->id;
-                 $user=User::find($admin);
-                 $user->name=$request->name;
-                 $user->email=$request->email;
-                 if(isset($request->logo))
+ 
+                 
+                 $update = $request->all();
+                 $email_checker = $this->update_email($update['id'],$update['email']);
+                
+                 if($email_checker['canUpdateEmail'] != 1)
                  {
-                     $old=$user->logo;
-                   Storage::delete($old);
-                 $path=$request->logo->store('logo');
-                 $user->logo=$path;
+                     unset($update['email']); 
                  }
-                 $user->save();
-                 return redirect()->back()->with('success', 'Your Data Updated ');
+                 $uploadId = $update['id'];
+                 unset($update['id']);
+                 unset($update['_token']);
+                 unset($update['update']);
+                 User::where('id', $uploadId)->update($update);
+              return redirect()->back()->with('success', 'Your account Updated '.$email_checker['message']);
              }
-
-             //Password Update
-             if(isset($request->secure) && $request->secure == 'Submit')
-           {
-                   $this->validate($request,[
-                    'password'=>'required',
-                    'confirm'=>'required|same:password'
-               ]);
-                 $pass=bcrypt($request->password);
-                 User::where('id',Auth::user()->id)->update(['password'=>$pass]);
-                 return redirect()->back()->with(array('success'=>'Your Password Updated','status'=>'ok'));
-             }
+ 
+ 
       }
-     
+      function update_email($id, $email) {
+        $canUpdateEmail = 0;
+        $message = '';
+        //check if user has changed his email or that new email is not already taken
+        $user = User::where('id', $id)->first();
+        if ($email != $user->email) {
+        $alreadyExist = User::where('email', $email)->count();
+        if ($alreadyExist <= 0) {
+        $canUpdateEmail = 1;
+        } else {
+        $message = ', This Email Already Exist! ';
+        }
+        }
+        return array('canUpdateEmail' => $canUpdateEmail, 'message' => $message);
+        }
+
+
+
+
         public function passwordUpdate(Request $request)
         {
             if (Auth::check()) {
@@ -1258,7 +1102,6 @@ class AdminController extends Controller
          //Add silhouette
       public function silhouette(Request $request)
       {
-          
           if (Auth::check()) {
               if($this->user->userRole != 1)
               {
@@ -1269,13 +1112,12 @@ class AdminController extends Controller
            {
                return redirect('/admin');
            }
-           if(isset($request->sendSilhouette))
+           if(isset($request->sendCategory))
          {
            $this->validate($request,[
             'silhouette'=>'required|unique:silhouettes,name',
             'first'=>'required'
             ]);
-            
             $category=new silhouette;
             $category->name=$request->silhouette;
             $path1 = $request->first->store('silhouette');
@@ -1348,7 +1190,6 @@ class AdminController extends Controller
              {
              $this->validate($request,[
                  'sleeve_name'=>'required|unique:sleeves,name',
-                 'cat_image'=>'image|mimes:jpeg,png,jpg,gif,svg'
                  ]);
              }
              else
@@ -1362,9 +1203,9 @@ class AdminController extends Controller
              $category->name=$request->sleeve_name;
              if(isset($request->cat_image))
              {
-                Storage::delete($category->image);
-                $path1 = $request->cat_image->store('sleeve');
-                $category->image=$path1;
+               Storage::delete($category->image);
+             $path1 = $request->cat_image->store('sleeve');
+             $category->image=$path1;
              }
              $category->save();
              if($category->save())
@@ -1396,7 +1237,7 @@ class AdminController extends Controller
            {
                return redirect('/admin');
            }
-           if(isset($request->sendNeckline))
+           if(isset($request->sendCategory))
          {
            $this->validate($request,[
             'neckline'=>'required|unique:necklines,name',
@@ -1780,7 +1621,7 @@ class AdminController extends Controller
          {
              return redirect('/admin');
          }
-         $swatches=ColourSwatches::orderBy('id','desc')->get();
+         $swatches=ColourSwatches::all();
          return view('admin.swatch')->with('swatches',$swatches);
     }
 
@@ -1967,17 +1808,55 @@ class AdminController extends Controller
         {
             return redirect('/admin');
         }
-
-        $retailer=User::where('userRole',2)->where('status',1)->where('name', 'like', '%' . $request->data . '%')
-        ->orWhere('email', 'like', '%' . $request->data . '%')->orWhere('registrationNumber', 'like', '%' . $request->data . '%')->get();
-
         
-        $inter=products::where('name', 'like', '%' . $request->data . '%')
-        ->orWhere('colour', 'like', '%' . $request->data . '%')->orWhere('tag', 'like', '%' . $request->data . '%')
-        ->orWhere('keyword', 'like', '%' . $request->data . '%')->orWhere('styleNumber', 'like', '%' . $request->data . '%')
-        ->orWhere('status', 'like', '%' . $request->data . '%')->get();
-       
-        return view('admin.result')->with(array('inter'=>$inter,'retailer'=>$retailer));
+        if(isset($request->search))
+        {
+            $this->validate($request,[
+                'type'=>[
+                    'required',
+                    Rule::in(['retailer','product','category']),
+                ],
+                'top_search'=>'required'
+            ]);
+            $counter=0;
+            $status=0;
+            if($request->type == 'retailer')
+            {
+                $status=1;
+                $retailer=$request->top_search;
+                $value=User::where('registrationNumber',$retailer)->first();
+                if(!isset($value))
+                {
+                    return redirect()->back()->with('error','Wrong Registration Number');
+                }
+            }
+
+            if($request->type == 'product')
+            {
+                $status=2;
+                $product=$request->top_search;
+                $value=products::where('styleNumber',$product)->first();
+                if(!isset($value))
+                {
+                    return redirect()->back()->with('error','Wrong Style Number');
+                }
+            }
+
+
+            if($request->type == 'category')
+            {
+                $status=3;
+                $cat=$request->top_search;
+                $value=Category::where('name',$cat)->first();
+                if(!isset($value))
+                {
+                    return redirect()->back()->with('error','Wrong Category Name');
+                }
+                $id=$value->id;
+                $counter=products::where('category',$id)->count();
+            }
+            return view('admin.result')->with(array('counter'=>$counter,'value'=>$value,'status'=>$status));
+        }
     }
 
     public function size()
@@ -2010,7 +1889,7 @@ class AdminController extends Controller
          {
              return redirect('/admin');
          }
-         $addition=additional::orderBy('id','desc')->get();
+         $addition=additional::all();
          return view('admin.addition')->with('addition',$addition);
     }
 

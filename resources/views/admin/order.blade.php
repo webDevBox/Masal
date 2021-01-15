@@ -1,156 +1,252 @@
 @extends('layout.admin')
 @section('content')
     
-<div class="app-content content ">
-    <div class="content-overlay"></div>
-    <div class="header-navbar-shadow"></div>
-    <div class="content-wrapper">
-    <div class="content-header row">
+
+
+  <!-- Quick Stats -->
+<div class="row text-center">
+    <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+    <a href="{{route('dater',array('status'=>'today'))}}" class="widget widget-hover-effect2">
+    <div class="widget-extra themed-background-dark">
+    <h4 class="widget-content-light"><strong>Orders</strong> Today</h4>
     </div>
-    <div class="content-body">
-    <!-- Dashboard Ecommerce Starts -->
-    <section id="dashboard-ecommerce">
-    
-            <div class="row match-height">
-            <!-- Bar Chart - Orders -->
-           
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <a href="{{route('dater',array('status'=>'today'))}}">
-                <div class="card  text-center " >
-                <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Order <strong>Today </strong> </h3> 
-                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $todayOrder }} </h2>
-                </div>
-                </div>
-            </a>
-            </div>
-        
-    
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <a href="{{route('dater',array('status'=>'month'))}}">
-                <div class="card  text-center " >
-                <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Order This<strong>Month </strong> </h3> 
-                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $monthOrder }} </h2>
-                </div>
-                </div>
-            </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <a href="{{route('dater',array('status'=>'last'))}}">
-                <div class="card  text-center " >
-                <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Order Last <strong>Month </strong> </h3> 
-                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $lastmonthOrder }} </h2>
-                </div>
-                </div>
-            </a>
-            </div>
-    
-            
-            
-            
-           
-            </div>
-    
-    
-    <div class="row match-height">
-    <!-- Company Table Card -->
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="card card-company-table">
-    <div class="card-body p-0">
-    <div class="table-responsive">
-        <div class="block full">
-            <!-- All Orders Title -->
-            <div class="block-title">
-            <h2 class="ml-3"><strong>All</strong> Orders</h2>
-           
-            @if(Session::has('success'))
-            <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
-            @endif
-            @if(Session::has('error'))
-            <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
-            @endif
-            @if ($errors->has('email')) <p style="color:red;">{{ $errors->first('email') }}</p> @endif
-            @if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif    
-                     </div>
-            <!-- END All Orders Title -->
-            
-            <!-- All Orders Content -->
-            <table id="ecom-orders" class="table table-bordered table-striped table-vcenter">
-            <thead>
-            <tr> 
-            <th class="text-center">Retailer  ID</th>
-            <th class="text-center">Retailer Name</th>
-            <th class="text-center"># of Orders</th>
-            <th class="text-center">Cancellation Requests</th>
-            <th class="text-center">Value</th>
-            <th class="text-center">Action</th>
-            </tr>
-            </thead>
-            <tbody>
-                @php
-                    $counter=0;
-                @endphp
-                @if(count($orders) > 0)
-                @foreach($orders as $order)
+    <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">{{$todayOrder}}</span></div>
+    </a>
+    </div>
+    <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+    <a href="{{route('dater',array('status'=>'month'))}}" class="widget widget-hover-effect2">
+    <div class="widget-extra themed-background-dark">
+    <h4 class="widget-content-light"><strong>Orders</strong> This Month</h4>
+    </div>
+<div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">{{$monthOrder}}</span></div>
+    </a>
+    </div>
+    <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+    <a href="{{route('dater',array('status'=>'last'))}}" class="widget widget-hover-effect2">
+    <div class="widget-extra themed-background-dark">
+    <h4 class="widget-content-light"><strong>Orders</strong> Last Month</h4>
+    </div>
+    <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">{{$lastmonthOrder}}</span></div>
+    </a>
+    </div>
+    </div>
+    <!-- END Quick Stats -->
+
+<!-- All Orders Block -->
+<div class="block full">
+<!-- All Orders Title -->
+<div class="block-title">
+<h2><strong>All</strong> Orders</h2>
+@if(Session::has('success'))
+<p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+@endif
+@if(Session::has('error'))
+<p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
+@endif
+@if ($errors->has('email')) <p style="color:red;">{{ $errors->first('email') }}</p> @endif
+@if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif
+</div>
+<!-- END All Orders Title -->
+
+<!-- All Orders Content -->
+<table id="ecom-orders" class="table table-bordered table-striped table-vcenter">
+<thead>
+<tr>
+{{-- <th class="text-center" style="width: 100px;"/>ID</th> --}}
+<th class="text-center">Retailer  ID</th>
+<th class="text-center">Retailer Name</th>
+<th class="text-center"># of Orders</th>
+<th class="text-center">Cancellation Requests</th>
+<th class="text-center">Value</th>
+<th class="text-center">Action</th>
+</tr>
+</thead>
+<tbody>
+    @php
+        $counter=0;
+    @endphp
+    @if(count($orders) > 0)
+        @foreach($orders as $order)
+            @php
+                $cancle=\App\retailerOrder::where('cancle_order_request',1)->where('payment','Done')->where('status','processing')->where('RetailerId',$order->id)->count();
+                $total_price=0;
+                $counter++;
+            @endphp
+            @if(count($order->orders) > 0)
+                @foreach($order->orders as $single_order)
                     @php
-                        $cancle=\App\retailerOrder::where('cancle_order_request',1)->where('payment','Done')->where('status','processing')->where('RetailerId',$order->id)->count();
-                        $total_price=0;
-                        $counter++;
+                        $extra=0;
+                        $product = \App\products::find($single_order->productId);
+                        if($single_order->extra != null)
+                        {
+                            $addition=\App\additional::where('additional',$single_order->extra)->first();
+                            $extra_price=$addition->price;
+                            $extra=$extra_price*$single_order->quantity;
+                        }
+                        $total_price = $total_price + ($product->wholesalePrice * $single_order->quantity)+$extra;
                     @endphp
-                    @if(count($order->orders) > 0)
-                        @foreach($order->orders as $single_order)
-                            @php
-                                $extra=0;
-                                $product = \App\products::find($single_order->productId);
-                                if($single_order->extra != null)
-                                {
-                                    $addition=\App\additional::where('additional',$single_order->extra)->first();
-                                    $extra_price=$addition->price;
-                                    $extra=$extra_price*$single_order->quantity;
-                                }
-                                $total_price = $total_price + ($product->wholesalePrice * $single_order->quantity)+$extra;
-                            @endphp
-                        @endforeach
-                    @endif
-                    <tr>
-                        {{-- <td class="text-center"><strong>ORD.{{$order->id}}</strong></td> --}}
-                        <td class="text-center">
-                            <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" > {{$order->id}} </a> </td>
-                        <td class="text-center">
-                            <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" >{{$order->name}} </a></td>
-                        <td class="text-center">
-                            <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" >{{$order->orders_count}} </a></td>
-                        <td class="text-center"> {{ $cancle }} </td>
-                        <td class="text-center"><a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" >${{$total_price}}</a></td>
-                        <td class="text-center">
-                        <div class="btn-group btn-group-xs">
-                        <a href="{{route('retailerOrderEdit',array('id' => $order->id))}}" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
-                        <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" class="btn btn-secondary"><i class="fa fa-eye"></i></a>
-                        <a href="{{route('retailerOrderDel',array('id' => $order->id))}}" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></a>
-                        </div>
-                        </td>
-                        </tr>
-                    @endforeach
-                @endif
-                   
-            </tbody>
-            </table>
-            <!-- END All Orders Content -->
+                @endforeach
+            @endif
+
+            <tr>
+            {{-- <td class="text-center"><strong>ORD.{{$order->id}}</strong></td> --}}
+            <td class="text-center">
+                <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" > {{$order->id}} </a> </td>
+            <td class="text-center">
+                <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" >{{$order->name}} </a></td>
+            <td class="text-center">
+                <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" >{{$order->orders_count}} </a></td>
+            <td class="text-center"> {{ $cancle }} </td>
+            <td class="text-center"><a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" >${{$total_price}}</a></td>
+            <td class="text-center">
+            <div class="btn-group btn-group-xs">
+            <a href="{{route('retailerOrderEdit',array('id' => $order->id))}}" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+            <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-eye"></i></a>
+            <a href="{{route('retailerOrderDel',array('id' => $order->id))}}" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
             </div>
+            </td>
+            </tr>
+        @endforeach
+    @endif
+</tbody>
+</table>
+<!-- END All Orders Content -->
+</div>
+<!-- END All Orders Block -->
+</div>
+<!-- END Page Content -->
+
+<!-- Footer -->
+
+<!-- END Footer -->
+</div>
+<!-- END Main Container -->
+</div>
+<!-- END Page Container -->
+</div>
+<!-- END Page Wrapper -->
+
+<!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+<a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<!-- User Settings, modal which opens from Settings link (found in top right user menu) and the Cog link (found in sidebar user info) -->
+<div id="modal-user-settings" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header text-center">
+    <h2 class="modal-title"><i class="fa fa-pencil"></i> Settings</h2>
     </div>
-    </div>
-    </div>
-    </div>
+    <!-- END Modal Header -->
     
+    <!-- Modal Body -->
+    <div class="modal-body">
+    <form action="{{route('adminEmail')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+    @csrf
+    <fieldset>
+    <legend>Email Update</legend>
+    <div class="form-group">
+    <label class="col-md-4 control-label">Username</label>
+    <div class="col-md-8">
+    <p class="form-control-static"> {{Auth::user()->email}}</p>
     </div>
-    </section>
-    <!-- Dashboard Ecommerce ends -->
-    
+    </div>
+    <div class="form-group">
+    <label class="col-md-4 control-label" for="user-settings-email">Email</label>
+    <div class="col-md-8">
+    <input type="email" id="user-settings-email" name="email" class="form-control" value="{{Auth::user()->email}}">
+    </div>
+    </div>
+    <div class="form-group" style="display: none">
+        <div class="col-md-8">
+        <input type="number" id="user-settings-repassword" name="id" class="form-control" value="{{Auth::user()->id}}">
+        </div>
+        </div>
+    <center>
+    <button type="submit" name="update" value="update" class="btn btn-sm btn-primary">Update Email</button>
+    </center>
+    </form>
+    {{-- <div class="form-group">
+    <label class="col-md-4 control-label" for="user-settings-notifications">Email Notifications</label>
+    <div class="col-md-8">
+    <label class="switch switch-primary">
+    <input type="checkbox" id="user-settings-notifications" name="user-settings-notifications" value="1" checked>
+    <span></span>
+    </label>
+    </div>
+    </div> --}}
+    </fieldset>
+    <form action="{{route('adminPassword')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+        @csrf
+    <fieldset>
+    <legend>Password Update</legend>
+    <div class="form-group">
+    <label class="col-md-4 control-label" for="user-settings-password">New Password</label>
+    <div class="col-md-8">
+    <input type="password" id="user-settings-password" name="password" class="form-control" placeholder="Please choose a complex one..">
+    @if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif
+    </div>
+    </div>
+    <div class="form-group">
+    <label class="col-md-4 control-label" for="user-settings-repassword">Confirm New Password</label>
+    <div class="col-md-8">
+    <input type="password" id="user-settings-repassword" name="repassword" class="form-control" placeholder="..and confirm it!">
+    </div>
+    </div>
+    <div class="form-group" style="display: none">
+        <div class="col-md-8">
+        <input type="number" id="user-settings-repassword" name="id" class="form-control" value="{{Auth::user()->id}}">
+        </div>
+        </div>
+    </fieldset>
+    <div class="form-group form-actions">
+    <div class="col-xs-12 text-right">
+    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+    <button type="submit" name="update" value="update" class="btn btn-sm btn-primary">Update Password</button>
+    </div>
+    </div>
+    </form>
+    </div>
+    <!-- END Modal Body -->
     </div>
     </div>
     </div>
 
+<!-- END User Settings -->
 
+<!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Load and execute javascript code used only in this page -->
+<script src="js/pages/ecomOrders.js"></script>
+<script>$(function(){ EcomOrders.init(); });</script>
+
+
+
+<script>
+    $('#top_type').change(function()
+    {
+        var type=$(this).val();
+        if(type == 'retailer')
+        {
+        $('#top_search').attr('placeholder','Registration Number');
+        }
+    
+        if(type == 'product')
+        {
+        $('#top_search').attr('placeholder','Product style#');
+        }
+    
+        if(type == 'category')
+        {
+        $('#top_search').attr('placeholder','Category Name');
+        }
+    
+    
+    });
+    $('.order').attr('class','active');
+    </script>
 @endsection

@@ -24,7 +24,7 @@ class AuthController extends Controller
    
     public function register(Request $request)
     {
-        if(isset($request->register) && $request->register == 'Register')
+        if(isset($request->register) && $request->register == 'Submit')
         {
             $this->validate($request,[
                 'contact'=>'required',
@@ -130,11 +130,11 @@ class AuthController extends Controller
            $user->lat=$geoloc['results'][0]['geometry']['location']['lat'];
            $user->save();
            $signature=emails::where('name','Signature')->first();
-            $ender=' ';
-            if($signature->status == 1)
-            {
-            $ender=$signature->message;
-            }
+                        $ender=' ';
+                        if($signature->status == 1)
+                        {
+                        $ender=$signature->message;
+                        }
            $email=emails::where('name','register')->first();
             if($email->status == 1)
             {
@@ -161,13 +161,12 @@ class AuthController extends Controller
             }
             return redirect()->back()->with('success', 'Your Account is Under Review');
         }
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
         $collection=Category::all();
         $countries=country::all();
-        $states=state::all();
         $foot=footer::where('id',1)->first();
 
-        return view('pages.retailerrequest')->with(array('foot'=>$foot,'states'=>$states,'countries'=>$countries,'collection'=>$collection,'gallery'=>$gallery));
+        return view('pages.retailerrequest')->with(array('foot'=>$foot,'countries'=>$countries,'collection'=>$collection,'gallery'=>$gallery));
     }
 
     /**
@@ -191,7 +190,6 @@ class AuthController extends Controller
                 $user = Auth::user();
                 if($user->status == 1 && $user->userRole == 1)
                 {
-                    User::where('id',$user->id)->update(['log'=>1]);
                     return redirect('/dashboard');
                 }
                else
@@ -221,26 +219,12 @@ class AuthController extends Controller
                 return redirect()->back()->with('error', 'Wrong Credantials');
             }
         }
-        $collection=Category::all();
-        $foot=footer::where('id',1)->first();
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
-        return view('admin.index')->with(array('gallery'=>$gallery,'foot'=>$foot,'collection'=>$collection));
-    }
-
-    //Retailer Login Form
-    public function login_form()
-    {
-        $foot=footer::where('id',1)->first();
-        $collection=Category::all();
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
-        return view('pages.login')->with(array('gallery'=>$gallery,'collection'=>$collection,'foot'=>$foot));
+        return view('admin.index');
     }
 
     //Admin Logout
     public function logout()
     {
-        $user=Auth::user()->id;
-        User::where('id',$user)->update(['log'=>0]);
         Auth::logout();
         return redirect('/admin');
     }
@@ -250,7 +234,6 @@ class AuthController extends Controller
     public function retailerlogout()
     {
         $user=Auth::user()->id;
-        User::where('id',$user)->update(['log'=>0]);
         Auth::logout();
         $status=0;
         return redirect('/')->with('status',$status);
@@ -273,7 +256,6 @@ class AuthController extends Controller
                 $user = Auth::user();
                 if($user->status == 1 && $user->userRole == 2)
                 {
-                    User::where('id',$user->id)->update(['log'=>1]);
                     return redirect('/retailerdash');
                 }
                else
@@ -303,7 +285,7 @@ class AuthController extends Controller
                 return redirect()->back()->with('error', 'Wrong Credantials');
             }
         }
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
         return view('pages.index')->with(array('foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery));

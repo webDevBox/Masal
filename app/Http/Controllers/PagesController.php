@@ -29,7 +29,7 @@ class PagesController extends Controller
 
     public function real()
     {
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
        $latestProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $real=real::all();
         $collection=Category::all();
@@ -42,7 +42,7 @@ class PagesController extends Controller
 
     public function wedding_detail($id)
     {
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
        $latestProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $real=real::all();
         $collection=Category::all();
@@ -58,8 +58,8 @@ class PagesController extends Controller
     public function index()
     {
         $country=buyer_country::all();
-        $user=User::where('userRole',2)->where('status',1)->get();
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $user=User::all();
+       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
         $menu=menu::where('header_status',1)->where('status',1)->get();
@@ -86,7 +86,7 @@ class PagesController extends Controller
     {
         $state = '';
         if(isset($request['country']) && $request['country'] != '') {
-            $state = state::orderBy('name', 'asc')->where('country_id', $request['country'])->get();
+            $state = state::orderBy('id', 'asc')->where('country_id', $request['country'])->get();
         }
         $data_array = [
             "success" => [
@@ -95,6 +95,7 @@ class PagesController extends Controller
             ]
         ];
         return response()->json($data_array);
+
     }
 
     public function cityPicker(Request $request)
@@ -140,16 +141,16 @@ class PagesController extends Controller
 
         $smallProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
 
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
 
         $collection=Category::all();
-        $category=Category::orderBy('id', 'desc')->limit(3)->get();
+       
         $home=homePage::first();
         $foot=footer::where('id',1)->first();
         $user=new visitor;
         $user->visitors=1;
         $user->save();
-        return view('pages.index')->with(array('category'=>$category,'foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
+        return view('pages.index')->with(array('foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
     }
 
     public function contact()
@@ -160,7 +161,7 @@ class PagesController extends Controller
 
          $smallProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
 
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
         return view('pages.contact')->with(array('foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
@@ -168,11 +169,11 @@ class PagesController extends Controller
 
     public function nav_collection($id)
     {
-        $products=products::where('category',$id)->where('delete_status',0)->get();
+        $products=products::where('category',$id)->get();
         $collection=Category::all();
         $cat=Category::find($id);
 
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
         $foot=footer::where('id',1)->first();
 
         return view('pages.collections')->with(array('foot'=>$foot,'collection'=>$collection,'cat'=>$cat,'gallery'=>$gallery,'products'=>$products));
@@ -184,7 +185,7 @@ class PagesController extends Controller
 
     public function detail($id)
     {
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
         $detail=products::find($id);
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
@@ -199,7 +200,7 @@ class PagesController extends Controller
         $menu=menu::where('header_status',1)->where('status',1)->get();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
         $this->validate($request,[
             'country'=>'required'
             ]);
@@ -298,7 +299,7 @@ return view('pages.retailersList')->with('menu',$menu)->with('foot',$foot)->with
     //Submit Feedback
     public function feedback(Request $request)
     {
-      if(isset($request->submit))
+      if(isset($request->submit) && $request->submit == 'SEND')
       {
         $this->validate($request,[
             'email'=>'required',
@@ -343,7 +344,7 @@ return view('pages.retailersList')->with('menu',$menu)->with('foot',$foot)->with
     {
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
-        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(8)->get();
 
         return view('pages.direction')->with('status',$status)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery);
     }

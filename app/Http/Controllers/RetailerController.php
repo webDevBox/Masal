@@ -14,7 +14,6 @@ use App\retailerOrder;
 use App\Category;
 use App\wedding;
 use App\retailer_bride;
-use Carbon\Carbon;
 class RetailerController extends Controller
 {
 
@@ -45,17 +44,9 @@ class RetailerController extends Controller
          {
              return redirect('/');
          }
-         $collection=Category::orderBy('id', 'desc')->limit(8)->get();
-         $todayOrder=retailerOrder::where('payment','Done')->where('RetailerId',Auth::user()->id)->whereDate('created_at', '=', Carbon::today())->count();
-         $monthOrder=retailerOrder::where('payment','Done')
-        ->whereMonth('created_at', '=', Carbon::now()->month)->where('RetailerId',Auth::user()->id)
-        ->whereYear('created_at', '=', Carbon::now()->year)->count();
-
-
-        $lastmonthOrder=retailerOrder::where('payment','Done')
-        ->whereMonth('created_at', '=', Carbon::now()->subMonth()->month)->where('RetailerId',Auth::user()->id)
-        ->whereYear('created_at', '=', Carbon::now()->subYear()->year)->count();
-        return view('retailer.retailerdash')->with(array('monthOrder'=>$monthOrder,'lastmonthOrder'=>$lastmonthOrder,'todayOrder'=>$todayOrder,'collection'=>$collection));
+         $collection=Category::orderBy('created_at', 'desc')->limit(6 )->get();
+         $categories=Category::all();
+        return view('retailer.retailerdash')->with(array('categories'=>$categories,'collection'=>$collection));
     }
 
     //Collection Page
@@ -334,94 +325,10 @@ class RetailerController extends Controller
            {
                return redirect('/');
            }
-           $wedding=wedding::orderBy('id','desc')->where('retailer',Auth::user()->id)->get();
+           $wedding=wedding::where('retailer',Auth::user()->id)->get();
            $total=wedding::where('retailer',Auth::user()->id)->count();
           return view('retailer.wedding')->with(array('total'=>$total,'wedding'=>$wedding));
       }
-
-      // Profile Page
-    public function retailer_profile()
-    {
-        if (Auth::check()) {
-            if($this->user->userRole != 2)
-            {
-             return redirect('/');
-            }
-            if($this->user->status != 1)
-            {
-             return redirect('/retailerlogout');
-            }
-         }
-         else
-         {
-             return redirect('/');
-         }
-         $profile=User::find(Auth::user()->id);
-         return view('retailer.profile')->with(array('profile'=>$profile));
-    }
-
-
-    public function retailerProfile(Request $request)
-      {
-        if (Auth::check()) {
-            if($this->user->userRole != 2)
-            {
-             return redirect('/');
-            }
-            if($this->user->status != 1)
-            {
-             return redirect('/retailerlogout');
-            }
-         }
-         else
-         {
-             return redirect('/');
-         }
-         //General Update
-        
-           if(isset($request->general) && $request->general == 'Submit')
-           {
-                   $this->validate($request,[
-                    'name'=>'required',
-                    'email'=>'required|email',
-                    'logo'=>'mimes:jpeg,bmp,png'
-               ]);
-                    if(Auth::user()->email != $request->email)
-                    {
-                        $this->validate($request,[
-                            'email'=>'unique:users,email'
-                       ]);
-                    }
-                 $retailer = Auth::user()->id;
-                 $user=User::find($retailer);
-                 $user->name=$request->name;
-                 $user->email=$request->email;
-                 if(isset($request->logo))
-                 {
-                     $old=$user->logo;
-                   Storage::delete($old);
-                 $path=$request->logo->store('logo');
-                 $user->logo=$path;
-                 }
-                 
-                 $user->save();
-                 return redirect()->back()->with('success', 'Your Data Updated ');
-             }
-
-             //Password Update
-             if(isset($request->secure) && $request->secure == 'Submit')
-           {
-                   $this->validate($request,[
-                    'password'=>'required',
-                    'confirm'=>'required|same:password'
-               ]);
-                 $pass=bcrypt($request->password);
-                 User::where('id',Auth::user()->id)->update(['password'=>$pass]);
-                 return redirect()->back()->with(array('success'=>'Your Password Updated','status'=>'ok'));
-             }
-      }
-
-
 
 
 

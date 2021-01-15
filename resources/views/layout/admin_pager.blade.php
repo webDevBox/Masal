@@ -1,350 +1,753 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
-<!-- BEGIN: Head-->
+
+<!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <![endif]-->
+
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-<meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-<meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-<meta name="author" content="PIXINVENT">
+
+<meta charset="utf-8">
+
+
+
 <title>Masal Australia</title>
-<link rel="apple-touch-icon" href="{{ asset('app-assets/images/ico/apple-icon-120.png') }}">
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/ico/favicon.png ')}}">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
-<!-- BEGIN: Vendor CSS-->
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/vendors.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/charts/apexcharts.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/extensions/toastr.min.css')}}">
-<!-- END: Vendor CSS-->
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/pages/app-chat.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/pages/app-chat-list.css')}}">
-<!-- BEGIN: Theme CSS-->
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/bootstrap.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/bootstrap-extended.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/colors.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/components.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/themes/dark-layout.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/themes/bordered-layout.css')}}">
 
-<!-- BEGIN: Page CSS-->
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/pages/dashboard-ecommerce.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/plugins/charts/chart-apex.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/plugins/extensions/ext-component-toastr.css')}}">
-<!-- END: Page CSS-->
-<!-- BEGIN: Custom CSS-->
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css')}}">
-<!-- END: Custom CSS-->
-<script src="https://use.fontawesome.com/d4bd60efc3.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<meta name="description" content="ProUI is a Responsive Bootstrap Admin Template created by pixelcave and published on Themeforest.">
+
+<meta name="author" content="pixelcave">
+
+<meta name="robots" content="noindex, nofollow">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+
+
+
+<!-- Icons -->
+
+<!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+
+<link rel="shortcut icon" href="{{asset('img/favicon.png')}}">
+
+<link rel="apple-touch-icon" href="{{asset('img/icon57.png')}}" sizes="57x57">
+
+<link rel="apple-touch-icon" href="{{asset('img/icon72.png')}}" sizes="72x72">
+
+<link rel="apple-touch-icon" href="{{asset('img/icon76.png')}}" sizes="76x76">
+
+<link rel="apple-touch-icon" href="{{asset('img/icon114.png')}}" sizes="114x114">
+
+<link rel="apple-touch-icon" href="{{asset('img/icon120.png')}}" sizes="120x120">
+
+<link rel="apple-touch-icon" href="{{asset('img/icon144.png')}}" sizes="144x144">
+
+<link rel="apple-touch-icon" href="{{asset('img/icon152.png')}}" sizes="152x152">
+
+<link rel="apple-touch-icon" href="{{asset('img/icon180.png')}}" sizes="180x180">
+
+<!-- END Icons -->
+
+
+
+<!-- Stylesheets -->
+
+<!-- Bootstrap is included in its original form, unaltered -->
+
+<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+
+
+
+<!-- Related styles of various icon packs and plugins -->
+
+<link rel="stylesheet" href="{{asset('css/plugins.css')}}">
+
+
+
+<!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+
+<link rel="stylesheet" href="{{asset('css/main.css')}}">
+
+
+
+<!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
+
+
+
+<!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
+
+<link rel="stylesheet" href="{{asset('css/themes.css')}}">
+
+<!-- END Stylesheets -->
+
+
+
+<!-- Modernizr (browser feature detection library) -->
+
+<script src="{{asset('js/vendor/modernizr.min.js')}}"></script>
+
+
+
+    <!-- Custom styles for this template -->
+
+   
+
+<link rel="stylesheet" href="{{ asset('css/nicdark_style.css') }}"> <!--style-->
+
+<link rel="stylesheet" href="{{ asset('css/nicdark_responsive.css')}}"> <!--nicdark_responsive-->
+
 <style>
-    .fake{
-        opacity: 0;
+
+    a{
+
+    text-decoration: none;
+
     }
-</style>
-</head>
-<!-- END: Head-->
 
-<!-- BEGIN: Body-->
+    a:hover
 
-<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static   menu-collapsed" data-open="click" data-menu="vertical-menu-modern" data-col="">
+    {
 
-<!-- BEGIN: Header-->
-<nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow">
-<div class="navbar-container d-flex content">
-<div class="bookmark-wrapper d-flex align-items-center">
-    <ul  class="nav navbar-nav align-items-center ml-auto">
-    <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <div class="user-nav d-sm-flex d-none"><span class="avatar"><img class="round" 
-            @if(Auth::user()->logo != null) src="{{ asset('images/'.Auth::user()->logo)}}" @else src="{{ asset('images/logos/abc.png') }}" @endif
-              alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span></div>
-        <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}</span><span class="user-status">Admin</span></div>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="{{ route('profile') }}"><i class="fa fa-user-o mr-50" aria-hidden="true"></i>Profile</a>
-        <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}"><i class="fa fa-power-off mr-50" aria-hidden="true"></i> Logout</a>
-        </div>
-        </li>
-    </ul>
-</div>
-<ul class="nav navbar-nav align-items-center ml-auto">
- 
+    text-decoration: none;
 
-<li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="fa fa-search" aria-hidden="true"></i></a>
-<div class="search-input">
-<div class="search-input-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
-<form action="{{ route('admin_searcher') }}" method="post" class="search_form">
-    @csrf
-<input class="form-control input" name="data" type="text" placeholder="Explore Masal..." tabindex="-1" data-search="search">
-</form>
-<div class="search-input-close"><i class="fa fa-times" aria-hidden="true"></i></div>
-</div>
-</li>
-@php
-$id=Auth::user()->id;
-$chat= \App\chatModel::where('marker',1)->where('receiver',$id)->count();
-$newUser= \App\User::where('status',0)->count();
-$unread= \App\feedback::where('status',0)->count();
-$note=$chat + $newUser + $unread;
-@endphp
-<li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"> <i class="fa fa-bell" style="color: #7367F0;" aria-hidden="true"></i>
-@if($note > 0) <span class="badge badge-pill badge-danger badge-up">{{ $note }}</span> @endif </a>
-<ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
-@if($chat > 0)
-<li class="dropdown-menu-header">
-<div class="dropdown-header d-flex">
-<h4 class="notification-title mb-0 mr-auto">Chats</h4>
-<div class="badge badge-pill badge-light-primary">{{ $chat }} New</div>
-</div>
-</li>
-<li class="scrollable-container media-list">
-<a class="d-flex" href="{{ route('adminChat') }}">
-<div class="media d-flex align-items-start">
-<div class="media-left">
-<div class=""><img src="{{ asset('app-assets/images/portrait/small/chat.png')}}" alt="avatar" width="32" height="32"></div>
-</div>
-<div class="media-body">
-<p class="media-heading"><span class="font-weight-bolder">Chat Modals</span>
-</div>
-</div>
-</a>
-</li>
-<hr>
-@endif
+    }
 
-@if($newUser > 0)
+    @media only screen and (max-width: 990px) {
 
-<li class="dropdown-menu-header">
-    <div class="dropdown-header d-flex">
-    <h4 class="notification-title mb-0 mr-auto">New User Request</h4>
-    <div class="badge badge-pill badge-light-primary">{{ $newUser }} New</div>
-    </div>
-    </li>
-    <li class="scrollable-container media-list">
-    <a class="d-flex" href="{{ route('stockistsrequest') }}">
-    <div class="media d-flex align-items-start">
-    <div class="media-left">
-    <div class=""><img src="{{ asset('app-assets/images/portrait/small/new.png')}}" alt="avatar" width="32" height="32"></div>
-    </div>
-    <div class="media-body">
-    <p class="media-heading"><span class="font-weight-bolder"> Retailer Request Page </span>
-    </div>
-    </div>
-    </a>
-    </li>
-    <hr>
-    @endif
+      .responsive_on_small {
 
+        margin-top: 100px;
 
-    @if($unread > 0)
+      }
+
+    }
+
     
-    <li class="dropdown-menu-header">
-    <div class="dropdown-header d-flex">
-    <h4 class="notification-title mb-0 mr-auto">FeedBack</h4>
-    <div class="badge badge-pill badge-light-primary">{{ $unread }} New</div>
-    </div>
-    </li>
-    <li class="scrollable-container media-list">
-    <a class="d-flex" href="{{route('contactReport')}}">
-    <div class="media d-flex align-items-start">
-    <div class="media-left">
-    <div class=""><img src="{{ asset('app-assets/images/portrait/small/feed.png')}}" alt="avatar" width="32" height="32"></div>
-    </div>
-    <div class="media-body">
-    <p class="media-heading">  <span class="font-weight-bolder">  FeedBack Page  </span>
-    </div>
-    </div>
-    </a>
-    </li>
-    <hr>
-    @endif
+
+    @media only screen and (max-width: 1200px) {
+
+      .logo_responsive_time {
+
+      width: 70px;
+
+      height: 40px;
+
+     margin-left: 40%;
+
+     margin-bottom: 20px;
+
+      }
+
+    }
+
+    
+
+    
+
+    @media only screen and (max-width: 1000px) {
+
+      .logo_responsive_time {
+
+      width: 70px;
+
+      height: 40px;
+
+     margin-left: 25%;
+
+      }
+
+    }
+
+    </style>
 
 
-</ul>
-</li>
 
 
 
 
-</ul>
+
+</head>
+
+<body>
+
+<!-- Page Wrapper -->
+
+<!-- In the PHP version you can set the following options from inc/config file -->
+
+<!--
+
+Available classes:
+
+
+
+'page-loading'      enables page preloader
+
+-->
+
+<div id="page-wrapper">
+
+<!-- Preloader -->
+
+<!-- Preloader functionality (initialized in js/app.js) - pageLoading() -->
+
+<!-- Used only if page preloader is enabled from inc/config (PHP version) or the class 'page-loading' is added in #page-wrapper element (HTML version) -->
+
+<div class="preloader themed-background">
+
+<h1 class="push-top-bottom text-light text-center"><strong>Admin</strong>Panel</h1>
+
+<div class="inner">
+
+<h3 class="text-light visible-lt-ie10"><strong>Loading..</strong></h3>
+
+<div class="preloader-spinner hidden-lt-ie10"></div>
+
 </div>
-</nav>
 
-<!-- END: Header-->
-
-
-<!-- BEGIN: Main Menu-->
-<div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
-<div class="navbar-header">
-<ul class="nav navbar-nav flex-row">
-<li class="nav-item mr-auto"><a class="navbar-brand" href="{{ route('dashboard') }}">
-  
-     <span class="brand-logo">
-        <img src="{{ asset('app-assets/images/logo/logo.png')}}" >      
-</span> 
-<h2 class="brand-text">Masal</h2>
-</a></li>
-<li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
-</ul>
 </div>
-<div class="shadow-bottom"></div>
-<div class="main-menu-content">
-<ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-<li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('dashboard') }}"><i class="fa fa-home" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboard</span></a></li>
-<li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span>
-</li>
-<li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('order') }}"><i class="fa fa-envelope" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-title text-truncate" data-i18n="Email">Orders</span></a>
-</li>
-<li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('adminChat') }}"><i class="fa fa-comments" style="color: #8c4fec;" aria-hidden="true"></i>
-    <span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>
-</li>
-<li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('stockistsrequest') }}"><i class="fa fa-user-plus" style="color: #8c4fec;" aria-hidden="true"></i>
-    <span class="menu-title text-truncate" data-i18n="Todo">Retailer Request</span></a>
-</li>
-<li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('stockist') }}"><i class="fa fa-user-circle" style="color: #8c4fec;" aria-hidden="true"></i>
-    <span class="menu-title text-truncate" data-i18n="Calendar">Manage Retailer</span></a>
+
+<!-- END Preloader -->
+
+
+
+<!-- Page Container -->
+
+<!-- In the PHP version you can set the following options from inc/config file -->
+
+<!--
+
+Available #page-container classes:
+
+
+
+'' (None)                                       for a full main and alternative sidebar hidden by default (> 991px)
+
+
+
+'sidebar-visible-lg'                            for a full main sidebar visible by default (> 991px)
+
+'sidebar-partial'                               for a partial main sidebar which opens on mouse hover, hidden by default (> 991px)
+
+'sidebar-partial sidebar-visible-lg'            for a partial main sidebar which opens on mouse hover, visible by default (> 991px)
+
+'sidebar-mini sidebar-visible-lg-mini'          for a mini main sidebar with a flyout menu, enabled by default (> 991px + Best with static layout)
+
+'sidebar-mini sidebar-visible-lg'               for a mini main sidebar with a flyout menu, disabled by default (> 991px + Best with static layout)
+
+
+
+'sidebar-alt-visible-lg'                        for a full alternative sidebar visible by default (> 991px)
+
+'sidebar-alt-partial'                           for a partial alternative sidebar which opens on mouse hover, hidden by default (> 991px)
+
+'sidebar-alt-partial sidebar-alt-visible-lg'    for a partial alternative sidebar which opens on mouse hover, visible by default (> 991px)
+
+
+
+'sidebar-partial sidebar-alt-partial'           for both sidebars partial which open on mouse hover, hidden by default (> 991px)
+
+
+
+'sidebar-no-animations'                         add this as extra for disabling sidebar animations on large screens (> 991px) - Better performance with heavy pages!
+
+
+
+'style-alt'                                     for an alternative main style (without it: the default style)
+
+'footer-fixed'                                  for a fixed footer (without it: a static footer)
+
+
+
+'disable-menu-autoscroll'                       add this to disable the main menu auto scrolling when opening a submenu
+
+
+
+'header-fixed-top'                              has to be added only if the class 'navbar-fixed-top' was added on header.navbar
+
+'header-fixed-bottom'                           has to be added only if the class 'navbar-fixed-bottom' was added on header.navbar
+
+
+
+'enable-cookies'                                enables cookies for remembering active color theme when changed from the sidebar links
+
+-->
+
+<div id="page-container" class="sidebar-partial sidebar-visible-lg sidebar-no-animations">
+
+<!-- Alternative Sidebar -->
+
+
+
+<!-- END Alternative Sidebar -->
+
+
+
+<!-- Main Sidebar -->
+
+<div id="sidebar">
+
+<!-- Wrapper for scrolling functionality -->
+
+<div id="sidebar-scroll">
+
+<!-- Sidebar Content -->
+
+<div class="sidebar-content">
+
+<!-- Brand -->
+
+<a href="/dashboard" class="sidebar-brand">
+
+<i class="gi gi-flash"></i><span class="sidebar-nav-mini-hide"><strong>Admin</strong>Panel</span>
+
+</a>
+
+<!-- END Brand -->
+
+
+
+<!-- User Info -->
+
+<div class="sidebar-section sidebar-user clearfix sidebar-nav-mini-hide">
+
+<div class="sidebar-user-avatar">
+
+
+
+<img src="{{asset('img/placeholders/avatars/avatar2.jpg')}}" alt="avatar">
+
+
+
+</div>
+
+<div class="sidebar-user-name">{{Auth::user()->name}}</div>
+
+<div class="sidebar-user-links">
+
+{{-- <a href="/profile" data-toggle="tooltip" data-placement="bottom" title="Profile"><i class="gi gi-user"></i></a> --}}
+
+<!--<a href="page_ready_inbox.php" data-toggle="tooltip" data-placement="bottom" title="Messages"><i class="gi gi-envelope"></i></a>-->
+
+<!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.php in PHP version) -->
+
+<a href="javascript:void(0)" class="enable-tooltip" data-placement="bottom" title="Settings" onclick="$('#modal-user-settings').modal('show');"><i class="gi gi-cogwheel"></i></a>
+
+<a href="{{route('logout')}}" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="gi gi-exit"></i></a>
+
+</div>
+
+</div>
+
+<!-- END User Info -->
+
+
+
+
+
+<!-- Sidebar Navigation -->
+
+<ul class="sidebar-nav">
+
+
+
+<li>
+
+    <a href="/dashboard" class="dashboard">Dashboard</a>
+
 </li>
 
-<li class=" nav-item"><a class="d-flex align-items-center" href="/product"><i class="fa fa-th-large" style="color: #8c4fec;" aria-hidden="true"></i>
-    <span class="menu-title text-truncate" data-i18n="Calendar">Product</span></a>
+<li>
+
+    <a href="/order" class="order">Orders</a>
+
 </li>
 
-<li  class=" dropdown nav-item"><a class="d-flex align-items-center" href="#"><i class="fa fa-th" style="color: #8c4fec;" aria-hidden="true"></i>
-    <span class="menu-title text-truncate" data-i18n="eCommerce">Product Assets</span></a>
-    <ul class="menu-content dropdown-content">
-    <li><a class="d-flex align-items-center" href="{{route('addProductPage')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Shop">Add New Product</span></a>
+
+
+<li>
+
+    <a href="/product" class="product">Products</a>
+
+</li>
+
+<li>
+
+    <a href="/stockistsrequest" class="stock_req">Retailer Request</a>
+
+</li>
+
+<li>
+
+    <a href="/stockist" class="stock_man">Manage Retailer</a>
+
+</li>
+
+<li>
+
+    <a href="/mainpage" class="main_page"> Edit Main page</a>
+
+</li>
+
+<li>
+
+<a href="/adminChat" class="chat"> Chat</a>
+
+</li>
+
+<li>
+
+    <a href="{{route('contactReport')}}" class="request"> Contact Request </a>
+    
     </li>
-    <li><a class="d-flex align-items-center" href="{{route('size')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Details">Manage Sizes</span></a>
-    </li>
-    <li><a class="d-flex align-items-center" href="{{route('addition')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Wish List">Additional Changes</span></a>
-    </li>
-    <li><a class="d-flex align-items-center" href="{{route('sale_tag')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Checkout">Sales Tag</span></a>
-    </li>
-    <li><a class="d-flex align-items-center" href="{{route('swatches')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Wish List">Manage Swatches</span></a>
-    </li>
-    <li><a class="d-flex align-items-center" href="{{route('manageCategory')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Wish List">Manage Category </span></a>
-    </li>
-    <li><a class="d-flex align-items-center" href="{{route('manageSilhouette')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Wish List">Manage silhouette</span></a>
-    </li>
-    <li><a class="d-flex align-items-center" href="{{route('manageNeckline')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Wish List">Manage Neckline</span></a>
-    </li>
-    <li><a class="d-flex align-items-center" href="{{route('manageFabric')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Wish List">Manage Fabric</span></a>
-    </li>
-    <li><a class="d-flex align-items-center" href="{{route('manageSleeve')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Wish List">Manage Sleeve</span></a>
-    </li>
-    <li><a class="d-flex align-items-center" href="{{ route('out_stock') }}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Wish List">Out of Stock</span></a>
-    </li>
-    <li><a class="d-flex align-items-center" href="{{ route('top_sell') }}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i>
-        <span class="menu-item" data-i18n="Wish List">Top Sells</span></a>
-    </li>
+
+</ul>
+
+
+
+
+
+</div>
+
+<!-- END Sidebar Content -->
+
+</div>
+
+<!-- END Wrapper for scrolling functionality -->
+
+</div>
+
+<!-- END Main Sidebar -->
+
+
+
+<!-- Main Container -->
+
+<div id="main-container">
+
+
+
+<header class="navbar navbar-default">
+
+<!-- Left Header Navigation -->
+
+<ul class="nav navbar-nav-custom">
+
+<!-- Main Sidebar Toggle Button -->
+
+<li>
+
+<a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();">
+
+<i class="fa fa-bars fa-fw"></i>
+
+</a>
+
+</li>
+
+<!-- END Main Sidebar Toggle Button -->
+
+
+
+<!-- Template Options -->
+
+<!-- Change Options functionality can be found in js/app.js - templateOptions() -->
+
+<li class="dropdown">
+
+<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+
+<i class="gi gi-settings"></i>
+
+</a>
+
+<ul class="dropdown-menu dropdown-custom dropdown-options">
+
+<li class="dropdown-header text-center">Header Style</li>
+
+<li>
+
+<div class="btn-group btn-group-justified btn-group-sm">
+
+    <a href="javascript:void(0)" class="btn btn-primary" id="options-header-default">Light</a>
+
+    <a href="javascript:void(0)" class="btn btn-primary" id="options-header-inverse">Dark</a>
+
+</div>
+
+</li>
+
+<li class="dropdown-header text-center">Page Style</li>
+
+<li>
+
+<div class="btn-group btn-group-justified btn-group-sm">
+
+    <a href="javascript:void(0)" class="btn btn-primary" id="options-main-style">Default</a>
+
+    <a href="javascript:void(0)" class="btn btn-primary" id="options-main-style-alt">Alternative</a>
+
+</div>
+
+</li>
+
+</ul>
+
+</li>
+
+<!-- END Template Options -->
+
+</ul>
+
+<!-- END Left Header Navigation -->
+
+
+
+<ul class="nav navbar-nav-custom" style="padding-top: 10px;">
+
+
+
+    <form action="{{route('admin_searcher')}}" method="get" class="">
+
+        @csrf
+
+        <div class="row">
+
+            <div class="form-group col-md-5 col-lg-5 col-sm-5 col-xs-5">
+
+                <select id="top_type" name="type" id="" class="form-control" required>
+
+                    <option disabled selected> Select Search Type </option>
+
+                    <option value="retailer">Retailer</option>
+
+                    <option value="product">Product</option>
+
+                    <option value="category">Category</option>
+
+                </select>
+
+                @if ($errors->has('type')) <p style="color:red;">{{ $errors->first('type') }}</p> @endif 
+
+
+
+                </div>
+
+        <div class="form-group col-md-5 col-lg-5 col-sm-5 col-xs-5">
+
+        <input type="text" id="top_search" name="top_search" class="form-control" placeholder="Select Type First" required>
+
+        @if ($errors->has('top_search')) <p style="color:red;">{{ $errors->first('top_search') }}</p> @endif 
+
+
+
+        </div>
+
+      
+
+        <div class="form-group col-md-2 col-lg-2 col-sm-2 col-xs-2">
+
+        <input type="submit" name="search" class="btn btn-default">
+
+        </div>
+
+    </div>
+
+        </form>
 
     </ul>
-    </li>
 
-<li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fa fa-hdd-o" style="color: #8c4fec;" aria-hidden="true"></i>
-    <span class="menu-title text-truncate" data-i18n="eCommerce">Manage Content</span></a>
-    <ul class="menu-content">
-        <li><a class="d-flex align-items-center" href="{{route('manageHome')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Shop"> Home Page</span></a>
-        </li>
-        <li><a class="d-flex align-items-center" href="{{route('manageFooter')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Details">Footer</span></a>
-        </li>
-        <li><a class="d-flex align-items-center" href="{{route('manageReal')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Wish List">Admin Real Brides</span></a>
-        </li>
-        <li><a class="d-flex align-items-center" href="{{route('email_templates')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Checkout">Email Templates</span></a>
-        </li>
-        <li><a class="d-flex align-items-center" href="{{route('real_request_list')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Checkout">Real Brides Requests </span></a>
-        </li>
-        <li><a class="d-flex align-items-center" href="{{route('menu')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Checkout">Menu Items</span></a>
-        </li>
-        <li><a class="d-flex align-items-center" href="{{route('customPage')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Checkout">Custom Page</span></a>
-        </li>
-        
-        </ul>
+
+
+<!-- Right Header Navigation -->
+
+<ul class="nav navbar-nav-custom pull-right">
+
+<!-- Alternative Sidebar Toggle Button -->
+
+
+
+<!-- END Alternative Sidebar Toggle Button -->
+
+
+
+<!-- User Dropdown -->
+
+<li class="dropdown">
+
+<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+
+<img src="{{asset('img/placeholders/avatars/avatar2.jpg')}}" alt="avatar"> <i class="fa fa-angle-down"></i>
+
+</a>
+
+<ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+
+<li class="dropdown-header text-center">Account</li>
+
+
+
+<li class="divider"></li>
+
+<li>
+
+
+
+<!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.php in PHP version) -->
+
+<a href="#modal-user-settings" data-toggle="modal">
+
+    <i class="fa fa-cog fa-fw pull-right"></i>
+
+    Settings
+
+</a>
+
 </li>
 
-<li class=" nav-item"><a class="d-flex align-items-center" href="{{route('contactReport')}}"><i class="fa fa-flag-checkered" style="color: #8c4fec;" aria-hidden="true"></i>
-    <span class="menu-title text-truncate" data-i18n="Pages">Contact Request</span></a>
+<li class="divider"></li>
+
+<li>
+
+{{-- <a href="/lock_screen"><i class="fa fa-lock fa-fw pull-right"></i> Lock Account</a> --}}
+
+<a href="{{route('logout')}}"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
 
 </li>
-
-
-
 
 </ul>
+
+</li>
+
+<!-- END User Dropdown -->
+
+</ul>
+
+<!-- END Right Header Navigation -->
+
+</header>
+
+<!-- END Header -->
+
+
+
+<!-- Page content -->
+
+<div id="page-content">
+
+<!-- eCommerce Product Edit Header -->
+
+<div class="content-header">
+
+    <ul class="nav-horizontal text-center">
+
+        <li class="dashboard">
+
+        <a href="/dashboard"><i class="fa fa-bar-chart"></i> Dashboard</a>
+
+        </li>
+
+        <li class="order">
+
+        <a href="/order"><i class="gi gi-shop_window"></i> Orders</a>
+
+        </li>
+
+        
+
+        <li class="product">
+
+        <a href="{{route('products')}}"><i class="gi gi-shopping_bag"></i> Products</a>
+
+        </li>
+
+        <li class="stock_req">
+
+        <a href="/stockistsrequest"><i class="gi gi-plus"></i>
+
+            @php
+
+            $remain= \App\User::where('status',0)->count();
+
+        @endphp
+
+        @if($remain > 0)
+
+        <span style="font-size: 15px; color:#000000;padding-top: 0px;padding-bottom: 4px;padding-left: 7px;padding-right: 7px;" class="label label-warning">{{$remain}}</span>
+
+        @endif 
+
+        Retailer Request</a>
+
+        </li>
+
+        <li class="stock_man">
+
+        <a href="/stockist"><i class="gi gi-pencil"></i>Manage Retailer</a>
+
+        </li>
+
+        <li class="main_page">
+
+        <a href="/mainpage"><i class="gi gi-user"></i> Edit Main page</a>
+
+        </li>
+
+        <li class="chat">
+
+        <a href="/adminChat"><i class="gi gi-chat"></i>
+
+            @php
+
+            $remain=0;
+
+            $id=Auth::user()->id;
+
+            $remain= \App\chatModel::where('marker',1)->where('receiver',$id)->count();
+
+        @endphp
+
+        @if($remain > 0)
+
+        <span style="font-size: 15px; color:#000000;padding-top: 0px;padding-bottom: 4px;padding-left: 7px;padding-right: 7px;" class="label label-warning">{{$remain}}</span>   
+
+        @endif 
+
+         Chat</a>
+
+        </li>
+
+        <li class="request">
+
+            <a href="{{route('contactReport')}}"><i class="fa fa-compress" aria-hidden="true"></i> 
+                
+                @php
+
+                $unread=0;
+                $unread= \App\feedback::where('status',0)->count();
+    
+            @endphp
+    
+            @if($unread > 0)
+    
+            <span style="font-size: 15px; color:#000000;padding-top: 0px;padding-bottom: 4px;padding-left: 7px;padding-right: 7px;" class="label label-warning">{{$unread}}</span>   
+    
+            @endif 
+                Contact Request</a>
+    
+            </li>
+
+        </ul>
+
 </div>
-</div>
-<!-- END: Main Menu-->
+
+<!-- END eCommerce Product Edit Header -->
+
+
 
 @yield('content')
 
 
-<div class="sidenav-overlay"></div>
-<div class="drag-target"></div>
 
-<!-- BEGIN: Footer-->
-<footer class="footer footer-static footer-light">
-<p class="clearfix mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; {{ Carbon\Carbon::now()->year }}<span class="d-none d-sm-inline-block">, All rights Reserved</span></span></p>
-</footer>
-<button class="btn btn-primary btn-icon scroll-top" type="button"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-<!-- END: Footer-->
-
-
-<!-- BEGIN: Vendor JS-->
-<script src="{{ asset('js/helpers/ckeditor/ckeditor.js')}}"></script>
-<script src="{{ asset('app-assets/vendors/js/vendors.min.js')}}"></script>
-<!-- BEGIN Vendor JS-->
-
-<!-- BEGIN: Page Vendor JS-->
-<script src="{{ asset('app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
-<script src="{{ asset('app-assets/vendors/js/extensions/toastr.min.js')}}"></script>
-<!-- END: Page Vendor JS-->
-
-<!-- BEGIN: Theme JS-->
-<script src="{{ asset('app-assets/js/core/app-menu.js')}}"></script>
-<script src="{{ asset('app-assets/js/core/app.js')}}"></script>
-<!-- END: Theme JS-->
-
-<!-- BEGIN: Page JS-->
-<script src="{{ asset('app-assets/js/scripts/pages/dashboard-ecommerce.js')}}"></script>
-<!-- END: Page JS-->
-
-<script src="{{ asset('app-assets/js/scripts/pages/app-chat.js') }}"></script>
-<!-- END: Page JS-->
-
-
-<script>
-    $(window).on('load', function() {
-        if (feather) {
-            feather.replace({
-                width: 14,
-                height: 14
-            });
-        }
-    })
-</script>
-
-{{-- <script>
-        var len = $('.input').val().length;
-        $(document).on('keypress',function(e) {
-    if(e.which == 13 && len > 1) {
-        $(".search_form").submit();
-    }
-});
-       
-</script> --}}
 </body>
-<!-- END: Body-->
 
 </html>

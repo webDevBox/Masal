@@ -1,311 +1,396 @@
 @extends('layout.admin')
 @section('content')
-  
-<div class="app-content content ">
-    <div class="content-overlay"></div>
-    <div class="header-navbar-shadow"></div>
-    <div class="content-wrapper">
-    <div class="content-header row">
-    </div>
-    <div class="content-body">
-    <!-- Dashboard Ecommerce Starts -->
-    <section id="dashboard-ecommerce">
-      
-        <div class="row text-center" >
-            <div class=" col-lg-12 col-md-12  col-sm-12  col-xs-12">
-               
-        <button  onclick="myFunction()" class="btn btn-primary" >Retailer</button>  
-        <button  onclick="order()" class="btn btn-primary mx-1" >Order</button>  
-        <button  onclick="product()" class="btn btn-primary" >Product</button>
     
-             </div>
-        </div>
 
-       
-    
-        <div id="myDIV" class="block full bg-light-primary row " style=" padding: 50px;">
-            <div class="col-md-12 col-lg-12">
-                                  
-            <!-- All Products Title -->
-            <div class="block-title">
-                <h2><strong>Retailer</strong> List </h2>
-                </div>
-                <!-- END All Products Title -->
-                
-                <!-- All Products Content -->
-                <div class="table-responsive">
-                <table id="ecom-products" class="table table-bordered table-striped table-hover">
-                <thead>
-                <tr>
-                <th class="text-center">Retailer Name</th>
-                <th class="text-center">Email</th>
-                <th class="text-center">Registration #</th>
-                <th class="text-center">Country</th>
-                <th class="text-center">State</th>
-                <th class="text-center">City</th>
-                <th class="text-center">Postcode</th>
-                <th class="text-center">Added</th>
-                </tr>
-                </thead>
-                <tbody>
-                        
-                   @foreach ($retailer as $item)
-                <tr>
-                <td class="text-center">{{ $item->name }}	</td>
-                <td class="text-center"><strong>{{ $item->email }}	</strong></td>
-                <td class="text-center"><strong>{{ $item->registrationNumber }}	</strong></td>
-                <td class="text-center"><strong>{{ $item->country }}	</strong></td>
-                <td class="text-center"><strong>{{ $item->state }}	</strong></td>
-                <td class="text-center"><strong>{{ $item->city }}	</strong></td>
-                <td class="text-center"><strong>{{ $item->post }}	</strong></td>
-                <td class="hidden-xs text-center">{{ $item->created_at }} </td>
-                </tr>
-                @endforeach
-                </tbody>
-                </table>
-            </div>
-            </div>
-        </div>
+<div class="block full">
+<!-- eShop Overview Title -->
+<div class="block-title">
+
+<h2><strong>SEARCH</strong> Result</h2>
+@if(Session::has('success'))
+<p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+@endif
+@if(Session::has('error'))
+<p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
+@endif
+@if ($errors->has('email')) <p style="color:red;">{{ $errors->first('email') }}</p> @endif
+@if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif
+</div>
+<!-- END eShop Overview Title -->
 
 
-            <div id="order" class="block full bg-light-primary" style="display: none; padding: 50px;">
-               
-                <!-- Company Table Card -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-               
-                    <div class="block-title ">
-                        <h2><strong>All</strong> Orders</h2>
-                          </div>
-                <div class="block full">
-                   
-                    <div class="table-responsive">
-                        <table id="ecom-orders" class="table table-bordered table-striped table-hover">
-                        <thead>
-                        <tr>
-                            <tr>
-                                <th class="text-center">Order Id</th>
-                                <th class="text-center">Product Name</th>
-                                <th class="text-center">Product Style#</th>
-                                <th class="text-center">Colors</th>
-                                <th class="text-center">Sizes</th>
-                                <th class="text-center">QTY</th>
-                                <th class="text-center">Extra</th>
-                                <th class="text-center">Unit Price</th>
-                                <th class="text-center">Total</th>
-                                <th class="text-center">Order Date & Time</th>
-                            </tr>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($retailer as $item)
-                            @php
-                                $order=0;
-                                if(count($retailer) > 0)
-                                {
-                                $order=\App\retailerOrder::where('RetailerId',$item->id)->where('payment','Done')->get();
-                                }
-                            @endphp
-                              @if(count($order) > 0)
-                              @foreach ($order as $row)
-                                @php
-                                $extra=0;
-                                    $product_id=$row->productId;
-                                    $product= \App\products::find($product_id);
-                                    if($row->extra != null)
-                                    {
-                                    $additional= \App\additional::where('additional',$row->extra)->first();
-                                    $exprice=$additional->price;
-                                    $extra=$row->quantity*$exprice;
-                                    }
-                                    $price=$row->quantity*$product->wholesalePrice;
-                                    if($row->extra != null)
-                                    {
-                                        $price=$price+$extra;
-                                    }
-                                @endphp
-                            <tr>
-                                <td class="text-center">OID.{{$row->id}}</td>
-                                <td class="text-center" style="width: 300px;">{{$product->name}}</td>
-                                <td class="text-center">{{$product->styleNumber}}</td>
-                                <td class="text-center">{{$row->colour}}</td>
-                                <td class="text-center">{{$row->sizes}}</td>
-                                <td class="text-center">{{$row->quantity}}</td>
-                                <td class="text-center">
-                                @if($row->extra != null)
-                                {{$row->extra}}
-                                @else
-                                No Extra
-                                @endif
-                                </td>
-                                <td class="text-center">${{$product->wholesalePrice}}</td>
-                                <td class="text-center">${{$price}}</td>
-                                <td class="text-center">{{$row->created_at}}</td>
-                            </tr>
-                            @endforeach
-                            @endif
-                            @endforeach
-                        </tbody>
-                        </table>
-                        <!-- END All Orders Content -->
-                        </div>
-                </div>
-                </div>
-                </div>
-                
-                </div>
-          
-        </div>
-            
-            
-                <div id="product" class="row match-height bg-light-primary " style="display: none; padding: 50px;">
-                    <div  class="col-md-3 " style="margin-bottom: 10px;">
-                        <h2><strong>All Products</strong></h2>
+
+
+
+@if($status == 3)
+
+<div class="grid grid_12">
+    <h1 class="grey2 text-center"><span class="grey">—</span> Category Detail  <span class="grey">—</span></h1>
+    <div class="nicdark_space20"></div>
+    <h3 class="text-center"><label for="">{{$value->name}} Collection</label></h3> 
+     <div class="row">   
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+                <div class=" nicdark_activity">               
+                    <div class="nicdark_archive1 nicdark_border_grey img-magnifier-container">
+                        <img id="main_image" class="main_image" style="width:250px; height:400px; " alt="" src="{{ asset('images/'.$value->image) }}">
                     </div>
-                    <div class="col-md-12">
-        
-                    <table id="ecom-products" class="table table-hover table-bordered table-striped">
-                
-                        <thead>
-                
-                            <tr>
-                
-                                <th class="text-center" style="width: 70px;">ID</th>
-                
-                                <th class="text-center">Product Name</th>
-                
-                                <th class="text-center">Style Number</th>
-                
-                                <th class="text-center">WholeSale Price</th>
-                
-                                <th class="text-center">Retailer Price</th>
-                
-                                <th class="text-center">Stock</th>
-                
-                                <th class="text-center">Status</th>
-                
-                                <th class="text-center">Tag</th>
-                
-                                <th class="text-center">Added</th>
-                
-                            </tr>
-                
-                        </thead>
-                
-                        <tbody>
-                
-                            @if(count($inter) > 0)
-
-                            @foreach($inter as $row)
-                
-                            <tr>
-                
-                                <td class="text-center"> <a href="{{route('edit_product', array('id' => $row->id))}}" style="color: black;"> PID.{{$row->id}} </a> </td>
-                
-                                <td class="text-center"> <a href="{{route('edit_product', array('id' => $row->id))}}" style="color: black;"> {{$row->name}} </a> </td>
-                
-                                <td class="text-center"> <a href="{{route('edit_product', array('id' => $row->id))}}" style="color: black;">{{$row->styleNumber}} </a></td>
-                
-                                <td class="text-center"> <a href="{{route('edit_product', array('id' => $row->id))}}" style="color: black;"> ${{$row->wholesalePrice}} </a> </td>
-                
-                                <td class="text-center"> <a href="{{route('edit_product', array('id' => $row->id))}}" style="color: black;"> ${{$row->retailerPrice}} </a> </td>
-                
-                                <td class="text-center"> <a href="{{route('edit_product', array('id' => $row->id))}}" style="color: black;"> {{$row->stock}} </a> </td>
-                
-                                <td class="text-center">
-                
-                                    <span class="label label-success"> <a href="{{route('edit_product', array('id' => $row->id))}}" style="color: black;"> {{$row->status}} </a> </span>
-                
-                                </td>
-                
-                
-                
-                
-                
-                                <td class="text-center">
-                
-                                    @php
-                
-                                    $tag=\App\sale::where('name',$row->tag)->first();
-                
-                                    if(!isset($tag))
-                
-                                    {
-                
-                                    $row->tag=null;
-                
-                                    }
-                
-                                    @endphp
-                                    <a href="{{route('edit_product', array('id' => $row->id))}}" style="color: black;">
-                                        <span @if($row->tag != null) style="background: {{ $tag->color }}" @endif>
-                
-                                            @if($row->tag == null) No Tag @else {{$row->tag}} @endif</span>
-                                    </a>
-                                </td>
-                
-                
-                
-                
-                
-                                <td class="text-center">{{$row->created_at}}</td>
-                            </tr>
-                
-                            @endforeach
-                
-                            @else
-                
-                            <p>No Product stored</p>
-                
-                            @endif
-
-
-                        </tbody>
-                
-                    </table>
-                
                 </div>
-                
-                </div>
-            
-            
-            <!-- END All Products Content -->
-           
-    </section>
-    <!-- Dashboard Ecommerce ends -->
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6" style="margin-top: 5px;">
+        <h4 class="text-center">Total Products of {{$value->name}} : {{$counter}}</h4>
     </div>
-    <script>
-        function myFunction() {
-             var y = document.getElementById("order");
-                 y.style.display = "none";
-              var z = document.getElementById("product");
-                z.style.display = "none";
+    </div>
+</div>
+@endif
+@if($status == 2)
+<div class="grid grid_12">
+    <h1 class="grey2 text-center"><span class="grey">—</span> Product Detail  <span class="grey">—</span></h1>
+    <div class="nicdark_space20"></div>
+    
+     <div class="row">   
+        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                <div class=" nicdark_activity">               
+                    <div class="nicdark_archive1 nicdark_border_grey img-magnifier-container">
+                        <h3 style="margin-left: 5%;"><label for="">{{$value->name}}</label></h3> 
+                        <img id="main_image" class="main_image" style="width:250px; height:400px; " alt="" src="{{ asset('images/'.$value->image1) }}">
+                    </div>
+                </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+                    <div class="nicdark_archive1 nicdark_border_grey">
+                            <img id="image_1" style="width:60px; height:80px; cursor:pointer;" alt=""  src="{{ asset('images/'.$value->image1) }}">
+                    </div>
+                </div>
         
-          var x = document.getElementById("myDIV");
-            x.style.display = "block";
-          
-        }
+                @if(isset($value->image2))
+                <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+                        <div class="nicdark_archive1 nicdark_border_grey">
+                            <img alt="" id="image_2" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$value->image2) }}">
+                    </div>
+                </div>
+                @endif
+                @if(isset($value->image3))
+                <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+                    <div class="nicdark_archive1 nicdark_border_grey">
+                            <img alt="" id="image_3" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$value->image3) }}">
+                    </div>
+                </div>
+                @endif
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+                @if(isset($value->image4))
+                <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+                    <div class="nicdark_archive1 nicdark_border_grey">
+                            <img alt="" id="image_4" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$value->image4) }}">
+                    </div>
+                </div>
+                @endif
         
-        function order(){
-          var x = document.getElementById("myDIV");
-            x.style.display = "none";
-           var z = document.getElementById("product");
-            z.style.display = "none";
-        
-            var y = document.getElementById("order");
-            y.style.display = "block";
-            
-         }
-        
-        
-        function product(){
-          var x = document.getElementById("myDIV");
-            x.style.display = "none";
-           var y = document.getElementById("order");
-                 y.style.display = "none";
+                @if(isset($value->image5))
+                <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+                    <div class="nicdark_archive1 nicdark_border_grey">
+                            <img alt="" id="image_5" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$value->image5) }}">
+                    </div>
+                </div>
+                @endif
+                @if(isset($value->image6))
+                <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+                    <div class="nicdark_archive1 nicdark_border_grey">
+                            <img alt="" id="image_6" style="width:60px; height:80px; cursor:pointer;" src="{{ asset('images/'.$value->image6) }}">
+                    </div>
+                </div>
+                @endif
+            </div>
+
+
+        </div>
+    
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" style="margin-top: 5px;">
+            <h1 style="color: orange">${{$value->retailerPrice}}</h1>
+           <h3><label for="">Description</label></h3> <p style="text-align: justify;">@php
+               echo $value->description;
+           @endphp</p>
            
-            var z = document.getElementById("product");
-            z.style.display = "block";
-         }
+            <div class="row">
+               
+                @php
+    $sizes = json_decode($value->size);
+    @endphp
+                        <div class="form-group col-md-12 col-sm-12">
+                           <h3> <label for="">Available Size <span id="sizer"></span></label> </h3>
+                           @foreach ($sizes as $size)
+                           <button type="button" id="" class="btn btn-default ">{{$size}}</button>
+                           @endforeach
+                            </div>
+    @php
+    $colors = json_decode($value->colour);
+    @endphp
+    <div class="form-group col-md-12 col-sm-12">
+    <h3> <label for="">Available Colour <span id="colourer"></span></label> </h3>
+    <br>
+    @foreach ($colors as $color)
+    <button type="button" id="" class="btn btn-default ">{{$color}}</button>
+    {{-- <button type="button" style="background-color: {{$color}};width:30px; height:30px;" id="" class="btn color_press" value="{{$color}}"></button> --}}
+    @endforeach
+   
+    </div>
+           
         
-        </script>
+    </div>
+    </div>
+    </div>
+</div>
+@endif
+
+
+
+@if($status == 1)
+<div class="grid grid_12">
+    <h1 class="grey2 text-center"><span class="grey">—</span> Retailer Detail  <span class="grey">—</span></h1>
+    <div class="nicdark_space20"></div>
+    
+     <div class="row">   
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="margin-top: 5px;">
+            <h1 class="text-center">{{$value->name}}</h1>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+           <h5><label for="">Email</label></h5> <p style="text-align: justify;">{{$value->email}}</p>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+           <h5><label for="">Phone</label></h5> <p style="text-align: justify;">{{$value->phone}}</p>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+            <h5><label for="">Registration Number</label></h5> <p style="text-align: justify;">{{$value->registrationNumber}}</p>
+         </div>
+
+
+         <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+            <h5><label for="">Country</label></h5> <p style="text-align: justify;">{{$value->country}}</p>
+         </div>
+
+         <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+            <h5><label for="">State</label></h5> <p style="text-align: justify;">{{$value->state}}</p>
+         </div>
+
+         <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+            <h5><label for="">City</label></h5> <p style="text-align: justify;">{{$value->city}}</p>
+         </div>
+
+
+         <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+            <h5><label for="">Website</label></h5> <p style="text-align: justify;">{{$value->website}}</p>
+         </div>
+
+         <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+            <h5><label for="">Facebook</label></h5> <p style="text-align: justify;">{{$value->facebook}}</p>
+         </div>
+
+         <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+            <h5><label for="">Instagram</label></h5> <p style="text-align: justify;">{{$value->instagram}}</p>
+         </div>
+
+
+        </div>
+    </div>
+    @endif
+</div>
+
+
+
+
+
+</div>
+<!-- END Page Content -->
+
+<!-- Footer -->
+
+<!-- END Footer -->
+</div>
+<!-- END Main Container -->
+</div>
+<!-- END Page Container -->
+</div>
+<!-- END Page Wrapper -->
+
+<!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+<a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<!-- User Settings, modal which opens from Settings link (found in top right user menu) and the Cog link (found in sidebar user info) -->
+<div id="modal-user-settings" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<!-- Modal Header -->
+<div class="modal-header text-center">
+<h2 class="modal-title"><i class="fa fa-pencil"></i> Settings</h2>
+</div>
+<!-- END Modal Header -->
+
+<!-- Modal Body -->
+<div class="modal-body">
+<form action="{{route('adminEmail')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+@csrf
+<fieldset>
+<legend>Email Update</legend>
+<div class="form-group">
+<label class="col-md-4 control-label">Username</label>
+<div class="col-md-8">
+<p class="form-control-static"> {{Auth::user()->email}}</p>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="user-settings-email">Email</label>
+<div class="col-md-8">
+<input type="email" id="user-settings-email" name="email" class="form-control" value="{{Auth::user()->email}}">
+</div>
+</div>
+<div class="form-group" style="display: none">
+<div class="col-md-8">
+<input type="number" id="user-settings-repassword" name="id" class="form-control" value="{{Auth::user()->id}}">
+</div>
+</div>
+<center>
+<button type="submit" name="update" value="update" class="btn btn-sm btn-primary">Update Email</button>
+</center>
+</form>
+{{-- <div class="form-group">
+<label class="col-md-4 control-label" for="user-settings-notifications">Email Notifications</label>
+<div class="col-md-8">
+<label class="switch switch-primary">
+<input type="checkbox" id="user-settings-notifications" name="user-settings-notifications" value="1" checked>
+<span></span>
+</label>
+</div>
+</div> --}}
+</fieldset>
+<form action="{{route('adminPassword')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+@csrf
+<fieldset>
+<legend>Password Update</legend>
+<div class="form-group">
+<label class="col-md-4 control-label" for="user-settings-password">New Password</label>
+<div class="col-md-8">
+<input type="password" id="user-settings-password" name="password" class="form-control" placeholder="Please choose a complex one..">
+@if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="user-settings-repassword">Confirm New Password</label>
+<div class="col-md-8">
+<input type="password" id="user-settings-repassword" name="repassword" class="form-control" placeholder="..and confirm it!">
+</div>
+</div>
+<div class="form-group" style="display: none">
+<div class="col-md-8">
+<input type="number" id="user-settings-repassword" name="id" class="form-control" value="{{Auth::user()->id}}">
+</div>
+</div>
+</fieldset>
+<div class="form-group form-actions">
+<div class="col-xs-12 text-right">
+<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+<button type="submit" name="update" value="update" class="btn btn-sm btn-primary">Update Password</button>
+</div>
+</div>
+</form>
+</div>
+<!-- END Modal Body -->
+</div>
+</div>
+</div>
+<!-- END User Settings -->
+
+<!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Load and execute javascript code used only in this page -->
+<script src="js/pages/ecomDashboard.js"></script>
+<script>$(function(){ EcomDashboard.init(); });</script>
+
+
+
+<script>
+$('#top_type').change(function()
+{
+    var type=$(this).val();
+    if(type == 'retailer')
+    {
+    $('#top_search').attr('placeholder','Registration Number');
+    }
+
+    if(type == 'product')
+    {
+    $('#top_search').attr('placeholder','Product style#');
+    }
+
+    if(type == 'category')
+    {
+    $('#top_search').attr('placeholder','Category Name');
+    }
+
+
+});
+
+
+magnify('main_image', 2);
+
+$("#image_2").click(function() {
+var temp=$('#image_2').attr('src');
+$('#main_image').attr('src',temp);
+magnify('main_image', 2);
+
+});
+
+$("#image_1").click(function() {
+var temp=$('#image_1').attr('src');
+$('#main_image').attr('src',temp);
+magnify('main_image', 2);
+
+});
+
+$("#image_3").click(function() {
+var temp=$('#image_3').attr('src');
+$('#main_image').attr('src',temp);
+magnify('main_image', 2);
+
+});
+
+
+$("#image_4").click(function() {
+var temp=$('#image_4').attr('src');
+$('#main_image').attr('src',temp);
+magnify('main_image', 2);
+
+});
+
+$("#image_5").click(function() {
+var temp=$('#image_5').attr('src');
+$('#main_image').attr('src',temp);
+magnify('main_image', 2);
+
+});
+
+
+$("#image_6").click(function() {
+var temp=$('#image_6').attr('src');
+$('#main_image').attr('src',temp);
+magnify('main_image', 2);
+
+});
+</script>
+
+@if($status == 1)
+<script>
+    $('.stock_man').attr('class','active');
+</script>
+@endif
+
+@if($status == 2 || $status == 3)
+<script>
+    $('.product').attr('class','active');
+</script>
+@endif
 @endsection

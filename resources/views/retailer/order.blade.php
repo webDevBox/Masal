@@ -1,165 +1,263 @@
 @extends('layout.retailer')
 @section('content')
- 
-<div class="app-content content ">
-    <div class="content-overlay"></div>
-    <div class="header-navbar-shadow"></div>
-    <div class="content-wrapper">
-    <div class="content-header row">
-    </div>
-    <div class="content-body">
-    <!-- Dashboard Ecommerce Starts -->
-    <section id="dashboard-ecommerce">
     
-            <div class="row match-height">
-            <!-- Bar Chart - Orders -->
-           
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="card  text-center" >
-            <div class="card-body pb-50  ">
-            <h3 style="margin-top: 20px;"  >Total  <strong>Orders</strong></h3> 
-            <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{$total}} </h2>
-            <!-- <div id="statistics-order-chart"></div> -->
-            </div>
-            </div>
-            </div>
-            @php
-            $price=0;
-            $extra_price=0;
-        @endphp
-        @foreach ($payment as $item)
-            @php
-                    $product_id=$item->productId;
-                    $product= \App\products::where('id',$product_id)->first();
-                    $rate=$product->wholesalePrice;
-                    $quantity=$item->quantity;
-                    if($item->extra != null)
-                    {
-                    $extra=$item->extra;
-                    $addition= \App\additional::where('additional',$extra)->first();
-                    $extra_price=$addition->price;
-                    }
-                    $price=$price+($rate*$quantity)+($extra_price*$quantity);
 
-            @endphp
-        
-            
-        @endforeach
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="card  text-center " >
-                <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Total <strong>Payment </strong> </h3> 
-                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > ${{$price}} </h2>
-                </div>
-                </div>
-            </div>
-           
-            </div>
-             <div class="block full">
-                                <!-- All Orders Title -->
-                                <div class="block-title">
-                                   
-                                    <h2><strong>All</strong> Orders</h2>
-                                    @if(Session::has('success'))
-                                    <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
-                                    @endif
-                                    @if(Session::has('error'))
-                                    <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
-                                    @endif
-                                </div>
-                                <!-- END All Orders Title -->
-    
-                                <!-- All Orders Content -->
-                                <div class="table-responsive">
-                                <table id="ecom-orders" class="table  table-bordered table-striped table-vcenter">
-                                    <thead >
-                                        <tr>
-                                            <th  class=" bg-light-primary text-center" style="width: 100px;">ID</th>
-                                            <th class="bg-light-primary text-center">Products</th>
-                                           <th class="text-center bg-light-primary">Price</th>
-                                            <th class="text-center bg-light-primary">Status</th>
-                                            <th class="text-center bg-light-primary">Extra</th>
-                                            <th class="text-center bg-light-primary">Quantity</th>
-                                            <th class="text-center bg-light-primary">Total</th>
-                                            <th class="text-center bg-light-primary">Submitted</th>
-                                            <th class="text-center bg-light-primary">Cancellation </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($payment as $row)
-                                        @php
-                                                $extra_price=0;
-                                                if($row->extra != null)
-                                            {
-                                                $additional=$row->extra;
-                                                $extra= \App\additional::where('additional',$additional)->first();
-                                                $extra_price=$extra->price;
-                                            }
-    
-                                                $product_id=$row->productId;
-                                                $product= \App\products::where('id',$product_id)->first();
-                                                $rate=$product->wholesalePrice;
-                                                $quantity=$row->quantity;
-                                            
-                                            $price=($rate*$quantity)+($extra_price*$quantity);
-                                                $pro_name=$product->name;
-                                        @endphp
-                                     <tr>
-                                     <td class="text-center"><strong>{{$row->id}}</strong></td>
-                                     <td class="text-center col-lg-2 col-md-2">{{$pro_name}}</td>
-                                     <td class="text-center"><strong>${{$product->wholesalePrice}}</strong></td>
-                                        <td class="text-center"><span class="label label-warning">{{$row->status}}</span></td>
-                                        <td class="text-center">
-                                        @if($row->extra != null)
-                                        {{$row->extra}}
-                                        @else
-                                        No Extra
-                                        @endif
-                                        </td>
-                                        <td class="text-center">{{$row->quantity}}</td>
-                                        <td class="text-center">${{$price}}</td>
-                                        <td class="text-center">{{$row->created_at}}</td>
-                                        <td class="text-center">
-                                            <div class="btn-group btn-group-xs">
-                                            {{-- <a href="{{route('retailer_edit_order', array('id' => $row->id))}}" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a> --}}
-                                           
-                                                
-                                           @if($row->cancle_order_request == 0)
-                                           @if($row->payment == 'Done')
-                                           @if($row->status == 'completed')
-                                           <p> Order Completed </p> 
-                                           @else 
-                                            <a href="{{route('retailer_del_order', array('id' => $row->id))}}" data-toggle="tooltip" title="Cancellation Requests " class="btn btn-xs btn-danger">
-                                            <i class="fa fa-times"></i></a>
-                                            @endif
-                                            @else
-                                            <a href="{{route('checkout')}}" data-toggle="tooltip" title="Saved in Cart" class="btn btn-xs btn-primary"><i class="fa fa-shopping-cart"></i></a>
-                                            @endif
-                                             @elseif($row->cancle_order_request == 2)
-                                             <p> Your Request is Approved </p>   
-                                             @else
-                                             <p> Your Request is Pending </p>   
-                                            @endif
-                                           
-                                        
-                                        
-                                        </div>
-                                        </td>
+                        <!-- Quick Stats -->
+                        <div class="row text-center">
+                            
+                          
+                            <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+                                <a href="javascript:void(0)" class="widget widget-hover-effect2">
+                                    <div class="widget-extra themed-background-dark">
+                                        <h4 class="widget-content-light"><strong>Total</strong> Orders</h4>
+                                    </div>
+                                <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">{{$total}}</span></div>
+                                </a>
+                            </div>
+                            @php
+                                $price=0;
+                                $extra_price=0;
+                            @endphp
+                            @foreach ($payment as $item)
+                                @php
+                                        $product_id=$item->productId;
+                                        $product= \App\products::where('id',$product_id)->first();
+                                        $rate=$product->wholesalePrice;
+                                        $quantity=$item->quantity;
+                                        if($item->extra != null)
+                                        {
+                                        $extra=$item->extra;
+                                        $addition= \App\additional::where('additional',$extra)->first();
+                                        $extra_price=$addition->price;
+                                        }
+                                        $price=$price+($rate*$quantity)+($extra_price*$quantity);
+
+                                @endphp
+                            
+                                
+                            @endforeach
+                            <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+                                <a href="javascript:void(0)" class="widget widget-hover-effect2">
+                                    <div class="widget-extra themed-background-dark">
+                                        <h4 class="widget-content-light"><strong>Total</strong> Payment</h4>
+                                    </div>
+                                <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">${{$price}}</span></div>
+                                </a>
+                            </div>
+
+                        </div>
+
+
+                        <!-- END Quick Stats -->
+
+                        <!-- All Orders Block -->
+                        <div class="block full">
+                            <!-- All Orders Title -->
+                            <div class="block-title">
+                               
+                                <h2><strong>All</strong> Orders</h2>
+                                @if(Session::has('success'))
+<p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+@endif
+@if(Session::has('error'))
+<p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
+@endif
+@if ($errors->has('email')) <p style="color:red;">{{ $errors->first('email') }}</p> @endif
+@if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif
+                            </div>
+                            <!-- END All Orders Title -->
+
+                            <!-- All Orders Content -->
+                            <div class="table-responsive">
+                            <table id="ecom-orders" class="table table-bordered table-striped table-vcenter">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="width: 100px;">ID</th>
+                                        <th class="text-center">Products</th>
+                                       <th class="text-center">Price</th>
+                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Extra</th>
+                                        <th class="text-center">Quantity</th>
+                                        <th class="text-center">Total</th>
+                                        <th class="text-center">Submitted</th>
+                                        <th class="text-center">Cancellation </th>
                                     </tr>
-                                        
-                                    @endforeach
-                                       
-                                       
-                                    </tbody>
-                                </table>
-                                </div>
-                                <!-- END All Orders Content -->
-                            </div>  
-    </section>
-    <!-- Dashboard Ecommerce ends -->
-    
-    </div>
-    </div>
-    </div>
+                                </thead>
+                                <tbody>
+                                    @foreach ($payment as $row)
+                                    @php
+                                            $extra_price=0;
+                                            if($row->extra != null)
+                                        {
+                                            $additional=$row->extra;
+                                            $extra= \App\additional::where('additional',$additional)->first();
+                                            $extra_price=$extra->price;
+                                        }
 
-@endsection
+                                            $product_id=$row->productId;
+                                            $product= \App\products::where('id',$product_id)->first();
+                                            $rate=$product->wholesalePrice;
+                                            $quantity=$row->quantity;
+                                        
+                                        $price=($rate*$quantity)+($extra_price*$quantity);
+                                            $pro_name=$product->name;
+                                    @endphp
+                                 <tr>
+                                 <td class="text-center"><strong>{{$row->id}}</strong></td>
+                                 <td class="text-center col-lg-2 col-md-2">{{$pro_name}}</td>
+                                 <td class="text-center"><strong>${{$product->wholesalePrice}}</strong></td>
+                                    <td class="text-center"><span class="label label-warning">{{$row->status}}</span></td>
+                                    <td class="text-center">
+                                    @if($row->extra != null)
+                                    {{$row->extra}}
+                                    @else
+                                    No Extra
+                                    @endif
+                                    </td>
+                                    <td class="text-center">{{$row->quantity}}</td>
+                                    <td class="text-center">${{$price}}</td>
+                                    <td class="text-center">{{$row->created_at}}</td>
+                                    <td class="text-center">
+                                        <div class="btn-group btn-group-xs">
+                                        {{-- <a href="{{route('retailer_edit_order', array('id' => $row->id))}}" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a> --}}
+                                       
+                                            
+                                       @if($row->cancle_order_request == 0)
+                                       @if($row->payment == 'Done')
+                                        <a href="{{route('retailer_del_order', array('id' => $row->id))}}" data-toggle="tooltip" title="Cancellation Requests " class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+                                       @else
+                                        <a href="{{route('checkout')}}" data-toggle="tooltip" title="Saved in Cart" class="btn btn-xs btn-primary"><i class="fa fa-shopping-cart"></i></a>
+                                        @endif
+                                         @elseif($row->cancle_order_request == 2)
+                                         <p> Your Request is Approved </p>   
+                                         @else
+                                         <p> Your Request is Pending </p>   
+                                        @endif
+                                    
+                                    
+                                    </div>
+                                    </td>
+                                </tr>
+                                    
+                                @endforeach
+                                   
+                                   
+                                </tbody>
+                            </table>
+                            </div>
+                            <!-- END All Orders Content -->
+                        </div>
+                        <!-- END All Orders Block -->
+                    </div>
+                    <!-- END Page Content -->
+
+                    <!-- Footer -->
+                   
+                    <!-- END Footer -->
+                </div>
+                <!-- END Main Container -->
+            </div>
+            <!-- END Page Container -->
+        </div>
+        <!-- END Page Wrapper -->
+
+        <!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+        <a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+
+        <!-- User Settings, modal which opens from Settings link (found in top right user menu) and the Cog link (found in sidebar user info) -->
+        <div id="modal-user-settings" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header text-center">
+                        <h2 class="modal-title"><i class="fa fa-pencil"></i> Settings</h2>
+                    </div>
+                    <!-- END Modal Header -->
+
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+                        <form action="{{route('account')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                        @csrf
+                        <fieldset>
+                        <legend>Email Update</legend>
+                        <div class="form-group">
+                        <label class="col-md-4 control-label">Username</label>
+                        <div class="col-md-8">
+                        <p class="form-control-static"> {{Auth::user()->email}}</p>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <label class="col-md-4 control-label" for="user-settings-email">Email</label>
+                        <div class="col-md-8">
+                        <input type="email" id="user-settings-email" name="email" class="form-control" value="{{Auth::user()->email}}">
+                        </div>
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <div class="col-md-8">
+                            <input type="number" id="user-settings-repassword" name="id" class="form-control" value="{{Auth::user()->id}}">
+                            </div>
+                            </div>
+                        <center>
+                        <button type="submit" name="update" value="update" class="btn btn-sm btn-primary">Update Email</button>
+                        </center>
+                        </form>
+                        {{-- <div class="form-group">
+                        <label class="col-md-4 control-label" for="user-settings-notifications">Email Notifications</label>
+                        <div class="col-md-8">
+                        <label class="switch switch-primary">
+                        <input type="checkbox" id="user-settings-notifications" name="user-settings-notifications" value="1" checked>
+                        <span></span>
+                        </label>
+                        </div>
+                        </div> --}}
+                        </fieldset>
+                        <form action="{{route('passwordUpdate')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                            @csrf
+                        <fieldset>
+                        <legend>Password Update</legend>
+                        <div class="form-group">
+                        <label class="col-md-4 control-label" for="user-settings-password">New Password</label>
+                        <div class="col-md-8">
+                        <input type="password" id="user-settings-password" name="password" class="form-control" placeholder="Please choose a complex one..">
+                        @if ($errors->has('password')) <p style="color:red;">{{ $errors->first('password') }}</p> @endif
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <label class="col-md-4 control-label" for="user-settings-repassword">Confirm New Password</label>
+                        <div class="col-md-8">
+                        <input type="password" id="user-settings-repassword" name="repassword" class="form-control" placeholder="..and confirm it!">
+                        </div>
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <div class="col-md-8">
+                            <input type="number" id="user-settings-repassword" name="id" class="form-control" value="{{Auth::user()->id}}">
+                            </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-group form-actions">
+                        <div class="col-xs-12 text-right">
+                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name="update" value="update" class="btn btn-sm btn-primary">Update Password</button>
+                        </div>
+                        </div>
+                        </form>
+                        </div>
+    <!-- END Modal Body -->
+                </div>
+            </div>
+        </div>
+        <!-- END User Settings -->
+
+        <!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
+        <script src="js/vendor/jquery.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/app.js"></script>
+
+        <!-- Load and execute javascript code used only in this page -->
+        <script src="js/pages/ecomOrders.js"></script>
+        <script>$(function(){ EcomOrders.init(); });</script>
+        <script>
+            $('.report').attr('class','active');
+        </script>
+        @endsection
