@@ -19,9 +19,6 @@
             <!-- eShop Overview Title -->
             
             <div class="block-title">
-            
-            
-            
             <h2 class="text-center"><strong>Add New</strong> Page </h2>
             @if(Session::has('success'))
 
