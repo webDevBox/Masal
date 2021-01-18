@@ -1,0 +1,774 @@
+/*GALLERY LOOKS*/
+.page-gallerylooks .gallerylook-header {
+    margin-top: 54px;
+}
+
+.page-gallerylooks section.section-btn {
+    margin-bottom: 150px;
+}
+
+.gallerylook-header {
+    text-align: center;
+}
+
+.gallerylook-header .header {
+    padding: 25px 0;
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+
+    .page-gallerylooks .gallerylook-header {
+        margin-top: 50px;
+    }
+
+    .page-gallerylooks section.section-btn {
+        margin-bottom: 120px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .gallerylook-header .header {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .page-gallerylooks .gallerylook-header {
+        margin-top: 8vw;
+    }
+
+    .page-gallerylooks section.section-btn {
+        margin-bottom: 20vw;
+    }
+}
+
+.page-gallerylooks .header-slider {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 0;
+    line-height: 100%;
+    letter-spacing: 0;
+}
+
+
+.page-gallerylooks .header-slide {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 0 0 56.25%;
+    margin: 0 auto;
+}
+
+.page-gallerylooks .header-slide .header {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 5%;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto;
+    text-align: right;
+    transform: translateY(-50%);
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.page-gallerylooks .header-slide > img {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.section-gallerylooks {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.gallerylooks-images {
+    display: block;
+    margin: -13px;
+    padding: 0;
+    font-size: 0;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.gallerylook-image {
+    width: calc((100% - 78px) / 3);
+    margin: 13px;
+}
+
+.gallerylook-image img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .gallerylooks-images {
+        margin: -2vw;
+    }
+
+    .gallerylook-image {
+        width: calc((100% - 12vw) / 3);
+        margin: 2vw;
+    }
+}
+
+
+.section-gallerylooks .grid-item-social {
+    width: 100%;
+    top: 0;
+    height: 100%;
+    position: absolute;
+}
+
+.section-gallerylooks .grid-item-info {
+    width: 100%;
+    top: 0;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: ease-in 0.5s;
+    opacity: 0;
+    z-index: 1;
+}
+
+.section-gallerylooks .grid-item-content:hover {
+    cursor: pointer;
+}
+
+.section-gallerylooks .grid-item-content:hover .grid-item-info {
+    opacity: 1;
+}
+
+.section-gallerylooks .grid-item-info .social-networks {
+    margin: 0;
+    position: absolute;
+    top: 15px;
+    left: 15px
+}
+
+.section-gallerylooks .grid-item-info-footer {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 10%;
+    font-size: 15px;
+    z-index: 2;
+    left: 0;
+}
+
+.section-gallerylooks .grid-item-info-header {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.section-gallerylooks .grid-item-info-header h2 {
+    font-size: 37px;
+}
+
+.section-gallerylooks .grid-item-info-header h3 {
+    font-size: 32px;
+}
+
+@media (max-width: 767px) {
+    .section-gallerylooks .grid-item-info-header h2 {
+        font-size: 3.7vw;
+    }
+
+    .section-gallerylooks .grid-item-info-header h3 {
+        font-size: 3.2vw;
+    }
+
+    .section-gallerylooks .social-networks a {
+        padding: 0;
+        width: 5.6vw;
+        height: 5.6vw;
+        font-size: 2.5vw;
+        line-height: 5.6vw;
+    }
+
+    .section-gallerylooks .grid-item-info-footer p {
+        line-height: 100%;
+        font-size: 1.5vw;
+    }
+}
+
+.section-gallerylooks .grid-item-link-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.section-gallerylooks .grid-item-link-overlay > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.section-gallerylooks .social-networks ul li {
+    margin: 0;
+}
+
+/*END GALLERY LOOKS*/
+/*BEGIN TESTIMONIALS*/
+.page-all-testimonials .section-testimonials-landing {
+    margin: 70px 0;
+}
+
+.page-all-testimonials .testimonial-text > * {
+    color: #8f8f8f;
+    letter-spacing: 0.15em;
+    font-size: 13px;
+    line-height: 230%;
+}
+
+.page-all-testimonials .section-testimonials-landing strong {
+    font-size: 15px;
+    letter-spacing: 0.15em;
+}
+
+.page-all-testimonials .testimonial-landing {
+    margin-bottom: 60px;
+}
+
+.page-all-testimonials .testimonial-landing:last-child {
+    margin-bottom: 0;
+}
+
+
+.page-all-testimonials .testimonials-button {
+    height: 100px;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #F9F9F9 100%);
+}
+
+.page-all-testimonials .testimonials-button:before {
+    content: "";
+    display: block;
+    height: 40px;
+    width: 40px;
+    transform: translateY(-50%) rotate(45deg);
+    left: 46%;
+    top: 50%;
+    position: absolute;
+}
+
+.page-all-testimonials .testimonials-button.button-next:before {
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+}
+
+.page-all-testimonials .testimonials-button.button-prev:before {
+    border-top: 1px solid;
+    border-left: 1px solid;
+}
+
+@media (max-width: 767px) {
+    .page-all-testimonials .testimonial-landing {
+        height: 100vw;
+    }
+}
+
+.page-all-testimonials .inner-content {
+    padding: 0 15%;
+}
+
+/*BEGIN TESTIMONIALS*/
+
+
+/*CHECK IN QUEUE PAGE*/
+.checkin-queue-page .list.col-list .list-item.col-50-md {
+    width: 50%;
+}
+
+.checkin-queue-page .list.queue-list .list-item {
+    width: 100%;
+}
+
+.checkin-queue-page .queue-header {
+    padding: 20px;
+}
+
+/*CHECK IN QUEUE PAGE END*/
+/*APPOINTMENT TIMEPICKER*/
+.page-appointment .ui-timepicker-list {
+    border: 1px solid #000;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    height: 120px;
+    overflow: auto;
+    z-index: 1;
+    position: relative;
+}
+
+.page-appointment .ui-timepicker-list > li {
+    list-style: none;
+    padding: 10px 50px;
+    border: 1px solid #000;
+}
+
+.page-appointment .ui-timepicker-list > li:hover, .page-appointment .ui-timepicker-list .ui-timepicker-selected {
+    background-color: #000;
+    color: #fff
+}
+
+.page-appointment .time-picker-container input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.page-appointment .appointment-display-time {
+    position: relative;
+    left: 50px;
+    top: 5px;
+}
+
+@media (max-width: 767px) {
+    .page-appointment .appointment-display-time {
+        left: 11vw;
+        top: 2vw;
+    }
+
+    .page-appointment .time-picker-container .has-icons i {
+        font-size: 8vw;
+    }
+}
+
+/**/
+
+/*APPOINTMENTS CHECKBOX*/
+
+.appointment-form .checkbox {
+    margin-bottom: 20px
+}
+
+.appointment-form .checkbox label {
+    position: relative;
+    padding-left: 0;
+    line-height: 24px
+}
+
+.appointment-form .checkbox label > * {
+    vertical-align: middle
+}
+
+.appointment-form .checkbox input[type=checkbox] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0
+}
+
+.appointment-form .checkbox input[type=checkbox] ~ .fake-checkbox {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #454545;
+    border-radius: 3px;
+    color: #fff;
+    line-height: 22px;
+    font-size: 18px;
+    padding: 0;
+    text-align: center
+}
+
+.appointment-form .checkbox input[type=checkbox]:checked ~ .fake-checkbox {
+    background-color: #454545;
+    font-family: FontAwesome
+}
+
+.appointment-form .checkbox input[type=checkbox]:checked ~ .fake-checkbox:before {
+    content: "\f00c"
+}
+
+/**/
+
+
+/*JOB PAGE*/
+.job-page section:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+
+.job-page h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.job-page p {
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.job-page p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+
+.job-page .content {
+    width: 100%;
+    font-size: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.job-page .content ul {
+    font-size: 15px;
+    list-style: none;
+    font-weight: 300;
+    color: #000;
+}
+
+.job-page .content ul li {
+    position: relative;
+    padding-left: 50px;
+    line-height: 150%;
+}
+
+.job-page .content ul li:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    background-color: #050505;
+    border-radius: 50%;
+}
+
+.job-page .requirement h3 {
+    margin: 0;
+    line-height: 150%;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.job-page h1 {
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.job-page .btn-holder a {
+    color: #000;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
+@media (min-width: 992px) {
+    .job-page .content .col-40 {
+        width: 40%;
+        float: left;
+        padding-right: 50px;
+    }
+
+
+    .job-page .content .col-60 {
+        width: 60%;
+        float: left;
+    }
+
+    .job-page .requirement .col-40 {
+        padding-right: 150px;
+    }
+}
+
+@media (max-width: 991px) {
+    .job-page .content .col:not(:last-child) {
+        margin-bottom: 3vw;
+    }
+
+    .job-page h1 {
+        font-size: 10vw;
+        margin-bottom: 10vw;
+        margin-top: 5vw;
+    }
+
+    .job-page .requirement h3 {
+        text-align: center;
+        font-size: 7vw;
+    }
+
+    .job-page p, .job-page .content ul {
+        font-size: 5vw;
+    }
+
+    .job-page .content ul li {
+        padding-left: 5vw;
+    }
+
+    .job-page .content ul li:before {
+        top: 3vw;
+        width: 1vw;
+        height: 1vw;
+    }
+
+    .job-page .btn-holder a {
+        font-size: 6vw;
+        text-transform: uppercase;
+    }
+
+
+    .job-page p:not(:last-child) {
+        margin-bottom: 3vw;
+    }
+}
+
+/**/
+
+/*JOB LISTING PAGE*/
+.job-list-page section:not(:last-child) {
+    margin-bottom: 70px;
+}
+
+.job-list-page .header-image {
+    position: relative;
+}
+
+.job-list-page .header-image h1 {
+    font-size: 45px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.job-list-page p {
+    font-size: 17px;
+}
+
+.job-list-page .content {
+    width: 100%;
+    font-size: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.job-list-page .content ul {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.job-list-page .content ul li {
+    position: relative;
+    padding-left: 50px;
+    line-height: 150%;
+}
+
+.job-list-page .content ul li:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    background-color: #050505;
+    border-radius: 50%;
+}
+
+.job-list-page .content h3 {
+    margin: 0;
+    line-height: 150%;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+.job-list-page .vocation h4 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 150%;
+    margin-bottom: 10px;
+}
+
+.job-list-page .vocation a {
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+
+@media (min-width: 992px) {
+    .job-list-page .content .col-30 {
+        width: 30%;
+        float: left;
+        padding-right: 50px;
+    }
+
+    .job-list-page .content .col-70 {
+        width: 70%;
+        float: left;
+    }
+
+    .job-list-page .requirement .col-30 {
+        padding-right: 150px;
+    }
+
+    .job-list-page .vocation {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 991px) {
+    .job-list-page section:not(:last-child) {
+        margin-bottom: 8vw;
+    }
+
+    .job-list-page .content h3 {
+        margin-bottom: 8vw;
+    }
+
+    .job-list-page .content span {
+        display: none;
+    }
+
+    .job-list-page .content {
+        padding: 0 10vw;
+    }
+
+    .job-list-page .content .col:not(:last-child) {
+        margin-bottom: 3vw;
+    }
+
+    .job-list-page h1 {
+        font-size: 10vw;
+    }
+
+    .job-list-page .content h3, job-list-page .vocation h4 {
+        text-align: center;
+        font-size: 7vw;
+    }
+
+    .job-list-page p, .job-list-page .content ul {
+        font-size: 5vw;
+    }
+
+    .job-list-page .content ul li {
+        padding-left: 5vw;
+    }
+
+    .job-list-page .content ul li:before {
+        top: 3vw;
+        width: 1vw;
+        height: 1vw;
+    }
+
+    .job-list-page .vocation {
+        margin-bottom: 5vw;
+    }
+
+    .job-list-page .vocation a, .job-list-page .vocation h4 {
+        font-size: 4vw;
+    }
+}
+
+/**/
+
+/*APPOINTMENTS BUDGET IMPROVEMENTS*/
+
+@media (min-width: 994px) {
+    .page-appointment .budgets {
+        padding-top: 3rem;
+    }
+
+    .appointment-form .budgets > .form-block {
+        padding-bottom: 1rem;
+    }
+}
+
+.page-appointment .budgets .form-block > input[type='radio'] {
+    height: 1rem;
+    width: 3rem;
+    display: inline-block;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.page-appointment .budgets .form-block > label {
+    display: inline-block;
+    width: 80%;
+    position: relative;
+    top: -0.25rem;
+    cursor: pointer;
+}
+
+.appointment-form .budgets .form-block:last-child {
+    padding-bottom: 0;
+}
+
+@media (max-width: 993px) {
+    .appointment-form .budgets > .form-block {
+        padding-bottom: 2.6vw;
+    }
+
+    .page-appointment .budgets {
+        padding-top: 7vw;
+    }
+}
+
+.appointment-form .form-block input[type='radio'] + span.error:not(.valid) ~ label {
+    opacity: 1;
+}
+
+/**/
+.appointment-form .has-icons .select2-container--open ~ i.fa-caret-down {
+    transform: rotateX(180deg);
+}
+
+/* APPOINTMENTS */
+.appointment-form .form-box .inline-block.description label {
+    position: static;
+}
+
+@media (max-width: 991px) {
+    .appointment-form button {
+        font-size: 2.97vw;
+    }
+}
+
+.page-appointment .form-result .has-success + .success-html {
+    display: block;
+}
+
+@media(max-width: 991px){
+    .appointment-form .time-picker-container .inline-block > label {
+        top: 0;
+    }
+}
+
+.success-html {
+    display: none;
+}
+
+.has-success ~ .success-html {
+    display: block;
+}
+/* END APPOINTMENTS */
