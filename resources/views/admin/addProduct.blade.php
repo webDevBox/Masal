@@ -1,23 +1,17 @@
 @extends('layout.admin')
-
 @section('content')
-
 <div class="app-content content ">
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper">
     <div class="content-header row">
     </div>
-    
-    
-    
-    
     <div class="row match-height" >
     <!-- Company Table Card -->
-    <div class=" col-lg-5 col-md-6 col-sm-12 col-xs-12 offset-lg-3 offset-md-3" style="background-color: white;" >
+    <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12 offset-lg-3 offset-md-3" style="background-color: white;" >
      
         
-        <h2 class="text-center pt-3 pb-1    "><strong>Add New</strong> Product</h2>
+        <h2 class="text-center pt-3 pb-1"><strong>Add New</strong> Product</h2>
         
         @if(Session::has('success'))
         
@@ -43,7 +37,7 @@
         
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label" for="product_name">Name</label>
+            <label class="col-md-12  h5   control-label" for="product_name">Name</label>
         
             <div class="col-md-9">
         
@@ -59,7 +53,7 @@
         
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label" for="product_name">Keywords</label>
+            <label class="col-md-12  h5   control-label" for="product_name">Keywords</label>
         
             <div class="col-md-9">
         
@@ -75,7 +69,7 @@
         
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label" for="product_description">Description</label>
+            <label class="col-md-12  h5   control-label" for="product_description">Description</label>
         
             <div class="col-md-9">
         
@@ -91,7 +85,7 @@
 
             <div class="form-group">
         
-                <label class="col-md-6 h5 control-label" for="product_description">Select Product Category</label>
+                <label class="col-md-12  h5  control-label" for="product_description">Select Product Category</label>
         
                 <div class="col-md-9">
         
@@ -119,7 +113,164 @@
         
                     </select>
         
-                @if ($errors->has('product_description')) <p style="color:red;">{{ $errors->first('product_description') }}</p> @endif 
+                @if ($errors->has('category')) <p style="color:red;">{{ $errors->first('category') }}</p> @endif 
+        
+                
+        
+                </div>
+        
+                </div>
+
+
+        
+             <br>
+            <div class="form-group">
+        
+                <label class="col-md-12  h5  control-label" for="product_description">Select Product Silhouette</label>
+        
+                <div class="col-md-9">
+        
+                    <select class="form-control" name="silhouette" required>
+        
+                        <option selected disabled >Select Any Silhouette</option>
+        
+            
+        
+                        @if(count($silhouette) > 0)
+        
+                        @foreach ($silhouette as $row)
+        
+                    <option value="{{$row->id}}" >{{$row->name}}</option>
+        
+                        @endforeach
+        
+                        @else
+        
+                        <option disabled >No Silhouette Available</option>
+        
+                        @endif
+        
+            
+        
+                    </select>
+        
+                @if ($errors->has('silhouette')) <p style="color:red;">{{ $errors->first('silhouette') }}</p> @endif 
+        
+                
+        
+                </div>
+        
+                </div>
+        
+             <br>
+            <div class="form-group">
+        
+                <label class="col-md-12  h5  control-label" for="product_description">Select Product Neckline</label>
+        
+                <div class="col-md-9">
+        
+                    <select class="form-control" name="neckline" required>
+        
+                        <option selected disabled >Select Any Neckline</option>
+        
+                        @if(count($neckline) > 0)
+        
+                        @foreach ($neckline as $row)
+        
+                    <option value="{{$row->id}}" >{{$row->name}}</option>
+        
+                        @endforeach
+        
+                        @else
+        
+                        <option disabled >No Neckline Available</option>
+        
+                        @endif
+        
+            
+        
+                    </select>
+        
+                @if ($errors->has('neckline')) <p style="color:red;">{{ $errors->first('neckline') }}</p> @endif 
+        
+                
+        
+                </div>
+        
+                </div>
+        
+             <br>
+            <div class="form-group">
+        
+                <label class="col-md-12  h5  control-label" for="product_description">Select Product Fabric</label>
+        
+                <div class="col-md-9">
+        
+                    <select class="form-control" name="fabric" required>
+        
+                        <option selected disabled >Select Any Fabric</option>
+        
+            
+        
+                        @if(count($fabric) > 0)
+        
+                        @foreach ($fabric as $row)
+        
+                    <option value="{{$row->id}}" >{{$row->name}}</option>
+        
+                        @endforeach
+        
+                        @else
+        
+                        <option disabled >No Fabric Available</option>
+        
+                        @endif
+        
+            
+        
+                    </select>
+        
+                @if ($errors->has('fabric')) <p style="color:red;">{{ $errors->first('fabric') }}</p> @endif 
+        
+                
+        
+                </div>
+        
+                </div>
+        
+             <br>
+
+            <div class="form-group">
+        
+                <label class="col-md-12  h5  control-label" for="product_description">Select Product Sleeve</label>
+        
+                <div class="col-md-9">
+        
+                    <select class="form-control" name="sleeve" required>
+        
+                        <option selected disabled >Select Any Sleeve</option>
+        
+            
+        
+                        @if(count($sleeve) > 0)
+        
+                        @foreach ($sleeve as $row)
+        
+                    <option value="{{$row->id}}" >{{$row->name}}</option>
+        
+                        @endforeach
+        
+                        @else
+        
+                        <option disabled >No Sleeve Available</option>
+        
+                        @endif
+        
+            
+        
+                    </select>
+        
+                @if ($errors->has('sleeve')) <p style="color:red;">{{ $errors->first('sleeve') }}</p> @endif 
         
                 
         
@@ -131,7 +282,7 @@
         
             <div class="form-group">
         
-                <label class="col-md-6 h5  control-label" for="product_description">Available Colour Swatches</label>
+                <label class="col-md-12  h5   control-label" for="product_description">Available Colour Swatches</label>
         
                 <div class="col-md-9">
         
@@ -173,7 +324,7 @@
         
                 <div class="form-group">
         
-                    <label class="col-md-6 h5  control-label" for="product_description">Available Sale Tags</label>
+                    <label class="col-md-12  h5   control-label" for="product_description">Available Sale Tags</label>
         
                     <div class="col-md-9">
         
@@ -211,7 +362,7 @@
         
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label" for="product-short-description">Available Sizes</label>
+            <label class="col-md-12  h5   control-label" for="product-short-description">Available Sizes</label>
         
             <div class="col-md-9">
         
@@ -236,7 +387,7 @@
             
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label" for="product-price">Wholesale Price</label>
+            <label class="col-md-12  h5   control-label" for="product-price">Wholesale Price</label>
         
             <div class="col-md-9">
         
@@ -260,7 +411,7 @@
         
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label" for="product-price">Retail Price</label>
+            <label class="col-md-12  h5   control-label" for="product-price">Retail Price</label>
         
             <div class="col-md-9">
         
@@ -284,7 +435,7 @@
         
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label" for="product-price">Style Number</label>
+            <label class="col-md-12  h5   control-label" for="product-price">Style Number</label>
         
             <div class="col-md-9">
         
@@ -302,7 +453,7 @@
         
             <div class="form-group">
         
-                <label class="col-md-6 h5  control-label" for="product-price">Stock</label>
+                <label class="col-md-12  h5   control-label" for="product-price">Stock</label>
         
                 <div class="col-md-9">
         
@@ -322,7 +473,7 @@
         
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label">Status</label>
+            <label class="col-md-12  h5   control-label">Status</label>
         
             <div class="col-md-9">
         
@@ -350,7 +501,7 @@
         
             <div class="form-group">
         
-                <label class="col-md-6 h5  control-label" for="product-short-description">Additional Changes</label>
+                <label class="col-md-12  h5   control-label" for="product-short-description">Additional Changes</label>
         
                 <div class="col-md-9">
         
@@ -376,7 +527,7 @@
         
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label" for="product-price">First Image</label>
+            <label class="col-md-12  h5   control-label" for="product-price">First Image</label>
         
             <div class="col-md-9">
         
@@ -394,7 +545,7 @@
         
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label" for="product-price">Second Image</label>
+            <label class="col-md-12  h5   control-label" for="product-price">Second Image</label>
         
             <div class="col-md-9">
         
@@ -410,7 +561,7 @@
         
             <div class="form-group">
         
-            <label class="col-md-6 h5  control-label" for="product-price">Third Image</label>
+            <label class="col-md-12  h5   control-label" for="product-price">Third Image</label>
         
             <div class="col-md-9">
         
@@ -428,7 +579,7 @@
         
             <div class="form-group">
         
-                <label class="col-md-6 h5  control-label" for="product-price">Forth Image</label>
+                <label class="col-md-12  h5   control-label" for="product-price">Forth Image</label>
         
                 <div class="col-md-9">
         
@@ -446,7 +597,7 @@
         
                 <div class="form-group">
         
-                    <label class="col-md-6 h5  control-label" for="product-price">Fifth Image</label>
+                    <label class="col-md-12  h5   control-label" for="product-price">Fifth Image</label>
         
                     <div class="col-md-9">
         
@@ -464,7 +615,7 @@
         
                     <div class="form-group">
         
-                        <label class="col-md-6 h5  control-label" for="product-price">Sixth Image</label>
+                        <label class="col-md-12  h5   control-label" for="product-price">Sixth Image</label>
         
                         <div class="col-md-9">
         

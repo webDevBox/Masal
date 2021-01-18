@@ -481,6 +481,11 @@ class AdminController extends Controller
                 'stock'=>'required',
                 'style'=>'required|unique:products,styleNumber',
                 'first'=>'required|image',
+                'category'=>'required|numeric',
+                'silhouette'=>'required|numeric',
+                'neckline'=>'required|numeric',
+                'fabric'=>'required|numeric',
+                'sleeve'=>'required|numeric',
                 'second'=>'image',
                 'third'=>'image',
                 'forth'=>'image',
@@ -502,6 +507,10 @@ class AdminController extends Controller
              $extra=null;  
             }
             $product->category=$request->category;
+            $product->silhouette=$request->silhouette;
+            $product->neckline=$request->neckline;
+            $product->fabric=$request->fabric;
+            $product->sleeve=$request->sleeve;
             if(isset($request->tag))
             {
             $product->tag=$request->tag;
@@ -611,12 +620,16 @@ class AdminController extends Controller
          {
              return redirect('/admin');
          }
-         $swatches=ColourSwatches::all();
+        $swatches=ColourSwatches::all();
         $category=Category::all();
+        $silhouette=silhouette::all();
+        $fabric=fabric::all();
+        $neckline=neckline::all();
+        $sleeve=sleeve::all();
         $size=size::all();
         $addition=additional::all();
         $sale=sale::all();
-        return view('admin.addProduct')->with(array('sale'=>$sale,'swatches'=>$swatches,'category'=>$category,'size'=>$size,
+        return view('admin.addProduct')->with(array('sleeve'=>$sleeve,'neckline'=>$neckline,'fabric'=>$fabric,'silhouette'=>$silhouette,'sale'=>$sale,'swatches'=>$swatches,'category'=>$category,'size'=>$size,
         'addition'=>$addition));;
     }
     
