@@ -14,7 +14,7 @@
         <div class="block">
             <!-- Products Title -->
             <div class="block-title">
-                <h2><i class="fa fa-shopping-cart"></i> <strong>Order Edit</strong></h2>
+                <h2><i class="fa fa-shopping-cart"></i> <strong>View Orders</strong></h2>
                 @if(Session::has('success'))
             <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
             @endif

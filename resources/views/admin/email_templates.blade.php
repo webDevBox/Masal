@@ -18,8 +18,8 @@
                 <a href="#" data-toggle="modal" data-target="#exampleModal2">
             <div class="card  text-center " >
             <div class="card-body pb-50">
-            <h3 style="margin-top: 20px;" >Add New <strong>Template</strong></h3> 
-            <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > <i class="fa fa-plus" aria-hidden="true"></i> </h2>
+            <h3 style="margin-top: 20px; color:#7367f0;" >Add New <strong>Template</strong></h3> 
+            <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > <i class="fa fa-plus" aria-hidden="true"></i> </h2>
             <!-- <div id="statistics-order-chart"></div> -->
             </div>
             </div>
@@ -31,8 +31,8 @@
                 <a href="{{ route('retailer_mail') }}">
                 <div class="card  text-center " >
                 <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Retailer <strong>Email</strong> </h3> 
-                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $user }} </h2>
+                <h3 style="margin-top: 20px; color:#7367f0;" >Retailer <strong>Email</strong> </h3> 
+                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{ $user }} </h2>
                 </div>
                 </div>
             </a>
@@ -41,8 +41,8 @@
                 <a href="#">
                 <div class="card  text-center " >
                 <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Total <strong>Template</strong> </h3> 
-                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ count($templates) }} </h2>
+                <h3 style="margin-top: 20px; color:#7367f0;" >Total <strong>Template</strong> </h3> 
+                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{ count($templates) }} </h2>
                 </div>
                 </div>
             </a>

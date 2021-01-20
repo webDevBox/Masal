@@ -76,20 +76,22 @@ class RetailerController extends Controller
              return redirect('/');
          }
          $status=0;
+         $send=0;
          $cat_product = '';
-         if(isset($request->category))
+         if(isset($request->category) && $request->category != 'all')
          {
             $products=products::where('category',$request->category)->where('delete_status',0)->orderBy('created_at', 'desc')->get();
             $cat_log=Category::find($request->category);
             $cat_product=$cat_log->name;
             $status=1;
+            $send=$request->category;
          }
          else
          {
          $products=products::orderBy('created_at', 'desc')->where('delete_status',0)->get();
          }
          $category=Category::all();
-         return view('retailer.collection')->with(array('cat_product'=>$cat_product,'category'=>$category,'products'=>$products,'status'=>$status));
+         return view('retailer.collection')->with(array('send'=>$send,'cat_product'=>$cat_product,'category'=>$category,'products'=>$products,'status'=>$status));
     }
 
      //Orders Page

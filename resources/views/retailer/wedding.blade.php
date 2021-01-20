@@ -18,8 +18,8 @@
                 <a href="#" data-toggle="modal" data-target="#forms" class="widget widget-hover-effect2">
             <div class="card  text-center " >
             <div class="card-body pb-50">
-            <h3 style="margin-top: 20px;" >Add New <strong>Wedding</strong></h3> 
-            <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > <i class="fa fa-plus" aria-hidden="true"></i> </h2>
+            <h3 style="margin-top: 20px; color:#7367f0;" >Add New <strong>Wedding</strong></h3> 
+            <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > <i class="fa fa-plus" aria-hidden="true"></i> </h2>
             <!-- <div id="statistics-order-chart"></div> -->
             </div>
             </div>
@@ -29,8 +29,8 @@
                 <a href="#">
                 <div class="card  text-center " >
                 <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Total <strong>Wedding </strong> </h3> 
-                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $total }} </h2>
+                <h3 style="margin-top: 20px; color:#7367f0;" >Total <strong>Wedding </strong> </h3> 
+                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{ $total }} </h2>
                 </div>
                 </div>
             </a>

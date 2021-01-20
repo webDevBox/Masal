@@ -18,8 +18,8 @@
                 <a href="#" data-toggle="modal" data-target="#exampleModal2">
             <div class="card  text-center " >
             <div class="card-body pb-50">
-            <h3 style="margin-top: 20px;" >Add New <strong>Neckline </strong></h3> 
-            <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > <i class="fa fa-plus" aria-hidden="true"></i> </h2>
+            <h3 style="margin-top: 20px; color:#7367f0;" >Add New <strong>Neckline </strong></h3> 
+            <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > <i class="fa fa-plus" aria-hidden="true"></i> </h2>
             <!-- <div id="statistics-order-chart"></div> -->
             </div>
             </div>
@@ -31,8 +31,8 @@
                 <a href="#">
                 <div class="card  text-center " >
                 <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Total <strong>Neckline</strong> </h3> 
-                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ count($silhouette) }} </h2>
+                <h3 style="margin-top: 20px; color:#7367f0;" >Total <strong>Neckline</strong> </h3> 
+                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{ count($silhouette) }} </h2>
                 </div>
                 </div>
             </a>

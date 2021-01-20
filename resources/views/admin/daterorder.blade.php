@@ -19,8 +19,8 @@
                 <a href="{{route('dater',array('status'=>'today'))}}">
             <div class="card  text-center " >
             <div class="card-body pb-50">
-            <h3 style="margin-top: 20px;" >Order Today</h3> 
-            <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $todayOrder }} </h2>
+            <h3 style="margin-top: 20px; color:#7367f0;" >Order Today</h3> 
+            <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{ $todayOrder }} </h2>
             <!-- <div id="statistics-order-chart"></div> -->
             </div>
             </div>
@@ -32,8 +32,8 @@
                 <a href="{{route('dater',array('status'=>'month'))}}">
                 <div class="card  text-center " >
                 <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Order This Month</h3> 
-                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $monthOrder }} </h2>
+                <h3 style="margin-top: 20px; color:#7367f0;" >Order This Month</h3> 
+                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{ $monthOrder }} </h2>
                 </div>
                 </div>
             </a>
@@ -44,8 +44,8 @@
                 <a href="{{route('dater',array('status'=>'last'))}}">
                 <div class="card  text-center " >
                 <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Order Last Month</h3> 
-                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{ $lastmonthOrder }} </h2>
+                <h3 style="margin-top: 20px;  color:#7367f0;" >Order Last Month</h3> 
+                <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{ $lastmonthOrder }} </h2>
                 </div>
                 </div>
                 </a>

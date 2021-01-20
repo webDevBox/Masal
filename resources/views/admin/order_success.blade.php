@@ -71,9 +71,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-9 col-md-9 col-sm-6 col-xs-4">
+                        <div class="col-lg-8 col-md-7 col-sm-6 col-xs-4">
                         </div>
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-4 col-md-5">
                         <button id="print" style="" class="btn btn-primary">Print</button>
                         <input type="button" id="pdf" class="btn btn-success" value="Download As PDF" onclick="Export()" />
                         <input type="text" value="{{ $row->id }}" style="display: none;" id="order_id">

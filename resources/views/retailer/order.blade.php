@@ -17,8 +17,8 @@
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 <div class="card  text-center" >
 <div class="card-body pb-50  ">
-<h3 style="margin-top: 20px;"  >Total  <strong>Orders</strong></h3> 
-<h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > {{$total}} </h2>
+<h3 style="margin-top: 20px; color:#7367f0;"  >Total  <strong>Orders</strong></h3> 
+<h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{$total}} </h2>
 <!-- <div id="statistics-order-chart"></div> -->
 </div>
 </div>
@@ -48,8 +48,8 @@ $price=$price+($rate*$quantity)+($extra_price*$quantity);
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 <div class="card  text-center " >
 <div class="card-body pb-50">
-<h3 style="margin-top: 20px;" >Total <strong>Payment </strong> </h3> 
-<h2 class="font-weight-bolder mb-1" style="margin-top: 30px;" > ${{$price}} </h2>
+<h3 style="margin-top: 20px; color:#7367f0;" >Total <strong>Payment </strong> </h3> 
+<h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > ${{$price}} </h2>
 </div>
 </div>
 </div>

@@ -11,7 +11,7 @@
     <!-- Dashboard Ecommerce Starts -->
     <div class="row text-center" id="block_card">
         <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10">
-            <h1 class="text-center"> Products @if($status == 1) of {{$cat_product}} @endif </h1>
+            <h1 class="text-center"> @if($status != 1) All @endif Products  @if($status == 1) of {{$cat_product}} @endif </h1>
             @if(Session::has('success'))
             <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
             @endif
@@ -23,9 +23,10 @@
             <form action="" method="POST">
                 @csrf
                 <select name="category" class="form-control" id="category">
-                <option selected disabled>Select Collection</option>
+                <option selected disabled>Select Category</option>
+                 <option value="all"> All Products</option> 
                 @foreach ($category as $item)
-                <option value="{{$item->id}}"> {{$item->name}} </option>
+                <option @if($send == $item->id) selected @endif value="{{$item->id}}"> {{$item->name}} </option>
                 @endforeach    
                 </select> 
             </form>
@@ -70,7 +71,8 @@
         $('#category').change(function()
         {
             this.form.submit();
-            
+           
         });
     </script>
+   
 @endsection

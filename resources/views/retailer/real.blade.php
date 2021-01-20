@@ -16,7 +16,7 @@
                     <a href="#" data-toggle="modal" data-target="#forms" class="widget widget-hover-effect2">
                         <div class="card  text-center " >
                             <div class="card-body pb-50">
-                        <h3 class="widget-content-light" style="margin-top: 20px;">Add New <strong>Bride </strong></h3>
+                        <h3 class="widget-content-light" style="margin-top: 20px; color:#7367f0;">Add New <strong>Bride </strong></h3>
                     </div>
                     <div class="widget-extra-full"><span class="h2 text-primary animation-expandOpen"><i class="fa fa-plus"></i></span></div>
                     </a>
@@ -26,7 +26,7 @@
                 <a href="{{ route('retailer_wedding') }}">
                 <div class="card  text-center " >
                 <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;" >Manage <strong>Wedding </strong> </h3> 
+                <h3 style="margin-top: 20px; color:#7367f0;" >Manage <strong>Wedding </strong> </h3> 
                 <h2 class="font-weight-bolder mb-1 text-primary" style="margin-top: 30px; " > {{ $wedding }} </h2>
                 </div>
                 </div>
@@ -37,7 +37,7 @@
                 <a href="#">
                 <div class="card  text-center " >
                 <div class="card-body pb-50">
-                <h3 style="margin-top: 20px; " >Total <strong>Brides </strong> </h3> 
+                <h3 style="margin-top: 20px; color:#7367f0;" >Total <strong>Brides </strong> </h3> 
                 <h2 class="font-weight-bolder mb-1 text-primary" style="margin-top: 30px;" > {{ $total }} </h2>
                 </div>
                 </div>
