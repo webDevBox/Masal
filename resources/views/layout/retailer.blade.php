@@ -127,23 +127,13 @@
 <li class="dropdown-menu-header">
 <div class="dropdown-header d-flex">
 <h4 class="notification-title mb-0 mr-auto">Notifications</h4>
-<div class="badge badge-pill badge-light-primary">{{ $remain }} New Messages</div>
+<a href="{{ route('chat') }}">
+<div class="badge badge-pill badge-light-primary">
+   {{ $remain }} New Messages 
+    </div>
+</a>
 </div>
 </li>
-@if($remain > 0)
-<li class="scrollable-container media-list">
-    <a class="d-flex" href="{{ route('chat') }}">
-    <div class="media d-flex align-items-start">
-    <div class="media-left">
-    <div class=""><img src="{{ asset('app-assets/images/portrait/small/chat.png')}}" alt="avatar" width="32" height="32"></div>
-    </div>
-    <div class="media-body">
-    <p class="media-heading"><span class="font-weight-bolder">Chat Modals</span>
-    </div>
-    </div>
-    </a>
-    </li>
-@endif
 </ul>
 
 

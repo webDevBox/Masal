@@ -56,6 +56,7 @@
                 <thead>
                     <tr>
                         <th class="text-center">Name</th>
+                        <th class="text-center">Total Weddings</th>
                         <th class="text-center">Added</th>
                         <th class="text-center">Action</th>
                     </tr>
@@ -63,8 +64,11 @@
                 <tbody>
                     @foreach ($wedding as $row)
                     <tr>
-                        
+                        @php
+                            $wed=\App\retailer_bride::where('wedding',$row->id)->count();
+                        @endphp
                             <td class="text-center">{{ $row->name }}</td>
+                            <td class="text-center">{{ $wed }}</td>
                             <td class="text-center">{{ $row->created_at }}</td>
                             <td class="text-center">
                                 <div class="btn-group btn-group-xs">

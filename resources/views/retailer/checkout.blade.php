@@ -96,7 +96,10 @@
                                    @endphp
                                   
                                    <td class="text-center">$<?php echo $extra; ?></td>
+
+                                   
                                    <td class="text-center">
+                                     <div class="row">
                                     <a href="{{ route('qty_update',array('id'=>$row->id,'status'=>'minus')) }}">
                                    <i id="" class="fa fa-minus" aria-hidden="true" style="padding-right: 10px; text-decoration: none; color:black;"></i>
                                   </a>
@@ -104,7 +107,10 @@
                                     <a href="{{ route('qty_update',array('id'=>$row->id,'status'=>'plus')) }}">
                                      <i id="" class="fa fa-plus" style="padding-left: 10px; text-decoration: none; color:black; cursor: pointer;" aria-hidden="true"></i> 
                                     </a>
+                                  </div>
                                     </td>
+
+
                                   <td class="text-center">$<?php echo $subtotal; ?></td>
                                    <td class="text-center">
                                     <div class="btn-group btn-group-xs">

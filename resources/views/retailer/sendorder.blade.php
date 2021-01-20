@@ -22,22 +22,21 @@
     
     <div class="row">   
         <div class="col-md-4 col-lg-4 col-sm-10 col-xs-10 mt-5">             
-            <div class="nicdark_archive1 nicdark_border_grey img-magnifier-container">
-            <img id="main_image" class="main_image mx-auto d-block" style="height:600px;" alt="" src="{{ asset('images/'.$product->image1) }}">
-            </div>
+            <img id="main_image" class="main_image mx-auto d-block" style="width:350px; height:600px;" alt="" src="{{ asset('images/'.$product->image1) }}">
+            
             </div>
             <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 mt-5">
 
-                <h1 class="text-center">Price: ${{$product->wholesalePrice}}</h1>
+                <h1>Price: ${{$product->wholesalePrice}}</h1>
                 <h3 class="mt-2">Description<h3> 
               
                     <a class="btn btn-primary mt-2" href="{{ asset('images/products/chart.pdf') }}" style="color: white;" download="Size Chart"> Size Chart </a>
-                    <p style="text-align: justify;" class="mt-2">
+                    <p style="text-align: center;" class="mt-2">
                @php
                    echo $product->description;
                 @endphp</p> 
 
-                <h3 class="text-center mt-3">Other Images</h3>
+                <h3 class=" mt-2">Other Images</h3>
                 <div class="row">
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-2">
                         
@@ -94,7 +93,7 @@
             </div>
     
     <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 mt-5">
-   <h2 class="text-center">Place Your Order</h2>
+   <h2>Place Your Order</h2>
     <form action="{{route('sendorder')}}" method="POST">
     @csrf
     <div class="row">
@@ -130,14 +129,16 @@
     </div>
     <input style="display: none" id="product_price" type="text" value="{{$product->wholesalePrice}}">
     
-    <div class="form-group col-md-4 col-sm-4 col-xs-4 mt-3">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12 mt-3">
     <h3> Quantity </h3>
-    <div class="input-group">
-      <div class="input-group-btn">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
         <button type="button" id="down" class="btn btn-danger"> <i class="fa fa-minus" aria-hidden="true"></i> </button>
         </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ml-3">
      <input type="text" name="quantity" id="myNumber" class="form-control input-number" value="1" />
-    <div class="input-group-btn">
+        </div>
+     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
     <button id="up" type="button" class="btn btn-success"> <i class="fa fa-plus" aria-hidden="true"></i> </button>
     </div>
     </div>

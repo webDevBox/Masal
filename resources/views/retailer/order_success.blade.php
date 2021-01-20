@@ -21,13 +21,14 @@
             <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
             @endif
             
-            @if(count($success) > 0)
-            <p class="alert alert-success"> Payment done successfully ! </p>
-            @endif
+         
             @if(count($success) > 0)
             <div class="table-responsive">
             <table class="table table-hover" id="table">
             <thead>
+                @if(count($success) > 0)
+                <p class="alert alert-success"> Payment done successfully ! </p>
+                @endif
             <tr>
             <th class="text-center" style="width: 70px;"> ID</th>
             <th class="text-center">Product Image</th>
@@ -88,12 +89,12 @@
             @else
             <h5 class="text-center">Nothing to Show</h5>
             @endif
-            {{-- @php
+            @php
             foreach($success as $row)
             {
             $row->delete();
             }
-            @endphp --}}
+            @endphp
 
 
             </div>  

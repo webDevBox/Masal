@@ -11,6 +11,12 @@
                             <div class="list-item">
                                 <div class="header header-title">
                                     <h2 style="" role="heading" aria-level="1">Login</h2>
+                                    @if(Session::has('success'))
+                                    <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+                                    @endif
+                                    @if(Session::has('error'))
+                                    <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
+                                    @endif
                                 </div>
                             </div>
                         </div>
