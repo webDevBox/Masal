@@ -203,6 +203,7 @@ Route::post('/mapper', 'PagesController@mapper')->name('mapper');
 Route::get('/order_success', 'RetailerOrderController@order_success');
 Route::post('/feedback', 'PagesController@feedback')->name('feedback');
 Route::get('/nav_collection/{id}', 'PagesController@nav_collection')->name('nav_collection');
+Route::post('/filter/{id}', 'PagesController@filter')->name('filter');
 Route::post ('/strip', 'RetailerOrderController@payment');
 Route::get('/del_me/{id}', 'ChatController@del_me');
 Route::get('/del_every/{id}', 'ChatController@del_every');

@@ -15,57 +15,103 @@
 
 <div class="row" id="admin_div" style="">
     @if(count($real) > 0)
-    @foreach ($real as $row)
-    @php
-    $id=$row->product;
-    $product=\App\products::where('id',$id)->first();
-    @endphp
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="text-align:center;">
-        <a href="{{route('detail', array('id' => $product->id))}}">
-        <img alt="" style="height: 500px; padding:15px;" src="{{ asset('images/'.$product->image1) }}">
-        <h4>{{$product->name}}</h4>
-        <h6>Style# {{$product->styleNumber}}</h6>
-    </a>
-    </div>
-    @endforeach
-    @else
-    <div class="col-lg-4 col-md-4">
-
-    </div>
-    <div class="col-lg-4 col-md-4">
-        <img alt="" style="height: 500px;" src="{{asset('images/products/no.png')}}">
-    </div>
-    @endif
+    <section class="section-gallerylooks gallerylooks-theme mt-internal mt-internal-sm-alt">
+        <div class="container container-lg">
+        <div class="row">
+        <div class="gallerylooks-images">
+        <div class="grid">
+        
+            @foreach ($real as $row)
+            @php
+            $id=$row->product;
+            $product=\App\products::find($id);
+            @endphp
+            
+        <div class="gallerylook-image grid-item" id="slidesGrid0">
+        <div class="grid-item-content">
+            <img alt="" src="{{ asset('images/'.$product->image1) }}">
+        <div class="grid-item-info">
+        <div class="grid-item-link-overlay">
+        <a href="{{route('detail', array('id' => $id))}}" data-property="description">
+        </a>
+        
+     
+        </div>
+        <div data-property="description" class="header">
+        <h3>{{$product->name}}</h3>
+        <h2>Style# {{$product->styleNumber}}</h2>
+        </div>
+        
+        </div>
+        </div>
+        </div>
+      
+        @endforeach
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+@endif
 </div>
 
 
 <div class="row" id="stock_div" style="display:none;">
-    @foreach ($wedding as $row)
-    @php
-        $name=\App\User::find($row->retailer);
-        $counter=\App\retailer_bride::where('wedding',$row->id)->count();
-        $data=\App\retailer_bride::where('wedding',$row->id)->first();
-    @endphp
-        @if($counter > 0)
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="text-align:center;">
-        <a href="{{route('wedding_detail', array('id' => $row->id))}}">
+
+
+
+    <section class="section-gallerylooks gallerylooks-theme mt-internal mt-internal-sm-alt">
+        <div class="container container-lg">
+        <div class="row">
+        <div class="gallerylooks-images">
+        <div class="grid">
+        
+            @foreach ($wedding as $row)
+            @php
+                $name=\App\User::find($row->retailer);
+                $counter=\App\retailer_bride::where('wedding',$row->id)->count();
+                $data=\App\retailer_bride::where('wedding',$row->id)->first();
+            @endphp
+             @if($counter > 0)
+        <div class="gallerylook-image grid-item" id="slidesGrid0">
+        <div class="grid-item-content">
+
             @if($data->type == 'image')
-            <img alt="" style="width: 200px; height: 300px; padding:15px;" src="{{ asset('images/'.$data->file) }}">
+            <img src="{{ asset('images/'.$data->file) }}" />
             @endif
             @if($data->type == 'video')
-            <video style="width: 200px; height: 300px; padding:15px;" src="{{ asset('images/'.$data->file) }}" type="video/mp4" controls>
+            <video src="{{ asset('images/'.$data->file) }}" type="video/mp4" controls>
             @endif
             @if($data->type == 'link')
-            <iframe style="width: 200px; height: 300px; padding:15px;" src="{{ $data->file }}" frameborder="0" allowfullscreen>
+            <iframe src="{{ $data->file }}" frameborder="0" allowfullscreen>
             </iframe>
             @endif
-            <h4> Wedding: {{$row->name}} </h4>
+
+       
+        <div class="grid-item-info">
+        <div class="grid-item-link-overlay">
+        <a href="{{route('wedding_detail', array('id' => $row->id))}}" data-property="description">
         </a>
+        
+     
+        </div>
+        <div data-property="description" class="header">
+        <h3>Wedding</h3>
+        <h2>{{$row->name}}</h2>
+        </div>
+        
+        </div>
+        </div>
         </div>
         @endif
-    @endforeach
+        @endforeach
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+   
 </div>
-
 <script>
   $("#admin").click(function() {
       $("#stock").attr('style','background: white; color:black;');
@@ -81,5 +127,3 @@
   });
 </script>
 @endsection
-
-

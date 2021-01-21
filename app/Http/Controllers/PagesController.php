@@ -9,6 +9,10 @@ use App\products;
 use App\Category;
 use App\country;
 use App\state;
+use App\fabric;
+use App\neckline;
+use App\silhouette;
+use App\sleeve;
 use App\city;
 use App\buyer_country;
 use App\buyer_state;
@@ -179,14 +183,41 @@ class PagesController extends Controller
 
     public function nav_collection($id)
     {
-        $products=products::where('category',$id)->where('delete_status',0)->get();
+        $products=products::where('category',$id)->where('delete_status',0)->paginate(6);
         $collection=Category::all();
         $cat=Category::find($id);
-
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $seleve=sleeve::get();
+        $fabric=fabric::get();
+        $neck=neckline::get();
+        $silhouette=silhouette::get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $foot=footer::where('id',1)->first();
 
-        return view('pages.collections')->with(array('foot'=>$foot,'collection'=>$collection,'cat'=>$cat,'gallery'=>$gallery,'products'=>$products));
+        return view('pages.collections')->with(array('seleve'=>$seleve,'fabric'=>$fabric,'neck'=>$neck,'silhouette'=>$silhouette,
+        'foot'=>$foot,'collection'=>$collection,'cat'=>$cat,'gallery'=>$gallery,'products'=>$products));
+    }
+    
+    
+    public function filter(Request $request,$id)
+    {
+        $invite = $request->silhouette;
+        foreach($invite as $key)
+        {
+            echo $key.'  ';
+        }
+        die();
+        $products=products::where('category',$id)->where('delete_status',0)->paginate(6);
+        $collection=Category::all();
+        $cat=Category::find($id);
+        $seleve=sleeve::get();
+        $fabric=fabric::get();
+        $neck=neckline::get();
+        $silhouette=silhouette::get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $foot=footer::where('id',1)->first();
+
+        return view('pages.collections')->with(array('seleve'=>$seleve,'fabric'=>$fabric,'neck'=>$neck,'silhouette'=>$silhouette,
+        'foot'=>$foot,'collection'=>$collection,'cat'=>$cat,'gallery'=>$gallery,'products'=>$products));
     }
 
 
