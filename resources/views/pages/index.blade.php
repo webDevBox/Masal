@@ -98,7 +98,7 @@
                         <div class="featured-categories">
                             <div class="list">
                                 <div class="list-item">
-                                    <a href="#" class="featured-category">
+                                    <a href="{{ route('wherebuy') }}" class="featured-category">
                                         <div class="content-blocks">
                                             <div class="content-block content-img has-background "
                                                 style="background-image: url(<?php echo $img[0]; ?>);">
@@ -109,11 +109,13 @@
                                             <div class="content-block content-header">
                                                 <h3>{{ $copon[0] }}
                                                 </h3>
+                                                <span class="btn btn-transparent-invert">Find Store
+                                                </span>
 
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#" class="featured-category">
+                                    <a href="{{ route('wherebuy') }}" class="featured-category">
                                         <div class="content-blocks">
                                             <div class="content-block content-img has-background"
                                                 style="background-image: url(<?php echo $img[1]; ?>);">
@@ -124,13 +126,15 @@
                                             <div class="content-block content-header">
                                                 <h3>{{ $copon[1] }}
                                                 </h3>
+                                                <span class="btn btn-transparent-invert">Find Store
+                                                </span>
 
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="list-item">
-                                    <a href="#" class="featured-category">
+                                    <a href="{{ route('wherebuy') }}" class="featured-category">
                                         <div class="content-blocks">
                                             <div class="content-block content-img has-background"
                                                 style="background-image: url(<?php echo $img[2]; ?>);">
@@ -140,6 +144,8 @@
                                             <div class="content-block content-header">
                                                 <h3>{{ $copon[2] }}
                                                 </h3>
+                                                <span class="btn btn-transparent-invert">Find Store
+                                                </span>
 
                                             </div>
                                         </div>
@@ -150,6 +156,36 @@
                     </div>
                 </div>
             </section>
+
+
+            <section class="store-locator-section" id="store-locator-section">
+                <div class="container">
+                <div class="row">
+                <div class="header">
+                <div class="headings">
+                <div class="icon-container">
+                <i class="material-icons" aria-hidden="true" style="font-size:23px; color: honeydew; ">pin_drop</i>
+                </i>
+                </div>
+                <h3>Find your dream dress
+                
+                </h3>
+                </div>
+                <form name="store-locator-form" class="store-locator-form iblock-fix" aria-label="Find a Store Form">
+                    <div class="form-group">
+                    <input type="search" placeholder="Enter your Country, state, or City" data-property="store-locator-search" data-rule-sllocationselected="true" autocomplete="off" class="ui-autocomplete-input" aria-label="Enter your city, state, or zip" required>
+                    <div class="input-btn">
+                    <button type="submit" class="btn btn-success" >
+                    <a href="{{route('wherebuy')}}"> Find a store</a>
+                    </button>
+                    </div>
+                    </div>
+                    </form>
+                </div>
+                </div>
+                </div>
+                </section>
+
 
             <section class="section-header section-featured-header" id="section-featured-header">
                 <div class="container">
@@ -251,8 +287,8 @@
                                     <div class="content-blocks">
                                         <div class="content-block content-header">
                                             <div class="headings">
-                                                <h3>{{ $home->name3 }}
-                                                </h3>
+                                                {{-- <h3>{{ $home->name3 }}
+                                                </h3> --}}
                                                 <div class="text-img">
                                                     <img src="{{ asset('images/' . $foot->logo) }}" alt="Sophia"
                                                         style="margin-top: 10px;">
@@ -270,17 +306,18 @@
                     </div>
                 </div>
             </section>
-            <section class="section-header section-featured-header" id="section-featured-header">
+           
+
+            <section class="section-instagram-header" id="section-instagram-header">
                 <div class="container">
-                    <div class="row">
-                        <div class="header">
-                            <h2>
-                               @twobirdsbridal
-                            </h2>
-                        </div>
-                    </div>
+                <div class="row">
+                <div class="header">
+                <a href="https://www.instagram.com" target="_blank"> @twobirdsbridal
+                </a>
                 </div>
-            </section>
+                </div>
+                </div>
+                </section>
 
             <section class="section-recommended section-featured" aria-label="Featured Products">
                 <div id="curator-feed-default-feed-layout"></div>
@@ -291,4 +328,5 @@
 
     </div>
 
+  
 @endsection

@@ -322,10 +322,10 @@
                
                <div class="col-md-6 content-block " > 
                       <div class="white pencil5" >
-                       <a href="#" data-toggle="modal" data-target="#myModal5">
+                       {{-- <a href="#" data-toggle="modal" data-target="#myModal5">
                            <h2><strong style="color: black ; font-size: 35px;">{{ $home->name3 }}</strong></h2>
                            <i style="display:none; font-size: 45px; color:#7367F0;" class="fa fa-pencil editor5"></i>
-                         </a>
+                         </a> --}}
                             <!-- modal-body Starts -->
                     <div class="modal fade" id="myModal5" role="dialog">
                        <div class="modal-dialog">

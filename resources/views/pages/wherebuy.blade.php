@@ -182,7 +182,21 @@
         <div class="breakpoint-sm" data-var-name="breakpoint" data-var-type="sm" data-var-value="width"></div>
     </div> --}}
     <div class="primary-block iblock-fix" data-property="fixed-header">
+        @php
+        $coll_head=\App\Category::orderBy('id','desc')->first();
+        @endphp
+        <div class="header-promo">
+            <div class="container-fluid">
+                <div class="row">
+                    <a class="promo-link" href="{{ route('nav_collection', ['id' => $coll_head->id]) }}">
+                        Pre-Spring styles just in! 
+                        <span>View the Collection
+                        </span>
+                    </a>
 
+                </div>
+            </div>
+        </div>
         <div class="preheader preheader-main" id="preheader">
             <div class="container">
                 <div class="row">

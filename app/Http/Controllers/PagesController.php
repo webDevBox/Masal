@@ -143,7 +143,8 @@ class PagesController extends Controller
         $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
 
         $collection=Category::all();
-        $category=Category::orderBy('id', 'desc')->limit(3)->get();
+        $category=Category::orderBy('id','desc')->limit(3)->get();
+        $country=buyer_country::all();
         $home=homePage::first();
         $foot=footer::where('id',1)->first();
         $visit=visitor::count();
@@ -159,7 +160,7 @@ class PagesController extends Controller
             $new=$data->visitors+1;
             visitor::where('id',1)->update(['visitors'=>$new]); 
         }
-        return view('pages.index')->with(array('category'=>$category,'foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
+        return view('pages.index')->with(array('country'=>$country,'category'=>$category,'foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
     }
 
     public function contact()
