@@ -82,7 +82,7 @@
                                             </select>
                                         </td>
                                         
-                                        <td class="text-center">
+                                        <td class="col-md-1 text-center">
                                             <select name="status" class="form-control" id="status{{$row->id}}">
 
 

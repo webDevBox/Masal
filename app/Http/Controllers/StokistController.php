@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\masalMail;
 use App\products;
+use App\buyer_country;
+use App\buyer_state;
+use App\buyer_city;
 use App\User;
 use App\emails;
 class StokistController extends Controller
@@ -166,6 +169,27 @@ class StokistController extends Controller
          }
          if($stokist->status==3)
          {
+            $country=$stokist->country;
+            $state=$stokist->state;
+            $city=$stokist->city;
+            $count_country=User::where('country',$country)->count();
+            $count_state=User::where('state',$state)->count();
+            $count_city=User::where('city',$city)->count();
+            if($count_country == 1)
+            {
+                $find=buyer_country::where('country',$country)->first();
+                $find->delete();
+            }
+            if($count_state == 1)
+            {
+                $find1=buyer_state::where('state',$state)->first();
+                $find1->delete();
+            }
+            if($count_city == 1)
+            {
+                $find2=buyer_city::where('city',$city)->first();
+                $find2->delete();
+            }
             $stokist->delete();
             return redirect()->back()->with('success', 'Retailer Account Deleted Permanently');
          }

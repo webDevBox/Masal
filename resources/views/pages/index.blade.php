@@ -173,7 +173,7 @@
                 </div>
                 <form name="store-locator-form" class="store-locator-form iblock-fix" aria-label="Find a Store Form">
                     <div class="form-group">
-                    <input type="search" placeholder="Enter your Country, state, or City" data-property="store-locator-search" data-rule-sllocationselected="true" autocomplete="off" class="ui-autocomplete-input" aria-label="Enter your city, state, or zip" required>
+                    {{-- <input type="search" placeholder="Enter your Country, state, or City" data-property="store-locator-search" data-rule-sllocationselected="true" autocomplete="off" class="ui-autocomplete-input" aria-label="Enter your city, state, or zip" required> --}}
                     <div class="input-btn">
                     <button type="submit" class="btn btn-success" >
                     <a href="{{route('wherebuy')}}"> Find a store</a>

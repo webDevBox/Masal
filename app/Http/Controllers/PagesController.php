@@ -61,7 +61,7 @@ class PagesController extends Controller
 
     public function index()
     {
-        $country=buyer_country::all();
+        $country=buyer_country::get();
         $user=User::where('userRole',2)->where('status',1)->get();
         $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $collection=Category::all();
@@ -69,6 +69,24 @@ class PagesController extends Controller
         $menu=menu::where('header_status',1)->where('status',1)->get();
         return view('pages.wherebuy')->with(array('menu'=>$menu,'foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'country'=>$country,'user'=>$user));
     }
+   
+    // public function find_buy(Request $request)
+    // {
+    //     $country=buyer_country::get();
+
+    //     $search_country=buyer_country::where('country',$request->search)->first();
+    //     $search_state=buyer_state::where('state',$request->search)->first();
+    //     $search_city=buyer_city::where('city',$request->search)->first();
+        
+    //     $user=User::where('userRole',2)->where('status',1)->get();
+    //     $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+    //     $collection=Category::all();
+    //     $foot=footer::where('id',1)->first();
+    //     $menu=menu::where('header_status',1)->where('status',1)->get();
+    //     return view('pages.wherebuy')->with(array('search_country'=>$search_country,'search_state'=>$search_state,
+    //     'search_city'=>$search_city,'menu'=>$menu,'foot'=>$foot,'collection'=>$collection,
+    //     'gallery'=>$gallery,'country'=>$country,'user'=>$user));
+    // }
 
     public function statepicker(Request $request)
     {

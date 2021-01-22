@@ -195,6 +195,7 @@ Route::get('/wedding_detail/{id}', 'PagesController@wedding_detail')->name('wedd
 Route::get('/real', 'PagesController@real')->name('real');
 Route::get('/wedding', 'PagesController@wedding');
 Route::get('/wherebuy',  'PagesController@index')->name('wherebuy');
+// Route::get('/find_buy',  'PagesController@find_buy')->name('find_buy');
 Route::get('/statepicker', 'PagesController@statepicker')->name('statepicker');
 Route::get('/retailerstatepicker', 'PagesController@retailerstatepicker')->name('retailerstatepicker');
 Route::get('/citypicker', 'PagesController@cityPicker')->name('citypicker');

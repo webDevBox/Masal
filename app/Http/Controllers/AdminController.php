@@ -935,6 +935,12 @@ class AdminController extends Controller
                             <tbody>
                             ';
                                 $product=products::find($retailer->productId);
+                                if($request->status == 'completed')
+                                {
+                                    $prod_quant=$product->stock;
+                                    $new_quant=$prod_quant-$order->quantity;
+                                    products::where('id',$product->id)->update(['stock'=>$new_quant]);
+                                }
                                 $addition=0;
                                 if($retailer->extra != null)
                                 {

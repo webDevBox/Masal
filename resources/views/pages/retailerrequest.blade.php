@@ -423,7 +423,7 @@
         <div class="nicdark_container nicdark_clearfix">
 
 
-            <h1 class="text-center">Retiler Register</h1>
+            <h1 class="text-center">Retailer Register</h1>
             @if (Session::has('success'))
                 <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
             @endif
