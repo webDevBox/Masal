@@ -378,7 +378,7 @@
     
     <center>
     {{$products->links()}}
-</center>
+    </center>
     
     </div>
     

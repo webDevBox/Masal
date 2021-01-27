@@ -218,13 +218,15 @@ class PagesController extends Controller
     
     public function filter(Request $request,$id)
     {
-        $invite = $request->silhouette;
-        foreach($invite as $key)
-        {
-            echo $key.'  ';
-        }
+        $fabric[] = $request->fabric;
+        $neckline[] = $request->neckline;
+        $silhouette[] = $request->silhouette;
+        echo $silhouette;
         die();
-        $products=products::where('category',$id)->where('delete_status',0)->paginate(6);
+        $sleeve[] = $request->sleeve;
+        
+        $products=products::where('category',$id)->where('delete_status',0)->whereIn('silhouette',[$silhouette])
+        ->whereIn('neckline',[$neckline])->whereIn('fabric',[$fabric])->whereIn('sleeve',[$sleeve])->paginate(6);
         $collection=Category::all();
         $cat=Category::find($id);
         $seleve=sleeve::get();
