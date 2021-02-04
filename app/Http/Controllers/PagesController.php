@@ -250,7 +250,11 @@ class PagesController extends Controller
         $detail=products::find($id);
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
-        return view('pages.detail')->with(array('foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'detail'=>$detail));
+        $fabric=fabric::find($detail->fabric);
+        $neck=neckline::find($detail->neckline);
+        $seleve=sleeve::find($detail->sleeve);
+        $silhouette=silhouette::find($detail->silhouette);
+        return view('pages.detail')->with(array('fabric'=>$fabric,'neck'=>$neck,'seleve'=>$seleve,'silhouette'=>$silhouette,'foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'detail'=>$detail));
     }
 
 
