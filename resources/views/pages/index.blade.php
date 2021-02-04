@@ -237,14 +237,20 @@
                                                             </div>
                                                             <div class="description controls custom-favorites">
 
-
+                                                                
 
                                                             </div>
+                                                            
+                                                            <center> <button class="btn btn-success" style="margin-top: 5px;" href="{{route('detail', ['id' => $item->id])}}">View Details </button> </center>
                                                         </div>
                                                     </a>
+                                                   
                                                 </div>
+                                               
+
                                             </div>
                                         </div>
+                                       
                                     @endforeach
 
 
