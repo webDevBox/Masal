@@ -645,9 +645,7 @@ availableItemsCountHeaderText: " item(s) available"
 </script>
 
 
-<script type="text/javascript"
-src="../../../assets.pinterest.com/js/pinit.js"></script>
-<script>
+
 jQuery(function ($) {
 var description = $("[data-property='description']").html();
 description = description || "";
