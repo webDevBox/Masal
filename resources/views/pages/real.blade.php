@@ -87,11 +87,47 @@
             </iframe>
             @endif
 
-       
+           
         <div class="grid-item-info">
         <div class="grid-item-link-overlay">
         <a href="{{route('wedding_detail', array('id' => $row->id))}}" data-property="description">
         </a>
+
+        <div class="social-networks social-share social-share-multi">
+            <ul>
+                <li>
+                    <span class="share-title">
+                        Share:
+                    </span>
+                </li>
+                            <li>
+                                <a href="https://www.pinterest.com/sophiatolli/"
+                                   target="_blank"
+                                   data-property="pinterest-share-multi"
+                                   data-social-title="Y11895A | Zena"
+                                   data-social-url="{{ asset('images/'.$data->file) }}"
+                                   data-social-picture="{{ asset('images/'.$data->file) }}"
+                                   data-social-description=""
+                                   title="Pinterest"
+                                   aria-label="Share on Pinterest">
+                                    <i class="fa fa-pinterest-p"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/sophiatolli"
+                                   target="_blank"
+                                   data-property="twitter-share-multi"
+                                   data-social-title="Y11895A | Zena"
+                                   data-social-url="real-brides.html#slidesGrid0"
+                                   data-social-picture="{{ asset('images/'.$data->file) }}"
+                                   data-social-description=""
+                                   title="Twitter"
+                                   aria-label="Share on Twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+            </ul>
+        </div>
         
      
         </div>
@@ -126,4 +162,28 @@
       $("#stock_div").attr('style','display:block;')
   });
 </script>
+
+<script>
+    jQuery(function ($) {
+
+        window.Syvo.Social_Networks.load({
+            multi: {
+                parentSelector: ".grid-item",
+                descriptionSelector: "[data-property='description']",
+                fb: { appId: "" },
+                tw: {},
+                pinterest: {}
+
+            }
+        });
+
+        $(window).load(function () {
+            var $grid = $('.gallerylooks-images > .grid').masonry({
+                itemSelector: '.grid-item',
+                percentPosition: true
+            });
+        });
+    });
+</script>
+
 @endsection
