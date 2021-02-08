@@ -163,6 +163,7 @@ Route::get('/editor/{id}', 'AdminController@editor');
 Route::get('/retailerdash', 'RetailerController@index')->name('retailerdash');
 Route::match(['get', 'post'],'/collection', 'RetailerController@collection')->name('collection');
 Route::get('/orders', 'RetailerController@orders')->name('orders');
+Route::get('/go_cat/{id}', 'RetailerController@go_cat')->name('go_cat');
 Route::get('/retailerorder/{id}', 'RetailerOrderController@retailerorder')->name('retailerorder');
 Route::get('/retailerOrderDel/{id}', 'OrderController@retailerOrderDel')->name('retailerOrderDel');
 Route::get('/OrderDel/{id}', 'OrderController@OrderDel')->name('OrderDel');

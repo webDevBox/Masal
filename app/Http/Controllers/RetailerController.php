@@ -55,7 +55,8 @@ class RetailerController extends Controller
         $lastmonthOrder=retailerOrder::where('payment','Done')
         ->whereMonth('created_at', '=', Carbon::now()->subMonth()->month)->where('RetailerId',Auth::user()->id)
         ->whereYear('created_at', '=', Carbon::now()->subYear()->year)->count();
-        return view('retailer.retailerdash')->with(array('monthOrder'=>$monthOrder,'lastmonthOrder'=>$lastmonthOrder,'todayOrder'=>$todayOrder,'collection'=>$collection));
+        return view('retailer.retailerdash')->with(array('monthOrder'=>$monthOrder,'lastmonthOrder'=>$lastmonthOrder,
+        'todayOrder'=>$todayOrder,'collection'=>$collection));
     }
 
     //Collection Page
@@ -91,6 +92,37 @@ class RetailerController extends Controller
          $products=products::orderBy('created_at', 'desc')->where('delete_status',0)->get();
          }
          $category=Category::all();
+         return view('retailer.collection')->with(array('send'=>$send,'cat_product'=>$cat_product,'category'=>$category,'products'=>$products,'status'=>$status));
+    }
+    
+    
+    //Collection Page
+    public function go_cat($id)
+    {
+        if (Auth::check()) {
+            if($this->user->userRole != 2)
+            {
+             return redirect('/');
+            }
+            if($this->user->status != 1)
+            {
+             return redirect('/retailerlogout');
+            }
+         }
+         else
+         {
+             return redirect('/');
+         }
+         $status=0;
+         $send=0;
+         $cat_product = '';
+        $products=products::where('category',$id)->where('delete_status',0)->orderBy('created_at', 'desc')->get();
+        $cat_log=Category::find($id);
+        $cat_product=$cat_log->name;
+        $status=1;
+        $send=$id;
+         
+         $category=Category::get();
          return view('retailer.collection')->with(array('send'=>$send,'cat_product'=>$cat_product,'category'=>$category,'products'=>$products,'status'=>$status));
     }
 

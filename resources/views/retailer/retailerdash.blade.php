@@ -84,6 +84,7 @@
             $prod[$count]=\App\products::where('delete_status',0)->where('category',$row->id)->count();
             $image[$count]=$row->image;
             $name[$count]=$row->name;
+            $id[$count]=$row->id;
             $count++;
          }
     @endphp
@@ -123,6 +124,7 @@
   
             <div class="row">
               <div class="col-md-3">
+                <a href="{{ route('go_cat',array('id'=>$id[0])) }}">
                 <div class="card mb-2">
                   <img class="card-img-top" style="height:350px;" src="{{ asset('images/'.$image[0]) }}">
                     <div class="card-body badge-glow badge-primary">
@@ -131,9 +133,12 @@
                        
                       </div>
                 </div>
+              </a>
               </div>
+           
   
               <div class="col-md-3 ">
+                <a href="{{ route('go_cat',array('id'=>$id[1])) }}">
                 <div class="card mb-2">
                   <img class="card-img-top" style="height:350px;" src="{{ asset('images/'.$image[1]) }}">
                     <div class="card-body badge-glow badge-primary">
@@ -142,9 +147,11 @@
                        
                       </div>
                 </div>
+                </a>
               </div>
   
               <div class="col-md-3 ">
+                <a href="{{ route('go_cat',array('id'=>$id[2])) }}">
                 <div class="card mb-2">
                   <img class="card-img-top" style="height:350px;" src="{{ asset('images/'.$image[2]) }}">
                     <div class="card-body badge-glow badge-primary">
@@ -153,9 +160,11 @@
                        
                       </div>
                 </div>
+                </a>
               </div>
 
               <div class="col-md-3">
+                <a href="{{ route('go_cat',array('id'=>$id[3])) }}">
                 <div class="card mb-2">
                   <img class="card-img-top" style="height:350px;" src="{{ asset('images/'.$image[3]) }}">
                     <div class="card-body badge-glow badge-primary">
@@ -164,6 +173,7 @@
                        
                       </div>
                 </div>
+                </a>
               </div>
             </div>
   
@@ -177,6 +187,7 @@
              
   
               <div class="col-md-3 ">
+                <a href="{{ route('go_cat',array('id'=>$id[4])) }}">
                 <div class="card mb-2">
                   <img class="card-img-top" style="height:350px;" src="{{ asset('images/'.$image[4]) }}">
                     <div class="card-body badge-glow badge-primary">
@@ -185,9 +196,11 @@
                        
                       </div>
                 </div>
+                </a>
               </div>
   
               <div class="col-md-3 ">
+                <a href="{{ route('go_cat',array('id'=>$id[5])) }}">
                 <div class="card mb-2">
                   <img class="card-img-top" style="height:350px;" src="{{ asset('images/'.$image[5]) }}">
                     <div class="card-body badge-glow badge-primary">
@@ -196,9 +209,11 @@
                        
                       </div>
                 </div>
+                </a>
               </div>
 
               <div class="col-md-3">
+                <a href="{{ route('go_cat',array('id'=>$id[6])) }}">
                 <div class="card mb-2">
                   <img class="card-img-top" style="height:350px;" src="{{ asset('images/'.$image[6]) }}">
                     <div class="card-body badge-glow badge-primary">
@@ -207,9 +222,11 @@
                        
                       </div>
                 </div>
+                </a>
               </div>
 
               <div class="col-md-3 ">
+                <a href="{{ route('go_cat',array('id'=>$id[7])) }}">
                 <div class="card mb-2">
                   <img class="card-img-top" style="height:350px;" src="{{ asset('images/'.$image[7]) }}">
                     <div class="card-body badge-glow badge-primary">
@@ -218,6 +235,7 @@
                        
                       </div>
                 </div>
+                </a>
               </div>
   
              
