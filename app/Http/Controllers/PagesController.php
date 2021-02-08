@@ -260,12 +260,13 @@ class PagesController extends Controller
 
     public function mapper(Request $request)
     {
-      if(isset($request->search) && $request->search == 'Search')
+      if(isset($request->country))
       {
+        $country1=buyer_country::get();
         $menu=menu::where('header_status',1)->where('status',1)->get();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $this->validate($request,[
             'country'=>'required'
             ]);
@@ -309,7 +310,7 @@ class PagesController extends Controller
 // var_dump($geoloc['results'][0]['geometry']['location']['lng']);
 // die();   
        
-return view('pages.retailersList')->with('menu',$menu)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
+return view('pages.retailersList')->with('country',$country1)->with('menu',$menu)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
             }
 
             if(isset($request->state) && !isset($request->city))
@@ -331,7 +332,7 @@ return view('pages.retailersList')->with('menu',$menu)->with('foot',$foot)->with
         $geoloc = json_decode(curl_exec($ch), true);
         $data = ["lat" => $geoloc['results'][0]['geometry']['location']['lat'], "lng" => $geoloc['results'][0]['geometry']['location']['lng']];
         $zoom=7;
-            return view('pages.retailersList')->with('menu',$menu)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
+            return view('pages.retailersList')->with('country',$country1)->with('menu',$menu)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
             }
 
             
@@ -355,8 +356,37 @@ return view('pages.retailersList')->with('menu',$menu)->with('foot',$foot)->with
         $zoom=5;
         $data = ["lat" => $geoloc['results'][0]['geometry']['location']['lat'], "lng" => $geoloc['results'][0]['geometry']['location']['lng']];
       
-            return view('pages.retailersList')->with('menu',$menu)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
+            return view('pages.retailersList')->with('country',$country1)->with('menu',$menu)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
             }
+      }
+      else
+      {
+        $get='Random';
+        $menu=menu::where('header_status',1)->where('status',1)->get();
+        $collection=Category::all();
+        $foot=footer::where('id',1)->first();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $result=User::where([
+            ['country', '=', 'Australia'], 
+            ['userRole', '=', 2], 
+            ['status', '=', 1], 
+        ])->get();
+        $country='Australia';
+        $cityclean = str_replace (" ", "+", $country);
+        $details_url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $cityclean . "&key=AIzaSyAUx-lN2Wy6w2C0f2o14A3GgY--AqGiXPc";
+     
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $details_url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $geoloc = json_decode(curl_exec($ch), true);
+
+        $zoom=5;
+        $data = ["lat" => $geoloc['results'][0]['geometry']['location']['lat'], "lng" => $geoloc['results'][0]['geometry']['location']['lng']];
+        $user=User::all();
+        $country=buyer_country::get();
+        return view('pages.retailersList')->with('country',$country)->with('menu',$menu)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery)
+        ->with('result',$result)->with('get',$get)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
+
       }
       
     }

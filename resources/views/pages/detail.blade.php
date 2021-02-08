@@ -8,29 +8,28 @@
 <div class="product-bio">
 <div class="product-detailed clearfix iblock-fix">
 <div class="product-info product-visual">
-
-
-
-
-
-
 <div class="product-media">
-
-
 <div class="product-views clearfix" data-property="parent">
-
 @php
-$image1='images/'.$detail->image1;
-$image2='images/'.$detail->image2;
-$image3='images/'.$detail->image3;
-$image4='images/'.$detail->image4;
-$image5='images/'.$detail->image5;
-$image6='images/'.$detail->image6;
+$image1='images/instagram/1.jpg';
+$image2='images/instagram/2.jpg';
+$image3='images/instagram/3.jpg';
+$image4='images/instagram/4.jpg';
+$image5='images/instagram/5.jpg';
+$image6='images/instagram/6.jpg';
+
+
+
+// $image1='images/'.$detail->image1;
+// $image2='images/'.$detail->image2;
+// $image3='images/'.$detail->image3;
+// $image4='images/'.$detail->image4;
+// $image5='images/'.$detail->image5;
+// $image6='images/'.$detail->image6;
 @endphp
 
 
 <div class="product-view overviews common-videolist">
-
 <div class="list" data-list="overviews" data-slick>
 <div class="list-item">
 <div class="overview main_top_1" data-lazy-background style="background-image: url({{ asset($image1) }})">
@@ -49,88 +48,69 @@ class="MagicZoom overview-media" data-options="textClickZoomHint: Click to zoom"
 </div>
 </div>
 </div>
-
-
-
 </div>
 
 
 
 <div class="product-view previews">
-<div class="list">
-
-
-
-    <div class="list-item">
-        <div class="preview has-background"
-             style="background-image: url('{{ asset($image6) }}')"
-             data-trigger="color-filter-all"
-             data-value-id="">
-            <img class="image6" src="{{ asset($image6) }}" alt="Masal Style #Y118JKT"/>
-        </div>
+    <div class="list" data-list="previews">
+            <div class="list-item">
+                <div class="preview has-background"
+                     style="background-image: url('{{asset($image1)}}')"
+                     data-trigger="color-filter-all"
+                     data-value-id="">
+                    <img src="{{asset($image1)}}" alt="Masal Style #Y118JKT"/>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="preview has-background"
+                     style="background-image: url('{{asset($image2)}}')"
+                     data-trigger="color-filter-all"
+                     data-value-id="">
+                    <img src="{{asset($image2)}}" alt="Masal Style #Y118JKT"/>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="preview has-background"
+                     style="background-image: url('{{asset($image3)}}')"
+                     data-trigger="color-filter-all"
+                     data-value-id="">
+                    <img src="{{asset($image3)}}" alt="Masal Style #Y118JKT"/>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="preview has-background"
+                     style="background-image: url('{{asset($image4)}}')"
+                     data-trigger="color-filter-all"
+                     data-value-id="">
+                    <img src="{{asset($image4)}}" alt="Masal Style #Y118JKT"/>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="preview has-background"
+                     style="background-image: url('{{asset($image5)}}')"
+                     data-trigger="color-filter-all"
+                     data-value-id="">
+                    <img src="{{asset($image5)}}" alt="Masal Style #Y118JKT"/>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="preview has-background"
+                     style="background-image: url('{{asset($image6)}}')"
+                     data-trigger="color-filter-all"
+                     data-value-id="">
+                    <img src="{{asset($image6)}}" alt="Masal Style #Y118JKT"/>
+                </div>
+            </div>
     </div>
-
-
-
-    <div class="list-item">
-        <div class="preview has-background"
-             style="background-image: url('{{ asset($image5) }}')"
-             data-trigger="color-filter-all"
-             data-value-id="">
-            <img class="image5" src="{{ asset($image5) }}" alt="Masal Style #Y118JKT"/>
-        </div>
-    </div>
-
-
-
-    <div class="list-item">
-        <div class="preview has-background"
-             style="background-image: url('{{ asset($image4) }}')"
-             data-trigger="color-filter-all"
-             data-value-id="">
-            <img class="image4" src="{{ asset($image4) }}" alt="Masal Style #Y118JKT"/>
-        </div>
-    </div>
-
-
-
-    <div class="list-item">
-        <div class="preview has-background"
-             style="background-image: url('{{ asset($image3) }}')"
-             data-trigger="color-filter-all"
-             data-value-id="">
-            <img class="image3" src="{{ asset($image3) }}" alt="Masal Style #Y118JKT"/>
-        </div>
-    </div>
-
-
-
-    <div class="list-item">
-        <div class="preview has-background"
-             style="background-image: url('{{ asset($image2) }}')"
-             data-trigger="color-filter-all"
-             data-value-id="">
-            <img class="image2" src="{{ asset($image2) }}" alt="Masal Style #Y118JKT"/>
-        </div>
-    </div>
-
-
-
-    <div class="list-item">
-        <div class="preview has-background"
-             style="background-image: url('{{ asset($image1) }}')"
-             data-trigger="color-filter-all"
-             data-value-id="">
-            <img class="image1" src="{{ asset($image1) }}" alt="Masal Style #Y118JKT"/>
-        </div>
-    </div>
-
-
-
 
 </div>
 
-</div>
+
+{{-- End Side Bar Images --}}
+
+
+
 </div>
 
 </div>
@@ -645,7 +625,7 @@ availableItemsCountHeaderText: " item(s) available"
 </script>
 
 
-
+<script>
 jQuery(function ($) {
 var description = $("[data-property='description']").html();
 description = description || "";

@@ -204,7 +204,7 @@
                         <div class="preheader-block preheader-left preheader-style">
                             <ul>
                                 <li>
-                                    <a href="{{ route('wherebuy') }}" rel="nofollow" data-property="find-store"
+                                    <a href="{{ route('mapper') }}" rel="nofollow" data-property="find-store"
                                         aria-label="Find a store">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                                         <span>Find a store</span>
@@ -252,7 +252,7 @@
                                 </li>
 
                                 <li class="visible-mobile-sticky">
-                                    <a href="{{ route('wherebuy') }}" rel="nofollow" aria-label="Find a store">
+                                    <a href="{{ route('mapper') }}" rel="nofollow" aria-label="Find a store">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                                         <span class="hidden-mobile-sticky">Find a store</span>
                                     </a>
@@ -348,7 +348,7 @@
                                     @endif
                                     @if ($where->header_status == 1)
                                         <li>
-                                            <a href="{{ route('wherebuy') }}" data-property="trunk-shows">
+                                            <a href="{{ route('mapper') }}" data-property="trunk-shows">
                                                 <span>FIND A Store
                                                 </span>
                                                 <i class="sign">
@@ -699,7 +699,7 @@
                                     @endif
                                     @if ($where1->footer_status == 1)
                                         <li>
-                                            <a href="{{ route('wherebuy') }}">SHOP
+                                            <a href="{{ route('mapper') }}">SHOP
                                             </a>
                                         </li>
                                     @endif

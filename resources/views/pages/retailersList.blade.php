@@ -236,7 +236,7 @@
                         <div class="preheader-block preheader-left preheader-style">
                             <ul>
                                 <li>
-                                    <a href="{{ route('wherebuy') }}" rel="nofollow" data-property="find-store"
+                                    <a href="{{ route('mapper') }}" rel="nofollow" data-property="find-store"
                                         aria-label="Find a store">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                                         <span>Find a store</span>
@@ -284,7 +284,7 @@
                                 </li>
 
                                 <li class="visible-mobile-sticky">
-                                    <a href="{{ route('wherebuy') }}" rel="nofollow" aria-label="Find a store">
+                                    <a href="{{ route('mapper') }}" rel="nofollow" aria-label="Find a store">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                                         <span class="hidden-mobile-sticky">Find a store</span>
                                     </a>
@@ -380,7 +380,7 @@
                                     @endif
                                     @if ($where->header_status == 1)
                                         <li>
-                                            <a href="{{ route('wherebuy') }}" data-property="trunk-shows">
+                                            <a href="{{ route('mapper') }}" data-property="trunk-shows">
                                                 <span>FIND A Store
                                                 </span>
                                                 <i class="sign">
@@ -451,7 +451,24 @@
     <div class="nicdark_site">
         <div class="nicdark_site_fullwidth nicdark_clearfix"><div class="nicdark_overlay"></div>
     
-    
+        <section class="section-showcase section-showcase-top">
+            <div class="container">
+                <div class="row">
+                    <div class="showcase">
+                            <div class="shocase-section showcase-header" style="">
+                                <div class="list">
+        
+                                        <div class="list-item">
+                                            <div class="header header-title">
+                                                    <h2 style="" role="heading" aria-level="1">Find a Store</h2>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     
     @if(Session::has('success'))
     <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
@@ -461,26 +478,66 @@
     @endif
     
     <div class="row" style="margin-bottom: 10px; padding:50px">
+        <div class="col-md-2 col-lg-2"> </div>
+    <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
 
-    <div class="col-md-6">
-    
-                <h1 class="text-center every_page_top_on_small"><span class="grey">—</span>Retailers in Your Area <span class="grey">—</span></h1>
-             
-                @if(count($result) > 0) 
+        <form action="{{ route('mapper') }}" method="post">
+            @csrf
+
+            <div class="form-group  col-md-4">
+                <select class="form-control" name="country" id="country" style="height:40px;border-radius:8px"
+                    required>
+                    <option value="">Select Country</option>
+                    @if (count($country) > 0)
+                        @foreach ($country as $row)
+                            <option value="{{ $row['id'] }}"> {{ $row['country'] }} </option>
+                        @endforeach
+
+                    @endif
+
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <select class="form-control" name="state" style="height:40px;border-radius:8px" id="state">
+                    <option value="">Select State</option>
+
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <select class="form-control" name="city" style="height:40px;border-radius:8px" id="city">
+                    <option value="">Select City</option>
+                </select>
+            </div>
+
+           <center> <button class="btn btn-success" style="border-radius:8px" type="submit"> Search </button></center>
+        </form>
+        <br><br>
+
+            @if(isset($get))
+            <h4 class="text-center">RESULTS IN AUSTRALIA</h4>
+            <hr style="border-top: 1px solid black; width:70%;">
+            @endif
+            @if(count($result) > 0) 
             @foreach ($result as $item)
             @php
               $status=$item->address.','.$item->city.','.$item->state.','.$item->country;
           @endphp
           <div class="bg-light border border-dark border-right-0 border-left-0 border-bottom-0">
-          <h5 class="text-dark"> {{$item->name}}</h5>
-          <p class="text-secondary">{{$item->address}}, {{$item->city}}, {{$item->state}}, {{$item->post}}, {{$item->country}}</p>
+          <h2 class="text-dark"> {{$item->name}}</h2>
+          <p style="color: #818181">{{$item->address}}, {{$item->city}}, {{$item->state}}, {{$item->post}}, {{$item->country}}</p>
           
-            <p style="color:firebrick; font-size:13px;"><i class="fa fa-phone" style="font-size:15px; color:firebrick;"></i> {{$item->phone}} <span class="text-secondary" style="padding-left:10px; padding-right:10px; ">|</span> 
-                <a href="{{ route('location',array('status'=>$status)) }}" target="blank"> GET DIRECTION  </a> <span style="padding-left:10px; padding-right:10px; " class="text-secondary">|</span> <a href="{{$item->website}}"> {{$item->website}} </a>
-                <span style="padding-left:10px; padding-right:10px; " class="text-secondary">|</span> <a href="{{$item->facebook}}"> {{$item->facebook}} </a>
-                <span style="padding-left:10px; padding-right:10px; " class="text-secondary">|</span> <a href="{{$item->instagram}}"> {{$item->instagram}} </a>
+          @for ($i = 0; $i < $item->star; $i++)
+          <img src="https://img.icons8.com/ios-filled/50/000000/slip-dress.png" style="width:40px;"/>
+          @endfor
+
+
+            <p style="font-size:13px; color:#551C7E"><i class="fa fa-phone" style="font-size:15px;"></i> {{$item->phone}} <span style="padding-left:10px; padding-right:10px; ">|</span> 
+                <a href="{{ route('location',array('status'=>$status)) }}" style="color:#551C7E" target="blank"> GET DIRECTION  </a> <span style="padding-left:10px; padding-right:10px; ">|</span> <a style="color:#551C7E" href="{{$item->website}}"> {{$item->website}} </a>
+                <span style="padding-left:10px; padding-right:10px; ">|</span> <a style="color:#551C7E" href="{{$item->facebook}}"> {{$item->facebook}} </a>
+                <span style="padding-left:10px; padding-right:10px; color:#551C7E ">|</span> <a style="color:#551C7E" href="{{$item->instagram}}"> {{$item->instagram}} </a>
     
             </p>
+            <hr style="border-top: 1px solid black; width:80%;">
           </div>
             @endforeach
             @else
@@ -496,7 +553,6 @@
        
         <div class="col-md-6">
            
-                        <h1 class="grey2 center every_page_top_on_small"><span class="grey">—</span>Retailers on Map <span class="grey">—</span></h1>
                        
                         <div id="map"></div>
                     </div>
@@ -911,7 +967,7 @@
                                     @endif
                                     @if ($where1->footer_status == 1)
                                         <li>
-                                            <a href="{{ route('wherebuy') }}">SHOP
+                                            <a href="{{ route('mapper') }}">SHOP
                                             </a>
                                         </li>
                                     @endif

@@ -19,6 +19,8 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 Route::match(['get', 'post'], '/retailerrequest', 'AuthController@register')->name('retailerrequest');
 //admin
 Route::match(['get', 'post'], '/admin', 'AuthController@login');
+
+Route::match(['get', 'post'], '/store-locater', 'PagesController@mapper')->name('mapper');
 //Admin Logout Route
 Route::get('/logout','AuthController@logout')->name('logout');
 Route::get('/login_form','AuthController@login_form')->name('login_form');
@@ -200,7 +202,7 @@ Route::get('/statepicker', 'PagesController@statepicker')->name('statepicker');
 Route::get('/retailerstatepicker', 'PagesController@retailerstatepicker')->name('retailerstatepicker');
 Route::get('/citypicker', 'PagesController@cityPicker')->name('citypicker');
 Route::get('/retailercitypicker', 'PagesController@retailercitypicker')->name('retailercitypicker');
-Route::post('/mapper', 'PagesController@mapper')->name('mapper');
+
 Route::get('/order_success', 'RetailerOrderController@order_success');
 Route::post('/feedback', 'PagesController@feedback')->name('feedback');
 Route::get('/nav_collection/{id}', 'PagesController@nav_collection')->name('nav_collection');
