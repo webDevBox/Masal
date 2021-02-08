@@ -19,7 +19,7 @@
                 <a href="{{route('dater',array('status'=>'today'))}}">
             <div class="card  text-center " >
             <div class="card-body pb-50">
-            <h3 style="margin-top: 20px; color:#7367f0;" >Order Today</h3> 
+            <h3 style="margin-top: 20px; color:#7367f0;" >Today’s Orders</h3> 
             <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{ $todayOrder }} </h2>
             <!-- <div id="statistics-order-chart"></div> -->
             </div>
@@ -32,7 +32,7 @@
                 <a href="{{route('dater',array('status'=>'month'))}}">
                 <div class="card  text-center " >
                 <div class="card-body pb-50">
-                <h3 style="margin-top: 20px; color:#7367f0;" >Order This Month</h3> 
+                <h3 style="margin-top: 20px; color:#7367f0;" >This Month’s Order</h3> 
                 <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{ $monthOrder }} </h2>
                 </div>
                 </div>
@@ -44,7 +44,7 @@
                 <a href="{{route('dater',array('status'=>'last'))}}">
                 <div class="card  text-center " >
                 <div class="card-body pb-50">
-                <h3 style="margin-top: 20px;  color:#7367f0;" >Order Last Month</h3> 
+                <h3 style="margin-top: 20px;  color:#7367f0;" >Last Month’s Order</h3> 
                 <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367f0;" > {{ $lastmonthOrder }} </h2>
                 </div>
                 </div>
@@ -63,6 +63,7 @@
                 <thead>
                     <tr>
                         {{-- <th class="text-center" style="width: 100px;"/>ID</th> --}}
+                        <th class="text-center">Retailer ID</th>
                         <th class="text-center">Customer Name</th>
                         <th class="text-center">Quantity</th>
                         <th class="text-center">Colour</th>
@@ -95,6 +96,7 @@
         
                     <tr>
                         {{-- <td class="text-center"><strong>ORD.{{$order->id}}</strong></td> --}}
+                        <td class="text-center"> <a href="{{route('OrderView',array('id' => $order->id))}}"> {{$order->RetailerId}} </a> </td>
                         <td class="text-center"> <a href="{{route('OrderView',array('id' => $order->id))}}"> {{$customer->name}} </a> </td>
                         <td class="text-center"> <a href="{{route('OrderView',array('id' => $order->id))}}"> {{$order->quantity}} </a> </td>
                         <td class="text-center"> <a href="{{route('OrderView',array('id' => $order->id))}}"> {{$order->colour}} </a> </td>

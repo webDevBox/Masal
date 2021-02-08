@@ -68,23 +68,23 @@ class AdminController extends Controller
          $sale=sale::all();
          if(isset($request->category))
          {
-            $product=products::where('category',$request->category)->where('delete_status',0)->orderBy('created_at', 'desc')->get();
+            $product=products::where('category',$request->category)->where('delete_status',0)->orderBy('created_at', 'desc')->paginate(8);
          }
          else if(isset($request->size))
          {
-            $product=products::where('size', 'like', '%' . $request->size . '%')->where('delete_status',0)->orderBy('created_at', 'desc')->get();
+            $product=products::where('size', 'like', '%' . $request->size . '%')->where('delete_status',0)->orderBy('created_at', 'desc')->paginate(8);
          }
          else if(isset($request->color))
          {
-            $product=products::where('colour', 'like', '%' . $request->color . '%')->where('delete_status',0)->orderBy('created_at', 'desc')->get();
+            $product=products::where('colour', 'like', '%' . $request->color . '%')->where('delete_status',0)->orderBy('created_at', 'desc')->paginate(8);
          }
          else if(isset($request->style))
          {
-            $product=products::where('styleNumber',$request->style)->where('delete_status',0)->orderBy('created_at', 'desc')->get();
+            $product=products::where('styleNumber',$request->style)->where('delete_status',0)->orderBy('created_at', 'desc')->paginate(8);
          }
          else
          {
-         $product = products::orderBy('id','desc')->where('delete_status',0)->get();
+         $product = products::orderBy('id','desc')->where('delete_status',0)->paginate(8);
         }
          return view('admin.products')
          ->with(array('fabric'=>$fabric,'neckline'=>$neckline,'sleeve'=>$sleeve,'sale'=>$sale,'silhouette'=>$silhouette,'addition'=>$addition,'size'=>$size,'outer'=>$outer,'total_products'=>$total_products,
@@ -689,8 +689,12 @@ class AdminController extends Controller
         $size=size::all();
         $addition=additional::all();
         $sale=sale::all();
+        $silhouette=silhouette::get();
+        $fabric=fabric::get();
+        $neckline=neckline::get();
+        $sleeve=sleeve::get();
         return view('admin.edit_product')->with(array('sale'=>$sale,'swatches'=>$swatches,'category'=>$category,'size'=>$size,
-        'addition'=>$addition,'product'=>$product));
+        'addition'=>$addition,'silhouette'=>$silhouette,'fabric'=>$fabric,'neckline'=>$neckline,'sleeve'=>$sleeve,'product'=>$product));
     }
 
 
@@ -716,6 +720,11 @@ class AdminController extends Controller
                 'product_name'=>'required',
                 'key'=>'required',
                 'product_description'=>'required',
+                'category'=>'required',
+                'silhouette'=>'required',
+                'neckline'=>'required',
+                'fabric'=>'required',
+                'sleeve'=>'required',
                 'wholesale_price'=>'required',
                 'retail_price'=>'required',
                 'stock'=>'required',
@@ -743,6 +752,10 @@ class AdminController extends Controller
             $product->keyword=$request->key;
             $product->description=$request->product_description;
             $product->category=$request->category;
+            $product->silhouette=$request->silhouette;
+            $product->neckline=$request->neckline;
+            $product->fabric=$request->fabric;
+            $product->sleeve=$request->sleeve;
             if(isset($request->tag))
             {
                 if($request->tag != '354545')

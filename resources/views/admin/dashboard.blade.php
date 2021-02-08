@@ -123,7 +123,7 @@
   <a href="{{route('dater',array('status'=>'month'))}}">     
   <div class="card  text-center " > 
   <div class="card-body pb-50">
-  <p style="margin-top: 20px;" >Order This Month</p> 
+  <p style="margin-top: 20px;" >This Month’s Order</p> 
   <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367F0; color:#7367F0; color:#7367F0;" > {{ $monthOrder }} </h2>
   <!-- <div id="statistics-order-chart"></div> -->
   </div>
@@ -137,7 +137,7 @@
       <a href="{{route('dater',array('status'=>'last'))}}">
       <div class="card  text-center " >
       <div class="card-body pb-50">
-      <p style="margin-top: 20px;" >Order Last Month</p> 
+      <p style="margin-top: 20px;" >Last Month’s Order</p> 
       <h2 class="font-weight-bolder mb-1" style="margin-top: 30px; color:#7367F0; color:#7367F0;" > {{ $lastmonthOrder }} </h2>
       <!-- <div id="statistics-order-chart"></div> -->
       </div>
@@ -153,7 +153,7 @@
   <div class="card-body" >
   <div class="row">
       <div class="col-12 " style="text-align: center;">
-          <p style="margin-top: px;">Order This Week</p>
+          <p style="margin-top: px;">This Week's Orders</p>
           <h2 class="font-weight-bolder mb-1" style="margin-top: 20px; color:#7367F0;">{{ $weekOrder }}</h2>
       </div>
   </div>
@@ -169,7 +169,7 @@
   <div class="card-body" >
   <div class="row">
       <div class="col-12 " style="text-align: center;">
-          <p style="margin-top: px;">Order Today</p>
+          <p style="margin-top: px;">Today’s Orders</p>
           <h2 class="font-weight-bolder mb-1" style="margin-top: 20px; color:#7367F0;">{{ $todayOrder }}</h2>
       </div>
   </div>

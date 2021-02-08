@@ -184,15 +184,24 @@
                 </td>
 
             </tr>
-
+            
             @endforeach
-
+            <tr>
+                <td colspan="10">
+                    <div class="offset-lg-5 offset-md-5">
+                        {{ $product->links() }} 
+                    </div>
+                </td>
+            </tr>
             @else
 
             <p>No Product stored</p>
 
             @endif
+            
             </tbody>
+
+           
     
         </table>
     
