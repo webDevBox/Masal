@@ -97,6 +97,45 @@
                         </tr>
                         </thead>
                         <tbody>
+
+                            @if(isset($order_by) && $order_by == 'get')
+                            @foreach ($orders as $order)
+                            @php
+                            $extra=0;
+                                $product_id=$order->productId;
+                                $product= \App\products::find($product_id);
+                                if($order->extra != null)
+                                {
+                                $additional= \App\additional::where('additional',$order->extra)->first();
+                                $exprice=$additional->price;
+                                $extra=$order->quantity*$exprice;
+                                }
+                                $price=$order->quantity*$product->wholesalePrice;
+                                if($order->extra != null)
+                                {
+                                    $price=$price+$extra;
+                                }
+                            @endphp
+                            <tr>
+                                <td class="text-center">OID.{{$order->id}}</td>
+                                <td class="text-center" style="width: 300px;">{{$product->name}}</td>
+                                <td class="text-center">{{$product->styleNumber}}</td>
+                                <td class="text-center">{{$order->colour}}</td>
+                                <td class="text-center">{{$order->sizes}}</td>
+                                <td class="text-center">{{$order->quantity}}</td>
+                                <td class="text-center">
+                                @if($order->extra != null)
+                                {{$order->extra}}
+                                @else
+                                No Extra
+                                @endif
+                                </td>
+                                <td class="text-center">${{$product->wholesalePrice}}</td>
+                                <td class="text-center">${{$price}}</td>
+                                <td class="text-center">{{$order->created_at}}</td>
+                            </tr>
+                            @endforeach
+                            @else
                             @foreach ($retailer as $item)
                             @php
                                 $order=0;
@@ -144,6 +183,7 @@
                             @endforeach
                             @endif
                             @endforeach
+                            @endif
                         </tbody>
                         </table>
                         <!-- END All Orders Content -->

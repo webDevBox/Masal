@@ -2000,8 +2000,18 @@ class AdminController extends Controller
         ->orWhere('colour', 'like', '%' . $request->data . '%')->orWhere('tag', 'like', '%' . $request->data . '%')
         ->orWhere('keyword', 'like', '%' . $request->data . '%')->orWhere('styleNumber', 'like', '%' . $request->data . '%')
         ->orWhere('status', 'like', '%' . $request->data . '%')->get();
-       
-        return view('admin.result')->with(array('inter'=>$inter,'retailer'=>$retailer));
+
+       $orders='';
+       $order_by='';
+       $word='OID';
+       $word1= 'oid';
+       if(strpos($request->data, $word) !== false || strpos($request->data, $word1) !== false)
+       {
+        preg_match_all('!\d+!', $request->data, $matches);
+        $order_by='get';
+        $orders = retailerOrder::where('payment','Done')->whereIn('id' , [$matches])->get();
+       }
+        return view('admin.result')->with(array('inter'=>$inter,'order_by'=>$order_by,'orders'=>$orders,'retailer'=>$retailer));
     }
 
     public function size()
