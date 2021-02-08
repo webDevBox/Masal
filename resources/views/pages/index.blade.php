@@ -318,7 +318,7 @@
                 <div class="container">
                 <div class="row">
                 <div class="header">
-                <a href="https://www.instagram.com" target="_blank"> @twobirdsbridal
+                <a href="https://www.instagram.com" target="_blank"> @masal.au Instagram 
                 </a>
                 </div>
                 </div>
