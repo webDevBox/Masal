@@ -181,6 +181,7 @@ class RetailerOrderController extends Controller
               return redirect('/');
           }
           $user=Auth::user();
+          $logo=footer::first();
           $id=$user->id;
           $email=$user->email;
           $name=$user->name;
@@ -317,7 +318,7 @@ class RetailerOrderController extends Controller
                                     User::where('id',Auth::user()->id)->update(['star' => 5]);
                                 }
 
-          return view('retailer.order_success')->with('success',$success);
+          return view('retailer.order_success')->with(array('success'=>$success,'logo'=>$logo));
     }
 
 
