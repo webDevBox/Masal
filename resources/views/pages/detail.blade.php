@@ -11,21 +11,21 @@
 <div class="product-media">
 <div class="product-views clearfix" data-property="parent">
 @php
-$image1='images/instagram/1.jpg';
-$image2='images/instagram/2.jpg';
-$image3='images/instagram/3.jpg';
-$image4='images/instagram/4.jpg';
-$image5='images/instagram/5.jpg';
-$image6='images/instagram/6.jpg';
+// $image1='images/instagram/1.jpg';
+// $image2='images/instagram/2.jpg';
+// $image3='images/instagram/3.jpg';
+// $image4='images/instagram/4.jpg';
+// $image5='images/instagram/5.jpg';
+// $image6='images/instagram/6.jpg';
 
 
 
-// $image1='images/'.$detail->image1;
-// $image2='images/'.$detail->image2;
-// $image3='images/'.$detail->image3;
-// $image4='images/'.$detail->image4;
-// $image5='images/'.$detail->image5;
-// $image6='images/'.$detail->image6;
+$image1='images/'.$detail->image1;
+$image2='images/'.$detail->image2;
+$image3='images/'.$detail->image3;
+$image4='images/'.$detail->image4;
+$image5='images/'.$detail->image5;
+$image6='images/'.$detail->image6;
 @endphp
 
 
@@ -244,187 +244,203 @@ $sizes = json_decode($detail->size);
 </div>
 </div>
 
-
-<div class="product-detailed product-description-video clearfix iblock-fix">
-<div class="product-info product-visual">
-<div class="product-media">
-<div class="product-views clearfix">
-<div class="product-view overviews">
-
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="product-detailed product-line clearfix iblock-fix">
-<div class="product-info product-visual">
-<div class="product-media"></div>
+    <div class="product-info product-visual">
+        <div class="product-media"></div>
+    </div>
+    <div class="product-info product-sheet">
+        <div class="product-details">
+            <div class="product-options-absolute">
+                <div class="option hidden-xs hidden-sm"></div>
+                        <div class="option buttons-block">
+                            <a href="https://www.pinterest.com/sophiatolli/" class="btn btn-pin"
+                               data-property="pinterest-share"
+                               target="_blank" title="Pinterest"
+                               aria-label="Pin This Style">
+                                <i class="fa fa-pinterest-p"></i>
+                                <span>in This Style</span>
+                            </a>
+                        </div>
+
+                <div class="option option-social footer-style">
+                    <div class="social-networks social-share social-share-single">
+    <ul>
+                    <li style="display: none;">
+                        <a href="https://www.facebook.com/sophiatolli"
+                           data-property="facebook-share"
+                           target="_blank" title="Facebook" aria-label="Facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://plus.google.com/"
+                           data-property="googleplus-share"
+                           target="_blank" title="GooglePlus" aria-label="GooglePlus">
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://www.instagram.com/sophiatolli/"
+                           data-property="instagram-share"
+                           target="_blank" title="Instagram" aria-label="Instagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://www.linkedin.com/"
+                           data-property="linkedin-share"
+                           target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://www.pinterest.com/sophiatolli/"
+                           data-property="pinterest-share"
+                           target="_blank" title="Pinterest" aria-label="Pinterest">
+                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://twitter.com/sophiatolli"
+                           data-property="twitter-share"
+                           target="_blank" title="Twitter" aria-label="Twitter">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://www.whatsapp.com/"
+                           data-property="whatsapp-share"
+                           target="_blank" title="WhatsApp" aria-label="WhatsApp">
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://www.youtube.com/"
+                           data-property="youtube-share"
+                           target="_blank" title="Youtube" aria-label="Youtube">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://www.snapchat.com/"
+                           data-property="snapchat-share"
+                           target="_blank" title="SnapChat" aria-label="SnapChat">
+                            <i class="fa fa-snapchat-ghost" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://www.yelp.com/"
+                           data-property="yelp-share"
+                           target="_blank" title="Yelp" aria-label="Yelp">
+                            <i class="fa fa-yelp" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="mailto:"
+                           data-property="email-share"
+                           target="_blank" title="Email" aria-label="Email">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://www.tiktok.com/"
+                           data-property="tiktok-share"
+                           target="_blank" title="TikTok" aria-label="TikTok">
+                            <i class="icon-syvo icon-tik-tok" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="https://www.theknot.com/"
+                           data-property="theknot-share"
+                           target="_blank" title="TheKnot" aria-label="TheKnot">
+                            <i class="icon-syvo icon-theknot-k" aria-hidden="true"></i>
+                            <span></span>
+                        </a>
+                    </li>
+    </ul>
 </div>
-<div class="product-info product-sheet">
-<div class="product-details">
-<div class="product-options-absolute">
-<div class="option hidden-xs hidden-sm"></div>
-<div class="option buttons-block">
-<a href="https://www.pinterest.com/sophiatolli/" class="btn btn-pin"
-data-property="pinterest-share"
-target="_blank" title="Pinterest"
-aria-label="Pin This Style">
-<i class="fa fa-pinterest-p"></i>
-<span>in This Style</span>
-</a>
+                </div>
+                <div class="option hidden-gt-sm"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="option option-social footer-style">
-<div class="social-networks social-share social-share-single">
-<ul>
-<li style="display: none;">
-<a href="https://www.facebook.com/sophiatolli"
-data-property="facebook-share"
-target="_blank" title="Facebook" aria-label="Facebook">
-<i class="fa fa-facebook" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://plus.google.com/"
-data-property="googleplus-share"
-target="_blank" title="GooglePlus" aria-label="GooglePlus">
-<i class="fa fa-google-plus" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://www.instagram.com/sophiatolli/"
-data-property="instagram-share"
-target="_blank" title="Instagram" aria-label="Instagram">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://www.linkedin.com/"
-data-property="linkedin-share"
-target="_blank" title="LinkedIn" aria-label="LinkedIn">
-<i class="fa fa-linkedin" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://www.pinterest.com/sophiatolli/"
-data-property="pinterest-share"
-target="_blank" title="Pinterest" aria-label="Pinterest">
-<i class="fa fa-pinterest-p" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://twitter.com/sophiatolli"
-data-property="twitter-share"
-target="_blank" title="Twitter" aria-label="Twitter">
-<i class="fa fa-twitter" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://www.whatsapp.com/"
-data-property="whatsapp-share"
-target="_blank" title="WhatsApp" aria-label="WhatsApp">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://www.youtube.com/"
-data-property="youtube-share"
-target="_blank" title="Youtube" aria-label="Youtube">
-<i class="fa fa-youtube" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://www.snapchat.com/"
-data-property="snapchat-share"
-target="_blank" title="SnapChat" aria-label="SnapChat">
-<i class="fa fa-snapchat-ghost" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://www.yelp.com/"
-data-property="yelp-share"
-target="_blank" title="Yelp" aria-label="Yelp">
-<i class="fa fa-yelp" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="mailto:"
-data-property="email-share"
-target="_blank" title="Email" aria-label="Email">
-<i class="fa fa-envelope" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://www.tiktok.com/"
-data-property="tiktok-share"
-target="_blank" title="TikTok" aria-label="TikTok">
-<i class="icon-syvo icon-tik-tok" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-<li style="display: none;">
-<a href="https://www.theknot.com/"
-data-property="theknot-share"
-target="_blank" title="TheKnot" aria-label="TheKnot">
-<i class="icon-syvo icon-theknot-k" aria-hidden="true"></i>
-<span></span>
-</a>
-</li>
-</ul>
-</div>
-</div>
-<div class="option hidden-gt-sm"></div>
-</div>
-</div>
-</div>
-</div>
 
 </div>
 </div>
 </div>
 </section>
-
-   
-
+<section class="section-header">
+    <div class="container">
+        <div class="row">
+            <div class="header">
+                <h2>We Think You'll Love:</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-recommended section-related" aria-label="Related Products">
+    <div class="container">
+        <div class="row">
+            <div class="recommended-products related-products" data-property="related-products">
+               <div class="product-list">
+                    <div class="list" data-list="products" role="region" aria-label="Product List">
+                        @foreach ($gallery as $item)
+                            <div class="list-item" data-layout-width aria-label="Masal Style #Y213BODYSUIT">
+                                <div class="product product-simple mc-item" data-property="parent" data-product-id="300">
+                                    <a href="#" class="product-image has-background"
+                                        style="background-image: url({{ asset('images/'.$item->image1) }})" data-img="default">
+                                        <img src="{{ asset('images/'.$item->image1) }}" alt="Masal Style #Y213BODYSUIT"/>
+                                    </a>
+                                    <div class="descriptions">
+                                        <div class="description description-title">
+                                            <h4 title="Masal Style #{{ $item->styleNumber }}">
+                                            <span data-layout-font="">#{{ $item->styleNumber }}</span>
+                                            </h4>
+                                            <h5 title="Masal Style #{{ $item->styleNumber }}">
+                                            <span data-layout-font="">Masal</span>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <script>
-   
-    $('.image6').click(function()
+    $('.image2').click(function()
     {
       $('.main_top_1').attr('style','background-image: url({{ asset($image6) }})');
       $('.main_top_2').attr('href','{{ asset($image6) }}');
       $('.main_top_3').attr('data-lazy','{{ asset($image6) }}');
       $('.main_top_3').attr('src','{{ asset($image6) }}');
-
     });
-
-
 </script>
-
-
-
 <script src="{{ asset('js/theme.min0368.js') }}"></script>
 <script>
 jQuery(function($) {
 window.Syvo.Google_Analytics.load({"TrackingCode":"UA-11484610-13","Event":2,"Parameters":{"Style":"Y118JKT","Name":"Masal Y118JKT","Brand":"Masal/Accessories","Variant":null,"List":null,"Price":null,"Quantity":null,"Position":null,"Id":null}});
 });
 </script>
-
 <script>
 if (typeof $.cookie === "function") {$.cookie.defaults = {secure:true,path: '/'};}
-
 var common_settings = {
 currencies: [{"Currency":0,"Format":"$0.00"}],
 checkoutCurrencyIndex: 0,
@@ -439,15 +455,6 @@ window.Syvo.Popups.load();
 window.Syvo.Subscribe.load({ url: '/subscribe' });
 });
 </script>
-
-
-
-
-
-
-
-
-
 <script>
 jQuery(function ($) {
 $("#privacyPolicyAcceptance button").click(function () {
@@ -456,12 +463,6 @@ $("#privacyPolicyAcceptance").fadeOut();
 });
 });
 </script>
-
-
-
-
-
-
 <script>
 jQuery(function($) {
 var initSlickDots, moveSlickDots;
@@ -501,7 +502,6 @@ appendDots: appendOverviewsDots
 }
 ]
 },
-
 previewVideos: {
 selector: "[data-list='preview-videos']",
 asNavFor: "[data-list='overview-videos']",
@@ -526,13 +526,10 @@ arrows: false,
 dots: false
 },
 callback: function () {
-
 var previewSlick = $("[data-list='previews']");
 var previewItems = previewSlick.find(".preview");
-
 if (!previewItems || previewItems.length <= 0)
 return;
-
 previewItems
 .click(
 function (e) {
@@ -556,14 +553,11 @@ colorNumber: 6
 });
 });
 </script>
-
 <script>
 jQuery(function($) {
-
 window.Syvo.Forms_v2.load();
 var description = $("[data-property='description']").html();
 description = description ? description.trim() : "";
-
 window.Syvo.Product_Details.load({
 urls: {
 add: "/cart/add",

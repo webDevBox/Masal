@@ -243,7 +243,7 @@ class PagesController extends Controller
 
     public function detail($id)
     {
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $detail=products::find($id);
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
