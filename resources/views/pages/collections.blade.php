@@ -51,6 +51,7 @@
                 <label class="mobile-control control btn-filter"
                         toggle-accordeon=".filters-accordeon">
                     <span>Filter By</span>
+                        <label class="col-md-12 control-label"> Enter Page Name <span style="color: red"> * </span></label>
                     <i class="icon-syvo icon-chevron-down sign" aria-hidden="true"></i>
                 </label>
             </div>
@@ -110,10 +111,11 @@
     <div class="control-panel hidden-xs hidden-sm">
     <div class="control-heading">
     <h2>Filter By</h2>
+    <p class="alert alert-danger warning" style="display: none;">Select Atleast One Category</p>
     </div>
     </div>
     
-    <form action="{{route('filter',array('id'=>$cat->id))}}" method="POST">
+    <form action="{{route('filter',array('id'=>$cat->id))}}" method="POST" id="filter_form">
         @csrf
     <div class="control-panel filters-accordeon" plp-filter>
     <div class="panel-group">
@@ -129,6 +131,7 @@
     <li>
         <label class="pretty-input filter-input">
             <input name="fabric[]"
+                    class="filter_1"
                     type="checkbox"
                     value="{{$item->id}}"
                     data-property="attrs"
@@ -156,6 +159,7 @@
     <li>
         <label class="pretty-input filter-input">
             <input name="neckline[]"
+                    class="filter_2"
                     type="checkbox"
                     value="{{$item->id}}"
                     data-property="attrs"
@@ -198,6 +202,7 @@
         <li>
             <label class="pretty-input filter-input">
                 <input name="silhouette[]"
+                        class="filter_3"
                         type="checkbox"
                         value="{{$item->id}}"
                         data-property="attrs"
@@ -227,6 +232,7 @@
         <li>
             <label class="pretty-input filter-input">
                 <input name="sleeve[]"
+                        class="filter_4"
                         type="checkbox"
                         value="{{$item->id}}"
                         data-property="attrs"
@@ -247,7 +253,7 @@
     </div>
     </div>
     <div class="control-btns sticky-submit" data-property="sticky-submit">
-        <input type="submit" name="submit" value="Apply Filter" class="btn btn-success">
+        <input type="submit" name="submit" value="Apply Filter" id="filter" class="btn btn-success">
         <input type="reset" value="Reset" class="btn btn-success-invert">
     
     </div>
@@ -385,5 +391,47 @@
     
     
     </div>
+
+
+    <script>
+            var sil = 0;
+            var neck = 0;
+            var sleeve = 0;
+            var fiber = 0;
+            
+        var form = document.getElementById('filter_form');
+        form.addEventListener('submit', function(event) 
+        {
+            $("input:checkbox[class=filter_1]:checked").each(function () {
+                fiber++;
+            });
+            
+            
+            $("input:checkbox[class=filter_2]:checked").each(function () {
+                neck++;
+            });
+            
+            
+            $("input:checkbox[class=filter_3]:checked").each(function () {
+                sil++;
+            });
+            
+            
+            $("input:checkbox[class=filter_4]:checked").each(function () {
+                sleeve++;
+            });
+
+            if(fiber == 0 && neck == 0 && sil == 0 && sleeve == 0)
+            {
+                event.preventDefault();
+                $('.warning').attr('style','block');
+            } 
+
+
+        });
+    </script>
+
+   
+
 
 @endsection

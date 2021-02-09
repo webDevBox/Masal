@@ -218,15 +218,12 @@ class PagesController extends Controller
     
     public function filter(Request $request,$id)
     {
-        $fabric[] = $request->fabric;
-        $neckline[] = $request->neckline;
-        $silhouette[] = $request->silhouette;
-        echo $silhouette;
-        die();
-        $sleeve[] = $request->sleeve;
-        
+        $fabric = $request->fabric;
+        $neckline = $request->neckline;
+        $silhouette = $request->silhouette;
+        $sleeve = $request->sleeve;
         $products=products::where('category',$id)->where('delete_status',0)->whereIn('silhouette',[$silhouette])
-        ->whereIn('neckline',[$neckline])->whereIn('fabric',[$fabric])->whereIn('sleeve',[$sleeve])->paginate(6);
+        ->orWhereIn('neckline',[$neckline])->orWhereIn('fabric',[$fabric])->orWhereIn('sleeve',[$sleeve])->paginate(6);
         $collection=Category::all();
         $cat=Category::find($id);
         $seleve=sleeve::get();
