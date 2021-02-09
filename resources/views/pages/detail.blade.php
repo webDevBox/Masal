@@ -35,15 +35,16 @@ $image6='images/'.$detail->image6;
 <div class="overview main_top_1" data-lazy-background style="background-image: url({{ asset($image1) }})">
 <a href="{{ asset($image1) }}"
 class="MagicZoom overview-media main_top_2" data-options="textClickZoomHint: Click to zoom" aria-hidden="true">
-<img class="main_top_3" data-lazy="{{ asset($image1) }}" src="{{ asset($image1) }}" alt="Masal Style #Y118JKT"/>
+<img class="main_top_3" data-lazy="{{ asset($image1) }}" src="{{ asset($image1) }}" style="width: 740px; height:700px" alt="Masal Style #Y118JKT"/>
 </a>
 </div>
 </div>
+
 <div class="list-item">
-<div class="overview" data-lazy-background style="background-image: url({{ asset($image2) }})">
+<div class="overview main_bot_1" data-lazy-background style="background-image: url({{ asset($image2) }})">
 <a href="{{ asset($image2) }}"
-class="MagicZoom overview-media" data-options="textClickZoomHint: Click to zoom" aria-hidden="true">
-<img data-lazy="{{ asset($image2) }}" src="{{ asset($image2) }}" alt="Masal Style #Y118JKT"/>
+class="MagicZoom overview-media main_bot_2" data-options="textClickZoomHint: Click to zoom" aria-hidden="true">
+<img class="main_bot_3" data-lazy="{{ asset($image2) }}" src="{{ asset($image2) }}" style="width: 740px; height:700px" alt="Masal Style #Y118JKT"/>
 </a>
 </div>
 </div>
@@ -54,54 +55,50 @@ class="MagicZoom overview-media" data-options="textClickZoomHint: Click to zoom"
 
 <div class="product-view previews">
     <div class="list" data-list="previews">
-            <div class="list-item">
-                <div class="preview has-background"
-                     style="background-image: url('{{asset($image1)}}')"
-                     data-trigger="color-filter-all"
-                     data-value-id="">
-                    <img src="{{asset($image1)}}" alt="Masal Style #Y118JKT"/>
+       
+                <div class="preview has-background li_1"
+                style="background-image: url('{{asset($image1)}}');"
+                data-trigger="color-filter-all"
+                data-value-id="">
+                <img style="cursor: pointer;" src="{{asset($image1)}}" alt="Masal Style #Y118JKT"/>
                 </div>
-            </div>
-            <div class="list-item">
-                <div class="preview has-background"
-                     style="background-image: url('{{asset($image2)}}')"
-                     data-trigger="color-filter-all"
-                     data-value-id="">
-                    <img src="{{asset($image2)}}" alt="Masal Style #Y118JKT"/>
+            
+                <div class="preview has-background li_2"
+                style="background-image: url('{{asset($image2)}}'); opacity: 0.4;"
+                data-trigger="color-filter-all"
+                data-value-id="">
+                <img style="cursor: pointer;" src="{{asset($image2)}}" alt="Masal Style #Y118JKT"/>
                 </div>
-            </div>
-            <div class="list-item">
-                <div class="preview has-background"
-                     style="background-image: url('{{asset($image3)}}')"
-                     data-trigger="color-filter-all"
-                     data-value-id="">
-                    <img src="{{asset($image3)}}" alt="Masal Style #Y118JKT"/>
+            
+                <div class="preview has-background li_3"
+                style="background-image: url('{{asset($image3)}}'); opacity: 0.4;"
+                data-trigger="color-filter-all"
+                data-value-id="">
+                <img style="cursor: pointer;" src="{{asset($image3)}}" alt="Masal Style #Y118JKT"/>
                 </div>
-            </div>
-            <div class="list-item">
-                <div class="preview has-background"
-                     style="background-image: url('{{asset($image4)}}')"
-                     data-trigger="color-filter-all"
-                     data-value-id="">
-                    <img src="{{asset($image4)}}" alt="Masal Style #Y118JKT"/>
+            
+                <div class="preview has-background li_4"
+                style="background-image: url('{{asset($image4)}}'); opacity: 0.4;"
+                data-trigger="color-filter-all"
+                data-value-id="">
+                <img style="cursor: pointer;" src="{{asset($image4)}}" alt="Masal Style #Y118JKT"/>
                 </div>
-            </div>
-            <div class="list-item">
-                <div class="preview has-background"
-                     style="background-image: url('{{asset($image5)}}')"
-                     data-trigger="color-filter-all"
-                     data-value-id="">
-                    <img src="{{asset($image5)}}" alt="Masal Style #Y118JKT"/>
+            
+                <div class="preview has-background li_5"
+                style="background-image: url('{{asset($image5)}}'); opacity: 0.4;"
+                data-trigger="color-filter-all"
+                data-value-id="">
+                <img style="cursor: pointer;" src="{{asset($image5)}}" alt="Masal Style #Y118JKT"/>
                 </div>
-            </div>
-            <div class="list-item">
-                <div class="preview has-background"
-                     style="background-image: url('{{asset($image6)}}')"
-                     data-trigger="color-filter-all"
-                     data-value-id="">
-                    <img src="{{asset($image6)}}" alt="Masal Style #Y118JKT"/>
+            
+                <div class="preview has-background li_6"
+                style="background-image: url('{{asset($image6)}}'); opacity: 0.4;"
+                data-trigger="color-filter-all"
+                data-value-id="">
+                <img style="cursor: pointer;" src="{{asset($image6)}}" alt="Masal Style #Y118JKT"/>
                 </div>
-            </div>
+           
+            
     </div>
 
 </div>
@@ -244,7 +241,7 @@ $sizes = json_decode($detail->size);
 </div>
 </div>
 
-<div class="product-detailed product-line clearfix iblock-fix">
+{{-- <div class="product-detailed product-line clearfix iblock-fix">
     <div class="product-info product-visual">
         <div class="product-media"></div>
     </div>
@@ -376,14 +373,16 @@ $sizes = json_decode($detail->size);
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 </div>
 </div>
 </div>
 </section>
-<section class="section-header">
+
+
+{{-- <section class="section-header">
     <div class="container">
         <div class="row">
             <div class="header">
@@ -423,15 +422,153 @@ $sizes = json_decode($detail->size);
             </div>
         </div>
     </div>
-</section>
+</section> --}}
+
+
+
+
 <script>
-    $('.image2').click(function()
+
+
+    $('.li_1').click(function()
     {
+
+        $('.li_1').attr("style","background-image: url('{{asset($image1)}}'); opacity: 1;");
+        $('.li_2').attr("style","background-image: url('{{asset($image2)}}'); opacity: 0.4;");
+        $('.li_3').attr("style","background-image: url('{{asset($image3)}}'); opacity: 0.4;");
+        $('.li_4').attr("style","background-image: url('{{asset($image4)}}'); opacity: 0.4;");
+        $('.li_5').attr("style","background-image: url('{{asset($image5)}}'); opacity: 0.4;");
+        $('.li_6').attr("style","background-image: url('{{asset($image6)}}'); opacity: 0.4;");
+
+
+      $('.main_top_1').attr('style','background-image: url({{ asset($image1) }})');
+      $('.main_top_2').attr('href','{{ asset($image1) }}');
+      $('.main_top_3').attr('data-lazy','{{ asset($image1) }}');
+      $('.main_top_3').attr('src','{{ asset($image1) }}');
+      
+      $('.main_bot_1').attr('style','background-image: url({{ asset($image2) }})');
+      $('.main_bot_2').attr('href','{{ asset($image2) }}');
+      $('.main_bot_3').attr('data-lazy','{{ asset($image2) }}');
+      $('.main_bot_3').attr('src','{{ asset($image2) }}');
+    });
+
+
+    $('.li_2').click(function()
+    {
+
+        $('.li_1').attr("style","background-image: url('{{asset($image1)}}'); opacity: 0.4;");
+        $('.li_2').attr("style","background-image: url('{{asset($image2)}}'); opacity: 1;");
+        $('.li_3').attr("style","background-image: url('{{asset($image3)}}'); opacity: 0.4;");
+        $('.li_4').attr("style","background-image: url('{{asset($image4)}}'); opacity: 0.4;");
+        $('.li_5').attr("style","background-image: url('{{asset($image5)}}'); opacity: 0.4;");
+        $('.li_6').attr("style","background-image: url('{{asset($image6)}}'); opacity: 0.4;");
+
+      $('.main_top_1').attr('style','background-image: url({{ asset($image2) }})');
+      $('.main_top_2').attr('href','{{ asset($image2) }}');
+      $('.main_top_3').attr('data-lazy','{{ asset($image2) }}');
+      $('.main_top_3').attr('src','{{ asset($image2) }}');
+      
+      $('.main_bot_1').attr('style','background-image: url({{ asset($image3) }})');
+      $('.main_bot_2').attr('href','{{ asset($image3) }}');
+      $('.main_bot_3').attr('data-lazy','{{ asset($image3) }}');
+      $('.main_bot_3').attr('src','{{ asset($image3) }}');
+    });
+
+
+    $('.li_3').click(function()
+    {
+
+        $('.li_1').attr("style","background-image: url('{{asset($image1)}}'); opacity: 0.4;");
+        $('.li_2').attr("style","background-image: url('{{asset($image2)}}'); opacity: 0.4;");
+        $('.li_3').attr("style","background-image: url('{{asset($image3)}}'); opacity: 1;");
+        $('.li_4').attr("style","background-image: url('{{asset($image4)}}'); opacity: 0.4;");
+        $('.li_5').attr("style","background-image: url('{{asset($image5)}}'); opacity: 0.4;");
+        $('.li_6').attr("style","background-image: url('{{asset($image6)}}'); opacity: 0.4;");
+
+      $('.main_top_1').attr('style','background-image: url({{ asset($image3) }})');
+      $('.main_top_2').attr('href','{{ asset($image3) }}');
+      $('.main_top_3').attr('data-lazy','{{ asset($image3) }}');
+      $('.main_top_3').attr('src','{{ asset($image3) }}');
+      
+      $('.main_bot_1').attr('style','background-image: url({{ asset($image4) }})');
+      $('.main_bot_2').attr('href','{{ asset($image4) }}');
+      $('.main_bot_3').attr('data-lazy','{{ asset($image4) }}');
+      $('.main_bot_3').attr('src','{{ asset($image4) }}');
+    });
+
+
+    $('.li_4').click(function()
+    {
+
+        $('.li_1').attr("style","background-image: url('{{asset($image1)}}'); opacity: 0.4;");
+        $('.li_2').attr("style","background-image: url('{{asset($image2)}}'); opacity: 0.4;");
+        $('.li_3').attr("style","background-image: url('{{asset($image3)}}'); opacity: 0.4;");
+        $('.li_4').attr("style","background-image: url('{{asset($image4)}}'); opacity: 1;");
+        $('.li_5').attr("style","background-image: url('{{asset($image5)}}'); opacity: 0.4;");
+        $('.li_6').attr("style","background-image: url('{{asset($image6)}}'); opacity: 0.4;");
+
+
+      $('.main_top_1').attr('style','background-image: url({{ asset($image4) }})');
+      $('.main_top_2').attr('href','{{ asset($image4) }}');
+      $('.main_top_3').attr('data-lazy','{{ asset($image4) }}');
+      $('.main_top_3').attr('src','{{ asset($image4) }}');
+      
+      $('.main_bot_1').attr('style','background-image: url({{ asset($image5) }})');
+      $('.main_bot_2').attr('href','{{ asset($image5) }}');
+      $('.main_bot_3').attr('data-lazy','{{ asset($image5) }}');
+      $('.main_bot_3').attr('src','{{ asset($image5) }}');
+    });
+
+
+    $('.li_5').click(function()
+    {
+
+        $('.li_1').attr("style","background-image: url('{{asset($image1)}}'); opacity: 0.4;");
+        $('.li_2').attr("style","background-image: url('{{asset($image2)}}'); opacity: 0.4;");
+        $('.li_3').attr("style","background-image: url('{{asset($image3)}}'); opacity: 0.4;");
+        $('.li_4').attr("style","background-image: url('{{asset($image4)}}'); opacity: 0.4;");
+        $('.li_5').attr("style","background-image: url('{{asset($image5)}}'); opacity: 1;");
+        $('.li_6').attr("style","background-image: url('{{asset($image6)}}'); opacity: 0.4;");
+
+
+      $('.main_top_1').attr('style','background-image: url({{ asset($image5) }})');
+      $('.main_top_2').attr('href','{{ asset($image5) }}');
+      $('.main_top_3').attr('data-lazy','{{ asset($image5) }}');
+      $('.main_top_3').attr('src','{{ asset($image5) }}');
+      
+      $('.main_bot_1').attr('style','background-image: url({{ asset($image6) }})');
+      $('.main_bot_2').attr('href','{{ asset($image6) }}');
+      $('.main_bot_3').attr('data-lazy','{{ asset($image6) }}');
+      $('.main_bot_3').attr('src','{{ asset($image6) }}');
+    });
+
+
+    $('.li_6').click(function()
+    {
+
+        $('.li_1').attr("style","background-image: url('{{asset($image1)}}'); opacity: 0.4;");
+        $('.li_2').attr("style","background-image: url('{{asset($image2)}}'); opacity: 0.4;");
+        $('.li_3').attr("style","background-image: url('{{asset($image3)}}'); opacity: 0.4;");
+        $('.li_4').attr("style","background-image: url('{{asset($image4)}}'); opacity: 0.4;");
+        $('.li_5').attr("style","background-image: url('{{asset($image5)}}'); opacity: 0.4;");
+        $('.li_6').attr("style","background-image: url('{{asset($image6)}}'); opacity: 1;");
+
+
       $('.main_top_1').attr('style','background-image: url({{ asset($image6) }})');
       $('.main_top_2').attr('href','{{ asset($image6) }}');
       $('.main_top_3').attr('data-lazy','{{ asset($image6) }}');
       $('.main_top_3').attr('src','{{ asset($image6) }}');
+      
+      $('.main_bot_1').attr('style','background-image: url({{ asset($image1) }})');
+      $('.main_bot_2').attr('href','{{ asset($image1) }}');
+      $('.main_bot_3').attr('data-lazy','{{ asset($image1) }}');
+      $('.main_bot_3').attr('src','{{ asset($image1) }}');
     });
+
+
+
+
+
 </script>
 <script src="{{ asset('js/theme.min0368.js') }}"></script>
 <script>

@@ -8,24 +8,20 @@
 
 
             <section class="common-slider common-videolist">
-
-
                 <div class="main-carousel">
                     <div class="list slick-slider" data-slick data-property-autoplaySpeed="5000"
                         aria-label="Home Page Hero">
                         <div class="list-item slick-current">
-
                             <div class="slider-item slide-just-image " id="slide3">
                                 <div class="content-blocks">
-
                                     <div class="content-block slider-image">
                                         <div class="slider-bg mobile-bg has-background"
-                                            style="background-image: url('slides/42a910bc_0460_43ea_98b5_64764a9ae2fc.jpg')">
-                                            <img src="slides/42a910bc_0460_43ea_98b5_64764a9ae2fc.jpg" alt="" />
+                                            style="background-image: url('slides/big.jpg')">
+                                            <img src="slides/big.jpg" alt="" />
                                         </div>
                                         <div class="slider-bg desktop-bg has-background"
-                                            style="background-image: url('slides/8d1ea58a_8d83_4ad8_a1d1_6b87a19c1408.jpg')">
-                                            <img src="{{ asset('slides/8d1ea58a_8d83_4ad8_a1d1_6b87a19c1408.jpg') }}"
+                                            style="background-image: url('slides/big.jpg')">
+                                            <img src="{{ asset('slides/big.jpg') }}"
                                                 alt="" />
                                         </div>
                                     </div>
@@ -41,6 +37,8 @@
                     </div>
                 </div>
             </section>
+
+
 
             <section class="section-header section-header-alt" id="section-designers-header">
                 <div class="container">
