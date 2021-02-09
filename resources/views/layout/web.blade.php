@@ -19,6 +19,7 @@
     <meta name="msapplication-config" content="{{ asset('Content/img/favicon/browserconfig.xml') }}">
     <meta name="theme-color" content="#760751">
     <link rel="stylesheet" href="{{ asset('linked/content/cfq6ota.css') }}">
+    <link rel="stylesheet" href="{{ asset('linked/content/cascade.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
