@@ -316,7 +316,7 @@
                 <div class="container">
                 <div class="row">
                 <div class="header">
-                <a href="https://www.instagram.com" target="_blank"> @masal.au Instagram 
+                <a href="https://www.instagram.com" target="_blank"> @masalaustralia
                 </a>
                 </div>
                 </div>
