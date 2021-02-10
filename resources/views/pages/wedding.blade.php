@@ -53,10 +53,8 @@
 
        
     <div class="grid-item-info">
+    <div class="grid-item-link-overlay">
    
-    <a href="{{route('wedding_detail', array('id' => $row->id))}}" data-property="description">
-    </a>
-
     <div class="social-networks social-share social-share-multi">
         <ul>
             <li>
@@ -94,7 +92,7 @@
     </div>
     
  
-    
+    </div>
     @if($row->type == 'image')
     <div data-property="description" class="header">
     <h3>Wedding</h3>
