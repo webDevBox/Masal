@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2021 at 06:13 AM
+-- Generation Time: Feb 10, 2021 at 06:46 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -58,6 +58,13 @@ CREATE TABLE `buyer_cities` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `buyer_cities`
+--
+
+INSERT INTO `buyer_cities` (`id`, `city`, `state`, `created_at`, `updated_at`) VALUES
+(1, 'Lahore', 1, '2021-02-10 00:25:42', '2021-02-10 00:25:42');
+
 -- --------------------------------------------------------
 
 --
@@ -70,6 +77,13 @@ CREATE TABLE `buyer_countries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `buyer_countries`
+--
+
+INSERT INTO `buyer_countries` (`id`, `country`, `created_at`, `updated_at`) VALUES
+(1, 'Pakistan', '2021-02-10 00:25:42', '2021-02-10 00:25:42');
 
 -- --------------------------------------------------------
 
@@ -84,6 +98,13 @@ CREATE TABLE `buyer_states` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `buyer_states`
+--
+
+INSERT INTO `buyer_states` (`id`, `state`, `country`, `created_at`, `updated_at`) VALUES
+(1, 'Punjab', 1, '2021-02-10 00:25:42', '2021-02-10 00:25:42');
 
 -- --------------------------------------------------------
 
@@ -48761,6 +48782,18 @@ CREATE TABLE `products` (
   `sleeve` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `colour`, `size`, `extra`, `category`, `silhouette`, `tag`, `keyword`, `wholesalePrice`, `retailerPrice`, `styleNumber`, `status`, `delete_status`, `stock`, `image1`, `image2`, `image3`, `image4`, `image5`, `image6`, `created_at`, `updated_at`, `neckline`, `fabric`, `sleeve`) VALUES
+(1, 'Bridal', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.</p>\r\n\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;</p>\r\n\r\n<p>rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>', '[\"skyblue\",\"Ivory\",\"black\",\"white\"]', '[\"4\",\"8\",\"14\"]', '[\"1 M long\",\"Add Seleves\"]', 5, 6, '50% Off', 'bridal,blow', 60, 45, 'A1E7R5', 'active', 0, 100, 'products/ezfHB4sjAgDsCJDWHke7tALoCZmIPHaOokWfdQDY.jpeg', 'products/8WTmHzmBajdBpGc7Ved0AfgfuiZF1jbkfyecyTN8.jpeg', 'products/oKRcKy1fr9SopSUPKgP8dzasJwUS9Q6y41YCWjLh.jpeg', 'products/DtwsdK6lbIeVmretBya2V2XGk5SYgDz04wqlxZqF.jpeg', 'products/XXyi5DA8B6CjyH9p7LB7ZXqUwfxgz7DGLU2LXBPG.jpeg', 'products/0I86Of11DYpdQqk83z7NOmxoL7HAxkk1RrmJOryZ.jpeg', '2021-02-10 00:33:08', '2021-02-10 00:44:17', 8, 2, 2),
+(2, 'Glow', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.</p>\r\n\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;</p>\r\n\r\n<p>rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"4\",\"12\",\"14\",\"16\"]', '[\"Urgent\",\"Add Seleves\"]', 4, 6, 'sale', 'bridal,blow,flow', 25, 33, 'L9E4T6', 'active', 0, 22, 'products/eL8xekVUSKDm3nxEYu02uNh8opzILbZQFI5mI1yq.jpeg', 'products/xt6IpPHCR4hfI9FTFqvV1dtPuWmhc1wTAPvQfbzy.jpeg', 'products/7CgY0NNpwaKj6xjp4XDWFfJuM4Z12Q8KsG7BJIWY.jpeg', 'products/oLzfMSiB5F5FzHcMV9NE1UxeC9brmrsqQkFLr8Bg.jpeg', 'products/wjcQ81QaBCp7qj17BpwytzYHkVIW96W14AQaJ2VU.jpeg', 'products/oYJxLceUu4DIywEuEELkhABitdjeBFpeHBeXs0XZ.jpeg', '2021-02-10 00:34:27', '2021-02-10 00:44:09', 6, 7, 2),
+(3, 'Beauty Bride', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.</p>\r\n\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;</p>\r\n\r\n<p>rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"8\",\"12\",\"16\",\"240\"]', '[\"Urgent\",\"Add Seleves\"]', 5, 6, '30%', 'bridal,blow,flow', 98, 32, 'P0R3U6', 'active', 0, 34, 'products/fHT8aMO0vxk9gveraaPyHkUPV3wNgNtxRyjvjrqu.jpeg', 'products/3MHw7lKEcE4HDTp6oFM3qefKSLXd0OsVdJDy3W2k.jpeg', 'products/f7ZpJnz4TPdt7H3guqHFWS8YiDt27K9cVX6ghu6f.jpeg', 'products/EtbEYXgVzAjE75oiNU1BIiWTivfEdWcONPy5bRnZ.jpeg', 'products/57DVmL0NexB9Qcb04uSO3QsqOvm8Bh01HBNe6dig.jpeg', 'products/ogXopbbZvELohtFv5vQeSgQl1e6FpBVyW9Z21Tw2.jpeg', '2021-02-10 00:35:35', '2021-02-10 00:44:00', 6, 7, 2),
+(4, 'Real bride', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.</p>\r\n\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;</p>\r\n\r\n<p>rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>', '[\"Green\",\"skyblue\",\"Ivory\",\"black\",\"orange\"]', '[\"4\",\"8\",\"14\",\"240\"]', '[\"1 M long\",\"Urgent\",\"Add Seleves\"]', 7, 6, 'New', 'bridal,blow', 10, 70, 'O5K0Y3', 'active', 0, 100, 'products/bpH4PQHeAGMJdfBQfRn6okWUfJBgnBoon5BgCU4b.jpeg', 'products/UIhQCZ4aI2qgyJMm2EcM8TANlOgvhAW3RZtvkXEU.jpeg', 'products/0hWjS9Ge827TbUpbXJGb88ZxGbqL89H2bj6JypUZ.jpeg', 'products/UztKrsK7kYstjRXNNg5624TLbVvr1XUjYgN5BeIU.jpeg', 'products/4AUKQVCMFGTXtYHP1bQ4O6JrDd63PaWclMQVXfKk.jpeg', 'products/Coj6R7rmpskmPdIv6BK8IrQVP00yDTaVC7GWY7ka.jpeg', '2021-02-10 00:36:48', '2021-02-10 00:43:45', 6, 2, 5),
+(5, 'Pum Bride', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.</p>\r\n\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;</p>\r\n\r\n<p>rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>', '[\"skyblue\",\"Ivory\",\"black\",\"white\"]', '[\"4\",\"8\",\"14\",\"240\"]', '[\"1 M long\",\"Add Seleves\"]', 4, 6, 'sale', 'bridal,blow,flow', 52, 256, 'P0Q2V4', 'active', 0, 100, 'products/Hh4AUTMcr2ruYjhYvKxhh7AjbcNKvixPBFuIKM9R.jpeg', 'products/R4LIWZAr6N22S2RyccjjB7ClXkYkBzUeE0ZxJNnp.jpeg', 'products/xenvVkx5OoGydLBWKz4GisqJwUl2CYQHlnUWgXNk.jpeg', 'products/wGYC61KHf21FUvB2td5IjDhjhsq5hV24ujWXhAG1.jpeg', 'products/E5oRhZIvhc3bjj2eDMbENkwsiU0gyIpnV3xZs0so.jpeg', 'products/CttYIzqt07WvnvWWfAlzMDBcNbVkkuywdTUuufnp.jpeg', '2021-02-10 00:40:02', '2021-02-10 00:43:31', 6, 2, 5),
+(6, 'Free Bride', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.</p>\r\n\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;</p>\r\n\r\n<p>rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>', '[\"Green\",\"skyblue\",\"Ivory\",\"black\",\"orange\"]', '[\"4\",\"8\",\"14\",\"240\"]', NULL, 8, 7, '30%', 'bridal,blow', 36, 25, 'U9G5N9', 'active', 0, 100, 'products/eEBjHmTdgmUjIt05sPlPxQa2tmEGwOp1HPjl0AmG.jpeg', 'products/tny5jbq0WDsgpEKwrQ0ydWvl9v3TOJfD2K5dqzu3.jpeg', 'products/NWrIVKCTtMY9RefAk2Psqz2594Ewg9KRcFQ6Qh0w.jpeg', 'products/NxkXYgHeaHCmc4IWzTqquvnA0Vsz5CjADYF3qtfr.jpeg', 'products/9gMkh4YYor4U3D4N887nF9Hd5K1HFNKHRmrnpysa.jpeg', 'products/4KpWzHButHBLSLH0F1aNBnI6T8vWSMmGNl2RrxLH.jpeg', '2021-02-10 00:41:15', '2021-02-10 00:44:58', 8, 7, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -53058,8 +53091,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `credit`, `logo`, `log`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 1, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-02-08 07:08:03'),
-(65, 'moeez', 'muhammadmoeez64@gmail.com', '$2y$10$r2GnAAvhiDfIpB3qgUq2YuRM7TRBNIHWg8DafAiGhrC15MB49DeHC', 129, 'logo/Jo4dbjBBBOrIpGyV3vpYDCjRnQUmlqPTXluwlCqX.png', 0, 1, '03025236233', '880 umar block bahria town lahore', 'Pakistan', 'Punjab', 'lahore', '52452', '545', 'jhuib', 'jkbjhgjhb', 'jhvjhv', '74.1948198', '31.3797593', 2, 1, 1, NULL, '2020-10-21 01:13:19', '2021-02-08 07:07:48');
+(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 0, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-02-10 00:45:53'),
+(80, 'Moeez', 'muhammadmoeez64@gmail.com', '$2y$10$4PzLmAfkKTi3F26zHtqlCuCXRGAGa23RldaR6mrY.oI3aeFlgWY9S', 0, NULL, 0, 0, '0302523782', '12 street jade block park view lahore', 'Pakistan', 'Punjab', 'Lahore', '53720', '5615345', 'di.com', 'fb.com', 'instagram.com', '74.2007968', '31.4525187', 2, 1, 0, NULL, '2021-02-10 00:25:43', '2021-02-10 00:30:19');
 
 -- --------------------------------------------------------
 
@@ -53073,6 +53106,13 @@ CREATE TABLE `visitors` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `visitors`
+--
+
+INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
+(1, 7, '2021-02-10 00:24:05', '2021-02-10 00:45:57');
 
 -- --------------------------------------------------------
 
@@ -53305,19 +53345,19 @@ ALTER TABLE `additionals`
 -- AUTO_INCREMENT for table `buyer_cities`
 --
 ALTER TABLE `buyer_cities`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `buyer_countries`
 --
 ALTER TABLE `buyer_countries`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `buyer_states`
 --
 ALTER TABLE `buyer_states`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -53419,7 +53459,7 @@ ALTER TABLE `new_pages`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `reals`
@@ -53479,13 +53519,13 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `weddings`
