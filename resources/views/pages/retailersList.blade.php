@@ -4,15 +4,9 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 <head>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      
-    <link rel="stylesheet" href="css/nicdark_style.css"> <!--style-->
-    <link rel="stylesheet" href="css/nicdark_responsive.css"> <!--nicdark_responsive-->
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!--revslider-->
-    <link rel="stylesheet" href="css/revslider/settings.css"> <!--revslider-->
     
     <base>
     <meta charset="UTF-8">
@@ -27,7 +21,6 @@
     <meta name="msapplication-TileColor" content="#760751">
     <meta name="msapplication-config" content="{{ asset('Content/img/favicon/browserconfig.xml') }}">
     <meta name="theme-color" content="#760751">
-    <link rel="stylesheet" href="{{ asset('linked/content/cfq6ota.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -80,9 +73,6 @@
 
     </script>
 
-    <link rel="stylesheet" href="css/nicdark_style.css">
-    <!--style-->
-    <link rel="stylesheet" href="css/nicdark_responsive.css">
     <!--nicdark_responsive-->
 
     <meta name="p:domain_verify" content="1ea8057ec0fccb8e17cf1ce9f003cdaa" />
@@ -198,6 +188,8 @@
                 margin-left: 25%;
             }
         }
+
+       
 
     </style>
 
@@ -469,105 +461,180 @@
                 </div>
             </div>
         </section>
-    
-    @if(Session::has('success'))
-    <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
-    @endif
-    @if(Session::has('error'))
-    <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
-    @endif
-    
-    <div class="row" style="margin-bottom: 10px; padding:50px">
-        <div class="col-md-2 col-lg-2"> </div>
-    <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
 
-        <form action="{{ route('mapper') }}" method="post">
+
+
+    <section class="section-store-finder section-block">
+        <div class="container">
+            <div class="row">
+                <div class="store-finder">
+                    <div class="list">
+                        <div class="list-item">
+                            
+<div class="store-finder-contents store-finder-contents-form">
+    <div class="store-finder-content store-finder-form">
+        <form action="{{ route('mapper') }}" method="post" class="form-v2" autocomplete="off" id="store-locator-form" >
             @csrf
-
-            <div class="form-group  col-md-4">
-                <select class="form-control" name="country" id="country" style="height:40px;border-radius:8px"
-                    required>
-                    <option value="">Select Country</option>
-                    @if (count($country) > 0)
-                        @foreach ($country as $row)
-                            <option value="{{ $row['id'] }}"> {{ $row['country'] }} </option>
-                        @endforeach
-
-                    @endif
-
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <select class="form-control" name="state" style="height:40px;border-radius:8px" id="state">
-                    <option value="">Select State</option>
-
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <select class="form-control" name="city" style="height:40px;border-radius:8px" id="city">
-                    <option value="">Select City</option>
-                </select>
-            </div>
-
-           <center> <button class="btn btn-success" style="border-radius:8px" type="submit"> Search </button></center>
-        </form>
-        <br><br>
-
-            @if(isset($get))
-            <h4 class="text-center">RESULTS IN AUSTRALIA</h4>
-            <hr style="border-top: 1px solid black; width:70%;">
-            @endif
-            @if(count($result) > 0) 
-            @foreach ($result as $item)
-            @php
-              $status=$item->address.','.$item->city.','.$item->state.','.$item->country;
-          @endphp
-          <div class="bg-light border border-dark border-right-0 border-left-0 border-bottom-0">
-          <h2 class="text-dark"> {{$item->name}}</h2>
-          <p style="color: #818181">{{$item->address}}, {{$item->city}}, {{$item->state}}, {{$item->post}}, {{$item->country}}</p>
-          
-          @for ($i = 0; $i < $item->star; $i++)
-          <img src="https://img.icons8.com/ios-filled/50/000000/slip-dress.png" style="width:40px;"/>
-          @endfor
-
-
-            <p style="font-size:13px; color:#551C7E"><i class="fa fa-phone" style="font-size:15px;"></i> {{$item->phone}} <span style="padding-left:10px; padding-right:10px; ">|</span> 
-                <a href="{{ route('location',array('status'=>$status)) }}" style="color:#551C7E" target="blank"> GET DIRECTION  </a> <span style="padding-left:10px; padding-right:10px; ">|</span> <a style="color:#551C7E" href="{{$item->website}}"> {{$item->website}} </a>
-                <span style="padding-left:10px; padding-right:10px; ">|</span> <a style="color:#551C7E" href="{{$item->facebook}}"> {{$item->facebook}} </a>
-                <span style="padding-left:10px; padding-right:10px; color:#551C7E ">|</span> <a style="color:#551C7E" href="{{$item->instagram}}"> {{$item->instagram}} </a>
-    
-            </p>
-            <hr style="border-top: 1px solid black; width:80%;">
-          </div>
-            @endforeach
-            @else
-            <div class="bg-light border border-dark border-right-0 border-left-0 border-bottom-0">
-                <h5 class="text-dark text-center"> No Retailer in your Area</h5>
-                </div>
-            @endif
-          
-    
-        <!--end nicdark_container-->
-         
-    </div>
-       
-        <div class="col-md-6">
-           
-                       
-                        <div id="map"></div>
+            <input type="hidden" autocomplete="false" id="no-autocomplete" name="no-autocomplete" placeholder="City, State, or ZIP Code">
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="list">
+                        <div class="list-item">
+                            <div class="v2-style v2-addon v2-has-addon-right v2-error-above" data-property="v2-style">
+                                <input type="text" id="store-locator-search-term" data-rule-sllocationselected="true" placeholder="City, State, or ZIP Code" required>                                
+                                <button type="submit" class="v2-addon-right">
+                                    <i class="icon-syvo icon-search"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-            
-               </div>
-              
-    
-    
-    <!--end section-->
-    
-    
-    
-    <!--end section-->        </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+                        </div>
+                        <div class="list-item">
+                            <div class="store-finder-contents store-finder-map-holder">
+    <div class="store-finder-content map-holder">
+        <div class="map" id="map" data-property="map">
+          
         </div>
-    <p style="color: white">.</p>
+    </div>
+</div>
+                        </div>
+                        <div class="list-item">
+                            
+<div data-role="results">
+    <div class="store-finder-contents store-finder-contents-info">
+        <div class="store-finder-content store-finder-results" 
+             data-property="">
+            <div class="founded-stores">
+                <div class="list">
+
+<div class="list-item empty-line item-sticky item-message">
+    <div class="showcase">
+        <div class="showcase-section showcase-header">
+            <div class="list">
+                <div class="list-item">
+                    @if(isset($get))
+                    <h3>Results in AUSTRALIA</h3>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if(count($result) > 0) 
+@foreach ($result as $item)
+@php
+  $status=$item->address.','.$item->city.','.$item->state.','.$item->country;
+@endphp
+
+<div class="list-item ">
+    <div class="founded-store founded-store-simple" data-store-info="" data-store-info-id="700" data-store-info-latitude="43.02128219604492" data-store-info-longitude="-85.69178009033203" data-store-info-name="America&#39;s Bride" data-store-info-address="3165 Alpine Ave NW, Walker, MI 49544, USA" data-store-info-phone="+16162240056" data-store-info-url="https://www.americasbride.us/" data-store-info-user-friendly-url="americasbride.us" data-store-info-google-place-id="ChIJzTR1fVGpGYgRXRPecESR3x8" data-store-info-business-url="https://www.google.com/maps/search/?api=1&amp;query=43.02128219604492,-85.69178009033203&amp;query_place_id=ChIJzTR1fVGpGYgRXRPecESR3x8">
+        <div class="content-blocks">
+            <div class="content-block founded-store-distance">
+                <h5 data-property="distance"></h5>
+            </div>
+            <div class="content-block founded-store-header">
+                <h2>{{$item->name}}</h2>
+            </div>
+            <div class="content-block founded-store-location color-alt">
+                <h3 class="font-secondary">
+                        {{$item->address}}, {{$item->city}}, {{$item->state}}, {{$item->post}}, {{$item->country}}
+                    
+                </h3>
+            </div>
+            <div class="content-block founded-store-warehouse">
+                <div class="store-warehouse" title="Store Availability">
+                    <ul>
+                        @for ($i = 0; $i < $item->star; $i++)
+                            <li>
+                                <i class="icon-syvo icon-dress"></i>
+                            </li>
+                        @endfor
+                    </ul>
+                </div>
+            </div>
+                <div class="content-block founded-store-buttons">
+                    <div class="list">
+                            <div class="list-item hidden-lg hidden-md hidden-sm">
+                                <a href="tel:+16162240056" rel="nofollow" class="btn btn-success" data-property="store-phone">
+                                    <i class="fa fa-phone"></i>
+                                    <span>Click to Call</span>
+                                </a>
+                            </div>
+                            <div class="list-item">
+                                <a href="tel:+16162240056" rel="nofollow" class="btn btn-link-secondary" data-property="store-phone">
+                                    <i class="fa fa-phone"></i>
+                                    <span>{{ $item->phone }}</span>
+                                </a>
+                            </div>
+                            <div class="list-item">
+                               
+                                    <span>
+                                        <a href="{{ route('location',array('status'=>$status)) }}" class="btn btn-link-secondary" data-property="store-directions">
+                                            Get Directions
+                                        </a>
+                                    </span>
+                                
+                            </div>
+                            <div class="list-item website-item">
+                                <a href="{{$item->website}}" target="_blank" class="btn btn-link-secondary btn-website" data-property="store-site">
+                                    <span>{{$item->website}}</span>
+                                </a>
+                            </div>
+                            <div class="list-item website-item">
+                                <a href="{{$item->facebook}}" target="_blank" class="btn btn-link-secondary btn-website" data-property="store-site">
+                                    <span>{{$item->facebook}}</span>
+                                </a>
+                            </div>
+                            <div class="list-item website-item">
+                                <a href="{{$item->instagram}}" target="_blank" class="btn btn-link-secondary btn-website" data-property="store-site">
+                                    <span>{{$item->instagram}}</span>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+@endforeach
+@endif
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+                        </div>
+                        <div class="list-item">
+                            <div class="store-finder-contents store-finder-toggle-buttons">
+                                <div class="list text-center">
+                                    <div class="list-item">
+                                        <button class="btn-success" id="store-locator-show-all-stores-btn" style="display: none">Show More</button>
+                                        <button class="btn-success" id="store-locator-hide-all-stores-btn" style="display: none">Hide More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+        </div>
+        
+       
         <!--main-->
         <script src="js/main/jquery.min.js"></script> <!--Jquery-->
     <script src="js/main/jquery-ui.js"></script> <!--Jquery UI-->
@@ -770,7 +837,7 @@
 </script>
 <!--custom js-->
 
-
+<script src="{{ asset('js/theme.min0368.js')}}"></script>
 
 <!--start preloader-->
 <script type="text/javascript">
@@ -1095,6 +1162,9 @@
             </div>
         </div>
     </div>
+
+
+
 
 </body>
 
