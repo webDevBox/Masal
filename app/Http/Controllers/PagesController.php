@@ -257,41 +257,19 @@ class PagesController extends Controller
 
     public function mapper(Request $request)
     {
-      if(isset($request->country))
+      if(isset($request->searcher))
       {
-        $country1=buyer_country::get();
-        $menu=menu::where('header_status',1)->where('status',1)->get();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
         $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
-        $this->validate($request,[
-            'country'=>'required'
-            ]);
-
-            $countryPick=$request->country;
-            $country_name=buyer_country::find($countryPick);
-            $country=$country_name->country;
-
-            if(isset($request->state))
-            {
-            $statePick=$request->state;
-            $state_name=buyer_state::find($statePick);
-            $state=$state_name->state;
-            }
-
-            if(isset($request->city))
-            {
-            $cityPick=$request->city;
-            $city_name=buyer_city::find($cityPick);
-            $city=$city_name->city;
-            $result=User::where([
-                ['city', '=', $city],
-                ['state', '=', $state],
-                ['country', '=', $country], 
-                ['userRole', '=', 2], 
-                ['status', '=', 1], 
-            ])->get();
-            $fullAddress = $city." ". $state." ".$country;
+        
+        $result=User::where('userRole',2)->where('status',1)->where('country',$request->searcher)
+        ->orWhere('state',$request->searcher)->orWhere('city',$request->searcher)->get();
+        
+        $finder=User::where('userRole',2)->where('status',1)->where('country',$request->searcher)
+        ->orWhere('state',$request->searcher)->orWhere('city',$request->searcher)->first();
+           
+            $fullAddress = $finder->city." ". $finder->state." ".$finder->country;
            
             $user=User::all();
             $cityclean = str_replace (" ", "+", $fullAddress);
@@ -303,58 +281,11 @@ class PagesController extends Controller
         $geoloc = json_decode(curl_exec($ch), true);
         $data = ["lat" => $geoloc['results'][0]['geometry']['location']['lat'], "lng" => $geoloc['results'][0]['geometry']['location']['lng']];
         $zoom=9;
-        // var_dump($geoloc);
-// var_dump($geoloc['results'][0]['geometry']['location']['lng']);
-// die();   
        
-return view('pages.retailersList')->with('country',$country1)->with('menu',$menu)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
-            }
-
-            if(isset($request->state) && !isset($request->city))
-            {
-            $result=User::where([
-                ['country', '=', $country],
-                ['state', '=', $state], 
-                ['userRole', '=', 2], 
-                ['status', '=', 1], 
-            ])->get();
-            $user=User::all();
-            $fullAddress = $state." ". $country;
-            $cityclean = str_replace (" ", "+", $fullAddress);
-        $details_url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $cityclean . "&key=AIzaSyAUx-lN2Wy6w2C0f2o14A3GgY--AqGiXPc";
-     
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $details_url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $geoloc = json_decode(curl_exec($ch), true);
-        $data = ["lat" => $geoloc['results'][0]['geometry']['location']['lat'], "lng" => $geoloc['results'][0]['geometry']['location']['lng']];
-        $zoom=7;
-            return view('pages.retailersList')->with('country',$country1)->with('menu',$menu)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
-            }
-
-            
-
-            if(isset($request->country))
-            {
-            $result=User::where([
-                ['country', '=', $country],
-                ['userRole', '=', 2], 
-                ['status', '=', 1], 
-                ])->get();
-                $user=User::all();
-                $cityclean = str_replace (" ", "+", $country);
-        $details_url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $cityclean . "&key=AIzaSyAUx-lN2Wy6w2C0f2o14A3GgY--AqGiXPc";
-     
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $details_url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $geoloc = json_decode(curl_exec($ch), true);
-
-        $zoom=5;
-        $data = ["lat" => $geoloc['results'][0]['geometry']['location']['lat'], "lng" => $geoloc['results'][0]['geometry']['location']['lng']];
-      
-            return view('pages.retailersList')->with('country',$country1)->with('menu',$menu)->with('foot',$foot)->with('collection',$collection)->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
-            }
+       
+        return view('pages.retailersList')->with('foot',$foot)->with('collection',$collection)
+        ->with('gallery',$gallery)->with('result',$result)->with('user',$user)
+        ->with('data',$data)->with('zoom',$zoom);
       }
       else
       {

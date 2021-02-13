@@ -481,7 +481,7 @@
                     <div class="list">
                         <div class="list-item">
                             <div class="v2-style v2-addon v2-has-addon-right v2-error-above" data-property="v2-style">
-                                <input type="text" id="store-locator-search-term" data-rule-sllocationselected="true" placeholder="City, State, or ZIP Code" required>                                
+                                <input type="text" name="searcher" id="store-locator-search-term" data-rule-sllocationselected="true" placeholder="City, State, or ZIP Code" required>                                
                                 <button type="submit" class="v2-addon-right">
                                     <i class="icon-syvo icon-search"></i>
                                 </button>
