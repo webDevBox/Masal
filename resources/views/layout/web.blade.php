@@ -315,16 +315,6 @@
                                             </a>
                                         </li>
                                     @endif
-                                    @if ($brand->header_status == 1)
-                                        <li>
-                                            <a href="{{ route('about') }}" data-property="trunk-shows">
-                                                <span>About Us
-                                                </span>
-                                                <i class="sign">
-                                                </i>
-                                            </a>
-                                        </li>
-                                    @endif
                                     @if ($coll->header_status == 1)
                                         <li>
                                             <input type="checkbox" data-trigger="menu-opener">
@@ -405,7 +395,16 @@
                                         </li>
 
                                     @endforeach
-
+                                    @if ($brand->header_status == 1)
+                                    <li>
+                                        <a href="{{ route('about') }}" data-property="trunk-shows">
+                                            <span>About Us
+                                            </span>
+                                            <i class="sign">
+                                            </i>
+                                        </a>
+                                    </li>
+                                @endif
                                     @if ($contact->header_status == 1)
                                         <li>
                                             <a href="{{ route('contact') }}">
@@ -809,17 +808,12 @@
 
     <script type="text/javascript">
         /* curator-feed-default-feed-layout */
-        (function() {
-            var i, e, d = document,
-                s = "script";
-            i = d.createElement("script");
-            i.async = 1;
-            i.src = "https://cdn.curator.io/published/2897884f-1c43-4f3a-99c8-334571ef3aab.js";
-            e = d.getElementsByTagName(s)[0];
-            e.parentNode.insertBefore(i, e);
+        (function(){
+        var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
+        i.src = "https://cdn.curator.io/published/31ee2922-31dc-4a2e-85ff-66c37e4f3f2b.js";
+        e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
         })();
-
-    </script>
+        </script>
 
     <script>
         $(document).ready(function() {

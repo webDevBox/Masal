@@ -324,7 +324,7 @@
                 </section>
 
             <section class="section-recommended section-featured" aria-label="Featured Products">
-                <div id="T-default-feed-layout"></div>
+                <div id="curator-feed-default-feed-layout"></div>
             </section>
 
         </div>

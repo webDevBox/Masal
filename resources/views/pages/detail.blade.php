@@ -237,16 +237,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                                                 </a>
                                             </li>
                                         @endif
-                                        @if ($brand->header_status == 1)
-                                        <li>
-                                            <a href="{{ route('about') }}" data-property="trunk-shows">
-                                                <span>About Us
-                                                </span>
-                                                <i class="sign">
-                                                </i>
-                                            </a>
-                                        </li>
-                                    @endif
+                                        
                                         @if ($coll->header_status == 1)
                                             <li>
                                                 <input type="checkbox" data-trigger="menu-opener">
@@ -327,7 +318,16 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                                             </li>
     
                                         @endforeach
-    
+                                        @if ($brand->header_status == 1)
+                                        <li>
+                                            <a href="{{ route('about') }}" data-property="trunk-shows">
+                                                <span>About Us
+                                                </span>
+                                                <i class="sign">
+                                                </i>
+                                            </a>
+                                        </li>
+                                    @endif
                                         @if ($contact->header_status == 1)
                                             <li>
                                                 <a href="{{ route('contact') }}">
