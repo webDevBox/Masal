@@ -533,6 +533,7 @@ class ComposerStaticInit6f9be6b776ebb6b7d1b6fd92a93c2cdc
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\about' => __DIR__ . '/../..' . '/app/about.php',
         'App\\additional' => __DIR__ . '/../..' . '/app/additional.php',
         'App\\buyer_city' => __DIR__ . '/../..' . '/app/buyer_city.php',
         'App\\buyer_country' => __DIR__ . '/../..' . '/app/buyer_country.php',
