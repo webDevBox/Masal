@@ -265,7 +265,8 @@ class PagesController extends Controller
         $user=User::all();
 
         $result=User::where('userRole',2)->where('status',1)->where('country',$request->searcher)
-        ->orWhere('state',$request->searcher)->orWhere('city',$request->searcher)->get();
+        ->orWhere('state',$request->searcher)->orWhere('city',$request->searcher)
+        ->orWhere('post',$request->searcher)->get();
         if(count($result) == 0)
         {
 

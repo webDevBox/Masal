@@ -526,6 +526,7 @@
     </div>
 </div>
 
+
 @if(count($result) > 0) 
 @foreach ($result as $item)
 @php
@@ -533,7 +534,7 @@
 @endphp
 
 <div class="list-item ">
-    <div class="founded-store founded-store-simple" data-store-info="" data-store-info-id="700" data-store-info-latitude="43.02128219604492" data-store-info-longitude="-85.69178009033203" data-store-info-name="America&#39;s Bride" data-store-info-address="3165 Alpine Ave NW, Walker, MI 49544, USA" data-store-info-phone="+16162240056" data-store-info-url="https://www.americasbride.us/" data-store-info-user-friendly-url="americasbride.us" data-store-info-google-place-id="ChIJzTR1fVGpGYgRXRPecESR3x8" data-store-info-business-url="https://www.google.com/maps/search/?api=1&amp;query=43.02128219604492,-85.69178009033203&amp;query_place_id=ChIJzTR1fVGpGYgRXRPecESR3x8">
+    <div class="founded-store founded-store-simple" data-store-info="" data-store-info-id="700" data-store-info-latitude="43.02128219604492" data-store-info-longitude="-85.69178009033203" data-store-info-name="America&#39;s Bride" data-store-info-address="3165 Alpine Ave NW, Walker, MI 49544, USA" data-store-info-phone="{{ $item->phone }}" data-store-info-url="https://www.americasbride.us/" data-store-info-user-friendly-url="americasbride.us" data-store-info-google-place-id="ChIJzTR1fVGpGYgRXRPecESR3x8" data-store-info-business-url="https://www.google.com/maps/search/?api=1&amp;query=43.02128219604492,-85.69178009033203&amp;query_place_id=ChIJzTR1fVGpGYgRXRPecESR3x8">
         <div class="content-blocks">
             <div class="content-block founded-store-distance">
                 <h5 data-property="distance"></h5>
@@ -561,13 +562,13 @@
                 <div class="content-block founded-store-buttons">
                     <div class="list">
                             <div class="list-item hidden-lg hidden-md hidden-sm">
-                                <a href="tel:+16162240056" rel="nofollow" class="btn btn-success" data-property="store-phone">
+                                <a href="tel:{{ $item->phone }}" rel="nofollow" class="btn btn-success" data-property="store-phone">
                                     <i class="fa fa-phone"></i>
                                     <span>Click to Call</span>
                                 </a>
                             </div>
                             <div class="list-item">
-                                <a href="tel:+16162240056" rel="nofollow" class="btn btn-link-secondary" data-property="store-phone">
+                                <a href="tel:{{ $item->phone }}" rel="nofollow" class="btn btn-link-secondary" data-property="store-phone">
                                     <i class="fa fa-phone"></i>
                                     <span>{{ $item->phone }}</span>
                                 </a>
@@ -604,7 +605,20 @@
 
 @endforeach
 @else
-NO RESULTS FOUND
+
+<div class="list-item empty-line item-sticky item-message">
+    <div class="showcase">
+        <div class="showcase-section showcase-header">
+            <div class="list">
+                <div class="list-item">
+                    <h3>NO RESULTS FOUND</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @endif
 
 
