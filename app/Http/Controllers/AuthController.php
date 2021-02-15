@@ -110,6 +110,28 @@ class AuthController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $geoloc = json_decode(curl_exec($ch), true);
 
+            $wesite=$request->website;
+            $fb=$request->facebook;
+            $insta=$request->Instagram;
+
+            $web = substr($wesite,0,4);
+            if($web != 'http')
+            {
+                $wesite='https://'.$request->website;
+            }
+            
+            $face = substr($fb,0,4);
+            if($face != 'http')
+            {
+                $fb='https://'.$request->facebook;
+            }
+            
+            $ins = substr($insta,0,4);
+            if($ins != 'http')
+            {
+                $insta='https://'.$request->Instagram;
+            }
+
            $user=new User;
            $user->name=$request->contact;
            $user->email=$request->email;
@@ -122,9 +144,9 @@ class AuthController extends Controller
            $user->city=$city_name;
            $user->post=$request->post;
            $user->registrationNumber=$request->registration;
-           $user->website=$request->website;
-           $user->facebook=$request->facebook;
-           $user->instagram=$request->Instagram;
+           $user->website=$wesite;
+           $user->facebook=$fb;
+           $user->instagram=$insta;
            $user->userRole=2;
            $user->lng=$geoloc['results'][0]['geometry']['location']['lng'];
            $user->lat=$geoloc['results'][0]['geometry']['location']['lat'];

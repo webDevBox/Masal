@@ -217,7 +217,7 @@
                                 <li>
                                     <a class="showsearch" href="{{ route('retailerrequest') }}" aria-haspopup="true"
                                         aria-expanded="false" aria-label="Toggle search">
-                                        <i class='fas fa-user-plus' style='font-size:24px' aria-hidden="true"></i>
+                                        <i class='fa fa-user-plus' style='font-size:24px' aria-hidden="true"></i>
                                     </a>
                                 </li>
                                 <li class="preheader-wishlist hidden-sm hidden-xs">
@@ -264,7 +264,7 @@
                                 <li class="visible-mobile-sticky">
                                     <a class="show-search" href="{{ route('retailerrequest') }}" aria-haspopup="true"
                                         aria-expanded="false" aria-label="Toggle search">
-                                        <i class='fas fa-user-plus' style='font-size:24px' aria-hidden="true"></i>
+                                        <i class='fa fa-user-plus' style='font-size:24px' aria-hidden="true"></i>
                                     </a>
                                 </li>
                                 <li class="preheader-wishlist">
