@@ -190,9 +190,10 @@ Route::post('/adminPassword', 'AdminController@passwordUpdate')->name('adminPass
 Route::get('/chat', 'ChatController@chat')->name('chat');
 Route::post('/send_message', 'ChatController@send_message')->name('send_message');
 //Website Routes
-Route::get('/',  'PagesController@home' );
+Route::get('/',  'PagesController@home');
 Route::get('/bridesmaids', 'PagesController@bridesmaids' );
 Route::get('/contact','PagesController@contact')->name('contact');
+Route::get('/about','PagesController@about')->name('about');
 Route::get('/Collection/{id}', 'PagesController@detail')->name('detail');
 Route::get('/masal-weddings/{id}', 'PagesController@wedding_detail')->name('wedding_detail');
 Route::get('/real', 'PagesController@real')->name('real');

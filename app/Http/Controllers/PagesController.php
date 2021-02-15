@@ -42,6 +42,20 @@ class PagesController extends Controller
         $wedding=wedding::get();
         return view('pages.real')->with(array('wedding'=>$wedding,'retailer_real'=>$retailer_real,'foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'real'=>$real));
     }
+    
+    
+    public function about()
+    {
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $latestProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $real=real::all();
+        $collection=Category::all();
+        $cat=Category::first();
+        $foot=footer::where('id',1)->first();
+        $retailer_real=retailer_bride::where('status',2)->get();
+        $wedding=wedding::get();
+        return view('pages.about')->with(array('cat'=>$cat,'wedding'=>$wedding,'retailer_real'=>$retailer_real,'foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'real'=>$real));
+    }
 
 
     public function wedding_detail($id)

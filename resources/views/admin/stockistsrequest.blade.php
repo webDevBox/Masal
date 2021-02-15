@@ -31,7 +31,8 @@
             <thead>
             <tr>
             <th class="text-center">ID</th>
-            <th class="text-center">Name</th>
+            <th class="text-center">Retailer Name</th>
+            <th class="text-center">Business Name</th>
             <th class="text-center">Email</th>
             <th class="text-center">Phone</th>
             <th class="text-center">Postcode</th>
@@ -52,6 +53,7 @@
             <tr>
             <td class="text-center"><strong>PID.{{$row->id}}</strong></td>
             <td class="text-center">{{$row->name}}</td>
+            <td class="text-center">{{$row->businessName}}</td>
             <td class="text-center">{{$row->email}}</td>
             <td class="text-center">{{$row->phone}}</td>
             <td class="text-center">{{$row->post}}</td>

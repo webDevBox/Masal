@@ -279,7 +279,7 @@
 
                             @php
                             $home=\App\menu::where('name','Home')->first();
-                            $brand=\App\menu::where('name','The Brand')->first();
+                            $brand=\App\menu::where('name','About Us')->first();
                             $coll=\App\menu::where('name','Collection')->first();
                             $where=\App\menu::where('name','Where to buy')->first();
                             $wedding=\App\menu::where('name','Masal Wedding')->first();
@@ -288,7 +288,7 @@
 
 
                             $home1=\App\menu::where('name','Home')->first();
-                            $brand1=\App\menu::where('name','The Brand')->first();
+                            $brand1=\App\menu::where('name','About Us')->first();
                             $coll1=\App\menu::where('name','Collection')->first();
                             $where1=\App\menu::where('name','Where to buy')->first();
                             $wedding1=\App\menu::where('name','Masal Wedding')->first();
@@ -308,6 +308,16 @@
                                         <li>
                                             <a href="/" data-property="trunk-shows">
                                                 <span>Home
+                                                </span>
+                                                <i class="sign">
+                                                </i>
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if ($brand->header_status == 1)
+                                        <li>
+                                            <a href="{{ route('about') }}" data-property="trunk-shows">
+                                                <span>About Us
                                                 </span>
                                                 <i class="sign">
                                                 </i>
@@ -708,6 +718,12 @@
                                             </a>
                                         </li>
                                     @endif
+                                    @if ($brand1->footer_status == 1)
+                                    <li>
+                                        <a href="{{ route('about') }}">About Us
+                                        </a>
+                                    </li>
+                                @endif
                                     @if ($where1->footer_status == 1)
                                         <li>
                                             <a href="{{ route('mapper') }}">SHOP

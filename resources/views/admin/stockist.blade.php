@@ -30,6 +30,7 @@
             <thead>
             <tr>
                 <th class="text-center">Retailer Name</th>
+                <th class="text-center">Business Name</th>
                 <th class="text-center">Email</th>
                 <th class="text-center">Registration #</th>
                 <th class="text-center">Country</th>
@@ -46,6 +47,7 @@
                 @foreach ($stokist as $row)
             <tr>
             <td class="text-center">{{$row->name}}</td>
+            <td class="text-center">{{$row->businessName}}</td>
             <td class="text-center"><strong>{{$row->email}}</strong></td>
             <td class="text-center"><strong>{{$row->registrationNumber}}</strong></td>
             <td class="text-center"><strong>{{$row->country}}</strong></td>
