@@ -278,7 +278,7 @@
                                 <li class="visible-mobile-sticky">
                                     <a href="{{ route('mapper') }}" rel="nofollow" aria-label="Find a store">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        <span class="hidden-mobile-sticky">Find a store</span>
+                                        <span class="hidden-mobile-sticky">Find a Store</span>
                                     </a>
                                 </li>
                             </ul>
@@ -497,7 +497,7 @@
                         <div class="list-item">
                             <div class="store-finder-contents store-finder-map-holder">
     <div class="store-finder-content map-holder">
-        <div class="map" id="map" data-property="map">
+        <div class="map" id="map" data-property="map" style="height: 500px;">
           
         </div>
     </div>
