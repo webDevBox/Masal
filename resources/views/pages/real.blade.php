@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="row" style="text-align: center;">
-    <button style="background: black; color:white;" id="admin">Our Brides</button> 
-    <button style="background: white; color:black;" id="stock">Retailer Brides</button>
+    <button style="background: black; color:white;" id="admin">Our Models</button> 
+    <button style="background: white; color:black;" id="stock">Real Weddings</button>
 </div>
 @if(Session::has('success'))
 <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
@@ -57,9 +57,6 @@
 
 
 <div class="row" id="stock_div" style="display:none;">
-
-
-
     <section class="section-gallerylooks gallerylooks-theme mt-internal mt-internal-sm-alt">
         <div class="container container-lg">
         <div class="row">

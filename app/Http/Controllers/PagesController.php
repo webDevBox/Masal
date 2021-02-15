@@ -46,8 +46,8 @@ class PagesController extends Controller
 
     public function wedding_detail($id)
     {
-       $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
-       $latestProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
+        $latestProduct=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $real=real::all();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();

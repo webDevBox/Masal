@@ -28,6 +28,7 @@ class AuthController extends Controller
         {
             $this->validate($request,[
                 'contact'=>'required',
+                'business_name'=>'required',
                 'email'=>'required|email|unique:users,email',
                 'phone'=>'required|unique:users,phone',
                 'address'=>'required',
@@ -134,6 +135,7 @@ class AuthController extends Controller
 
            $user=new User;
            $user->name=$request->contact;
+           $user->businessName=$request->business_name;
            $user->email=$request->email;
            $user->password=bcrypt('12345678');
            $user->credit=0;

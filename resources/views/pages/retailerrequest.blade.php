@@ -433,6 +433,9 @@
             @if ($errors->has('contact'))
                 <p style="color:red;">{{ $errors->first('contact') }}</p>
             @endif
+            @if ($errors->has('business_name'))
+                <p style="color:red;">{{ $errors->first('business_name') }}</p>
+            @endif
             @if ($errors->has('email'))
                 <p style="color:red;">{{ $errors->first('email') }}</p>
             @endif
@@ -477,6 +480,12 @@
 
                     </div>
                     <div class="form-group col-md-6 col-sm-6">
+                        <label for="">Business Name <span style="color: red;">*</span></label>
+                        <input type="text" placeholder="Contact Name" value="{{ old('business_name') }}" name="business_name"
+                            style="border-radius:8px" class="custom-form-control" id="Shop Name" required>
+
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6">
                         <label for="">Email <span style="color: red;">*</span></label>
                         <input type="email" value="{{ old('email') }}" name="email" class="custom-form-control"
                             style="border-radius:8px" id="Shop Name" placeholder="Your Email" required>
@@ -493,6 +502,14 @@
                         <label for="">Business Address <span style="color: red;">*</span></label>
                         <input type="text" name="address" value="{{ old('address') }}" style="border-radius:8px"
                             class="custom-form-control" id="Shop Name" placeholder="Your Location" required>
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="">Business Registration Number<span style="color: red;">*</span></label>
+                        <input type="number" value="{{ old('registration') }}" name="registration"
+                            style="border-radius:8px" class="custom-form-control" id="Shop Name"
+                            placeholder="Your Unique Registration Number" required>
 
                     </div>
 
@@ -531,13 +548,7 @@
                             style="border-radius:8px" id="Shop Name" placeholder="Your Postcode" required>
                     </div>
 
-                    <div class="form-group col-md-6 col-sm-6">
-                        <label for="">Business Registration Number<span style="color: red;">*</span></label>
-                        <input type="number" value="{{ old('registration') }}" name="registration"
-                            style="border-radius:8px" class="custom-form-control" id="Shop Name"
-                            placeholder="Your Unique Registration Number" required>
-
-                    </div>
+                   
 
                     <div class="form-group col-md-6 col-sm-6">
                         <label for="">Website <span style="color: red;">*</span></label>
@@ -551,7 +562,7 @@
                             class="custom-form-control" id="Shop Name" placeholder="Your Facebook Link" required>
 
                     </div>
-                    <div class="form-group col-md-6 col-sm-6">
+                    <div class="form-group col-md-12 col-sm-12">
                         <label for="">Instagram <span style="color: red;">*</span></label>
                         <input type="text" value="{{ old('Instagram') }}" name="Instagram" style="border-radius:8px"
                             class="custom-form-control" id="Shop Name" placeholder="Your Instagram Link" required>
