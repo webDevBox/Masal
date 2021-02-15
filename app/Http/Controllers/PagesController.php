@@ -244,7 +244,7 @@ class PagesController extends Controller
     public function detail($id)
     {
         $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
-        $detail=products::find($id);
+        $detail=products::where('styleNumber',$id)->first();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
         $fabric=fabric::find($detail->fabric);
@@ -262,16 +262,37 @@ class PagesController extends Controller
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
         $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
-        
+        $user=User::all();
+
         $result=User::where('userRole',2)->where('status',1)->where('country',$request->searcher)
         ->orWhere('state',$request->searcher)->orWhere('city',$request->searcher)->get();
-        
+        if(count($result) == 0)
+        {
+
+        $finder=User::where('userRole',2)->where('status',1)->first();
+           
+        $fullAddress = $finder->city." ". $finder->state." ".$finder->country;
+           
+           
+        $cityclean = str_replace (" ", "+", $fullAddress);
+        $details_url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $cityclean . "&key=AIzaSyAUx-lN2Wy6w2C0f2o14A3GgY--AqGiXPc";
+     
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $details_url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $geoloc = json_decode(curl_exec($ch), true);
+        $data = ["lat" => $geoloc['results'][0]['geometry']['location']['lat'], "lng" => $geoloc['results'][0]['geometry']['location']['lng']];
+        $zoom=9;
+
+        return view('pages.retailersList')->with('foot',$foot)->with('collection',$collection)
+        ->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
+        }
         $finder=User::where('userRole',2)->where('status',1)->where('country',$request->searcher)
         ->orWhere('state',$request->searcher)->orWhere('city',$request->searcher)->first();
            
             $fullAddress = $finder->city." ". $finder->state." ".$finder->country;
            
-            $user=User::all();
+           
             $cityclean = str_replace (" ", "+", $fullAddress);
         $details_url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $cityclean . "&key=AIzaSyAUx-lN2Wy6w2C0f2o14A3GgY--AqGiXPc";
      

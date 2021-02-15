@@ -214,7 +214,7 @@
                                             <div class="recommended-product featured-product">
 
                                                 <div class="recommended-product featured-product">
-                                                    <a href="{{ route('detail', ['id' => $item->id]) }}"
+                                                    <a href="{{ route('detail', ['id' => $item->styleNumber]) }}"
                                                         class="product product-simple" data-property="parent"
                                                         data-product-id="448">
                                                         <div class="product-image has-background"
@@ -239,7 +239,7 @@
 
                                                             </div>
                                                             
-                                                            <center> <button class="btn btn-success" style="margin-top: 5px;" href="{{route('detail', ['id' => $item->id])}}">View Details </button> </center>
+                                                            <center> <button class="btn btn-success" style="margin-top: 5px;" href="{{route('detail', ['id' => $item->styleNumber])}}">View Details </button> </center>
                                                         </div>
                                                     </a>
                                                    

@@ -603,6 +603,8 @@
 </div>
 
 @endforeach
+@else
+NO RESULTS FOUND
 @endif
 
 
