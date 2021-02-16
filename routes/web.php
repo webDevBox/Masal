@@ -195,7 +195,7 @@ Route::get('/bridesmaids', 'PagesController@bridesmaids' );
 Route::get('/contact','PagesController@contact')->name('contact');
 Route::get('/about','PagesController@about')->name('about');
 Route::get('/Collection/{id}', 'PagesController@detail')->name('detail');
-Route::get('/masal-weddings/{id}', 'PagesController@wedding_detail')->name('wedding_detail');
+Route::get('/masal-weddings/{name}/{id}', 'PagesController@wedding_detail')->name('wedding_detail');
 Route::get('/real', 'PagesController@real')->name('real');
 Route::get('/wedding', 'PagesController@wedding');
 Route::get('/wherebuy',  'PagesController@index')->name('wherebuy');

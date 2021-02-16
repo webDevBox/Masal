@@ -87,7 +87,7 @@
            
         <div class="grid-item-info">
         <div class="grid-item-link-overlay">
-        <a href="{{route('wedding_detail', array('id' => $row->id))}}" data-property="description">
+        <a href="{{route('wedding_detail', array('id' => $row->id,'name'=>$row->name))}}" data-property="description">
         </a>
 
         <div class="social-networks social-share social-share-multi">
