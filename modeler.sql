@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2021 at 01:01 PM
+-- Generation Time: Feb 16, 2021 at 11:02 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -53173,7 +53173,7 @@ CREATE TABLE `visitors` (
 --
 
 INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
-(1, 87, '2021-02-10 00:24:05', '2021-02-15 06:45:59');
+(1, 108, '2021-02-10 00:24:05', '2021-02-16 02:34:07');
 
 -- --------------------------------------------------------
 
