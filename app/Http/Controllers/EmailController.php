@@ -53,6 +53,47 @@ class EmailController extends Controller
         return view('admin.email_templates')->with(array('user'=>$user,'templates'=>$templates));
 
       }
+    
+    
+      //Product Detail Email
+    public function emailshare($id)
+    {
+        $product = products::find($id);
+        return view('pages.mailto')->with('product',$product);
+    }
+      
+    
+    //Product Detail Send Email
+    public function send_mail(Request $request)
+    {
+        $product=products::find($request->id);
+        $name=$request->friend;
+        $output='';
+                $output.=' <center> <img style="height:400px;width:250px" src='.asset('/images/'.$product->image1).'>  <br>
+                     '.$product->name.' <br> $'.$product->wholesalePrice.'  
+                     </center>
+                     <br><br>
+                     <a style=" background-color: #4CAF50;
+                     border: none;
+                     color: white;
+                     padding: 15px 32px;
+                     text-align: center;
+                     text-decoration: none;
+                     display: inline-block;
+                     font-size: 16px;
+                     margin: 4px 2px;
+                     cursor: pointer;" href="http://masal.com.au/Collection/'.$product->styleNumber.'">View Product</a>
+                     ';
+        $mail=[
+            'body'=>$request->message.'<br><br>'.$output
+        ];
+        $subject=$request->subject;
+        Mail::to($request->FriendEmail)->send(new masalMail($mail,$subject));
+        return redirect()->back()->with(array('success'=>'Your Email Send Successfully','name'=>$name));
+    }
+
+
+
 
 
 

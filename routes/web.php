@@ -220,6 +220,8 @@ Route::get('/edit_item/{id}', 'RetailerOrderController@edit_item')->name('edit_i
 Route::get('/edit_templete/{id}', 'EmailController@edit_templete')->name('edit_templete');
 Route::get('/delete_templete/{id}', 'EmailController@delete_templete')->name('delete_templete');
 Route::get('/retailer_mail', 'EmailController@retailer_mail')->name('retailer_mail');
+Route::get('/emailshare/{id}', 'EmailController@emailshare')->name('emailshare');
+Route::post('/send_mail', 'EmailController@send_mail')->name('send_mail');
 Route::post('/send_email', 'EmailController@send_email')->name('send_email');
 Route::post('/specific', 'EmailController@specific')->name('specific');
 Route::post('/all_retailer_mail', 'EmailController@all_retailer_mail')->name('all_retailer_mail');

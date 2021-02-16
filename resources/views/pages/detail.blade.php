@@ -59,11 +59,12 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
     
     
     <link rel="canonical" href="y22041.html" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 
     <link rel="stylesheet" type="text/css" href="{{ asset('linked/content/theme.min4070.css') }}" />
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
     <meta property="og:url" content="https://www.sophiatolli.com/sophia-tolli/spring-2021/y22041"/>
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Sophia Tolli Aurora" />
@@ -666,7 +667,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
             <div class="product-options-absolute">
                 <div class="option hidden-xs hidden-sm"></div>
                         <div class="option buttons-block">
-                            <a href="https://www.pinterest.com/sophiatolli/" class="btn btn-pin"
+                            <a href="https://www.pinterest.com.au/MasalAustralia/_saved/" class="btn btn-pin"
                                data-property="pinterest-share"
                                target="_blank" title="Pinterest"
                                aria-label="Pin This Style">
@@ -678,110 +679,40 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                 <div class="option option-social footer-style">
                     <div class="social-networks social-share social-share-single">
     <ul>
-                    <li style="display: none;">
-                        <a href="https://www.facebook.com/sophiatolli"
+                    <li style="">
+                        <a href="https://www.facebook.com/MasalAustralia/"
                            data-property="facebook-share"
                            target="_blank" title="Facebook" aria-label="Facebook">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
                             <span></span>
                         </a>
                     </li>
-                    <li style="display: none;">
-                        <a href="https://plus.google.com/"
-                           data-property="googleplus-share"
-                           target="_blank" title="GooglePlus" aria-label="GooglePlus">
-                            <i class="fa fa-google-plus" aria-hidden="true"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <li style="display: none;">
-                        <a href="https://www.instagram.com/sophiatolli/"
-                           data-property="instagram-share"
-                           target="_blank" title="Instagram" aria-label="Instagram">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <li style="display: none;">
-                        <a href="https://www.linkedin.com/"
-                           data-property="linkedin-share"
-                           target="_blank" title="LinkedIn" aria-label="LinkedIn">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <li style="display: none;">
-                        <a href="https://www.pinterest.com/sophiatolli/"
+                   
+                    <li style="">
+                        <a href="https://www.pinterest.com.au/MasalAustralia/_saved/"
                            data-property="pinterest-share"
                            target="_blank" title="Pinterest" aria-label="Pinterest">
                             <i class="fa fa-pinterest-p" aria-hidden="true"></i>
                             <span></span>
                         </a>
                     </li>
-                    <li style="display: none;">
-                        <a href="https://twitter.com/sophiatolli"
+                    <li style="">
+                        <a href="https://twitter.com/MasalAustralia"
                            data-property="twitter-share"
                            target="_blank" title="Twitter" aria-label="Twitter">
                             <i class="fa fa-twitter" aria-hidden="true"></i>
                             <span></span>
                         </a>
                     </li>
-                    <li style="display: none;">
-                        <a href="https://www.whatsapp.com/"
-                           data-property="whatsapp-share"
-                           target="_blank" title="WhatsApp" aria-label="WhatsApp">
-                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <li style="display: none;">
-                        <a href="https://www.youtube.com/"
-                           data-property="youtube-share"
-                           target="_blank" title="Youtube" aria-label="Youtube">
-                            <i class="fa fa-youtube" aria-hidden="true"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <li style="display: none;">
-                        <a href="https://www.snapchat.com/"
-                           data-property="snapchat-share"
-                           target="_blank" title="SnapChat" aria-label="SnapChat">
-                            <i class="fa fa-snapchat-ghost" aria-hidden="true"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <li style="display: none;">
-                        <a href="https://www.yelp.com/"
-                           data-property="yelp-share"
-                           target="_blank" title="Yelp" aria-label="Yelp">
-                            <i class="fa fa-yelp" aria-hidden="true"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <li style="display: none;">
-                        <a href="mailto:"
-                           data-property="email-share"
-                           target="_blank" title="Email" aria-label="Email">
+                   
+                    <li style="">
+                        <a href="#" data-property="email-share" data-placement="Social group" target="_blank" 
+                        title="Email" aria-label="Email">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             <span></span>
                         </a>
                     </li>
-                    <li style="display: none;">
-                        <a href="https://www.tiktok.com/"
-                           data-property="tiktok-share"
-                           target="_blank" title="TikTok" aria-label="TikTok">
-                            <i class="icon-syvo icon-tik-tok" aria-hidden="true"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <li style="display: none;">
-                        <a href="https://www.theknot.com/"
-                           data-property="theknot-share"
-                           target="_blank" title="TheKnot" aria-label="TheKnot">
-                            <i class="icon-syvo icon-theknot-k" aria-hidden="true"></i>
-                            <span></span>
-                        </a>
-                    </li>
+                   
     </ul>
 </div>
                 </div>
@@ -1318,7 +1249,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                         pinAny: pinAny
                     },
                     email: {
-                        url:"/emailshare/share",
+                        url:"/emailshare/{{ $detail->id }}",
                         data: {
                             entityId: $("[data-product-id]").data("productId"),
                             shareType: 1
