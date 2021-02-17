@@ -313,7 +313,7 @@
     <div class="product-images">
     <div class="product-images--list list" data-list="images">
     <div class="list-item">
-    <a href="{{route('detail', array('id' => $row->id))}}" class="product-image has-background"
+    <a href="{{route('detail', array('id' => $row->styleNumber))}}" class="product-image has-background"
     aria-label="Go to Masal Kalani product details page"
     style="background:url({{asset('images/'.$row->image1)}});  background-size:cover;" data-img="default">
     <img src="{{ asset('images/'.$row->image1) }}" alt="Masal Kalani"/>

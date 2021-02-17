@@ -37,6 +37,7 @@ Route::post('/templateeditor', 'EmailController@templateeditor')->name('template
 Route::post('/add_template', 'EmailController@add_template')->name('add_template');
 Route::post('/temp_edit', 'EmailController@temp_edit')->name('temp_edit');
 Route::get('/manageHome', 'pagerController@manageHome')->name('manageHome');
+Route::get('/manageAbout', 'pagerController@manageAbout')->name('manageAbout');
 Route::get('/real_request/{id}', 'AdminController@real_request')->name('real_request');
 Route::get('/active_request/{id}/{value}', 'pagerController@active_request')->name('active_request');
 Route::post('/head1', 'pagerController@head1')->name('head1');
@@ -70,6 +71,26 @@ Route::post('/foot8', 'pagerController@foot8')->name('foot8');
 Route::post('/foot9', 'pagerController@foot9')->name('foot9');
 Route::post('/foot10', 'pagerController@foot10')->name('foot10');
 Route::post('/foot11', 'pagerController@foot11')->name('foot11');
+
+
+
+Route::post('/about1', 'pagerController@about1')->name('about1');
+Route::post('/about2', 'pagerController@about2')->name('about2');
+Route::post('/about3', 'pagerController@about3')->name('about3');
+Route::post('/about4', 'pagerController@about4')->name('about4');
+Route::post('/about5', 'pagerController@about5')->name('about5');
+Route::post('/about6', 'pagerController@about6')->name('about6');
+Route::post('/about7', 'pagerController@about7')->name('about7');
+Route::post('/about8', 'pagerController@about8')->name('about8');
+Route::post('/about9', 'pagerController@about9')->name('about9');
+Route::post('/about10', 'pagerController@about10')->name('about10');
+
+
+
+
+
+
+
 Route::get('/manageFooter', 'pagerController@manageFooter')->name('manageFooter');
 Route::get('/manageReal', 'pagerController@manageReal')->name('manageReal');
 Route::get('/add_real/{id}', 'pagerController@add_real')->name('add_real');

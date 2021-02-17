@@ -17,6 +17,7 @@ use App\User;
 use App\feedback;
 use App\visitor;
 use App\homePage;
+use App\about;
 use App\footer;
 use App\real;
 use App\retailer_bride;
@@ -64,6 +65,368 @@ class pagerController extends Controller
           return view('admin.home')->with(array('foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
 
      }
+    
+    
+    
+     public function manageAbout()
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+          $latestCat=Category::orderBy('created_at', 'desc')->limit(8)->get();
+
+          $latestProduct=products::orderBy('created_at', 'desc')->limit(6)->get();
+  
+          $smallProduct=products::orderBy('created_at', 'desc')->limit(8)->get();
+  
+          $gallery=products::orderBy('created_at', 'desc')->limit(6)->get();
+  
+          $collection=Category::all();
+
+          $home=about::first();
+
+          $foot=footer::where('id',1)->first();
+
+          return view('admin.about')->with(array('foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
+
+     }
+
+
+     public function about1(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=about::first();
+            $del=$home->logo;
+            $home->logo=$request->data;
+            $path1 = $request->data->store('about');
+            $home->logo=$path1;
+            Storage::delete($del);
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Logo Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Logo Not Updated');
+         }
+        }
+          
+         
+     }
+     
+     
+     public function about2(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=about::first();
+            $del=$home->image1;
+            $home->image1=$request->data;
+            $path1 = $request->data->store('about');
+            $home->image1=$path1;
+            Storage::delete($del);
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Image Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Image Not Updated');
+         }
+        }
+          
+         
+     }
+     
+     
+     public function about3(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=about::first();
+            $del=$home->image2;
+            $home->image2=$request->data;
+            $path1 = $request->data->store('about');
+            $home->image2=$path1;
+            Storage::delete($del);
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Image Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Image Not Updated');
+         }
+        }
+          
+         
+     }
+     
+     
+     public function about4(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=about::first();
+            $del=$home->image3;
+            $home->image3=$request->data;
+            $path1 = $request->data->store('about');
+            $home->image3=$path1;
+            Storage::delete($del);
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Image Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Image Not Updated');
+         }
+        }
+          
+         
+     }
+    
+    
+     public function about5(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=about::first();
+            $home->h1=$request->data;
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
+         }
+        }
+          
+         
+     }
+    
+    
+     public function about6(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=about::first();
+            $home->p1=$request->data;
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
+         }
+        }
+          
+         
+     }
+    
+    
+     public function about7(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=about::first();
+            $home->p2=$request->data;
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
+         }
+        }
+          
+         
+     }
+     
+     
+     public function about8(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=about::first();
+            $home->p3=$request->data;
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
+         }
+        }
+          
+         
+     }
+     
+     
+     public function about9(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=about::first();
+            $home->p4=$request->data;
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
+         }
+        }
+          
+         
+     }
+     
+     
+     public function about10(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $home=about::first();
+            $home->p5=$request->data;
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
+         }
+        }
+          
+         
+     }
+
+
+
+
 
      public function head1(Request $request)
      {

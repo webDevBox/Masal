@@ -281,6 +281,8 @@ $note=$chat + $newUser + $unread;
     <ul class="menu-content">
         <li><a class="d-flex align-items-center" href="{{route('manageHome')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Shop"> Home Page</span></a>
         </li>
+        <li><a class="d-flex align-items-center" href="{{route('manageAbout')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Shop"> About Us Page</span></a>
+        </li>
         <li><a class="d-flex align-items-center" href="{{route('manageFooter')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Details">Footer</span></a>
         </li>
         <li><a class="d-flex align-items-center" href="{{route('manageReal')}}"><i class="fa fa-circle-thin" style="color: #8c4fec;" aria-hidden="true"></i><span class="menu-item" data-i18n="Wish List">Admin Real Brides</span></a>
