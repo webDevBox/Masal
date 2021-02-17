@@ -21,6 +21,7 @@ use App\User;
 use App\feedback;
 use App\visitor;
 use App\homePage;
+use App\about;
 use App\footer;
 use App\real;
 use App\wedding;
@@ -54,7 +55,8 @@ class PagesController extends Controller
         $foot=footer::where('id',1)->first();
         $retailer_real=retailer_bride::where('status',2)->get();
         $wedding=wedding::get();
-        return view('pages.about')->with(array('cat'=>$cat,'wedding'=>$wedding,'retailer_real'=>$retailer_real,'foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'real'=>$real));
+        $about=about::first();
+        return view('pages.about')->with(array('about'=>$about,'cat'=>$cat,'wedding'=>$wedding,'retailer_real'=>$retailer_real,'foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'real'=>$real));
     }
 
 
@@ -258,7 +260,7 @@ class PagesController extends Controller
     public function detail($id)
     {
         $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
-        $detail=products::where('styleNumber',$id)->first();
+        $detail=products::where('styleNumber',$id)->orWhere('id',$id)->first();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
         $fabric=fabric::find($detail->fabric);
