@@ -203,6 +203,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
     
                                 @php
                                 $home=\App\menu::where('name','Home')->first();
+                                $wed=\App\menu::where('name','Wedding dresses')->first();
                                 $brand=\App\menu::where('name','About Us')->first();
                                 $coll=\App\menu::where('name','Collection')->first();
                                 $where=\App\menu::where('name','Where to buy')->first();
@@ -220,6 +221,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                                 $contact1=\App\menu::where('name','Contact')->first();
     
                                 $menu=\App\menu::where('header_status',1)->where('status',1)->get();
+                                $sil=\App\silhouette::get();
                                 @endphp
     
     
@@ -238,6 +240,38 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                                                 </a>
                                             </li>
                                         @endif
+
+                                        @if ($wed->header_status == 1)
+                                        <li>
+                                            <a href="#" data-trigger="menu-opener">
+                                                <span>Wedding dresses
+                                                </span>
+                                                <i class="sign">
+                                                </i>
+                                            </a>
+                                            <ul class="common-sub-menu">
+                                                <li data-menu-item="empty">
+                                                    <input type="checkbox">
+                                                    <ul>
+                                                        @foreach ($sil as $row)
+
+                                                            <li>
+                                                                <a href="{{ route('nav_collection', ['id' => $row->id]) }}"
+                                                                    class="menu_item_smaller_font">
+                                                                    <span>
+                                                                        {{ $row->name }}
+                                                                    </span>
+                                                                    <i class="sign">
+                                                                    </i>
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
+
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    @endif
                                         
                                         @if ($coll->header_status == 1)
                                             <li>
