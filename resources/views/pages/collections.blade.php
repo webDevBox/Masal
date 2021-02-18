@@ -175,12 +175,17 @@
     </div>
     </div>
     </div>
+
+
     <div class="panel" id="attributeSilhouette">
     <div class="panel-heading has-dropdown">
+        <a class="product-control control" data-toggle="collapse" data-parent="#attributeSilhouette" href="#attribute2">
     <span>Silhouette</span>
+    <i class="control-sign" aria-hidden="true"></i>
+    </a>
     <div class="dropdown dropdown-info">
     <span class="info-addon" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Open Silhouette Info Popup">
-  
+        <i class="icon-syvo icon-info-inside-circle" aria-hidden="true"></i>
     </span>
     <div class="dropdown-menu silhouette-menu">
     <span class="fl-right close-dropdown"
@@ -191,6 +196,9 @@
             aria-expanded="false"
             aria-hidden="true">
     </span>
+    <img src="{{ asset('images/silhouette/large.jpg') }}" alt="Silhouette Description" class="hidden-xs hidden-sm"/>
+    <img src="{{ asset('images/silhouette/small.jpg') }}" alt="Silhouette Description" class="hidden-gt-sm"/>
+                            
     </div>
     </div>
     </div>
@@ -220,6 +228,10 @@
     </div>
     </div>
     </div>
+
+
+
+
     <div class="panel" id="attributeSleeve Type">
     <div class="panel-heading has-dropdown">
     <span>Sleeve Type</span>

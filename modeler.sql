@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2021 at 11:02 AM
+-- Generation Time: Feb 18, 2021 at 01:06 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -33,15 +33,22 @@ CREATE TABLE `abouts` (
   `image1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `h1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `p1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `p2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `p3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `p4` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `p5` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `h1` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `p1` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `p2` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `p3` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `p4` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `p5` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `abouts`
+--
+
+INSERT INTO `abouts` (`id`, `logo`, `image1`, `image2`, `image3`, `h1`, `p1`, `p2`, `p3`, `p4`, `p5`, `created_at`, `updated_at`) VALUES
+(1, 'about/sZ9IjL0TVmLNgIoQaLMjlQ1gLVC44J9aY7ZnEqAJ.png', 'about/XUCbuef4ybtCKSk3Zgxed5tMLVKCWnJtbwjeGZpp.jpeg', 'about/EmT6Ia5KQAWN5hxE3ZatmJ8tsZDzdIYZ7kNR5inv.jpeg', 'about/Lqmd8BBycb1E1uRemnunvFm9LheguPkPaMH0tcdN.jpeg', 'A fusion of modern romance and timeless elegance, the Masal collection is a celebration of diversity, femininity and individuality.', 'With the vision to make every bride feel confident, empowered and beautiful on their special day, every Masal gown is handcrafted with love and designed to be remembered forever.', 'For over a decade Masal Apostolides has been recognised as one of the bridal industry’s most talented designers, inspired by real women to create unforgettable designs that highlight your natural beauty and unique bridal style. A graduate of the Fashion Design Studio in her hometown of Sydney, , Masal is diverse in her creative approach to dressing women’s bodies, driven by the endless design possibilities that come with it.', 'Having grown up surrounded by dressmakers, fabrics and sewing machines, Masal knew from a young age that she was destined to be a designer. Throughout college she challenged traditional dressmaking techniques and her award-winning expertise in fit and construction is the result of both her higher education and experience in made-to-measure gowns.', 'The luxurious fabrics, fabulous fit, exquisite embellishments and attention to detail are all signature elements of Masal’s design style. From classic lace looks to chic simplicity, there is something that celebrates every body shape and size.', 'Designed with love in Sydney, the Masal bridal collection can be found in over 400 retailers worldwide. We look forward to sharing this incredible journey with you as we bring your dream dress to life.', NULL, '2021-02-17 00:12:41');
 
 -- --------------------------------------------------------
 
@@ -48620,13 +48627,14 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id`, `name`, `header_status`, `footer_status`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Home', 1, 2, 0, '2020-10-02 09:41:08', '2021-01-14 17:45:35'),
+(1, 'Home', 2, 2, 0, '2020-10-02 09:41:08', '2021-02-18 06:13:32'),
 (2, 'About Us', 1, 1, 0, '2020-10-02 09:41:08', '2021-02-15 04:00:57'),
 (3, 'Collection', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-05 04:57:03'),
 (4, 'Where to buy', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-02 05:38:40'),
 (5, 'Masal Wedding', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-02 09:41:55'),
 (6, 'Become a Retailer', 1, 1, 0, '2020-10-02 09:41:55', '2020-10-02 06:12:57'),
 (7, 'Contact', 1, 1, 0, '2020-10-02 09:41:55', '2021-01-01 01:45:23'),
+(8, 'Wedding dresses', 1, 2, 0, '2021-02-18 11:05:41', '2021-02-18 06:27:28'),
 (65, 'Groom', 2, 2, 1, '2021-01-12 03:42:32', '2021-01-13 00:53:10');
 
 -- --------------------------------------------------------
@@ -53150,7 +53158,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `businessName`, `password`, `credit`, `logo`, `log`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', 'Techhub', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 1, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-02-15 03:53:38'),
+(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', 'Techhub', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 1, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-02-18 06:13:12'),
 (80, 'Moeez', 'muhammadmoeez64@gmail.com', 'Techhub', '$2y$10$4PzLmAfkKTi3F26zHtqlCuCXRGAGa23RldaR6mrY.oI3aeFlgWY9S', 0, NULL, 1, 0, '0302523782', '12 street jade block park view lahore', 'Pakistan', 'Punjab', 'Lahore', '53720', '5615345', 'di.com', 'fb.com', 'instagram.com', '74.2007968', '31.4525187', 2, 1, 0, NULL, '2021-02-10 00:25:43', '2021-02-15 02:47:38'),
 (81, 'zohaib', 'zohaib@gmail.com', 'Techhub', '$2y$10$Gt8/1xOyya1gk7xEatsmHuQ69skUqIO28hL1TXDUFjl7C2Cjz2Equ', 0, NULL, 1, 1, '03025233459', '(Psychiatrist) Level 4/ 235 Macquarie St, Sydney, NSW 2000', 'Australia', 'New South Wales', 'Sydney', '53720', '214534545', 'jhjkbjkb', 'jb', 'jhb', '151.2118229', '-33.8687363', 2, 1, 1, NULL, '2021-02-12 00:45:45', '2021-02-12 00:53:08'),
 (85, 'Aown', 'aown@gmail.com', 'Techhub', '$2y$10$oDgQVOoe9afbjrfn0MPgd.HGlWYrRdOAN6crJlhjY687Ak6rICjvm', 0, NULL, 0, 0, '54146', 'abc road fsd', 'Pakistan', 'Punjab', 'faisalabad', '53720', '5654767', 'https://jhbhjv.com', 'https://fb.com', 'https://instagram.com', '73.0424269', '31.4224645', 2, 1, 0, NULL, '2021-02-15 03:08:19', '2021-02-15 03:10:18');
@@ -53173,7 +53181,7 @@ CREATE TABLE `visitors` (
 --
 
 INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
-(1, 108, '2021-02-10 00:24:05', '2021-02-16 02:34:07');
+(1, 149, '2021-02-10 00:24:05', '2021-02-18 07:04:52');
 
 -- --------------------------------------------------------
 
@@ -53413,7 +53421,7 @@ ALTER TABLE `weddings`
 -- AUTO_INCREMENT for table `abouts`
 --
 ALTER TABLE `abouts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `additionals`
