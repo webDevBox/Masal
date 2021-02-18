@@ -256,7 +256,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                                                         @foreach ($sil as $row)
 
                                                             <li>
-                                                                <a href="{{ route('nav_collection', ['id' => $row->id]) }}"
+                                                                <a href="{{ route('sil_collection', ['id' => $row->id]) }}"
                                                                     class="menu_item_smaller_font">
                                                                     <span>
                                                                         {{ $row->name }}

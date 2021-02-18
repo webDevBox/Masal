@@ -115,7 +115,7 @@
     </div>
     </div>
     
-    <form action="{{route('filter',array('id'=>$cat->id))}}" method="POST" id="filter_form">
+    <form @if(isset($sil)) action="{{route('filter_sil',array('id'=>$sil->id))}}" @else action="{{route('filter',array('id'=>$cat->id))}}" @endif method="POST" id="filter_form">
         @csrf
     <div class="control-panel filters-accordeon" plp-filter>
     <div class="panel-group">
@@ -280,7 +280,11 @@
     <div class="content-block content-title">
     <h2
     role="heading" aria-level="1">
+    @if(isset($sil))
+    {{ $sil->name }}
+    @else
     {{$cat->name}}
+    @endif
     </h2>
     </div>
     <div class="content-block content-count">
