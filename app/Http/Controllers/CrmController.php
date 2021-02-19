@@ -1262,8 +1262,8 @@ class CrmController extends Controller
 
         $foot=footer::where('id',1)->first();
          $page=newPages::where('name',$name)->first();
-         return view('pages.page')
-         ->with(array('page'=>$page,'foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
+         return view('pages.page')->with(array('page'=>$page,'foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,
+         'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
      }
 
      //Video Upload

@@ -119,7 +119,7 @@
                         <td class="text-center">
                             <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" > {{$order->id}} </a> </td>
                         <td class="text-center">
-                            <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" >{{$order->name}} </a></td>
+                            <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" >{{$order->businessName}} </a></td>
                         <td class="text-center">
                             <a href="{{route('retailerOrderView',array('id' => $order->id))}}" data-toggle="tooltip" title="View" >{{$order->orders_count}} </a></td>
                         <td class="text-center"> {{ $cancle }} </td>

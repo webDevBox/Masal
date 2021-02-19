@@ -31,7 +31,8 @@
                     <th class="text-center">Product Name</th>
                     <th class="text-center">Product Notes</th>
                     <th class="text-center">Style #</th>
-                    <th class="text-center">Price</th>
+                    <th class="text-center">Unit Price</th>
+                    <th class="text-center">Total Price</th>
                     <th class="text-center">Quantity</th>
                     <th class="text-center">Size</th>
                     <th class="text-center">Color</th>
@@ -43,7 +44,13 @@
                     
                     @php
                     $product= \App\products::find($row->productId);
-                    
+                    $extra=0;
+                    if($row->extra != null)
+                    {
+                        $addition=additional::where('additional',$row->extra)->first();
+                        $extra=$addition->price;
+                    }
+                    $total=($product->wholesalePrice*$row->quantity)+($extra*$row->quantity);
                     @endphp
                     <tr>
                     <td class="text-center"><strong>OID.{{$row->id}}</strong></td>
@@ -60,6 +67,7 @@
                     </td>
                     <td class="text-center">{{$product->styleNumber}}</td>
                     <td class="text-center">${{$product->wholesalePrice}}</td>
+                    <td class="text-center">${{$total}}</td>
                     <td class="text-center">{{$row->quantity}}</td>
                     <td class="text-center">{{$row->sizes}}</td>
                     <td class="text-center">{{$row->colour}}</td>

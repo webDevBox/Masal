@@ -69,7 +69,7 @@
 
           {{-- End Banner --}}
 
-          <h1 style="font-size:xx-large;" class="white pencil11 text-center my-2"><i><strong>{{ $page->h1 }}</strong> 
+          <h1 style="font-size:xx-large;" class="white pencil11 text-center my-2"><i><strong>@php echo $page->h1; @endphp</strong> 
                                  
             <a href="#" data-toggle="modal" data-target="#myModal8">
               <i style="display:none; font-size: 25px; color:#7367F0;" class="fa fa-pencil editor11"></i>
@@ -93,7 +93,7 @@
                      <div class="form-group">
                      <label class="col-md-4 control-label">Enter Text</label>
                      <div class="col-md-8">
-                     <input type="text" name="data" value="{{$page->h1}}" class="form-control">
+                     <textarea name="data" class="form-control ckeditor">{{$page->h1}}</textarea>
                      </div>
                      </div>
                     
@@ -117,7 +117,7 @@
           <div class="row bg-light">
             <div class="col-lg-3 col-md-3 offset-lg-3 offset-md-3 col-sm-12 col-xs-12" style="margin-top: 10%;">
                <div style="background-color: rgb(253, 253, 253);  box-shadow: 5px 5px 5px 5px #c0bcbc;">
-                  <h2 class="white pencil1 text-center my-2"><i><strong>{{ $page->h2 }}</strong>  
+                  <h2 class="white pencil1 text-center my-2"><i><strong> @php echo $page->h2; @endphp</strong>  
                      <a href="#" data-toggle="modal" data-target="#myModal1">
                        <i style="display:none; font-size: 25px; color:#7367F0;" class="fa fa-pencil editor1"></i>
                      </a>
@@ -139,7 +139,7 @@
                               <div class="form-group">
                               <label class="col-md-4 control-label">Enter Text</label>
                               <div class="col-md-8">
-                              <input type="text" name="data" value="{{$page->h2}}" class="form-control">
+                              <textarea name="data" class="form-control ckeditor">{{$page->h2}}</textarea>
                               </div>
                               </div>
                              
@@ -157,12 +157,15 @@
                      </div>
                    </div>
 
-
-                   <p class="white pencil2 text-center my-2"><i><strong>{{ $page->p1 }}</strong>  
+                   <div class="pencil2">
+                   <p class="white text-center my-2"><i><strong>@php
+                       echo $page->p1;
+                   @endphp</strong>  
                      <a href="#" data-toggle="modal" data-target="#myModal4">
                        <i style="display:none; font-size: 25px; color:#7367F0;" class="fa fa-pencil editor2"></i>
                      </a>
                    </i></p>
+                  </div>
 
                    <div class="modal fade" id="myModal4" role="dialog">
                      <div class="modal-dialog">
@@ -181,7 +184,7 @@
                               <div class="form-group">
                               <label class="col-md-4 control-label">Enter Text</label>
                               <div class="col-md-8">
-                              <input type="text" name="data" value="{{$page->p1}}" class="form-control">
+                              <textarea name="data" class="form-control ckeditor">{{$page->p1}}</textarea>
                               </div>
                               </div>
                              
@@ -213,7 +216,7 @@
                      <div class="modal-dialog">
                        <div class="modal-content  ">
                          <div class="modal-header ">
-                             <h2>Edit Banner <i style="font-size: 25px; color:#7367F0;" class="fa fa-pencil"></i></h2>
+                             <h2>Edit Image <i style="font-size: 25px; color:#7367F0;" class="fa fa-pencil"></i></h2>
                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                         
                          </div>
@@ -285,7 +288,9 @@
 
             {{-- End Slider Section --}}
          
-          <h1 style="font-size:xx-large;" class="white pencil5 text-center my-2"><i><strong>{{ $page->h3 }}</strong> 
+          <h1 style="font-size:xx-large;" class="white pencil5 text-center my-2"><i><strong>@php
+              echo $page->h3;
+          @endphp</strong> 
                                  
             <a href="#" data-toggle="modal" data-target="#myModal9">
               <i style="display:none; font-size: 25px; color:#7367F0;" class="fa fa-pencil editor5"></i>
@@ -309,7 +314,7 @@
                      <div class="form-group">
                      <label class="col-md-4 control-label">Enter Text</label>
                      <div class="col-md-8">
-                     <input type="text" name="data" value="{{$page->h3}}" class="form-control">
+                     <textarea name="data" class="form-control ckeditor">{{$page->h3}}</textarea>
                      </div>
                      </div>
                     
@@ -344,7 +349,7 @@
                      <div class="modal-dialog">
                        <div class="modal-content  ">
                          <div class="modal-header ">
-                             <h2>Edit Banner <i style="font-size: 25px; color:#7367F0;" class="fa fa-pencil"></i></h2>
+                             <h2>Edit Image <i style="font-size: 25px; color:#7367F0;" class="fa fa-pencil"></i></h2>
                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                         
                          </div>
@@ -379,7 +384,9 @@
 
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="margin-top:10%;">
               <div style="background-color: rgb(253, 253, 253);  box-shadow: 5px 5px 5px 5px #c0bcbc;">
-                 <h2 class="white pencil7 text-center my-2"><i><strong>{{ $page->h4 }}</strong>  
+                 <h2 class="white pencil7 text-center my-2"><i><strong>@php
+                     echo $page->h4;
+                 @endphp</strong>  
                     <a href="#" data-toggle="modal" data-target="#myModal7">
                       <i style="display:none; font-size: 25px; color:#7367F0;" class="fa fa-pencil editor7"></i>
                     </a>
@@ -401,7 +408,7 @@
                              <div class="form-group">
                              <label class="col-md-4 control-label">Enter Text</label>
                              <div class="col-md-8">
-                             <input type="text" name="data" value="{{$page->h4}}" class="form-control">
+                             <textarea name="data" class="form-control ckeditor">{{$page->h4}}</textarea>
                              </div>
                              </div>
                             
@@ -418,13 +425,15 @@
                       
                     </div>
                   </div>
-
-
-                  <p class="white pencil8 text-center my-2"><i><strong>{{ $page->p2 }}</strong>  
+                  <div class="pencil8">
+                  <p class="white text-center my-2"><strong>@php
+                      echo $page->p2;
+                  @endphp</strong>  
                     <a href="#" data-toggle="modal" data-target="#myModal10">
                       <i style="display:none; font-size: 25px; color:#7367F0;" class="fa fa-pencil editor8"></i>
                     </a>
-                  </i></p>
+                  </p>
+                </div>
 
                   <div class="modal fade" id="myModal10" role="dialog">
                     <div class="modal-dialog">
@@ -443,7 +452,7 @@
                              <div class="form-group">
                              <label class="col-md-4 control-label">Enter Text</label>
                              <div class="col-md-8">
-                             <input type="text" name="data" value="{{$page->p2}}" class="form-control">
+                             <textarea name="data" class="form-control ckeditor">{{$page->p2}}</textarea>
                              </div>
                              </div>
                             

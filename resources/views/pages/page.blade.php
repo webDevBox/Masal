@@ -13,7 +13,8 @@
                 $banner='images/'.$page->banner;
                 @endphp
 
-                <img style="width:100%; height:300px;" src="{{ asset('images/' . $page->banner) }}">
+                <img style="width:100%; height:300px;" @if($page->banner == null) src="{{ asset('images/banner/banner.jpg') }}"
+                @else src="{{ asset('images/' . $page->banner) }}" @endif>
 
             </section>
 
@@ -22,7 +23,9 @@
                     <div class="row">
                         <div class="header">
                             <h2>
-                                {{ $page->h1 }}
+                                @php
+                                    echo $page->h1;
+                                @endphp
                             </h2>
                         </div>
                     </div>
@@ -48,8 +51,12 @@
                                 <div class="list-item">
                                     <div class="content-header">
                                         <div class="header">
-                                            <h3> {{ $page->h2 }} </h3>
-                                            <p> {{ $page->p1 }} </p>
+                                            <h3> @php
+                                                echo $page->h2;
+                                            @endphp </h3>
+                                            <p> @php
+                                                echo $page->p1;
+                                            @endphp </p>
 
                                         </div>
                                     </div>
@@ -124,7 +131,9 @@
                     <div class="row">
                         <div class="header">
                             <h2>
-                                {{ $page->h3 }}
+                               @php
+                                   echo $page->h3;
+                               @endphp
                             </h2>
                         </div>
                     </div>
@@ -142,7 +151,8 @@
                                     <div class="content-blocks">
                                         <a href="#" class="content-block content-img"
                                             style="background-image: url(<?php echo $image2; ?>);">
-                                            <img style="height:500px;" src="{{ asset('images/' . $page->image2) }}" alt="Photo of Masal">
+                                            <img style="height:500px;" src="{{ asset('images/' . $page->image2) }}" 
+                                            alt="Photo of Masal">
                                         </a>
 
                                     </div>
@@ -151,15 +161,13 @@
                                     <div class="content-blocks">
                                         <div class="content-block content-header">
                                             <div class="headings">
-                                                <h3>{{ $page->h4 }}
+                                                <h3>@php
+                                                    echo $page->h4;
+                                                @endphp
                                                 </h3>
-                                                <div class="text-img">
-                                                    <img src="{{ asset('images/' . $foot->logo) }}" alt="Sophia"
-                                                        style="margin-top: 10px;">
-                                                </div>
-                                                <p>
-                                                    {{ $page->p2 }}
-                                                </p>
+                                               @php
+                                                   echo $page->p2;
+                                               @endphp
 
                                             </div>
                                         </div>

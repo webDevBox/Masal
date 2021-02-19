@@ -30,11 +30,12 @@
                 <h1>Price: ${{$product->wholesalePrice}}</h1>
                 <h3 class="mt-2">Description<h3> 
               
-                    <a class="btn btn-primary mt-2" href="{{ asset('images/products/chart.pdf') }}" style="color: white;" download="Size Chart"> Size Chart </a>
-                    <p style="text-align: center;" class="mt-2">
-               @php
+                    <a class="btn btn-primary mt-2 mb-2" href="{{ asset('images/products/chart.pdf') }}" style="color: white;" download="Size Chart"> Size Chart </a>
+                   
+                @php
                    echo $product->description;
-                @endphp</p> 
+                @endphp
+                
 
                 <h3 class=" mt-2">Other Images</h3>
                 <div class="row">

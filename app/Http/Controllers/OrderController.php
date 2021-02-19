@@ -37,7 +37,7 @@ class OrderController extends Controller
          {
              return redirect('/admin');
          }
-         $usersWithOrders = User::select('users.id', 'users.name')
+         $usersWithOrders = User::select('users.id', 'users.name', 'users.businessName')
             ->where('userRole', 2)->where('status', 1)
             ->withCount('orders')
             ->with('orders')->has('orders')->get();
