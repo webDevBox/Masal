@@ -278,10 +278,10 @@ class PagesController extends Controller
         $neckline = $request->neckline;
         $silhouette = $request->silhouette;
         $sleeve = $request->sleeve;
-        $products=products::where('silhouette',$id)->where('delete_status',0)->whereIn('silhouette',[$silhouette])
+        $products=products::where('delete_status',0)->whereIn('silhouette',[$silhouette])
         ->orWhereIn('neckline',[$neckline])->orWhereIn('fabric',[$fabric])->orWhereIn('sleeve',[$sleeve])->paginate(6);
         $collection=Category::all();
-        $cat=Category::find($id);
+        $sil=silhouette::find($id);
         $seleve=sleeve::get();
         $fabric=fabric::get();
         $neck=neckline::get();
@@ -290,7 +290,7 @@ class PagesController extends Controller
         $foot=footer::where('id',1)->first();
 
         return view('pages.collections')->with(array('seleve'=>$seleve,'fabric'=>$fabric,'neck'=>$neck,'silhouette'=>$silhouette,
-        'foot'=>$foot,'collection'=>$collection,'cat'=>$cat,'gallery'=>$gallery,'products'=>$products));
+        'foot'=>$foot,'collection'=>$collection,'sil'=>$sil,'gallery'=>$gallery,'products'=>$products));
     }
 
 

@@ -12,14 +12,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=1" />
     <meta name="format-detection" content="telephone=yes">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('Content/img/favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('Content/img/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('Content/img/favicon/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('Content/img/favicon/site.webmanifest') }}">
-    <link rel="mask-icon" href="{{ asset('Content/img/favicon/safari-pinned-tab.svg') }}" color="#760751">
-    <link rel="shortcut icon" href="{{ asset('Content/img/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/logo/favicon/apple-touch-icon') }}">
+    <link rel="shortcut icon" type="image/gif" href="{{ asset('images/logo/favicon/safari-pinned-tab.html') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/logo/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/logo/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('images/logo/favicon/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('images/logo/favicon/safari-pinned-tab.svg') }}" color="#760751">
+    <link rel="shortcut icon" href="{{ asset('images/logo/favicon/favicon.ico') }}">
+
+    <meta name="msapplication-config" content="{{ asset('images/logo/favicon/browserconfig.xml') }}">
     <meta name="msapplication-TileColor" content="#760751">
-    <meta name="msapplication-config" content="{{ asset('Content/img/favicon/browserconfig.xml') }}">
     <meta name="theme-color" content="#760751">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
