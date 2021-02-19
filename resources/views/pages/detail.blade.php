@@ -66,7 +66,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
 
     <meta property="og:url" content="https://www.sophiatolli.com/sophia-tolli/spring-2021/y22041"/>
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Sophia Tolli Aurora" />
+<meta property="og:title" content="Masal" />
 <meta property="og:description" content="For the classic and youthful bride, let your heart be captured by this lightweight tulle A-line wedding gown. Delicate floral lace adorns the ultra-comfortable crepe bodice with plunging V-neckline and sheer tulle side panels. The detachable crepe belt highlights the natural waist, while lace appliqu&#xE9;s trickle softly onto the skirt. Beaded spaghetti straps add a subtle touch of sparkle, leading to a striking illusion lace back feature finished with fabric covered buttons.&#xA;&#xA;This romantic style is also available with a higher back as Y22041HB." />
 <meta property="og:image" content="https://dy9ihb9itgy3g.cloudfront.net/products/2804/y22041/y22041__ivory__f__e__d.670.jpg" />
 
@@ -82,7 +82,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
   },
   "@type": "Product",
   "@context": "http://schema.org",
-  "name": "Sophia Tolli Aurora",
+  "name": "Masal",
   "description": "For the classic and youthful bride, let your heart be captured by this lightweight tulle A-line wedding gown. Delicate floral lace adorns the ultra-comfortable crepe bodice with plunging V-neckline and sheer tulle side panels. The detachable crepe belt highlights the natural waist, while lace appliqués trickle softly onto the skirt. Beaded spaghetti straps add a subtle touch of sparkle, leading to a striking illusion lace back feature finished with fabric covered buttons.\n\nThis romantic style is also available with a higher back as Y22041HB.",
   "image": "https://dy9ihb9itgy3g.cloudfront.net/products/2804/y22041/y22041__ivory__f__e__d.740.jpg",
   "url": "https://www.sophiatolli.com/sophia-tolli/spring-2021/y22041"
@@ -435,8 +435,19 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                         <a href="{{ asset($image1) }}"
                            class="MagicZoom overview-media" data-options="textClickZoomHint: Click to zoom" aria-hidden="true">
                             <img data-lazy="{{ asset($image1) }}" style="width: 740px; height:700px"
-                             src="{{ asset($image1) }}" alt="Sophia Tolli Aurora"/>
+                             src="{{ asset($image1) }}" alt="Masal"/>
                         </a>
+                            <div class="overview-social-share color-secondary">
+                                <div class="social-networks social-share social-share-single">
+                                    <ul>
+                                        <li style="">
+                                            <a href="https://www.pinterest.com.au/MasalAustralia/" data-property="pinterest-share" data-placement="Product image" target="_blank" title="Pinterest" aria-label="Pinterest" tabindex="-1">
+                                                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
                 </div>
                 <div class="list-item">
@@ -444,40 +455,95 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                         <a href="{{ asset($image2) }}"
                            class="MagicZoom overview-media" data-options="textClickZoomHint: Click to zoom" aria-hidden="true">
                             <img data-lazy="{{ asset($image2) }}" style="width: 740px; height:700px"
-                             src="{{ asset($image2) }}" alt="Sophia Tolli Aurora"/>
+                             src="{{ asset($image2) }}" alt="Masal"/>
                         </a>
+                        <div class="overview-social-share color-secondary">
+                            <div class="social-networks social-share social-share-single">
+                                <ul>
+                                    <li style="">
+                                        <a href="https://www.pinterest.com.au/MasalAustralia/" data-property="pinterest-share" data-placement="Product image" target="_blank" title="Pinterest" aria-label="Pinterest" tabindex="-1">
+                                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="list-item">
                     <div class="overview" data-lazy-background style="">
                         <a href="{{ asset($image3) }}"
                            class="MagicZoom overview-media" data-options="textClickZoomHint: Click to zoom" aria-hidden="true">
-                            <img data-lazy="{{ asset($image3) }}" style="width: 740px; height:700px"  alt="Sophia Tolli Aurora"/>
+                            <img data-lazy="{{ asset($image3) }}" style="width: 740px; height:700px"  alt="Masal"/>
                         </a>
+                        <div class="overview-social-share color-secondary">
+                            <div class="social-networks social-share social-share-single">
+                                <ul>
+                                    <li style="">
+                                        <a href="https://www.pinterest.com.au/MasalAustralia/" data-property="pinterest-share" data-placement="Product image" target="_blank" title="Pinterest" aria-label="Pinterest" tabindex="-1">
+                                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="list-item">
                     <div class="overview" data-lazy-background style="">
                         <a href="{{ asset($image4) }}"
                            class="MagicZoom overview-media" data-options="textClickZoomHint: Click to zoom" aria-hidden="true">
-                            <img data-lazy="{{ asset($image4) }}" style="width: 740px; height:700px" alt="Sophia Tolli Aurora"/>
+                            <img data-lazy="{{ asset($image4) }}" style="width: 740px; height:700px" alt="Masal"/>
                         </a>
+                        <div class="overview-social-share color-secondary">
+                            <div class="social-networks social-share social-share-single">
+                                <ul>
+                                    <li style="">
+                                        <a href="https://www.pinterest.com.au/MasalAustralia/" data-property="pinterest-share" data-placement="Product image" target="_blank" title="Pinterest" aria-label="Pinterest" tabindex="-1">
+                                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="list-item">
                     <div class="overview" data-lazy-background style="">
                         <a href="{{ asset($image5) }}"
                            class="MagicZoom overview-media" data-options="textClickZoomHint: Click to zoom" aria-hidden="true">
-                            <img data-lazy="{{ asset($image5) }}" style="width: 740px; height:700px" alt="Sophia Tolli Aurora"/>
+                            <img data-lazy="{{ asset($image5) }}" style="width: 740px; height:700px" alt="Masal"/>
                         </a>
+                        <div class="overview-social-share color-secondary">
+                            <div class="social-networks social-share social-share-single">
+                                <ul>
+                                    <li style="">
+                                        <a href="https://www.pinterest.com.au/MasalAustralia/" data-property="pinterest-share" data-placement="Product image" target="_blank" title="Pinterest" aria-label="Pinterest" tabindex="-1">
+                                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="list-item">
                     <div class="overview" data-lazy-background style="">
                         <a href="{{ asset($image6) }}"
                            class="MagicZoom overview-media" data-options="textClickZoomHint: Click to zoom" aria-hidden="true">
-                            <img data-lazy="{{ asset($image6) }}" style="width: 740px; height:700px" alt="Sophia Tolli Aurora"/>
+                            <img data-lazy="{{ asset($image6) }}" style="width: 740px; height:700px" alt="Masal"/>
                         </a>
+                        <div class="overview-social-share color-secondary">
+                            <div class="social-networks social-share social-share-single">
+                                <ul>
+                                    <li style="">
+                                        <a href="https://www.pinterest.com.au/MasalAustralia/" data-property="pinterest-share" data-placement="Product image" target="_blank" title="Pinterest" aria-label="Pinterest" tabindex="-1">
+                                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -495,7 +561,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                          style="background-image: url('{{ asset($image1) }}')"
                          data-trigger="color-filter-all"
                          data-value-id="">
-                        <img src="{{ asset($image1) }}" alt="Sophia Tolli Aurora"/>
+                        <img src="{{ asset($image1) }}" alt="Masal"/>
                     </div>
                 </div>
                 <div class="list-item">
@@ -503,7 +569,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                          style="background-image: url('{{ asset($image2) }}')"
                          data-trigger="color-filter-all"
                          data-value-id="">
-                        <img src="{{ asset($image2) }}" alt="Sophia Tolli Aurora"/>
+                        <img src="{{ asset($image2) }}" alt="Masal"/>
                     </div>
                 </div>
                 <div class="list-item">
@@ -511,7 +577,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                          style="background-image: url('{{ asset($image3) }}')"
                          data-trigger="color-filter-all"
                          data-value-id="">
-                        <img src="{{ asset($image3) }}" alt="Sophia Tolli Aurora"/>
+                        <img src="{{ asset($image3) }}" alt="Masal"/>
                     </div>
                 </div>
                 <div class="list-item">
@@ -519,7 +585,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                          style="background-image: url('{{ asset($image4) }}')"
                          data-trigger="color-filter-all"
                          data-value-id="">
-                        <img src="{{ asset($image4) }}" alt="Sophia Tolli Aurora"/>
+                        <img src="{{ asset($image4) }}" alt="Masal"/>
                     </div>
                 </div>
                 <div class="list-item">
@@ -527,7 +593,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                          style="background-image: url('{{ asset($image5) }}')"
                          data-trigger="color-filter-all"
                          data-value-id="">
-                        <img src="{{ asset($image5) }}" alt="Sophia Tolli Aurora"/>
+                        <img src="{{ asset($image5) }}" alt="Masal"/>
                     </div>
                 </div>
                 <div class="list-item">
@@ -535,7 +601,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                          style="background-image: url('{{ asset($image6) }}')"
                          data-trigger="color-filter-all"
                          data-value-id="">
-                        <img src="{{ asset($image6) }}" alt="Sophia Tolli Aurora"/>
+                        <img src="{{ asset($image6) }}" alt="Masal"/>
                     </div>
                 </div>
                
@@ -599,10 +665,10 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
 
     <div class="tabs tabs-description">
         <ul class="nav nav-tabs">
-                <li class="active">
+                <li class="active" id="upper">
                     <a data-toggle="tab" href="#description" class="option-title">Description</a>
                 </li>
-                <li class="">
+                <li class="" id="lower">
                     <a data-toggle="tab" href="#attributes" class="option-title">Details</a>
                 </li>
         </ul>
@@ -699,8 +765,8 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
         <div class="product-details">
             <div class="product-options-absolute">
                 <div class="option hidden-xs hidden-sm"></div>
-                        <div class="option buttons-block">
-                            <a href="https://www.pinterest.com.au/MasalAustralia/_saved/" class="btn btn-pin"
+                        <div class="option buttons-block" style="display: block;">
+                            <a href="https://www.pinterest.com.au/MasalAustralia/" class="btn btn-pin"
                                data-property="pinterest-share"
                                target="_blank" title="Pinterest"
                                aria-label="Pin This Style">
@@ -722,7 +788,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                     </li>
                    
                     <li style="">
-                        <a href="https://www.pinterest.com.au/MasalAustralia/_saved/"
+                        <a href="https://www.pinterest.com.au/MasalAustralia/"
                            data-property="pinterest-share"
                            target="_blank" title="Pinterest" aria-label="Pinterest">
                             <i class="fa fa-pinterest-p" aria-hidden="true"></i>
@@ -1194,7 +1260,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                 productId: 491,
                 productStockModel: [{"ColorId":14,"ColorName":"Ivory","SizeId":7,"SizeName":"6","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15575},{"ColorId":14,"ColorName":"Ivory","SizeId":9,"SizeName":"10","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15576},{"ColorId":14,"ColorName":"Ivory","SizeId":10,"SizeName":"12","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15577},{"ColorId":14,"ColorName":"Ivory","SizeId":11,"SizeName":"14","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15578},{"ColorId":14,"ColorName":"Ivory","SizeId":12,"SizeName":"16","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15579},{"ColorId":14,"ColorName":"Ivory","SizeId":13,"SizeName":"18","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15580},{"ColorId":14,"ColorName":"Ivory","SizeId":14,"SizeName":"20","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15581},{"ColorId":14,"ColorName":"Ivory","SizeId":15,"SizeName":"22","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15582},{"ColorId":14,"ColorName":"Ivory","SizeId":16,"SizeName":"24","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15583},{"ColorId":14,"ColorName":"Ivory","SizeId":17,"SizeName":"26","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15584},{"ColorId":14,"ColorName":"Ivory","SizeId":18,"SizeName":"28","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15585},{"ColorId":14,"ColorName":"Ivory","SizeId":19,"SizeName":"30","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15586},{"ColorId":14,"ColorName":"Ivory","SizeId":20,"SizeName":"32","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15587},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":3,"SizeName":"0","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15588},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":5,"SizeName":"2","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15589},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":6,"SizeName":"4","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15590},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":7,"SizeName":"6","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15591},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":8,"SizeName":"8","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15592},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":9,"SizeName":"10","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15593},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":10,"SizeName":"12","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15594},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":11,"SizeName":"14","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15595},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":12,"SizeName":"16","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15596},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":13,"SizeName":"18","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15597},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":14,"SizeName":"20","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15598},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":15,"SizeName":"22","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15599},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":16,"SizeName":"24","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15600},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":17,"SizeName":"26","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15601},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":18,"SizeName":"28","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15602},{"ColorId":14,"ColorName":"Ivory","SizeId":8,"SizeName":"8","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15603},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":19,"SizeName":"30","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15604},{"ColorId":58,"ColorName":"Sky Blue/Ivory","SizeId":20,"SizeName":"32","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15605},{"ColorId":14,"ColorName":"Ivory","SizeId":5,"SizeName":"2","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15606},{"ColorId":11,"ColorName":"White","SizeId":3,"SizeName":"0","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15607},{"ColorId":11,"ColorName":"White","SizeId":5,"SizeName":"2","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15608},{"ColorId":11,"ColorName":"White","SizeId":6,"SizeName":"4","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15609},{"ColorId":11,"ColorName":"White","SizeId":7,"SizeName":"6","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15610},{"ColorId":14,"ColorName":"Ivory","SizeId":6,"SizeName":"4","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15611},{"ColorId":11,"ColorName":"White","SizeId":9,"SizeName":"10","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15612},{"ColorId":11,"ColorName":"White","SizeId":10,"SizeName":"12","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15613},{"ColorId":11,"ColorName":"White","SizeId":11,"SizeName":"14","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15614},{"ColorId":11,"ColorName":"White","SizeId":12,"SizeName":"16","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15615},{"ColorId":11,"ColorName":"White","SizeId":8,"SizeName":"8","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15616},{"ColorId":11,"ColorName":"White","SizeId":14,"SizeName":"20","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15617},{"ColorId":11,"ColorName":"White","SizeId":15,"SizeName":"22","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15618},{"ColorId":11,"ColorName":"White","SizeId":16,"SizeName":"24","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15619},{"ColorId":11,"ColorName":"White","SizeId":17,"SizeName":"26","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15620},{"ColorId":11,"ColorName":"White","SizeId":18,"SizeName":"28","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15621},{"ColorId":11,"ColorName":"White","SizeId":19,"SizeName":"30","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15622},{"ColorId":11,"ColorName":"White","SizeId":20,"SizeName":"32","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15623},{"ColorId":14,"ColorName":"Ivory","SizeId":3,"SizeName":"0","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15624},{"ColorId":11,"ColorName":"White","SizeId":13,"SizeName":"18","UnitsAvailableInWarehouse":0,"UnitsAvailableInStore":0,"AvailableDate":null,"ShowAvailableOnlineOnlyText":false,"Prices":[],"ShowOnline":false,"Id":15625}],
                 prices: [],
-                style: 'Sophia Tolli Aurora',
+                style: 'Masal',
                 ecommerceEnable: false,
                 purchasable: false,
                 disableColorClass: "hidden",
@@ -1248,7 +1314,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
 
 
 <script type="text/javascript"
-        src="../../../assets.pinterest.com/js/pinit.js"></script>
+        src="{{ asset('js/pinit.js') }}"></script>
 <script>
     jQuery(function ($) {
         var description = $("[data-property='description']").html();
@@ -1261,24 +1327,24 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
 
 
                 pinAny = {
-                        images: ["https://dy9ihb9itgy3g.cloudfront.net/products/2804/y22041/y22041__ivory__f__e__d.2000.jpg","../../../dy9ihb9itgy3g.cloudfront.net/products/2804/y22041/y22041__ivory_b__e__c.2000.jpg","../../../dy9ihb9itgy3g.cloudfront.net/products/2804/y22041/y22041__sky_blue__ivory__f__e.2000.jpg","../../../dy9ihb9itgy3g.cloudfront.net/products/2804/y22041/y22041__sky_blue__ivory_b.2000.jpg","../../../dy9ihb9itgy3g.cloudfront.net/products/2804/y22041/y22041__ivory__f.2000.jpg","../../../dy9ihb9itgy3g.cloudfront.net/products/2804/y22041/y22041__ivory_b.2000.jpg","../../../dy9ihb9itgy3g.cloudfront.net/products/2804/y22041/y22041__sky_blue__ivory__f.2000.jpg","uploads/images/products/491/363077a1_8ab8_4253_afea_7d325d6c0c47.jpg?w=2000"]
+                        images: ["{{ asset('images/'.$detail->image1) }}","{{ asset('images/'.$detail->image2) }}","{{ asset('images/'.$detail->image3) }}","{{ asset('images/'.$detail->image4) }}","{{ asset('images/'.$detail->image5) }}","{{ asset('images/'.$detail->image6) }}"]
                     };
             
 
                 tw = {
-                    message: "Sophia Tolli Aurora - visit our website to discover the latest collection and find your nearest Sophia Tolli retailer!",
+                    message: "Masal - visit our website to discover the latest collection and find your nearest Sophia Tolli retailer!",
                     via: "SophiaTolli"
                 };
             
             window.Syvo.Social_Networks.load({
                 single: {
-                    url: "https://www.sophiatolli.com/sophia-tolli/spring-2021/y22041",
-                    title: "Sophia Tolli Aurora",
-                    image: "https://dy9ihb9itgy3g.cloudfront.net/products/2804/y22041/y22041__ivory__f__e__d.670.jpg",
+                    url: "https://www.pinterest.com.au/MasalAustralia/",
+                    title: "Masal",
+                    image: "{{ asset('images/'.$detail->image1) }}",
                     description: description,
                     fb: {appId: "331370691567172"},
                     pinterest:{
-                        description: "Sophia Tolli Aurora" + ". Description: " + description.replace(/\.$/, "") + "." + " Details: Fabric: Crepe, Lace, Organza, Tulle;Neckline: V-Neck;Silhouette: A-Line;Sleeve Type: Spaghetti Strap;Special Features: Also available with Higher Back, Detachable Belt Included;Waistline: Natural",
+                        description: "Masal" + ". Description: " + description.replace(/\.$/, "") + "." + " Details: Fabric: Crepe, Lace, Organza, Tulle;Neckline: V-Neck;Silhouette: A-Line;Sleeve Type: Spaghetti Strap;Special Features: Also available with Higher Back, Detachable Belt Included;Waistline: Natural",
                         pinAny: pinAny
                     },
                     email: {
@@ -1373,6 +1439,22 @@ jQuery(function($) {
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     
+<script>
+    $('#upper').click(function()
+    {
+        $('#upper').attr('class','active');
+        $('#lower').attr('class','no');
+    });
+    $('#lower').click(function()
+    {
+        $('#lower').attr('class','active');
+        $('#upper').attr('class','no');
+    });
+</script>
+
+
+
+
 </body>
 
 <!-- Mirrored from www.sophiatolli.com/sophia-tolli/spring-2021/y22041 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 Dec 2020 06:29:07 GMT -->
