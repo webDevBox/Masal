@@ -66,6 +66,11 @@
                     <td class="text-center">{{$row->status}}</td>
                     <td class="text-center"> @if($row->extra != null) {{$row->extra}} @else No Extra @endif </td>
                     </tr>
+                    <tr>
+                        <td colspan="11">
+                        <img class="mx-auto d-block" style="width:300px; height:150px;" src="{{ asset('images/'.$logo->logo) }}" alt="">
+                        </td>
+                    </tr>
                     </tbody>
                     </table>
                     </div>
@@ -93,6 +98,11 @@
         $('#print').attr('style','display:none;');
         $('#pdf').attr('style','display:none;');
         window.print();
+        // var divToPrint=document.getElementById("table");
+        // newWin= window.open("");
+        // newWin.document.write(divToPrint.outerHTML);
+        // newWin.print();
+        // newWin.close();
         $('#print').attr('style','display:inline;');
         $('#pdf').attr('style','display:inline;');
         });

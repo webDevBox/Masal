@@ -15,6 +15,7 @@ use App\neckline;
 use App\silhouette;
 use App\sleeve;
 use App\User;
+use App\footer;
 use App\ColourSwatches;
 use App\feedback;
 use App\retailerOrder;
@@ -2357,7 +2358,8 @@ class AdminController extends Controller
              return redirect('/admin');
          }
         $row=retailerOrder::find($id);
-        return view('admin.order_success')->with('row',$row);
+        $logo=footer::first();
+        return view('admin.order_success')->with(['row'=>$row,'logo'=>$logo]);
     }
     
     
