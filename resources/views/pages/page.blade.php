@@ -39,11 +39,19 @@
                             <div class="list">
                                 <div class="list-item">
                                     @php
-                                    $modern= 'images/'.$page->image1;
+                                    if($page->image1 != null)
+                                    {
+                                    $modern='images/'.$page->image1;
+                                    }
+                                    else {
+                                    $modern='images/custom/dummy.jpg';
+                                    }
                                     @endphp
+                                   
                                     <a href="#" class="content-block content-img"
                                         style="background-image: url(<?php echo $modern; ?>);">
-                                        <img style="height: 800px;" src="{{ asset('images/' . $page->image1) }}"
+                                        <img style="height: 800px;" @if($page->image1!=null) src="{{ asset('images/' . $page->image1) }}"
+                                        @else src="{{ asset('images/custom/dummy.jpg') }}" @endif
                                             alt="Model in yellow Sherri Hill dress">
                                     </a>
 
@@ -140,7 +148,13 @@
                 </div>
             </section>
             @php
+            if($page->image2 != null)
+            {
             $image2='images/'.$page->image2;
+            }
+            else {
+                $image2='images/custom/dummy.jpg';
+            }
             @endphp
             <section class="section-meet-sophia" id="meet-sophia">
                 <div class="container">
@@ -151,7 +165,8 @@
                                     <div class="content-blocks">
                                         <a href="#" class="content-block content-img"
                                             style="background-image: url(<?php echo $image2; ?>);">
-                                            <img style="height:500px;" src="{{ asset('images/' . $page->image2) }}" 
+                                            <img style="height:500px;" @if($page->image2!=null) src="{{ asset('images/' . $page->image2) }}"
+                                            @else src="{{ asset('images/custom/dummy.jpg') }}" @endif 
                                             alt="Photo of Masal">
                                         </a>
 
