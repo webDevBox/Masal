@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2021 at 01:01 PM
+-- Generation Time: Feb 22, 2021 at 09:16 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -48484,7 +48484,7 @@ INSERT INTO `emails` (`id`, `name`, `subject`, `message`, `status`, `created_at`
 (3, 'new_user', 'Account Approval Request', '<p><img alt=\"\" src=\"https://static.thenounproject.com/png/542237-200.png\" style=\"float:left; height:200px; width:200px\" />A new user apply as retailer kindly accept or reject acoount.</p>', 1, '2020-09-21 23:29:25', '2020-10-21 01:11:59'),
 (4, 'Reject_account', 'Account Status', '<p>.Your Account has been Rejected by Admin.</p>', 1, '2020-09-21 23:53:12', '2021-01-14 22:38:59'),
 (5, 'New_product', 'Product', '<p>A new Product Added in masal. you can Order now.</p>', 1, '2020-09-22 00:12:51', '2020-11-02 02:17:59'),
-(6, 'Price_change', 'The price of a product is updated on Masal Australia!', '<p>.</p>', 1, '2020-09-22 00:26:12', '2020-12-22 06:39:05'),
+(6, 'Price_change', 'The price of a product is updated on Masal Australia!', '<p>.Price is now change of a product</p>', 1, '2020-09-22 00:26:12', '2021-02-22 00:06:26'),
 (7, 'Retailer_chat', 'You have a new chat request from a retailer!', '<p>Dear Management Team,</p>\r\n\r\n<p>We have received a chat request from a retailer now!</p>', 1, '2020-09-22 00:53:40', '2021-01-13 20:52:49'),
 (8, 'admin_chat', 'You have a new request and/or a new reply!', '<p>Admin Send you Message Kindly check and reply from your panel</p>', 1, '2020-09-22 01:15:32', '2020-12-22 06:41:57'),
 (9, 'new_order', 'Your Order Received by Masal Australia', '<p>.</p>', 1, '2020-09-23 00:49:14', '2020-12-22 06:39:16'),
@@ -48492,7 +48492,9 @@ INSERT INTO `emails` (`id`, `name`, `subject`, `message`, `status`, `created_at`
 (11, 'change_order_status', 'Your order status has been updated on Masal Australia!', '<p>.</p>', 1, '2020-09-23 23:23:57', '2020-12-22 06:39:27'),
 (12, 'mail_to_all', 'Masal admin', '<p>I want to tell you that I am New Admin<img alt=\"\" src=\"https://vignette.wikia.nocookie.net/fan-fiction-library/images/1/15/Admin.png/revision/latest?cb=20140917130743\" style=\"float:left; height:256px; width:256px\" /></p>', 1, '2020-09-24 02:41:22', '2020-10-21 01:28:51'),
 (13, 'real_bride_get', 'Real Bride', 'A new Real bride data waiting for approval', 1, '2020-09-25 04:49:03', '2020-09-28 05:09:34'),
-(14, 'Signature', 'End of Email', '<table border=\"0\">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Masal</strong> has been the #1 leader in designing bridal dresses for over 30 years in Australia and we&rsquo;re excited to connect with you.</p>\r\n\r\n			<p>Thanks for your application to be our retailer, unfortunately, your account is Rejected.</p>\r\n\r\n			<p>If you believe a mistake happened, please do not hesitate to email us at <strong><a href=\"mailto:sales@masal.com.au?subject=Re%3A%20My%20application%20rejected%20to%20become%20a%20retailer!\">sales@masal.com.au</a></strong></p>\r\n\r\n			<p>Follow us on our social platforms below, stay in touch to get updated with&nbsp;new styles, collections, and stay up to date with the latest news from <strong>Masal Australia</strong>.</p>\r\n\r\n			<p><img alt=\"\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png\" style=\"height:50px; width:50px\" />&nbsp;<img alt=\"\" src=\"https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png\" style=\"height:50px; width:50px\" />&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2020-12-22 06:17:46', '2021-01-14 22:35:18');
+(17, 'Re write', 'This is for confirmation', '<p><img alt=\"\" src=\"https://newfashionelle.com/wp-content/uploads/2015/12/Exclusive-Shalwar-Kameez-and-Waist-Coats-by-COLORS-4.jpg\" style=\"float:left; height:100px; width:150px\" />I am admin of masal Ecommerce system</p>', 1, '2021-02-22 00:41:27', '2021-02-22 01:22:18'),
+(18, 'Signature', 'This is signature Email', '<table border=\"0\">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Masal</strong> has been the #1 leader in designing bridal dresses for over 30 years in Australia and we&rsquo;re excited to connect with you.</p>\r\n\r\n			<p>Thanks for your application to be our retailer, unfortunately, your account is Rejected.</p>\r\n\r\n			<p>If you believe a mistake happened, please do not hesitate to email us at <strong><a href=\"mailto:sales@masal.com.au?subject=Re%3A%20My%20application%20rejected%20to%20become%20a%20retailer!\">sales@masal.com.au</a></strong></p>\r\n\r\n			<p>Follow us on our social platforms below, stay in touch to get updated with&nbsp;new styles, collections, and stay up to date with the latest news from <strong>Masal Australia</strong>.</p>\r\n\r\n			<p><img alt=\"\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png\" style=\"height:50px; width:50px\" />&nbsp;<img alt=\"\" src=\"https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png\" style=\"height:50px; width:50px\" />&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2021-02-22 06:30:16', '2021-02-22 06:30:21'),
+(19, 'pending_order', 'Pending order', 'Your Order is in pending in your cart', 1, '2021-02-22 07:31:59', '2021-02-22 07:31:59');
 
 -- --------------------------------------------------------
 
@@ -48555,7 +48557,7 @@ CREATE TABLE `feedback` (
 INSERT INTO `feedback` (`id`, `name`, `phone`, `email`, `message`, `status`, `created_at`, `updated_at`) VALUES
 (1, NULL, NULL, 'khubaibwaheed1995@gmail.com', 'I am happy', 1, '2021-02-19 05:23:42', '2021-02-19 05:23:50'),
 (2, 'Ali', '03123456789', 'ali@gmail.com', 'Test shot', 1, '2021-02-19 05:24:24', '2021-02-19 05:24:30'),
-(3, NULL, NULL, 'admin@test.com', 'defsd', 0, '2021-02-19 05:30:17', '2021-02-19 05:30:17');
+(3, NULL, NULL, 'admin@test.com', 'defsd', 1, '2021-02-19 05:30:17', '2021-02-21 22:47:45');
 
 -- --------------------------------------------------------
 
@@ -48721,7 +48723,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (66, '2021_01_08_101235_add_image2', 50),
 (67, '2021_01_18_145621_add_four', 51),
 (68, '2021_02_15_080451_add_business_name', 52),
-(69, '2021_02_15_115510_create_abouts_table', 53);
+(69, '2021_02_15_115510_create_abouts_table', 53),
+(70, '2021_02_22_054517_add_id_email', 54),
+(71, '2021_02_22_055751_add_id_email_status', 55);
 
 -- --------------------------------------------------------
 
@@ -48789,7 +48793,7 @@ CREATE TABLE `new_pages` (
 --
 
 INSERT INTO `new_pages` (`id`, `name`, `keyword`, `title`, `banner`, `h1`, `h2`, `p1`, `h3`, `h4`, `p2`, `latest`, `image1`, `image2`, `created_at`, `updated_at`) VALUES
-(11, 'Test-Page', 'bridal,blow,flow', 'World cup 2019', 'banner/Pgk4PT2hraPQeEbsYlidSGR73rkdxzff9mLBmxyr.jpeg', '<p>Top spot</p>', '<p>Pop up</p>', '<p>This is pop us section From start</p>', '<p>Twin tower</p>', '<p>I am twin Heading</p>', '<p>Now underground</p>', 'cat', NULL, NULL, '2021-02-19 05:36:01', '2021-02-19 07:00:55');
+(11, 'Pop-up-Page', 'Blow,Groom,Youtube', 'New page when enter', 'banner/Pgk4PT2hraPQeEbsYlidSGR73rkdxzff9mLBmxyr.jpeg', '<p>Top spot</p>', '<p>Pop up</p>', '<p>This is pop us section From start</p>', '<p>Twin tower</p>', '<p>I am twin Heading</p>', '<p>Now underground</p>', 'cat', NULL, NULL, '2021-02-19 05:36:01', '2021-02-21 23:55:44');
 
 -- --------------------------------------------------------
 
@@ -48837,7 +48841,8 @@ INSERT INTO `products` (`id`, `name`, `description`, `colour`, `size`, `extra`, 
 (3, 'Beauty Bride', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Odio&nbsp;culpa&nbsp;neque&nbsp;tenetur&nbsp;possimus&nbsp;fugiat&nbsp;maxime&nbsp;debitis&nbsp;quae&nbsp;excepturi&nbsp;sit&nbsp;perspiciatis&nbsp;dolorem&nbsp;minus,&nbsp;illo&nbsp;consectetur&nbsp;in&nbsp;error&nbsp;nam&nbsp;ab&nbsp;tempora&nbsp;deserunt.</p>', '[\"Ivory\",\"Champagne\",\"Blue\"]', '[\"8\",\"12\",\"16\",\"240\"]', '[\"Urgent\",\"Add Seleves\"]', 5, 6, '30%', 'bridal,blow,flow', 98, 32, 'P0R3U6', 'active', 0, 34, 'products/fHT8aMO0vxk9gveraaPyHkUPV3wNgNtxRyjvjrqu.jpeg', 'products/3MHw7lKEcE4HDTp6oFM3qefKSLXd0OsVdJDy3W2k.jpeg', 'products/f7ZpJnz4TPdt7H3guqHFWS8YiDt27K9cVX6ghu6f.jpeg', 'products/EtbEYXgVzAjE75oiNU1BIiWTivfEdWcONPy5bRnZ.jpeg', 'products/57DVmL0NexB9Qcb04uSO3QsqOvm8Bh01HBNe6dig.jpeg', 'products/ogXopbbZvELohtFv5vQeSgQl1e6FpBVyW9Z21Tw2.jpeg', '2021-02-10 00:35:35', '2021-02-19 04:34:07', 6, 7, 2),
 (4, 'Real bride', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.</p>\r\n\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;</p>\r\n\r\n<p>rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>', '[\"Green\",\"skyblue\",\"Ivory\",\"black\",\"orange\"]', '[\"4\",\"8\",\"14\",\"240\"]', '[\"1 M long\",\"Urgent\",\"Add Seleves\"]', 7, 6, 'New', 'bridal,blow', 10, 70, 'O5K0Y3', 'active', 0, 100, 'products/bpH4PQHeAGMJdfBQfRn6okWUfJBgnBoon5BgCU4b.jpeg', 'products/UIhQCZ4aI2qgyJMm2EcM8TANlOgvhAW3RZtvkXEU.jpeg', 'products/0hWjS9Ge827TbUpbXJGb88ZxGbqL89H2bj6JypUZ.jpeg', 'products/UztKrsK7kYstjRXNNg5624TLbVvr1XUjYgN5BeIU.jpeg', 'products/4AUKQVCMFGTXtYHP1bQ4O6JrDd63PaWclMQVXfKk.jpeg', 'products/Coj6R7rmpskmPdIv6BK8IrQVP00yDTaVC7GWY7ka.jpeg', '2021-02-10 00:36:48', '2021-02-10 00:43:45', 6, 2, 5),
 (5, 'Pum Bride', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.</p>\r\n\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;</p>\r\n\r\n<p>rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>', '[\"skyblue\",\"Ivory\",\"black\",\"white\"]', '[\"4\",\"8\",\"14\",\"240\"]', '[\"1 M long\",\"Add Seleves\"]', 4, 6, 'sale', 'bridal,blow,flow', 52, 256, 'P0Q2V4', 'active', 0, 86, 'products/Hh4AUTMcr2ruYjhYvKxhh7AjbcNKvixPBFuIKM9R.jpeg', 'products/R4LIWZAr6N22S2RyccjjB7ClXkYkBzUeE0ZxJNnp.jpeg', 'products/xenvVkx5OoGydLBWKz4GisqJwUl2CYQHlnUWgXNk.jpeg', 'products/wGYC61KHf21FUvB2td5IjDhjhsq5hV24ujWXhAG1.jpeg', 'products/E5oRhZIvhc3bjj2eDMbENkwsiU0gyIpnV3xZs0so.jpeg', 'products/CttYIzqt07WvnvWWfAlzMDBcNbVkkuywdTUuufnp.jpeg', '2021-02-10 00:40:02', '2021-02-19 04:18:33', 6, 2, 5),
-(6, 'Free Bride', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.</p>\r\n\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;</p>\r\n\r\n<p>rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>', '[\"Green\",\"skyblue\",\"Ivory\",\"black\",\"orange\"]', '[\"4\",\"8\",\"14\",\"240\"]', NULL, 8, 7, '30%', 'bridal,blow', 36, 25, 'U9G5N9', 'active', 0, 96, 'products/eEBjHmTdgmUjIt05sPlPxQa2tmEGwOp1HPjl0AmG.jpeg', 'products/tny5jbq0WDsgpEKwrQ0ydWvl9v3TOJfD2K5dqzu3.jpeg', 'products/NWrIVKCTtMY9RefAk2Psqz2594Ewg9KRcFQ6Qh0w.jpeg', 'products/NxkXYgHeaHCmc4IWzTqquvnA0Vsz5CjADYF3qtfr.jpeg', 'products/9gMkh4YYor4U3D4N887nF9Hd5K1HFNKHRmrnpysa.jpeg', 'products/4KpWzHButHBLSLH0F1aNBnI6T8vWSMmGNl2RrxLH.jpeg', '2021-02-10 00:41:15', '2021-02-15 03:24:52', 8, 7, 2);
+(6, 'Free Bride', '<p>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.</p>\r\n\r\n<p>&nbsp;Possimus&nbsp;<strong>voluptates&nbsp;</strong>animi&nbsp;delectus&nbsp;<a href=\"http://masal.com.au\">adipisci&nbsp;</a>quasi&nbsp;nisi&nbsp;incidunt&nbsp;asperiores&nbsp;libero&nbsp;dolorem&nbsp;consequuntur,&nbsp;</p>\r\n\r\n<p>atque,&nbsp;sunt&nbsp;itaque&nbsp;deserunt&nbsp;voluptas&nbsp;dolorum&nbsp;corporis&nbsp;</p>\r\n\r\n<p>rerum&nbsp;reiciendis&nbsp;neque!&nbsp;</p>', '[\"Green\",\"skyblue\",\"Ivory\",\"black\",\"orange\"]', '[\"4\",\"8\",\"14\",\"240\"]', NULL, 8, 7, '30%', 'bridal,blow', 36, 25, 'U9G5N9', 'active', 0, 96, 'products/eEBjHmTdgmUjIt05sPlPxQa2tmEGwOp1HPjl0AmG.jpeg', 'products/tny5jbq0WDsgpEKwrQ0ydWvl9v3TOJfD2K5dqzu3.jpeg', 'products/NWrIVKCTtMY9RefAk2Psqz2594Ewg9KRcFQ6Qh0w.jpeg', 'products/NxkXYgHeaHCmc4IWzTqquvnA0Vsz5CjADYF3qtfr.jpeg', 'products/9gMkh4YYor4U3D4N887nF9Hd5K1HFNKHRmrnpysa.jpeg', 'products/4KpWzHButHBLSLH0F1aNBnI6T8vWSMmGNl2RrxLH.jpeg', '2021-02-10 00:41:15', '2021-02-15 03:24:52', 8, 7, 2),
+(7, 'Super Bride', '<p>This is our Bride</p>', '[\"Green\",\"skyblue\",\"Ivory\",\"black\",\"orange\"]', '[\"10\",\"16\"]', '[\"1 M long\",\"Add Seleves\"]', 5, 6, 'sale', 'bridal,blow,flow', 70, 10, '54KU36', 'active', 0, 97, 'products/CeaI8A3ovIwYO65wRgHvSuEyikGKxexb2ieof5GJ.jpeg', 'products/47IQyLSmy81fDCbsgXyNti0r2WrrfwGNc1OSZ33e.jpeg', 'products/pXjo2sQmlelItIDwA3ISScIxNAlM6Lpai9v7chOx.jpeg', 'products/1Zg1BLhyNbuu6zvoXfAFOXaXYMhCo26KYVjPVqrC.jpeg', 'products/ovhfdrAjJbPkZRuCO9y88Wd8PgXEF997D0x76WxT.jpeg', 'products/rVvIg3rXWsecUzXCilfFcPrBUVlkI5lGVjMVd6bw.jpeg', '2021-02-22 00:02:01', '2021-02-22 00:08:04', 8, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -48899,8 +48904,10 @@ INSERT INTO `retailer_brides` (`id`, `retailerId`, `wedding`, `file`, `type`, `s
 
 CREATE TABLE `retailer_emails` (
   `id` int(10) UNSIGNED NOT NULL,
+  `email_id` int(11) DEFAULT NULL,
   `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL COMMENT '1=active , 2=inactive',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48909,11 +48916,10 @@ CREATE TABLE `retailer_emails` (
 -- Dumping data for table `retailer_emails`
 --
 
-INSERT INTO `retailer_emails` (`id`, `subject`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'Lorem Ipsum', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque suscipit nam esse excepturi quam ab, qui, atque a facere expedita quae! Rem minima corporis dignissimos totam. Quidem explicabo asperiores facilis?</p>', '2020-10-23 06:02:46', '2020-11-02 07:00:55'),
-(6, 'Welcome Email', '<p>Dear Retailer,</p>\r\n\r\n<p>We would like to welcome you with our warm wishes.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>', '2020-11-25 17:42:38', '2020-11-25 17:42:38'),
-(8, 'New one', '<p>dsfsdgfdsg</p>', '2021-01-01 01:05:06', '2021-01-01 01:05:06'),
-(9, 'End of Email', '<p>rfsgdtdfhydtfj</p>', '2021-01-01 01:11:33', '2021-01-01 01:11:33');
+INSERT INTO `retailer_emails` (`id`, `email_id`, `subject`, `message`, `status`, `created_at`, `updated_at`) VALUES
+(10, 17, 'This is for confirmation', '<p><img alt=\"\" src=\"https://newfashionelle.com/wp-content/uploads/2015/12/Exclusive-Shalwar-Kameez-and-Waist-Coats-by-COLORS-4.jpg\" style=\"float:left; height:100px; width:150px\" />I am admin of masal Ecommerce system</p>', 1, '2021-02-22 00:41:27', '2021-02-22 01:22:18'),
+(11, NULL, 'Poli clinic', '<p>This is poli clinic 1</p>', 1, '2021-02-22 01:35:20', '2021-02-22 01:35:50'),
+(12, NULL, 'subject', '<p>sdfbgfdghdf</p>', 1, '2021-02-22 01:43:57', '2021-02-22 01:43:57');
 
 -- --------------------------------------------------------
 
@@ -48947,7 +48953,8 @@ INSERT INTO `retailer_orders` (`id`, `productId`, `RetailerId`, `colour`, `sizes
 (3, 3, 85, 'Champagne', '8', 'Add Seleves', 6, 0, 'processing', NULL, 'Done', '2021-02-19 01:27:00', '2021-02-19 01:27:16'),
 (4, 5, 85, 'Ivory', '14', 'Add Seleves', 4, 0, 'processing', NULL, 'Done', '2021-02-19 01:33:01', '2021-02-19 01:33:12'),
 (5, 5, 80, 'black', '8', NULL, 6, 0, 'completed', NULL, 'Done', '2021-02-19 01:45:23', '2021-02-19 04:18:33'),
-(6, 6, 80, 'Green', '14', NULL, 4, 0, 'processing', NULL, 'Done', '2021-02-19 05:10:02', '2021-02-19 05:10:15');
+(6, 6, 80, 'Green', '14', NULL, 4, 0, 'processing', NULL, 'Done', '2021-02-19 05:10:02', '2021-02-19 05:10:15'),
+(7, 5, 80, 'Ivory', '4', NULL, 3, 0, 'processing', NULL, 'Done', '2021-02-22 00:19:42', '2021-02-22 00:19:58');
 
 -- --------------------------------------------------------
 
@@ -53171,8 +53178,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `businessName`, `password`, `credit`, `logo`, `log`, `star`, `phone`, `address`, `country`, `state`, `city`, `post`, `registrationNumber`, `website`, `facebook`, `instagram`, `lng`, `lat`, `userRole`, `status`, `orderStatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', 'Techhub', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 1, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-02-19 04:06:50'),
-(80, 'Moeez', 'muhammadmoeez64@gmail.com', 'Moeez Fabric', '$2y$10$4PzLmAfkKTi3F26zHtqlCuCXRGAGa23RldaR6mrY.oI3aeFlgWY9S', 0, NULL, 1, 1, '0302523782', '12 street jade block park view lahore', 'Pakistan', 'Punjab', 'Lahore', '53720', '5615345', 'di.com', 'fb.com', 'instagram.com', '74.2007968', '31.4525187', 2, 1, 1, NULL, '2021-02-10 00:25:43', '2021-02-19 05:10:23'),
+(35, 'Two Birds', 'khubaibwaheed1995@gmail.com', 'Techhub', '$2y$10$QG7IZ./eTH3qBN3NF63tT.VHI5St2vAHHgI05Aogi6q8kl9heNo8i', 0, 'logo/T1XhhTXGdd34HHb4OFiBYhq5LV5KvSNfGnytniwg.png', 1, 0, '30456855245', 'abc', 'australia', 'sydny', 'sydny', '', '5335433', NULL, NULL, NULL, '67.0576612', '24.8043485', 1, 1, 0, NULL, NULL, '2021-02-22 03:13:54'),
+(80, 'Moeez', 'muhammadmoeez64@gmail.com', 'Moeez Fabric', '$2y$10$4PzLmAfkKTi3F26zHtqlCuCXRGAGa23RldaR6mrY.oI3aeFlgWY9S', 0, NULL, 0, 1, '0302523782', '12 street jade block park view lahore', 'Pakistan', 'Punjab', 'Lahore', '53720', '5615345', 'di.com', 'fb.com', 'instagram.com', '74.2007968', '31.4525187', 2, 1, 1, NULL, '2021-02-10 00:25:43', '2021-02-22 03:13:36'),
 (81, 'zohaib', 'zohaib@gmail.com', 'Zohaib shop', '$2y$10$Gt8/1xOyya1gk7xEatsmHuQ69skUqIO28hL1TXDUFjl7C2Cjz2Equ', 0, NULL, 1, 1, '03025233459', '(Psychiatrist) Level 4/ 235 Macquarie St, Sydney, NSW 2000', 'Australia', 'New South Wales', 'Sydney', '53720', '214534545', 'jhjkbjkb', 'jb', 'jhb', '151.2118229', '-33.8687363', 2, 1, 1, NULL, '2021-02-12 00:45:45', '2021-02-12 00:53:08'),
 (85, 'Aown', 'aown@gmail.com', 'aown spot', '$2y$10$/226PSTydKVjZnIugZpw6.Hh4pr/kwMQF0hBQOtlrm62BB9EbtA26', 0, 'logo/6hU7om5Cyuqh6lEJZA21Q6fyXqTBVDLzYgd8MEGb.png', 1, 1, '54146', 'abc road fsd', 'Pakistan', 'Punjab', 'faisalabad', '53720', '5654767', 'https://jhbhjv.com', 'https://fb.com', 'https://instagram.com', '73.0424269', '31.4224645', 2, 1, 1, NULL, '2021-02-15 03:08:19', '2021-02-19 01:33:19');
 
@@ -53194,7 +53201,7 @@ CREATE TABLE `visitors` (
 --
 
 INSERT INTO `visitors` (`id`, `visitors`, `created_at`, `updated_at`) VALUES
-(1, 173, '2021-02-10 00:24:05', '2021-02-19 07:01:05');
+(1, 176, '2021-02-10 00:24:05', '2021-02-22 03:13:36');
 
 -- --------------------------------------------------------
 
@@ -53494,7 +53501,7 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `fabrics`
@@ -53536,7 +53543,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `necklines`
@@ -53548,7 +53555,7 @@ ALTER TABLE `necklines`
 -- AUTO_INCREMENT for table `new_orders`
 --
 ALTER TABLE `new_orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `new_pages`
@@ -53560,7 +53567,7 @@ ALTER TABLE `new_pages`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `reals`
@@ -53578,13 +53585,13 @@ ALTER TABLE `retailer_brides`
 -- AUTO_INCREMENT for table `retailer_emails`
 --
 ALTER TABLE `retailer_emails`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `retailer_orders`
 --
 ALTER TABLE `retailer_orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `sales`

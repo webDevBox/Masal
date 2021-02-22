@@ -318,7 +318,6 @@
   <div class="card">
   <div class="card-header d-flex justify-content-between align-items-center">
   <h4 class="card-title">Orders Overview</h4>
-  <i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i>
   </div>
   <div class="card-body p-0">
   <div id="goal-overview-radial-bar-chart" class="my-2"></div>
