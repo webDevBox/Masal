@@ -55,8 +55,14 @@
                                 <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">
                                     {{ Session::get('error') }}</p>
                             @endif
-                            @if ($errors->has('page'))
-                                <p style="color:red;">{{ $errors->first('page') }}</p>
+                            @if ($errors->has('id'))
+                                <p style="color:red;">{{ $errors->first('id') }}</p>
+                            @endif
+                            @if ($errors->has('name'))
+                                <p style="color:red;">{{ $errors->first('name') }}</p>
+                            @endif
+                            @if ($errors->has('title'))
+                                <p style="color:red;">{{ $errors->first('title') }}</p>
                             @endif
                             @if ($errors->has('key'))
                                 <p style="color:red;">{{ $errors->first('key') }}</p>
@@ -72,6 +78,7 @@
                                     <th class="text-center">Name</th>
                                     <th class="text-center">Title</th>
                                     <th class="text-center">Keywords</th>
+                                    <th class="text-center btn_update" style="display: none;">Update</th>
                                     <th class="text-center">Edit</th>
                                     <th class="text-center">Delete</th>
 
@@ -80,10 +87,29 @@
                             <tbody>
                                 @if (count($page) > 0)
                                     @foreach ($page as $row)
+                                    <form action="{{ route('info_update') }}" method="post">
+                                        @csrf
+                                        <input type="text" name="id" value="{{ $row->id }}" style="display: none;">
                                         <tr>
-                                            <td class="text-center"> {{ $row->name }} </td>
-                                            <td class="text-center"> {{ $row->title }} </td>
-                                            <td class="text-center"> {{ $row->keyword }} </td>
+                                            <td class="text-center"> <p class="para_name" style="cursor: pointer;"> {{ $row->name }} </p> 
+                                            <input type="text" name="name" style="display: none;" class="input_name form-control" value="{{ $row->name }}" required>
+                                            </td>
+
+
+                                            <td class="text-center" style="cursor: pointer;"> <p class="para_title" style="cursor: pointer;"> {{ $row->title }}</p>
+                                                <input type="text" name="title" style="display: none;" class="input_title form-control" value="{{ $row->title }}" required>
+                                            </td>
+
+
+                                            <td class="text-center" style="cursor: pointer;"> <p class="para_key" style="cursor: pointer;"> {{ $row->keyword }} </p>
+                                                <input type="text" name="key" style="display: none;" class="input_key form-control" value="{{ $row->keyword }}" required>
+                                            </td>
+
+
+
+
+                                            <td class="text-center btn_update" style="display: none;"> 
+                                                <button type="submit" class="btn btn-primary"> Update </button> </td>
 
                                             <td class="text-center">
                                                 <div class="btn-group btn-group-xs">
@@ -101,6 +127,7 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                    </form>
                                     @endforeach
                                 @else
                                     <p>No Page Created</p>
@@ -115,5 +142,23 @@
             </div>
         </div>
     </div>
+
+<script>
+    $('.para_name').click(function(){
+       $('.btn_update').attr('style','display:block;')
+       $('.input_name').attr('style','display:block;')
+    });
+   
+   
+    $('.para_title').click(function(){
+       $('.btn_update').attr('style','display:block;')
+       $('.input_title').attr('style','display:block;')
+    });
+   
+    $('.para_key').click(function(){
+       $('.btn_update').attr('style','display:block;')
+       $('.input_key').attr('style','display:block;')
+    });
+</script>
 
 @endsection

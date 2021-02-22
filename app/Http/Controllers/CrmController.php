@@ -1299,6 +1299,45 @@ class CrmController extends Controller
           
          
      }
+    
+    
+     //Video Upload
+     public function info_update(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+            $this->validate($request,[
+                'id'=>'required|numeric',
+                'name'=>'required',
+                'title'=>'required',
+                'key'=>'required'
+            ]);
+            $page=newPages::find($request->id);
+            $str=str_replace(' ', '-',$request->name);
+            $page->name=$str;
+            $page->keyword=$request->key;
+            $page->title=$request->title;
+            $page->save();
+            if($page->save())
+            {
+            return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
+         }
+        
+          
+         
+     }
 
 
       //Video Upload

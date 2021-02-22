@@ -812,7 +812,7 @@ class AdminController extends Controller
                         foreach($retailer as $row)
                         {
                         $mail=[
-                            'body'=> $output.'<br><br>'.$welcome->message.'<br>'.$ender
+                            'body'=> $welcome->message.'<br><br>'.$output.'<br>'.$ender
                         ];
                         $subject=$welcome->subject;
                         Mail::to($row->email)->send(new masalMail($mail,$subject));

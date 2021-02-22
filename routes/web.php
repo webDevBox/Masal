@@ -301,3 +301,4 @@ Route::get('/retailer_wedding', 'RetailerController@retailer_wedding')->name('re
 Route::post('/wedding_send', 'RetailerController@wedding_send')->name('wedding_send');
 Route::post('/wedding_edit', 'RetailerController@wedding_edit')->name('wedding_edit');
 Route::post('/logo', 'RetailerController@logo')->name('logo');
+Route::post('/info_update', 'CrmController@info_update')->name('info_update');

@@ -132,7 +132,7 @@ class EmailController extends Controller
         }
 
         $stokist=User::where('userRole',2)->where('status',1)->get();
-        $template=retailer_email::get();
+        $template=retailer_email::where('status',1)->get();
         return view('admin.email_retailer')->with(array('template'=>$template,'stokist'=>$stokist));
       }
 
@@ -179,6 +179,7 @@ class EmailController extends Controller
                     $template=new retailer_email;
                     $template->subject=$request->subject;
                     $template->message=$request->body;
+                    $template->status=1;
                     $template->save();
                 }
                 
@@ -238,6 +239,7 @@ class EmailController extends Controller
                        $template=new retailer_email;
                        $template->subject=$request->subject;
                        $template->message=$request->body;
+                       $template->status=1;
                        $template->save();
                    }
                    
@@ -349,6 +351,14 @@ class EmailController extends Controller
             $template->message=$request->message;
             $template->status=$request->status;
             $template->save();
+            if(retailer_email::where('email_id',$request->id)->count() > 0)
+            {
+            retailer_email::where('email_id',$request->id)->update([
+                'subject'=>$request->subject,
+                'message'=>$request->message,
+                'status'=>$request->status
+            ]);
+            }
             return redirect()->back()->with('success','Your Email Template Updated Successfully');
         }   
       }
@@ -370,6 +380,10 @@ class EmailController extends Controller
             $template=emails::find($id);
             $template->status=$value;
             $template->save();
+
+            retailer_email::where('email_id',$id)->update([
+                'status'=>$value
+            ]);
             if($value == 1)
             {
             return redirect()->back()->with('success','Your Email Template Active Successfully');
@@ -408,6 +422,12 @@ class EmailController extends Controller
                 $template->message=$request->message;
                 $template->status=$request->status;
                 $template->save();
+
+                $retailer=new retailer_email;
+                $retailer->subject=$request->subject;
+                $retailer->message=$request->message;
+                $retailer->status=$request->status;
+                $retailer->save(); 
                 return redirect()->back()->with('success','Your Email Template Added Successfully');
             }   
     }   
@@ -470,6 +490,8 @@ class EmailController extends Controller
              return redirect('/admin');
          }
          $temp=retailer_email::find($id);
+         $email=emails::find($temp->email_id);
+         $email->delete();
          $temp->delete();
          return redirect()->back()->with('success','Templete Deleted Successfully');
      }
@@ -518,6 +540,16 @@ class EmailController extends Controller
             $template->subject=$request->subject;
             $template->message=$request->message;
             $template->save();
+
+            if(emails::where('id',$template->email_id)->count() > 0)
+            {
+                emails::where('id',$template->email_id)->update([
+                    'subject'=>$request->subject,
+                    'message'=>$request->message
+                ]);
+            }
+            
+
             return redirect()->back()->with('success','Templete Updated Successfully');
          }
          return redirect()->back()->with('error','Templete Not Updated');

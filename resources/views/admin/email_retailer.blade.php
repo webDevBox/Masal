@@ -155,7 +155,7 @@
             <td class="text-center">
             <div class="btn-group btn-group-xs">
             {{-- <a href="{{route('send_email',array('id' => $row->id))}}" data-toggle="tooltip" title="Send Email" class="btn btn-default"><i class="fa fa-envelope"></i></a> --}}
-            <a href="#mailpop" data-toggle="modal" title="Send Email" id="{{ $row->id }}" class="btn btn-default clicker"><i class="fa fa-envelope"></i></a>
+            <a href="#mailpop" data-toggle="modal" title="Send Email From Templates" id="{{ $row->id }}" class="btn btn-default clicker"><i class="fa fa-envelope"></i></a>
             <a href="#mailnew" data-toggle="modal" title="Send Email" id="{{ $row->id }}" class="btn btn-default clicker"><i class="fa fa-envelope-o">+</i></a>
             </div>
             </td>
