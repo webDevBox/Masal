@@ -45,6 +45,90 @@ class RetailerController extends Controller
          {
              return redirect('/');
          }
+         $welcome=emails::where('name','pending_order')->first();
+         $signature=emails::where('name','Signature')->first();
+
+         $email=retailerOrder::where('payment','none')->get();
+         $current = Carbon::today();
+         foreach($email as $send)
+         {
+            $user=User::find($send->RetailerId);
+            $email=$user->email;
+            $order_time=$send->created_at;
+            $one_date=Carbon::parse($order_time)->addDays(1);
+            $seven_date=Carbon::parse($order_time)->addDays(7);
+            $fifteen_date=Carbon::parse($order_time)->addDays(15);
+            if(now()->isSameDay($one_date) || now()->isSameDay($seven_date) || now()->isSameDay($fifteen_date))
+            {
+                $product=products::find($send->productId);
+                $addition=0;
+                if($send->extra != null)
+                {
+                    $extra=additional::where('additional',$send->extra)->first();
+                    $addition=$extra->price;
+                }
+                $sub=($send->quantity*$addition)+($send->quantity*$product->wholesalePrice);
+                $output='';
+                $output.='
+               <div class="table-responsive" id="tbl_detail">
+                <table class="table table-dark" style="border-collapse: collapse;background-color:#212529;color:white" >
+                <thead>
+                  <tr>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Order Id</b></th>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Image</b></th>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Name</b></th>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Notes</b></th>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Color</b></th>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Size</b></th>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Extra</b></th>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Style #</b></th>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Quantity</b></th>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Status</b></th>
+                  <th style="padding:20px; border: 1px solid black;" ><b>Price</b></th> 
+                  </tr>
+                </thead>
+                <tbody>
+                
+                ';
+                $output.='
+                <tr>
+                    <td style="padding:20px; border: 1px solid black;" > '.'OID.'.$send->id.' </td>
+                    <td style="padding:20px; border: 1px solid black;" > <img style="height:100px;width:100px" src='.asset('images/'.$product->image1).'> </td>
+                    <td style="padding:20px; border: 1px solid black;" > '.$product->name.' </td>
+                    <td style="padding:20px; border: 1px solid black;" > '.$send->detail.'  </td>
+                    <td style="padding:20px; border: 1px solid black;" > '.$send->colour.'  </td>
+                    <td style="padding:20px; border: 1px solid black;" > '.$send->sizes.' </td>
+                    <td style="padding:20px; border: 1px solid black;" > '.$send->extra.'  </td>
+                    <td style="padding:20px; border: 1px solid black;" > '.$product->styleNumber.' </td>
+                    <td style="padding:20px; border: 1px solid black;" > '.$send->quantity.' </td>
+                    <td style="padding:20px; border: 1px solid black;" > '.$send->status.' </td>
+                    <td style="padding:20px; border: 1px solid black;" > $'.$sub.'</td>
+                </tr>
+                ';
+                $output.='
+              </tbody>
+              </table>
+              </div>
+                ';
+              
+              
+                $ender=' ';
+                if($signature->status == 1)
+                {
+                $ender=$signature->message;
+                }
+                if($welcome->status ==1)
+                {
+                    $mail=[
+                        'title'=>$welcome->subject,
+                        'body'=>$welcome->message.'<br><br>'.$output.'<br>'.$ender
+                    ];
+                    $subject=$welcome->subject;
+                    Mail::to($email)->send(new masalMail($mail,$subject));
+                }
+
+            }
+        }
          $collection=Category::orderBy('id', 'desc')->limit(8)->get();
          $todayOrder=retailerOrder::where('payment','Done')->where('RetailerId',Auth::user()->id)->whereDate('created_at', '=', Carbon::today())->count();
          $monthOrder=retailerOrder::where('payment','Done')
