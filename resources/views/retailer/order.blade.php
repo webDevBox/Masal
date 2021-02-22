@@ -82,7 +82,7 @@ $price=$price+($rate*$quantity)+($extra_price*$quantity);
 <th class="text-center bg-light-primary" style="width: 50px;">Quantity</th>
 <th class="text-center bg-light-primary">Total</th>
 <th class="text-center bg-light-primary">Submitted</th>
-<th class="text-center bg-light-primary">Cancellation </th>
+<th class="text-center bg-light-primary">Action </th>
 </tr>
 </thead>
 <tbody>
