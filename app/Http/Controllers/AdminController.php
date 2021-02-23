@@ -481,6 +481,7 @@ class AdminController extends Controller
                 'retail_price'=>'required',
                 'stock'=>'required',
                 'style'=>'required|unique:products,styleNumber',
+                'bar'=>'required|unique:products,barcode',
                 'first'=>'required|image',
                 'category'=>'required|numeric',
                 'silhouette'=>'required|numeric',
@@ -522,6 +523,7 @@ class AdminController extends Controller
             $product->retailerPrice=$request->retail_price;
             $product->wholesalePrice=$request->wholesale_price;
             $product->styleNumber=$request->style;
+            $product->barcode=$request->bar;
             $product->status=$request->product_condition;
             $product->stock=$request->stock;
             $path1 = $request->first->store('products');
