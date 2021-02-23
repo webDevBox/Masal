@@ -455,10 +455,12 @@
             <div class="form-group">
         
             <label class="col-md-12  h5   control-label" for="product-price">Barcode</label>
-        
+            <div class="col-md-9 baro" style="display: none;">
+                <svg id="barcode2"></svg>
+                </div>
             <div class="col-md-9">
         
-            <input type="text" id="product-price" value="{{ old('bar') }}" name="bar" class="form-control" placeholder="Enter Barcode" required>
+            <input type="text" id="prod_bar" value="{{ old('bar') }}" name="bar" class="form-control" placeholder="Enter Barcode" required>
         
             @if ($errors->has('bar')) <p style="color:red;">{{ $errors->first('bar') }}</p> @endif 
         
@@ -677,5 +679,15 @@
     
     </div>
     </div>
-
+    <script>
+        $('input[name=bar]').keyup(function() { 
+            $('.baro').attr('style','block');
+            var val = $('#prod_bar').val();
+            JsBarcode("#barcode2", val, {
+            font: "cursive",
+            fontSize: 20
+            });
+         });
+       
+    </script>
 @endsection
