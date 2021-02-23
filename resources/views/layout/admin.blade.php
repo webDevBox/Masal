@@ -89,7 +89,8 @@ $id=Auth::user()->id;
 $chat= \App\chatModel::where('marker',1)->where('receiver',$id)->count();
 $newUser= \App\User::where('status',0)->count();
 $unread= \App\feedback::where('status',0)->count();
-$note=$chat + $newUser + $unread;
+$calcle=\App\retailerOrder::where('cancle_order_request',1)->count();
+$note=$chat + $newUser + $unread + $calcle;
 @endphp
 <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"> <i class="fa fa-bell" style="color: #7367F0;" aria-hidden="true"></i>
 @if($note > 0) <span class="badge badge-pill badge-danger badge-up">{{ $note }}</span> @endif </a>
@@ -115,6 +116,31 @@ $note=$chat + $newUser + $unread;
 </li>
 <hr>
 @endif
+
+@if($calcle > 0)
+
+<li class="dropdown-menu-header">
+    <div class="dropdown-header d-flex">
+    <h4 class="notification-title mb-0 mr-auto">Order Cancellation Request</h4>
+    <div class="badge badge-pill badge-light-primary">{{ $calcle }} New</div>
+    </div>
+    </li>
+    <li class="scrollable-container media-list">
+    <a class="d-flex" href="{{ route('order') }}">
+    <div class="media d-flex align-items-start">
+    <div class="media-left">
+    <div class=""><img src="{{ asset('app-assets/images/portrait/small/new.png')}}" alt="avatar" width="32" height="32"></div>
+    </div>
+    <div class="media-body">
+    <p class="media-heading"><span class="font-weight-bolder"> Orders Page </span>
+    </div>
+    </div>
+    </a>
+    </li>
+    <hr>
+    @endif
+
+
 
 @if($newUser > 0)
 

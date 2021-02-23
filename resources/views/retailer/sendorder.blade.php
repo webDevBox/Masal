@@ -25,17 +25,17 @@
             <img id="main_image" class="main_image mx-auto d-block" style="width:350px; height:600px;" alt="" src="{{ asset('images/'.$product->image1) }}">
             
             </div>
-            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 mt-5">
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 mt-5" >
 
                 <h1>Price: ${{$product->wholesalePrice}}</h1>
-                <h3 class="mt-2">Description<h3> 
+                <h3 class="mt-2"> Description <h3> 
               
                     <a class="btn btn-primary mt-2 mb-2" href="{{ asset('images/products/chart.pdf') }}" style="color: white;" download="Size Chart"> Size Chart </a>
-                   
+                   <div style="overflow-x:auto; ">
                 @php
                    echo $product->description;
                 @endphp
-                
+                </div>
 
                 <h3 class=" mt-2">Other Images</h3>
                 <div class="row">

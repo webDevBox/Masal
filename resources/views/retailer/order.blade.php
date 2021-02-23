@@ -136,7 +136,9 @@ No Extra
 <a href="{{route('checkout')}}" data-toggle="tooltip" title="Saved in Cart" class="btn btn-xs btn-primary"><i class="fa fa-shopping-cart"></i></a>
 @endif
 @elseif($row->cancle_order_request == 2)
-<p> Your Request is Approved </p>   
+<p> Your Request is Approved </p> 
+@elseif($row->cancle_order_request == 3)
+<p> Your Request is Rejected </p>  
 @else
 <p> Your Request is Pending </p>   
 @endif

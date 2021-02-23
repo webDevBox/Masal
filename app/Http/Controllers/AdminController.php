@@ -907,7 +907,11 @@ class AdminController extends Controller
                 $order->colour=$request->color;
                 $order->sizes=$request->size;
                 $order->status=$request->status;
-                
+                if($request->status == 'completed' && $order->cancle_order_request == 1)
+                {
+                    $order->cancle_order_request=3;
+                }
+
                 if($request->status == 'canceled' && $order->cancle_order_request == 1)
                 {
                     $order->cancle_order_request=2;

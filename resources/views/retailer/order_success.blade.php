@@ -35,8 +35,9 @@
             <th class="text-center">Product Name</th>
             <th class="text-center">Product Notes</th>
             <th class="text-center">Style #</th>
-            <th class="text-center">Price</th>
             <th class="text-center">Quantity</th>
+            <th class="text-center">Unit Price</th>
+            <th class="text-center">Total Price</th>
             <th class="text-center">Size</th>
             <th class="text-center">Color</th>
             <th class="text-center">Status</th>
@@ -50,6 +51,13 @@
             $order=$row->order_id;
             $retail_order=\App\retailerOrder::find($order);
             $product= \App\products::where('id',$retail_order->productId)->first();
+            $extra=0;
+            if($retail_order->extra != null)
+            {
+                $addition=additional::where('additional',$retail_order->extra)->first();
+                $extra=$addition->price;
+            }
+            $total=($product->wholesalePrice*$retail_order->quantity)+($extra*$retail_order->quantity);
 
             @endphp
             <tr>
@@ -66,8 +74,9 @@
             @endif
             </td>
             <td class="text-center">{{$product->styleNumber}}</td>
-            <td class="text-center">${{$product->wholesalePrice}}</td>
             <td class="text-center">{{$retail_order->quantity}}</td>
+            <td class="text-center">${{$product->wholesalePrice}}</td>
+            <td class="text-center">${{$total}}</td>
             <td class="text-center">{{$retail_order->sizes}}</td>
             <td class="text-center">{{$retail_order->colour}}</td>
             <td class="text-center">{{$retail_order->status}}</td>
