@@ -732,12 +732,19 @@ class AdminController extends Controller
                 'retail_price'=>'required',
                 'stock'=>'required',
                 'style'=>'required',
+                'bar'=>'required',
                 'size'=>'required'
                 ]);
                 if($request->style != $request->check_style)
                 {
                     $this->validate($request,[
                         'style'=>'unique:products,styleNumber'
+                        ]);
+                }
+                if($request->bar != $request->check_bar)
+                {
+                    $this->validate($request,[
+                        'bar'=>'unique:products,barcode'
                         ]);
                 }
                 $size=json_encode($request->size);
@@ -776,6 +783,7 @@ class AdminController extends Controller
             $product->wholesalePrice=$request->wholesale_price;
             $product->retailerPrice=$request->retail_price;
             $product->styleNumber=$request->style;
+            $product->barcode=$request->bar;
             $product->status=$request->product_condition;
             $product->stock=$request->stock;
             $product->save();

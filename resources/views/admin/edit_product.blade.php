@@ -35,7 +35,7 @@
                     </div>
                     </div>
                 <div class="form-group">
-                <label class="col-md-3 h5 control-label" for="product_name">Name</label>
+                <label class="col-md-6 h5 control-label" for="product_name">Name</label>
                 <div class="col-md-9">
                 <input type="text" id="product_name" value="{{$product->name}}"  value="{{ old('product_name') }}" name="product_name" class="form-control">
                 @if ($errors->has('product_name')) <p style="color:red;">{{ $errors->first('product_name') }}</p> @endif 
@@ -43,7 +43,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <label class="col-md-3 h5 control-label" for="product_name">Keywords</label>
+                    <label class="col-md-6 h5 control-label" for="product_name">Keywords</label>
                     <div class="col-md-9">
                     <input type="text" id="product_name" value="{{$product->keyword}}" value="{{ old('key') }}" name="key" class="form-control" placeholder="Enter product Keyword with , Separation.." required>
                     @if ($errors->has('key')) <p style="color:red;">{{ $errors->first('key') }}</p> @endif 
@@ -51,7 +51,7 @@
                     </div>
                 
                 <div class="form-group">
-                <label class="col-md-3 h5 control-label" for="product_description">Description</label>
+                <label class="col-md-6 h5 control-label" for="product_description">Description</label>
                 <div class="col-md-9">
                 <textarea rows="5" id="product_description" name="product_description" class="form-control ckeditor">{{$product->description}}</textarea>
                 @if ($errors->has('product_description')) <p style="color:red;">{{ $errors->first('product_description') }}</p> @endif 
@@ -61,7 +61,7 @@
                 
                 
                 <div class="form-group">
-                    <label class="col-md-3 h5 control-label" for="product_description"> Category</label>
+                    <label class="col-md-6 h5 control-label" for="product_description"> Category</label>
                     <div class="col-md-9">
                         <select class="form-control" name="category" required>
                             @if(count($category) > 0)
@@ -81,7 +81,7 @@
 
 
                 <div class="form-group">
-                    <label class="col-md-3 h5 control-label" for="product_description"> Silhouettes</label>
+                    <label class="col-md-6 h5 control-label" for="product_description"> Silhouettes</label>
                     <div class="col-md-9">
                         <select class="form-control" name="silhouette" required>
                             @if(count($silhouette) > 0)
@@ -100,7 +100,7 @@
 
 
                 <div class="form-group">
-                    <label class="col-md-3 h5 control-label" for="product_description"> Necklines</label>
+                    <label class="col-md-6 h5 control-label" for="product_description"> Necklines</label>
                     <div class="col-md-9">
                         <select class="form-control" name="neckline" required>
                             @if(count($neckline) > 0)
@@ -119,7 +119,7 @@
 
 
                 <div class="form-group">
-                    <label class="col-md-3 h5 control-label" for="product_description"> Fabrics</label>
+                    <label class="col-md-6 h5 control-label" for="product_description"> Fabrics</label>
                     <div class="col-md-9">
                         <select class="form-control" name="fabric" required>
                             @if(count($fabric) > 0)
@@ -139,7 +139,7 @@
                 
                 
                     <div class="form-group">
-                    <label class="col-md-3 h5 control-label" for="product_description"> Sleeve Type</label>
+                    <label class="col-md-6 h5 control-label" for="product_description"> Sleeve Type</label>
                     <div class="col-md-9">
                         <select class="form-control" name="sleeve" required>
                             @if(count($sleeve) > 0)
@@ -159,7 +159,7 @@
                 
                     
                     <div class="form-group">
-                        <label class="col-md-3 h5 control-label" for="product_description"> Tag</label>
+                        <label class="col-md-6 h5 control-label" for="product_description"> Tag</label>
                         <div class="col-md-9">
                             <select class="form-control" name="tag">
                                 @if($product->tag == null)
@@ -183,7 +183,7 @@
                         </div>
                 
                     <div class="form-group">
-                        <label class="col-md-3 h5 control-label" for="product_description">Colour Swatches</label>
+                        <label class="col-md-6 h5 control-label" for="product_description">Colour Swatches</label>
                         <div class="col-md-9">
                             <select class="form-control" name="colour" required>
                                 @if(count($category) > 0)
@@ -229,7 +229,7 @@
                 
                 
                 <div class="form-group">
-                <label class="col-md-3 h5 control-label" for="product-price">Wholesale Price</label>
+                <label class="col-md-6 h5 control-label" for="product-price">Wholesale Price</label>
                 <div class="col-md-9">
                 <div class="input-group">
                 <div class="input-group-addon"></div>
@@ -241,7 +241,7 @@
                 </div>
                 
                 <div class="form-group">
-                <label class="col-md-3 h5 control-label" for="product-price">Retail Price</label>
+                <label class="col-md-6 h5 control-label" for="product-price">Retail Price</label>
                 <div class="col-md-9">
                 <div class="input-group">
                 <div class="input-group-addon"></div>
@@ -253,21 +253,33 @@
                 </div>
                 
                 <div class="form-group">
-                    <label class="col-md-3 h5 control-label" for="product_name">Style Number</label>
+                    <label class="col-md-6 h5 control-label" for="product_name">Style Number</label>
                     <div class="col-md-9">
                     <input type="text" id="product_name" value="{{$product->styleNumber}}"  value="{{ old('style') }}" name="style" class="form-control">
                     @if ($errors->has('style')) <p style="color:red;">{{ $errors->first('style') }}</p> @endif 
                     </div>
                 </div>
                 
+                
+                <div class="form-group">
+                    <label class="col-md-6 h5 control-label" for="product_name">Barcode</label>
+                    <div class="col-md-9">
+                    <svg id="barcode2"></svg>
+                    </div>
+                    <div class="col-md-9">
+                    <input type="text" id="product_name" value="{{$product->barcode}}"  value="{{ old('bar') }}" name="bar" class="form-control">
+                    @if ($errors->has('bar')) <p style="color:red;">{{ $errors->first('bar') }}</p> @endif 
+                    </div>
+                </div>
+                
                 <div class="form-group" style="display: none;">
-                   
+                    <input type="text" id="product_name" value="{{$product->barcode}}"  name="check_bar" class="form-control">
                     <input type="text" id="product_name" value="{{$product->styleNumber}}" name="check_style" class="form-control">
                     
                 </div>
                 
                 <div class="form-group">
-                    <label class="col-md-3 h5 control-label" for="product-price">Stock</label>
+                    <label class="col-md-6 h5 control-label" for="product-price">Stock</label>
                     <div class="col-md-9">
                     <input type="number" id="product-price" value="{{$product->stock}}" name="stock" class="form-control" placeholder="0,00">
                     @if ($errors->has('stock')) <p style="color:red;">{{ $errors->first('stock') }}</p> @endif 
@@ -275,7 +287,7 @@
                     </div>
                 <br>
                 <div class="form-group">
-                <label class="col-md-3 h5 control-label">Status</label>
+                <label class="col-md-6 h5 control-label">Status</label>
                 <div class="col-md-9">
                 <label class="radio-inline" for="product_condition-new">
                 <input type="radio" id="product_condition-new" name="product_condition" value="active" @if($product->status == 'active') checked @endif > Active
@@ -631,6 +643,10 @@
 
                 $('.product').attr('class','active');
 </script>
-
-
+<script>
+    JsBarcode("#barcode2", "{{$product->barcode}}", {
+  font: "cursive",
+  fontSize: 20
+});
+</script>
 @endsection 
