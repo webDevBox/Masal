@@ -174,7 +174,7 @@
                     {{-- <input type="search" placeholder="Enter your Country, state, or City" data-property="store-locator-search" data-rule-sllocationselected="true" autocomplete="off" class="ui-autocomplete-input" aria-label="Enter your city, state, or zip" required> --}}
                     <div class="input-btn">
                     <button type="submit" class="btn btn-success" >
-                    <a href="{{route('wherebuy')}}"> Find a store</a>
+                    <a href="{{route('mapper')}}"> Find a store</a>
                     </button>
                     </div>
                     </div>
