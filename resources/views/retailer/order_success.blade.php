@@ -26,6 +26,11 @@
             <div class="table-responsive">
             <table class="table table-hover" id="table">
             <thead>
+            <tr>
+                <td colspan="11">
+                <img class="mx-auto d-block" style="width:300px; height:150px;" src="{{ asset('images/'.$logo->logo) }}" alt="">
+                </td>
+            </tr>
                 @if(count($success) > 0)
                 <p class="alert alert-success"> Payment done successfully ! </p>
                 @endif
@@ -83,11 +88,6 @@
             <td class="text-center"> @if($retail_order->extra != null) {{$retail_order->extra}} @else No Extra @endif </td>
             </tr>
             @endforeach
-            <tr>
-                <td colspan="11">
-                <img class="mx-auto d-block" style="width:300px; height:150px;" src="{{ asset('images/'.$logo->logo) }}" alt="">
-                </td>
-            </tr>
             </tbody>
             </table>
             </div>

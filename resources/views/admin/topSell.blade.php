@@ -43,37 +43,12 @@
 
                 <tbody>
 
-                    @php
-
-                    $counter1=0;
-
-                    @endphp
 
                     @if(count($product) > 0)
 
                     @foreach($product as $row)
 
-                    @php
 
-                    $quantity=0;
-
-                    $selling_check= \App\retailerOrder::where('productId',$row->id)->get();
-
-                    foreach ($selling_check as $sell) {
-
-                    $quantity=$quantity+$sell->quantity;
-
-                    }
-
-                    @endphp
-
-                    @if ($quantity >= 10)
-
-                    @php
-
-                    $counter1++;
-
-                    @endphp
 
                     <tr>
                         <td class="text-center"><strong>PID.{{$row->id}}</strong></td>
@@ -82,12 +57,11 @@
 
                         <td class="text-center"><strong>{{$row->styleNumber}}</strong></td>
 
-                        <td class="text-center"> {{$quantity}} </td>
+                        <td class="text-center"> {{$row->min}} </td>
 
                         <td class="text-center">{{$row->created_at}}</td>
                     </tr>
 
-                    @endif
 
                     @endforeach
 
@@ -97,7 +71,7 @@
 
                     @endif
 
-                    <input type="text" value="{{$counter1}}" id="no_metter" style="display: none;">
+                   
 
                 </tbody>
             </table>

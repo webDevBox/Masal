@@ -17,6 +17,7 @@ use App\sleeve;
 use App\User;
 use App\footer;
 use App\ColourSwatches;
+use DB;
 use App\feedback;
 use App\retailerOrder;
 use App\visitor;
@@ -656,6 +657,24 @@ class AdminController extends Controller
     
     
     //Product edit form page
+    // public function top_sell()
+    // {
+    //     if (Auth::check()) {
+    //         if($this->user->userRole != 1)
+    //         {
+    //          return redirect('/admin');
+    //         }
+    //      }
+    //      else
+    //      {
+    //          return redirect('/admin');
+    //      }
+    //     $product = products::orderBy('id','desc')->where('delete_status',0)->get();
+    //     return view('admin.topSell')->with(array('product'=>$product));;
+    // }
+    
+    
+    //Top Sell Products
     public function top_sell()
     {
         if (Auth::check()) {
@@ -668,8 +687,9 @@ class AdminController extends Controller
          {
              return redirect('/admin');
          }
-         $product = products::orderBy('id','desc')->where('delete_status',0)->get();
-        return view('admin.topSell')->with(array('product'=>$product));;
+        $product = DB::select("SELECT SUM(r.quantity) as 'min',p.id,p.name,p.styleNumber,r.created_at FROM retailer_orders r 
+        INNER join products p on(p.id = r.productId ) GROUP by (r.productId) order by min Desc");
+        return view('admin.topSell')->with(array('product'=>$product));
     }
 
 
@@ -2030,16 +2050,19 @@ class AdminController extends Controller
         ->orWhere('status', 'like', '%' . $request->data . '%')->get();
 
        $orders='';
-       $order_by='';
        $word='OID';
        $word1= 'oid';
-       if(strpos($request->data, $word) !== false || strpos($request->data, $word1) !== false)
+       if(strpos($request->data, $word) != false || strpos($request->data, $word1) != false)
        {
         preg_match_all('!\d+!', $request->data, $matches);
-        $order_by='get';
         $orders = retailerOrder::where('payment','Done')->whereIn('id' , [$matches])->get();
        }
-        return view('admin.result')->with(array('inter'=>$inter,'order_by'=>$order_by,'orders'=>$orders,'retailer'=>$retailer));
+       else
+       {
+           $product=products::where('name',$request->data)->first();
+           $orders=retailerOrder::where('payment','Done')->where('productId',$product->id)->get();
+       }
+        return view('admin.result')->with(array('inter'=>$inter,'orders'=>$orders,'retailer'=>$retailer));
     }
 
     public function size()

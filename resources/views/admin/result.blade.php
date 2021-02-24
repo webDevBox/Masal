@@ -90,6 +90,7 @@
                                 <th class="text-center">Sizes</th>
                                 <th class="text-center">QTY</th>
                                 <th class="text-center">Extra</th>
+                                <th class="text-center">Status</th>
                                 <th class="text-center">Unit Price</th>
                                 <th class="text-center">Total</th>
                                 <th class="text-center">Order Date & Time</th>
@@ -98,7 +99,7 @@
                         </thead>
                         <tbody>
 
-                            @if(isset($order_by) && $order_by == 'get')
+                            @if(count($orders) > 0)
                             @foreach ($orders as $order)
                             @php
                             $extra=0;
@@ -130,6 +131,8 @@
                                 No Extra
                                 @endif
                                 </td>
+                                
+                                <td class="text-center">{{$order->status}}</td>
                                 <td class="text-center">${{$product->wholesalePrice}}</td>
                                 <td class="text-center">${{$price}}</td>
                                 <td class="text-center">{{$order->created_at}}</td>
@@ -176,6 +179,7 @@
                                 No Extra
                                 @endif
                                 </td>
+                                <td class="text-center">{{$row->status}}</td>
                                 <td class="text-center">${{$product->wholesalePrice}}</td>
                                 <td class="text-center">${{$price}}</td>
                                 <td class="text-center">{{$row->created_at}}</td>

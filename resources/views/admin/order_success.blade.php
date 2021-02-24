@@ -26,6 +26,11 @@
                     <table class="table" id="table">
                     <thead>
                     <tr>
+                        <td colspan="11">
+                        <img class="mx-auto d-block" style="width:300px; height:150px;" src="{{ asset('images/'.$logo->logo) }}" alt="">
+                        </td>
+                    </tr>
+                    <tr>
                     <th class="text-center" style="width: 70px;"> ID</th>
                     <th class="text-center">Product Image</th>
                     <th class="text-center">Product Name</th>
@@ -73,11 +78,6 @@
                     <td class="text-center">{{$row->colour}}</td>
                     <td class="text-center">{{$row->status}}</td>
                     <td class="text-center"> @if($row->extra != null) {{$row->extra}} @else No Extra @endif </td>
-                    </tr>
-                    <tr>
-                        <td colspan="11">
-                        <img class="mx-auto d-block" style="width:300px; height:150px;" src="{{ asset('images/'.$logo->logo) }}" alt="">
-                        </td>
                     </tr>
                     </tbody>
                     </table>
