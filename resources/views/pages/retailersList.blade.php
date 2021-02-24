@@ -590,7 +590,7 @@
                 <h5 data-property="distance"></h5>
             </div>
             <div class="content-block founded-store-header">
-                <h2>{{$item->name}}</h2>
+                <h2>{{$item->businessName}}</h2>
             </div>
             <div class="content-block founded-store-location color-alt">
                 <h3 class="font-secondary">

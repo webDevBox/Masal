@@ -345,7 +345,7 @@ class PagesController extends Controller
         ->with('gallery',$gallery)->with('result',$result)->with('user',$user)->with('data',$data)->with('zoom',$zoom);
         }
         $finder=User::where('userRole',2)->where('status',1)->where('country',$request->searcher)
-        ->orWhere('state',$request->searcher)->orWhere('city',$request->searcher)->first();
+        ->orWhere('state',$request->searcher)->orWhere('city',$request->searcher)->orWhere('post',$request->searcher)->first();
            
             $fullAddress = $finder->city." ". $finder->state." ".$finder->country;
            
