@@ -98,6 +98,9 @@
 
 
 
-
+            <script>
+                $('#top_title').html('{{ $about->title }}');
+                $('#top_key').attr('content','{{ $about->keyword }}');
+            </script>
 
 @endsection

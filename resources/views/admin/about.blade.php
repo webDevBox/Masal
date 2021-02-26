@@ -10,6 +10,45 @@
    <div class="content-body">
    <!-- Dashboard Ecommerce Starts -->
    <div class="container">
+    <h1 class="text-center">Edit About Us Page</h1>
+    @if(Session::has('success'))
+
+    <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+    
+    @endif
+    
+    @if(Session::has('error'))
+    
+    <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('error') }}</p>
+    
+    @endif
+    @if ($errors->has('name'))<p style="color:red;">{{ $errors->first('name') }}</p>@endif
+    @if ($errors->has('title'))<p style="color:red;">{{ $errors->first('title') }}</p>@endif
+    @if ($errors->has('key'))<p style="color:red;">{{ $errors->first('key') }}</p>@endif
+         <form action="{{ route('about_date') }}" method="post">
+           @csrf
+           <div class="row container">
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+               <label> Enter Page Name </label>
+              <input type="text" name="name" value="{{ $home->name }}" class="form-control" required>
+             </div>
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <label> Enter Page Title </label>
+           <input type="text" name="title" value="{{ $home->title }}" class="form-control mx-auto" required>
+             </div>
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <label> Enter Page Keywords </label>
+           <input type="text" name="key" value="{{ $home->keyword }}" class="form-control" required>
+             </div>
+          </div>
+          <center><input type="submit" name="submit" value="Submit" class="btn btn-primary my-2"> </center>
+         </form>
+
+
+
+
+
+
     
               
             <a href="#" data-toggle="modal" data-target="#myModal1">

@@ -17,6 +17,7 @@ use App\User;
 use App\feedback;
 use App\visitor;
 use App\homePage;
+use App\contact;
 use App\about;
 use App\footer;
 use App\real;
@@ -34,6 +35,8 @@ class pagerController extends Controller
             return $next($request);
         });
     }
+
+
     public function manageHome()
      {
          if (Auth::check()) {
@@ -95,6 +98,38 @@ class pagerController extends Controller
           $foot=footer::where('id',1)->first();
 
           return view('admin.about')->with(array('foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
+
+     }
+    
+    
+    
+     public function manageContact()
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+          $latestCat=Category::orderBy('created_at', 'desc')->limit(8)->get();
+
+          $latestProduct=products::orderBy('created_at', 'desc')->limit(6)->get();
+  
+          $smallProduct=products::orderBy('created_at', 'desc')->limit(8)->get();
+  
+          $gallery=products::orderBy('created_at', 'desc')->limit(6)->get();
+  
+          $collection=Category::all();
+
+          $home=contact::first();
+
+          $foot=footer::where('id',1)->first();
+
+          return view('admin.contact')->with(array('foot'=>$foot,'home'=>$home,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
 
      }
 
@@ -1023,6 +1058,122 @@ class pagerController extends Controller
          else
          {
             return redirect()->back()->with('error', 'Image Not Updated');
+         }
+        }
+          
+         
+     }
+     
+     
+     public function home_date(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $this->validate($request,[
+                'name'=>'required',
+                'title'=>'required',
+                'key'=>'required'
+            ]);
+            $home=homePage::where('id',1)->first();
+            $home->name=$request->name;
+            $home->title=$request->title;
+            $home->keyword=$request->key;
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
+         }
+        }
+          
+         
+     }
+    
+    
+    
+     public function about_date(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $this->validate($request,[
+                'name'=>'required',
+                'title'=>'required',
+                'key'=>'required'
+            ]);
+            $home=about::where('id',1)->first();
+            $home->name=$request->name;
+            $home->title=$request->title;
+            $home->keyword=$request->key;
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
+         }
+        }
+          
+         
+     }
+     
+     
+     
+     public function contact_date(Request $request)
+     {
+         if (Auth::check()) {
+             if($this->user->userRole != 1)
+             {
+              return redirect('/admin');
+             }
+          }
+          else
+          {
+              return redirect('/admin');
+          }
+        if(isset($request->submit))
+        {
+            $this->validate($request,[
+                'name'=>'required',
+                'title'=>'required',
+                'key'=>'required'
+            ]);
+            $home=contact::where('id',1)->first();
+            $home->name=$request->name;
+            $home->title=$request->title;
+            $home->keyword=$request->key;
+            $home->save();
+            if($home->save())
+            {
+            return redirect()->back()->with('success', 'Content Updated');
+         }
+         else
+         {
+            return redirect()->back()->with('error', 'Content Not Updated');
          }
         }
           

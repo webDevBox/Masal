@@ -67,6 +67,9 @@
 </div>
 </section>
 
-
+<script>
+    $('#top_title').html('{{ $contact->title }}');
+    $('#top_key').attr('content','{{ $contact->keyword }}');
+</script>
 
 @endsection

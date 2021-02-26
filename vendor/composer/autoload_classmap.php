@@ -45,6 +45,7 @@ return array(
     'App\\buyer_state' => $baseDir . '/app/buyer_state.php',
     'App\\chatModel' => $baseDir . '/app/chatModel.php',
     'App\\city' => $baseDir . '/app/city.php',
+    'App\\contact' => $baseDir . '/app/contact.php',
     'App\\country' => $baseDir . '/app/country.php',
     'App\\emails' => $baseDir . '/app/emails.php',
     'App\\fabric' => $baseDir . '/app/fabric.php',

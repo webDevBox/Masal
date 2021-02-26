@@ -17,6 +17,7 @@ use App\city;
 use App\buyer_country;
 use App\buyer_state;
 use App\buyer_city;
+use App\contact;
 use App\User;
 use App\feedback;
 use App\visitor;
@@ -212,7 +213,8 @@ class PagesController extends Controller
        $gallery=products::orderBy('created_at', 'desc')->where('delete_status',0)->limit(6)->get();
         $collection=Category::all();
         $foot=footer::where('id',1)->first();
-        return view('pages.contact')->with(array('foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
+        $contact=contact::first();
+        return view('pages.contact')->with(array('contact'=>$contact,'foot'=>$foot,'collection'=>$collection,'gallery'=>$gallery,'latestProduct'=>$latestProduct,'latestCat'=>$latestCat,'smallProduct'=>$smallProduct));
     }
 
     public function nav_collection($id)

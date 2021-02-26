@@ -37,10 +37,10 @@
     </script>
 
 
-    <title>Masal</title>
+    <title id="top_title">Masal</title>
     <meta name="description"
         content="Masal  is a designer of award-winning wedding dresses. With emphasis on luxurious fabrics, fabulous fit and exquisite embellishments, browse our collection of wedding gowns and accessories." />
-    <meta name="keywords"
+    <meta id="top_key" name="keywords"
         content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Bridal Gowns, Lace Wedding Dresses, Plus Size Wedding Dresses, Masal, Wedding Gowns" />
     
     <!-- Google Tag Manager -->

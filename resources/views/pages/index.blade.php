@@ -332,5 +332,9 @@
 
     </div>
 
+    <script>
+        $('#top_title').html('{{ $home->title }}');
+        $('#top_key').attr('content','{{ $home->keyword }}');
+    </script>
   
 @endsection

@@ -38,6 +38,7 @@ Route::post('/add_template', 'EmailController@add_template')->name('add_template
 Route::post('/temp_edit', 'EmailController@temp_edit')->name('temp_edit');
 Route::get('/manageHome', 'pagerController@manageHome')->name('manageHome');
 Route::get('/manageAbout', 'pagerController@manageAbout')->name('manageAbout');
+Route::get('/manageContact', 'pagerController@manageContact')->name('manageContact');
 Route::get('/real_request/{id}', 'AdminController@real_request')->name('real_request');
 Route::get('/active_request/{id}/{value}', 'pagerController@active_request')->name('active_request');
 Route::post('/head1', 'pagerController@head1')->name('head1');
@@ -59,6 +60,9 @@ Route::post('/head16', 'pagerController@head16')->name('head16');
 Route::post('/head17', 'pagerController@head17')->name('head17');
 Route::post('/head18', 'pagerController@head18')->name('head18');
 Route::post('/head19', 'pagerController@head19')->name('head19');
+Route::post('/home_date', 'pagerController@home_date')->name('home_date');
+Route::post('/about_date', 'pagerController@about_date')->name('about_date');
+Route::post('/contact_date', 'pagerController@contact_date')->name('contact_date');
 //Footer Edits
 Route::post('/foot1', 'pagerController@foot1')->name('foot1');
 Route::post('/foot2', 'pagerController@foot2')->name('foot2');
