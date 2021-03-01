@@ -222,7 +222,7 @@ class PagesController extends Controller
         $category=Category::where('name',$id)->first();
         $products=products::where('category',$category->id)->where('delete_status',0)->paginate(6);
         $collection=Category::all();
-        $cat=Category::find($id);
+        $cat=Category::find($category->id);
         $seleve=sleeve::get();
         $fabric=fabric::get();
         $neck=neckline::get();
@@ -237,8 +237,9 @@ class PagesController extends Controller
     
     public function sil_collection($id)
     {
-        $products=products::where('silhouette',$id)->where('delete_status',0)->paginate(6);
-        $sil=silhouette::find($id);
+        $silhout=silhouette::where('name',$id)->first();
+        $products=products::where('silhouette',$silhout->id)->where('delete_status',0)->paginate(6);
+        $sil=silhouette::find($silhout->id);
         $collection=Category::all();
         $cat=Category::find($id);
         $seleve=sleeve::get();
