@@ -929,12 +929,14 @@ class AdminController extends Controller
                 $order->status=$request->status;
                 if($request->status == 'completed' && $order->cancle_order_request == 1)
                 {
+                    $order->view=0;
                     $order->cancle_order_request=3;
                 }
 
                 if($request->status == 'canceled' && $order->cancle_order_request == 1)
                 {
                     $order->cancle_order_request=2;
+                    $order->view=0;
                     $user=User::find($order->RetailerId);
                     $credit=$user->credit;
                     $extra=0;

@@ -96,6 +96,7 @@
   $quantity=0;
 
   $items= \App\retailerOrder::where('RetailerId',$id)->where('payment','none')->get();
+  $request= \App\retailerOrder::where('RetailerId',$id)->where('view',0)->get();
 
   foreach ($items as $item) {
 
@@ -107,7 +108,7 @@
 
         $id=Auth::user()->id;
 
-        $remain= \App\chatModel::where('marker',1)->where('receiver',$id)->count();
+        $remain= (\App\chatModel::where('marker',1)->where('receiver',$id)->count()) + count($request);
 
 @endphp
 
@@ -126,7 +127,7 @@
 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
 <li class="dropdown-menu-header">
 <div class="dropdown-header d-flex">
-<h4 class="notification-title mb-0 mr-auto">Notifications</h4>
+<h4 class="notification-title mb-0 mr-auto">Chat</h4>
 <a href="{{ route('chat') }}">
 <div class="badge badge-pill badge-light-primary">
    {{ $remain }} New Messages 
@@ -134,6 +135,29 @@
 </a>
 </div>
 </li>
+
+@foreach ($request as $cap)
+<li class="dropdown-menu-header">
+<div class="dropdown-header d-flex">
+<h4 class="notification-title mb-0 mr-auto">OID{{ $cap->id }}</h4>
+<a href="{{ route('orders') }}">
+<div class="badge badge-pill badge-light-primary">
+    
+@if($cap->cancle_order_request == 2)
+<p> Your Request is Approved </p> 
+@elseif($cap->cancle_order_request == 3)
+<p> Your Request is Rejected </p>  
+@endif
+
+
+</div>
+</a>
+</div>
+</li>
+@endforeach
+
+
+
 </ul>
 
 

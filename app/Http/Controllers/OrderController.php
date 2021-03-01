@@ -166,7 +166,7 @@ class OrderController extends Controller
           {
               return redirect('/admin');
           }
-         $order=retailerOrder::where('RetailerId',$id)->paginate(5);
+         $order=retailerOrder::where('RetailerId',$id)->orderBy('id','desc')->paginate(5);
          return view('admin.order_edit')->with('order',$order);
      }
 

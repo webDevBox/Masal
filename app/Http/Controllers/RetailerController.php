@@ -228,6 +228,7 @@ class RetailerController extends Controller
               return redirect('/');
           }
           $id=Auth::user()->id;
+          retailerOrder::where('RetailerId',$id)->update(['view'=>1]);
           $total=retailerOrder::where('RetailerId',$id)->where('payment','Done')->count();
           $payment=retailerOrder::orderBy('id', 'desc')->where('RetailerId',$id)->get();
           $Summary=retailerOrder::orderBy('id', 'desc')->where('RetailerId',$id)->where('payment','Done')->get();
