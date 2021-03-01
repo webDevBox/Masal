@@ -34,10 +34,12 @@
                                 <th class="text-center">Colors</th>
                                 <th class="text-center">Sizes</th>
                                 <th class="text-center">QTY</th>
+                                <th class="text-center">Status</th>
                                 <th class="text-center">Extra</th>
                                 <th class="text-center">Unit Price</th>
                                 <th class="text-center">Total</th>
                                 <th class="text-center">Order Date & Time</th>
+                                <th class="text-center">Cancellation Requests </th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -67,6 +69,7 @@
                                 <td class="text-center">{{$row->colour}}</td>
                                 <td class="text-center">{{$row->sizes}}</td>
                                 <td class="text-center">{{$row->quantity}}</td>
+                                <td class="text-center">{{$row->status}}</td>
                                 <td class="text-center">
                                 @if($row->extra != null)
                                 {{$row->extra}}
@@ -77,6 +80,9 @@
                                 <td class="text-center">${{$product->wholesalePrice}}</td>
                                 <td class="text-center">${{$price}}</td>
                                 <td class="text-center">{{$row->created_at}}</td>
+                                <td class="text-center"> @if($row->cancle_order_request == 1)<span class="bg-warning text-dark">Requested</span>
+                                    @elseif($row->cancle_order_request == 2) <p> Order Canceled Request is Accpted </p> @elseif($row->cancle_order_request == 3)
+                                    <p> Order Canceled Request is Rejected </p>  @else <p> No Request </p> @endif </td>
                                 <td class="text-center">
                                     <div class="btn-group">
                                     <a href="{{route('OrderView',array('id' => $row->id))}}" data-toggle="tooltip" title="Order Details" class="btn btn-xs btn-primary" style="color:black;">
@@ -98,9 +104,8 @@
                         </tbody>
                     </table>
                     
-                    
                     </div>
-
+                    <center>{{ $order->links() }}</center>
                     <div class="table-responsive fake" style="display:none; background:#EAEDF1;">
                         <table class="table table-bordered" style="border: 1px solid black" id="table">
                             <thead>
@@ -136,6 +141,7 @@
                     </div>
             <!-- END Products Content -->
         </div>
+        
     </section>
     <!-- Dashboard Ecommerce ends -->
     

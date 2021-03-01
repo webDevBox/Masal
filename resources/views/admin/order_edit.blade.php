@@ -100,7 +100,9 @@
 
                                         </td>
 
-                                        <td class="text-center"> @if($row->cancle_order_request == 1)<span class="bg-warning text-dark">Requested</span> @elseif($row->cancle_order_request == 2) <p> Order Canceled </p> @else <p> No Request </p> @endif </td>
+                                        <td class="text-center"> @if($row->cancle_order_request == 1)<span class="bg-warning text-dark">Requested</span>
+                                        @elseif($row->cancle_order_request == 2) <p> Order Canceled Request is Accpted </p> @elseif($row->cancle_order_request == 3)
+                                        <p> Order Canceled Request is Rejected </p>  @else <p> No Request </p> @endif </td>
                                         <td class="text-center"> <input type="number" min="1" class="form-control" value="{{$row->quantity}}" name="quantity"> </td>
                                        
                                         <td class="text-center"> <button type="submit" class="btn btn-success"> Update </button> </td>
@@ -112,6 +114,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        {{ $order->links() }}
             <!-- END Products Content -->
         </div>
     </section>

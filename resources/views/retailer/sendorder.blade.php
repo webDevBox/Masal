@@ -193,6 +193,7 @@
     </div>
     </div>
     </div>
+</div>
 
 <script>
 $("#image_2").click(function() {

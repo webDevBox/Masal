@@ -148,7 +148,7 @@ class OrderController extends Controller
           }
           $user=User::find($id);
           $name=$user->name;
-         $order=retailerOrder::where('RetailerId',$id)->orderBy('id','desc')->get();
+         $order=retailerOrder::where('RetailerId',$id)->orderBy('id','desc')->paginate(5);
          return view('admin.order_view')->with(array('order'=>$order,'name'=>$name));
      }
 
@@ -166,7 +166,7 @@ class OrderController extends Controller
           {
               return redirect('/admin');
           }
-         $order=retailerOrder::where('RetailerId',$id)->get();
+         $order=retailerOrder::where('RetailerId',$id)->paginate(5);
          return view('admin.order_edit')->with('order',$order);
      }
 

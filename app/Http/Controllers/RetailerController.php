@@ -253,13 +253,93 @@ class RetailerController extends Controller
                return redirect('/');
            }
            $order=retailerOrder::find($id);
+           $user=User::find($order->RetailerId);
+           $admin=User::where('userRole',1)->get();
+           $product=products::find($order->productId);
            if($order->payment == 'Done')
            {
            $order->cancle_order_request=1;
            $order->save();
+
+            $addition=0;
+            if($order->extra != null)
+            {
+                $extra=additional::where('additional',$order->extra)->first();
+                $addition=$extra->price;
+            }
+            $sub=($order->quantity*$addition)+($order->quantity*$product->wholesalePrice);
+            if($order->extra == null)
+            {
+                $extra="No Extra";
+            }
+            else
+            {
+                $extra=$order->extra;
+            }
+           $output='';
+            $output.='<div class="table-responsive">
+            <table class="table table-dark" style="border-collapse: collapse;background-color:#212529;color:white" >
+            <thead>
+                <tr>
+                <th style="padding:20px; border: 1px solid black;" ><b>Order Id</b></th>
+                <th style="padding:20px; border: 1px solid black;" ><b>Image</b></th>
+                <th style="padding:20px; border: 1px solid black;" ><b>Name</b></th>
+                <th style="padding:20px; border: 1px solid black;" ><b>Notes</b></th>
+                <th style="padding:20px; border: 1px solid black;" ><b>Color</b></th>
+                <th style="padding:20px; border: 1px solid black;" ><b>Size</b></th>
+                <th style="padding:20px; border: 1px solid black;" ><b>Extra</b></th>
+                <th style="padding:20px; border: 1px solid black;" ><b>Style #</b></th>
+                <th style="padding:20px; border: 1px solid black;" ><b>Quantity</b></th>
+                <th style="padding:20px; border: 1px solid black;" ><b>Status</b></th>
+                <th style="padding:20px; border: 1px solid black;" ><b>Price</b></th> 
+                </tr>
+            </thead>
+            <tbody>
+            ';
+            $output.='
+            <tr>
+            <td style="padding:20px; border: 1px solid black;" > '.'OID.'.$order->id.' </td>
+                <td style="padding:20px; border: 1px solid black;" > <img style="height:100px;width:100px" 
+                src='.asset('/images/'.$product->image1).'> </td>
+                <td style="padding:20px; " > '.$product->name.' </td>
+                <td style="padding:20px; border: 1px solid black;" > '.$order->detail.'  </td>
+                <td style="padding:20px; " > '.$order->colour.'  </td>
+                <td style="padding:20px; " > '.$order->sizes.' </td>
+                <td style="padding:20px; " > '.$extra.'  </td>
+                <td style="padding:20px; border: 1px solid black;" > '.$product->styleNumber.' </td>
+                <td style="padding:20px; " > '.$order->quantity.' </td>
+                <td style="padding:20px; border: 1px solid black;" > '.$order->status.' </td>
+                <td style="padding:20px; " > $'.$sub.'</td>
+
+            </tr>
+            </tbody>
+            </table>   
+            </div>';
+
+            $welcome=emails::where('name','Order_Cancle')->first();
+            $signature=emails::where('name','Signature')->first();
+            $ender=' ';
+            if($signature->status == 1)
+            {
+            $ender=$signature->message;
+            }
+            if($welcome->status == 1)
+            {
+                $mail=[
+                    'body'=>$welcome->message.'<br><br>'.$output.'<br>'.$ender
+                ];    
+                $subject=$welcome->subject;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                Mail::to($user->email)->send(new masalMail($mail,$subject));
+
+                foreach($admin as $own)
+                {
+                    Mail::to($own->email)->send(new masalMail($mail,$subject));
+                }
+            }
+
            return redirect()->back()->with('success', 'Order Cancellation Requests Submitted');
            }
-           return redirect()->back()->with('success', 'Your Order is not Paid');
+           return redirect()->back()->with('error', 'Your Order is not Paid');
            
       }
 
