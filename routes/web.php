@@ -232,7 +232,7 @@ Route::get('/retailercitypicker', 'PagesController@retailercitypicker')->name('r
 
 Route::get('/order_success', 'RetailerOrderController@order_success');
 Route::post('/feedback', 'PagesController@feedback')->name('feedback');
-Route::get('/nav_collection/{id}', 'PagesController@nav_collection')->name('nav_collection');
+Route::get('/categories/{id}', 'PagesController@nav_collection')->name('nav_collection');
 Route::get('/sil_collection/{id}', 'PagesController@sil_collection')->name('sil_collection');
 Route::post('/filter/{id}', 'PagesController@filter')->name('filter');
 Route::post('/filter_sil/{id}', 'PagesController@filter_sil')->name('filter_sil');

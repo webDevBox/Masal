@@ -219,7 +219,8 @@ class PagesController extends Controller
 
     public function nav_collection($id)
     {
-        $products=products::where('category',$id)->where('delete_status',0)->paginate(6);
+        $category=Category::where('name',$id)->first();
+        $products=products::where('category',$category->id)->where('delete_status',0)->paginate(6);
         $collection=Category::all();
         $cat=Category::find($id);
         $seleve=sleeve::get();

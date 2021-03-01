@@ -10,7 +10,18 @@
     <div class="content-body">
     <!-- Dashboard Ecommerce Starts -->
     <section id="dashboard-ecommerce">
-    
+        @if(Session::has('success'))
+        <p class="alert {{ Session::get('alert-class', 'alert-success') }}" style="width: 500px;">{{ Session::get('success') }}</p>
+        @endif
+        @if(Session::has('error'))
+        <p class="alert {{ Session::get('alert-class', 'alert-danger') }}" style="width: 500px;">{{ Session::get('error') }}</p>
+        @endif
+        @if ($errors->has('category'))
+        <p style="color:red;">{{ $errors->first('category') }}</p>
+        @endif
+        @if ($errors->has('first'))
+        <p style="color:red;">{{ $errors->first('first') }}</p>
+        @endif
             <div class="row match-height">
             <!-- Bar Chart - Orders -->
            
@@ -38,15 +49,6 @@
             </a>
             </div>
             </div>
-
-            @if(Session::has('success'))
-            <p class="alert {{ Session::get('alert-class', 'alert-success') }}" style="width: 500px;">{{ Session::get('success') }}</p>
-            @endif
-            @if(Session::has('error'))
-            <p class="alert {{ Session::get('alert-class', 'alert-danger') }}" style="width: 500px;">{{ Session::get('error') }}</p>
-            @endif
-    
-    
     <div class="row match-height" >
     <!-- Company Table Card -->
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >

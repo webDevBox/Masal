@@ -111,7 +111,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
             <div class="header-promo">
                 <div class="container-fluid">
                     <div class="row">
-                        <a class="promo-link" href="{{ route('nav_collection', ['id' => $coll_head->id]) }}">
+                        <a class="promo-link" href="{{ route('nav_collection', ['id' => $coll_head->name]) }}">
                             Pre-Spring styles just in! 
                             <span>View the Collection
                             </span>
@@ -288,7 +288,7 @@ content="Wedding Dresses, Designer Wedding Dresses, Masal , Modern Romance, Brid
                                                             @foreach ($collection as $nav)
     
                                                                 <li>
-                                                                    <a href="{{ route('nav_collection', ['id' => $nav->id]) }}"
+                                                                    <a href="{{ route('nav_collection', ['id' => $nav->name]) }}"
                                                                         class="menu_item_smaller_font">
                                                                         <span>
                                                                             {{ $nav->name }}
