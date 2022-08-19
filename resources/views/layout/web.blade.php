@@ -207,7 +207,7 @@
                 <div class="row">
                     <div class="preheader-blocks header-spacing">
                         <div class="preheader-block preheader-left preheader-style">
-                            <ul>
+                            {{-- <ul>
                                 <li>
                                     <a href="{{ route('mapper') }}" rel="nofollow" data-property="find-store"
                                         aria-label="Find a store">
@@ -215,7 +215,7 @@
                                         <span>Find a store</span>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                         <div class="preheader-block preheader-right preheader-style">
                             <ul>

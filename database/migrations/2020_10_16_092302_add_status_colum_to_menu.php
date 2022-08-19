@@ -14,7 +14,7 @@ class AddStatusColumToMenu extends Migration
     public function up()
     {
         Schema::table('menus', function (Blueprint $table) {
-            $table->integer('status')->after('footer_status')->comment('0=default , 1=custom')->default(0);
+            $table->integer('status')->comment('0=default , 1=custom')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class AddStatusColumToMenu extends Migration
     public function down()
     {
         Schema::table('menus', function (Blueprint $table) {
-            //
+            $table->dropColumn('status');
         });
     }
 }

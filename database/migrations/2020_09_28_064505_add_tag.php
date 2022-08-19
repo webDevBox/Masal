@@ -14,7 +14,7 @@ class AddTag extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('tag')->after('category')->nullable();
+            $table->string('tag')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddTag extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->dropColumn('tag');
         });
     }
 }
